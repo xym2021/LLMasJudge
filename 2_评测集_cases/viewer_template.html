@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>旅行规划评测集 · 10 个 case</title>
+<style>
+:root {
+  --paper: #EDF1F3;
+  --panel: #FFFFFF;
+  --ink: #1C2B39;
+  --muted: #5B6B7A;
+  --rule: #CFD8DF;
+  --track: #A3B0BB;
+  --plan: #26786B;
+  --clar: #C4870F;
+  --nosol: #AF3646;
+  --focus: #2F5FD0;
+  --ui: "Bahnschrift", "Segoe UI Variable Text", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  --text: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 15px; line-height: 1.6; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* masthead */
+.masthead { padding: 40px 0 8px; }
+.masthead h1 { font-family: var(--ui); font-weight: 600; font-size: 34px; letter-spacing: .5px; margin: 0 0 6px; }
+.masthead p { margin: 0; color: var(--muted); max-width: 70ch; }
+.bar { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; margin: 22px 0 0; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.bar nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.bar nav a { text-decoration: none; padding: 4px 12px; border-radius: 999px; font-family: var(--ui); }
+.bar nav a:hover { background: #DCE3E8; }
+.legend { display: flex; gap: 16px; align-items: center; color: var(--muted); font-size: 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.toggle { margin-left: auto; display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); cursor: pointer; }
+
+/* station shapes */
+.st { display: inline-block; width: 18px; height: 18px; flex: none; border: 3px solid var(--panel); box-shadow: 0 0 0 2px currentColor; background: currentColor; }
+.st.plan { color: var(--plan); border-radius: 50%; }
+.st.clarification { color: var(--clar); border-radius: 3px; transform: rotate(45deg) scale(.9); }
+.st.no_solution { color: var(--nosol); border-radius: 2px; }
+.st.sm { width: 12px; height: 12px; border-width: 2px; box-shadow: 0 0 0 1.5px currentColor; }
+
+section { padding: 36px 0 8px; }
+h2 { font-family: var(--ui); font-weight: 600; font-size: 22px; margin: 0 0 4px; }
+.lede { color: var(--muted); margin: 0 0 18px; max-width: 75ch; }
+
+/* coverage */
+.principles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px 28px; margin: 0 0 22px; }
+.principles div { border-top: 3px solid var(--ink); padding-top: 10px; }
+.principles b { display: block; font-family: var(--ui); font-weight: 600; margin-bottom: 4px; }
+.principles p { margin: 0; font-size: 14px; color: var(--muted); }
+.groups { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 0 0 8px; font-size: 14px; }
+.groups span { display: inline-flex; gap: 8px; align-items: baseline; max-width: 380px; }
+.grp { display: inline-block; flex: none; white-space: nowrap; padding: 0 9px; border-radius: 5px; font-family: var(--ui); font-size: 13px; line-height: 22px; font-weight: 600; }
+.grp.g-typical { background: #DDEBE8; color: #1F5F55; }
+.grp.g-boundary { background: #F6E4C4; color: #7A520A; }
+.grp.g-pair { background: #DCE4F5; color: #2C4A8C; }
+.sub-h { font-family: var(--ui); font-weight: 600; font-size: 17px; margin: 26px 0 10px; }
+table.cover { min-width: 1000px; }
+.cover td .shapes { display: inline-flex; gap: 6px; align-items: center; }
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 18px; }
+.pair { background: var(--panel); border-radius: 14px; padding: 18px 22px; }
+.pair h4 { font-family: var(--ui); font-weight: 600; font-size: 16px; margin: 0 0 10px; }
+.pair .vs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 10px 0; }
+.pair .side { background: #F4F7F9; border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.pair .side b { display: flex; gap: 8px; align-items: center; font-family: var(--ui); }
+.pair .side p { margin: 4px 0 0; color: var(--muted); }
+.pair dl { margin: 8px 0 0; font-size: 14px; display: grid; grid-template-columns: 5.5em 1fr; gap: 4px 10px; }
+.pair dt { color: var(--muted); }
+.pair dd { margin: 0; }
+
+/* line map */
+.lines { background: var(--panel); border-radius: 14px; padding: 10px 0; }
+.line-row { display: grid; grid-template-columns: 56px 240px 170px 1fr 130px; align-items: center; gap: 16px; width: 100%; text-align: left; background: none; border: 0; padding: 12px 24px; cursor: pointer; }
+.line-row + .line-row { border-top: 1px solid #E6EBEF; }
+.line-row:hover { background: #F4F7F9; }
+.line-row .who { font-weight: 600; }
+.line-row .who small { display: block; font-weight: 400; color: var(--muted); font-family: var(--ui); }
+.line-row .route { font-family: var(--ui); color: var(--muted); }
+.track { position: relative; display: flex; align-items: center; gap: 0; height: 40px; }
+.track { --gap: 84px; }
+.track .stop { position: relative; width: var(--gap); display: flex; flex-direction: column; align-items: center; gap: 2px; z-index: 1; }
+.track .stop:not(:last-child)::after { content: ""; position: absolute; top: 9px; left: 50%; width: var(--gap); height: 4px; background: var(--track); z-index: -1; }
+.track .stop em { font-style: normal; font-family: var(--ui); font-size: 12px; color: var(--muted); }
+.line-row .kind { font-size: 13px; color: var(--muted); }
+
+/* stats */
+.kpis { display: flex; flex-wrap: wrap; gap: 10px 44px; margin: 0 0 22px; }
+.kpi b { display: block; font-family: var(--ui); font-weight: 600; font-size: 40px; line-height: 1.1; }
+.kpi span { color: var(--muted); font-size: 14px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+.panel { background: var(--panel); border-radius: 14px; padding: 18px 20px; }
+.panel.wide { grid-column: span 2; }
+.panel h3 { font-family: var(--ui); font-weight: 600; font-size: 16px; margin: 0 0 12px; }
+.panel h4 { font-size: 13px; color: var(--muted); font-weight: 400; margin: 14px 0 6px; }
+.hbar { display: grid; grid-template-columns: 9.5em 1fr 2em; gap: 10px; align-items: center; font-size: 14px; margin: 5px 0; }
+.hbar .fill { height: 10px; border-radius: 5px; background: var(--ink); opacity: .78; }
+.hbar .n { font-family: var(--ui); text-align: right; color: var(--muted); }
+.stack { display: flex; height: 26px; border-radius: 6px; overflow: hidden; margin: 6px 0 12px; }
+.stack div { display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--ui); font-size: 13px; }
+.mini td, .mini th { padding: 5px 8px 5px 0; text-align: left; font-size: 14px; border-bottom: 1px solid #E6EBEF; }
+.mini th { color: var(--muted); font-weight: 400; }
+.mini { border-collapse: collapse; width: 100%; }
+
+/* persona matrix */
+.matrix-wrap { overflow-x: auto; background: var(--panel); border-radius: 14px; }
+table.matrix { border-collapse: collapse; min-width: 1100px; width: 100%; font-size: 14px; }
+.matrix th, .matrix td { padding: 12px 14px; vertical-align: top; text-align: left; border-bottom: 1px solid #E6EBEF; }
+.matrix thead th { white-space: nowrap; font-family: var(--ui); font-weight: 600; color: var(--muted); background: #F6F8FA; position: sticky; top: 0; }
+.matrix tbody th { position: sticky; left: 0; background: var(--panel); min-width: 190px; font-weight: 600; }
+.matrix tbody th small { display: block; font-weight: 400; color: var(--muted); }
+.matrix .people { min-width: 220px; }
+.tag { display: inline-block; padding: 1px 9px; margin: 2px 4px 2px 0; border-radius: 999px; background: #E7EDF1; font-size: 13px; white-space: nowrap; }
+.tag.warn { background: #F6E7C8; }
+.tag.risk { background: #F3D9DC; }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--focus); cursor: pointer; text-decoration: underline; font-size: 13px; }
+
+/* detail */
+.detail { display: grid; grid-template-columns: 260px 1fr; gap: 22px; align-items: start; }
+.case-nav { position: sticky; top: 14px; background: var(--panel); border-radius: 14px; padding: 8px; }
+.case-nav button { display: block; width: 100%; text-align: left; background: none; border: 0; border-radius: 9px; padding: 9px 12px; cursor: pointer; }
+.case-nav button:hover { background: #F1F4F6; }
+.case-nav button[aria-current="true"] { background: var(--ink); color: #fff; }
+.case-nav button[aria-current="true"] small { color: #C9D3DC; }
+.case-nav small { display: block; font-family: var(--ui); color: var(--muted); font-size: 12px; }
+.case-nav .dots { display: flex; gap: 5px; margin-top: 4px; }
+.case-nav button[aria-current="true"] .st { border-color: var(--ink); }
+
+article.case { background: var(--panel); border-radius: 14px; padding: 26px 30px 30px; min-width: 0; }
+.case-head h3 { font-family: var(--ui); font-weight: 600; font-size: 26px; margin: 0; }
+.case-head .sub { color: var(--muted); font-family: var(--ui); margin: 2px 0 14px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 20px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.facts div span { display: block; color: var(--muted); font-size: 13px; }
+.facts div b { font-family: var(--ui); font-weight: 600; font-size: 16px; }
+.goal { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 18px 0 6px; }
+.goal div { padding: 12px 16px; border-radius: 10px; background: #F1F5F7; }
+.goal div.bad { background: #FBEEF0; }
+.goal b { display: block; font-size: 13px; color: var(--muted); font-weight: 400; margin-bottom: 2px; }
+.case h4 { font-family: var(--ui); font-weight: 600; font-size: 17px; margin: 28px 0 10px; }
+
+.turns { list-style: none; margin: 0; padding: 0; }
+.turn { display: grid; grid-template-columns: 44px 1fr; gap: 14px; }
+.turn .rail { display: flex; flex-direction: column; align-items: center; }
+.turn .rail .st { margin-top: 6px; }
+.turn .rail::after { content: ""; flex: 1; width: 4px; background: var(--track); margin: 8px 0 -6px; }
+.turn:last-child .rail::after { background: transparent; }
+.turn .body { padding-bottom: 22px; min-width: 0; }
+.turn .top { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.turn .top b { font-family: var(--ui); font-weight: 600; }
+.badge { display: inline-block; padding: 1px 10px; border-radius: 999px; color: #fff; font-size: 13px; font-family: var(--ui); }
+.badge.plan { background: var(--plan); } .badge.clarification { background: var(--clar); } .badge.no_solution { background: var(--nosol); }
+.turn .say { font-size: 16px; margin: 6px 0 4px; max-width: 72ch; }
+.turn .en { color: var(--muted); font-size: 14px; margin: 0 0 6px; max-width: 80ch; font-family: "Segoe UI", sans-serif; }
+body:not(.show-en) .turn .en { display: none; }
+.turn .note { font-size: 14px; margin: 4px 0; }
+.turn .note::before { content: "评测关注："; color: var(--muted); }
+.turn .chips { font-size: 13px; margin: 6px 0; color: var(--muted); }
+.turn .block { font-size: 14px; background: #FBF3E3; border-radius: 8px; padding: 6px 12px; margin: 6px 0; }
+details { margin: 6px 0; font-size: 14px; }
+details summary { cursor: pointer; color: var(--focus); }
+details pre { white-space: pre-wrap; word-break: break-word; background: #F4F7F9; border-radius: 8px; padding: 10px 12px; font-size: 12.5px; max-height: 320px; overflow: auto; }
+
+table.ref { border-collapse: collapse; width: 100%; font-size: 14px; }
+.ref th, .ref td { text-align: left; vertical-align: top; padding: 9px 10px 9px 0; border-bottom: 1px solid #E6EBEF; }
+.ref th { color: var(--muted); font-weight: 400; font-size: 13px; }
+.ref td.name { font-weight: 600; white-space: nowrap; }
+.ref td.ctx { color: var(--muted); max-width: 40ch; font-family: "Segoe UI", sans-serif; }
+.kv { display: block; }
+.kv i { font-style: normal; color: var(--muted); }
+ul.plain { margin: 0; padding-left: 18px; }
+ul.plain li { margin: 4px 0; }
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 16px; }
+  .line-row { grid-template-columns: 1fr; gap: 6px; padding: 12px 16px; }
+  .line-row .grp { justify-self: start; }
+  .track { --gap: 64px; }
+  .panel.wide { grid-column: auto; }
+  .detail { grid-template-columns: 1fr; }
+  .case-nav { position: static; display: flex; overflow-x: auto; gap: 4px; }
+  .case-nav button { min-width: 150px; }
+  .goal { grid-template-columns: 1fr; }
+  .ref td { overflow-wrap: anywhere; }
+  .ref td.name { white-space: normal; }
+  .pairs { grid-template-columns: 1fr; }
+  .pair .vs { grid-template-columns: 1fr; }
+  article.case { padding: 20px; }
+  .toggle { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+<header class="wrap masthead">
+  <h1>旅行规划评测集</h1>
+  <p>10 个多轮 case，基于 Trip+ 改编。下面每条线是一个 case，每个站点是一轮用户对话，站点形状和颜色表示这一轮期望模型做出的回应。</p>
+  <div class="bar">
+    <nav aria-label="页面导航">
+      <a href="#coverage">覆盖设计</a><a href="#lines">线路图</a><a href="#stats">数据统计</a><a href="#personas">画像与人群</a><a href="#detail">case 详情</a>
+    </nav>
+    <div class="legend" aria-label="图例">
+      <span><i class="st sm plan"></i>出方案</span>
+      <span><i class="st sm clarification"></i>澄清</span>
+      <span><i class="st sm no_solution"></i>判无解</span>
+    </div>
+    <label class="toggle"><input type="checkbox" id="showEn"> 显示英文原文</label>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="coverage">
+    <h2>覆盖设计</h2>
+    <p class="lede">目标是测出模型在"该不该停下来问、能不能诚实说做不到"上的边界，同时不丢掉 Trip+ 在城市、画像和交互原型上的覆盖面。</p>
+    <div class="principles" id="principles"></div>
+    <div class="groups" id="groups"></div>
+    <h3 class="sub-h">10 个 case 一览</h3>
+    <div class="matrix-wrap"><table class="matrix cover" id="coverTable"></table></div>
+    <h3 class="sub-h">成对案例</h3>
+    <div class="pairs" id="pairs"></div>
+  </section>
+
+  <section id="lines">
+    <h2>线路图</h2>
+    <p class="lede">线越长，对话轮次越多。点击任意一行，查看该 case 的完整对话。</p>
+    <div class="lines" id="lineMap"></div>
+  </section>
+
+  <section id="stats">
+    <h2>数据统计</h2>
+    <p class="lede">轮次统计包含全部 10 个 case；画像、目的地、约束类统计按 8 个不重复的 case 计算，因为两个改编 case（0029P、0006P）与原 case 共用同一画像和初始请求。</p>
+    <div class="kpis" id="kpis"></div>
+    <div class="stats" id="statPanels"></div>
+  </section>
+
+  <section id="personas">
+    <h2>画像与人群</h2>
+    <p class="lede">画像以"长期记忆"的形式提供给被测模型。标黄的是行动限制，标红的是目的地环境风险。</p>
+    <div class="matrix-wrap"><table class="matrix" id="matrix"></table></div>
+  </section>
+
+  <section id="detail">
+    <h2>case 详情</h2>
+    <p class="lede">左侧选择 case。每轮给出中文意译、期望回应、本轮要落实和需要保留的条件；打开"显示英文原文"可以对照原始输入。</p>
+    <div class="detail">
+      <nav class="case-nav" id="caseNav" aria-label="case 列表"></nav>
+      <article class="case" id="caseView" aria-live="polite"></article>
+    </div>
+  </section>
+</main>
+
+<script>
+const D = __DATA__;
+const L = (g, k) => (D.labels[g] && D.labels[g][k]) || k;
+const city = c => D.cities[c] || c;
+const meta = c => c.meta_info.base_query_meta;
+const note = c => D.notes[c.id] || {};
+const shortId = id => id.replace("mt_single_", "");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+const route = c => `${city(meta(c).org)} → ${meta(c).dest.map(city).join("、")}`;
+const unique = D.cases.filter(c => !c.pair_of);
+
+function crowd(c) {
+  const p = meta(c).observable_profile.party_composition;
+  const kids = p.children.length, elders = p.elders.length;
+  if (kids && elders) return "三代同堂";
+  if (kids) return "带孩子";
+  if (elders && p.adults === 0) return "独行老人";
+  if (elders) return "陪老人";
+  const t = meta(c).user_profile.party_type;
+  return t === "couple" ? "情侣" : t === "friends" ? "朋友/室友" : L("party_type", t);
+}
+function people(c) {
+  const p = meta(c).observable_profile.party_composition;
+  const parts = [`${p.adults} 位成人`];
+  p.children.forEach(k => parts.push(`孩子 ${k.age} 岁`));
+  p.elders.forEach(e => parts.push(`老人 ${e.age} 岁`));
+  return parts.join("，");
+}
+function peopleNotes(c) {
+  const p = meta(c).observable_profile.party_composition;
+  return [...p.children.map(k => `${k.age} 岁：${k.note}`), ...p.elders.map(e => `${e.age} 岁：${e.mobility_note}`)];
+}
+const shape = (mode, sm) => `<i class="st ${mode}${sm ? " sm" : ""}" title="${esc(L("mode", mode))}"></i>`;
+const tags = (arr, g, cls) => arr.map(x => `<span class="tag${cls ? " " + cls : ""}">${esc(L(g, x))}</span>`).join("") || "—";
+const GROUP_CLASS = { "典型": "g-typical", "边界": "g-boundary", "成对": "g-pair" };
+const grp = g => `<span class="grp ${GROUP_CLASS[g] || ""}">${esc(g)}</span>`;
+const season = c => { const mo = +meta(c).depart_date.slice(5, 7); return mo >= 6 && mo <= 8 ? "夏季" : mo === 12 || mo <= 2 ? "冬季" : "五一"; };
+
+/* coverage */
+const CV = D.coverage;
+document.getElementById("principles").innerHTML = CV.principles.map(([t, p]) => `<div><b>${esc(t)}</b><p>${esc(p)}</p></div>`).join("");
+document.getElementById("groups").innerHTML = CV.groups.map(([g, s]) => `<span>${grp(g)}${esc(s)}</span>`).join("");
+document.getElementById("coverTable").innerHTML = `<thead><tr>
+  <th>case</th><th>分组</th><th>人群</th><th>交互原型</th><th>每轮期望</th><th>考察的边界</th><th>路线与时间</th><th>目的地风险</th></tr></thead>
+  <tbody>${D.cases.map(c => {
+    const n = note(c), m = meta(c);
+    return `<tr>
+      <th>${esc(n.persona)}<small>${shortId(c.id)}</small><button class="linkbtn" data-id="${c.id}">查看</button></th>
+      <td>${grp(n.group)}</td>
+      <td>${esc(crowd(c))}<br><small style="color:var(--muted)">${esc(people(c))}</small></td>
+      <td>${esc(L("interaction", c.interaction_type))}</td>
+      <td><span class="shapes">${c.turns.map(t => shape(t.response_expectation, true)).join("")}</span></td>
+      <td>${esc(n.boundary)}</td>
+      <td>${esc(route(c))}<br><small style="color:var(--muted)">${season(c)}　${m.depart_date.slice(5)} 起 ${m.days} 天</small></td>
+      <td>${tags(m.city_context?.seasonal_advisories || [], "advisory", "risk")}</td>
+    </tr>`;
+  }).join("")}</tbody>`;
+const caseById = id => D.cases.find(c => c.id === id);
+document.getElementById("pairs").innerHTML = CV.pairs.map(p => {
+  const a = caseById(p.a), b = caseById(p.b);
+  const side = c => `<div class="side"><b>${shortId(c.id)}　T1 ${shape(c.turns[1].response_expectation, true)} ${esc(L("mode", c.turns[1].response_expectation))}</b><p>${esc(note(c).turns[1][0])}</p></div>`;
+  return `<div class="pair"><h4>${shortId(a.id)} 对比 ${shortId(b.id)}：${esc(note(a).persona)}</h4>
+    <div class="vs">${side(a)}<span aria-hidden="true">→</span>${side(b)}</div>
+    <dl><dt>唯一变化</dt><dd>${esc(p.change)}</dd><dt>预期变化</dt><dd>${esc(p.expect)}</dd><dt>为什么</dt><dd>${esc(p.why)}</dd></dl>
+    <p style="margin:10px 0 0"><button class="linkbtn" data-id="${a.id}">查看 ${shortId(a.id)}</button>　<button class="linkbtn" data-id="${b.id}">查看 ${shortId(b.id)}</button></p></div>`;
+}).join("");
+
+/* line map */
+document.getElementById("lineMap").innerHTML = D.cases.map(c => {
+  const n = note(c);
+  const stops = c.turns.map((t, i) => `<span class="stop" title="T${i}（${esc(L("mode", t.response_expectation))}）：${esc((n.turns || [])[i]?.[0] || "")}">${shape(t.response_expectation)}<em>T${i}</em></span>`).join("");
+  return `<button class="line-row" data-id="${c.id}">
+    ${grp(n.group)}
+    <span class="who">${esc(n.persona)}<small>${shortId(c.id)}　${esc(n.scene)}</small></span>
+    <span class="route">${esc(route(c))}　${meta(c).days} 天</span>
+    <span class="track">${stops}</span>
+    <span class="kind">${esc(L("interaction", c.interaction_type))}</span>
+  </button>`;
+}).join("");
+
+/* stats */
+function count(items) {
+  const m = new Map();
+  items.forEach(x => m.set(x, (m.get(x) || 0) + 1));
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+}
+function bars(entries, group, max) {
+  const top = max || Math.max(...entries.map(e => e[1]), 1);
+  return entries.map(([k, v]) => `<div class="hbar"><span>${esc(group ? L(group, k) : k)}</span><span class="fill" style="width:${(v / top) * 100}%"></span><span class="n">${v}</span></div>`).join("");
+}
+const allTurns = D.cases.flatMap(c => c.turns);
+const modes = count(allTurns.map(t => t.response_expectation));
+const modeColor = { plan: "var(--plan)", clarification: "var(--clar)", no_solution: "var(--nosol)" };
+const withKidsElders = unique.filter(c => { const p = meta(c).observable_profile.party_composition; return p.children.length || p.elders.length; }).length;
+const avgDays = (unique.reduce((s, c) => s + meta(c).days, 0) / unique.length).toFixed(1);
+
+document.getElementById("kpis").innerHTML = [
+  [D.cases.length, `个 case（${D.cases.filter(c => c.pair_of).length} 个为改编）`],
+  [allTurns.length, "轮用户对话"],
+  [allTurns.filter(t => t.response_expectation !== "plan").length, "轮应澄清或判无解"],
+  [D.cases.filter(c => c.pair_of).length, "轮成对案例中\"不该问\"的对照轮"],
+  [unique.length, "种旅行者画像"],
+  [withKidsElders, "个画像开局含老人或孩子"],
+  [avgDays, "天平均行程"],
+].map(([b, s]) => `<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join("");
+
+const prof = k => unique.flatMap(c => meta(c).observable_profile[k]);
+const panels = [];
+panels.push(`<div class="panel"><h3>每轮期望的回应方式</h3>
+  <div class="stack">${modes.map(([k, v]) => `<div style="flex:${v};background:${modeColor[k]}" title="${L("mode", k)} ${v}">${v}</div>`).join("")}</div>
+  ${bars(modes, "mode")}
+  <h4>每个 case 的轮数</h4>${bars(count(D.cases.map(c => `${c.turns.length} 轮`)).sort())}</div>`);
+panels.push(`<div class="panel"><h3>交互类型</h3>${bars(count(D.cases.map(c => c.interaction_type)), "interaction")}
+  <h4>典型、边界与成对</h4>${bars(count(D.cases.map(c => note(c).group)))}
+  <h4>出行季节</h4>${bars(count(unique.map(season)))}</div>`);
+panels.push(`<div class="panel"><h3>人群</h3>${bars(count(unique.map(crowd)))}
+  <h4>住宿档次</h4>${bars(count(prof("accommodation_style")), "accommodation_style")}
+  <h4>节奏偏好</h4>${bars(count(prof("schedule_rules")), "schedule_rules")}</div>`);
+panels.push(`<div class="panel"><h3>目的地与行程</h3><table class="mini"><thead><tr><th>路线</th><th>日期</th><th>天数</th><th>人数</th></tr></thead><tbody>
+  ${unique.map(c => `<tr><td>${esc(route(c))}</td><td>${meta(c).depart_date.slice(5)}</td><td>${meta(c).days}</td><td>${meta(c).people_number}</td></tr>`).join("")}</tbody></table></div>`);
+panels.push(`<div class="panel"><h3>画像标签</h3>
+  <h4>行动限制</h4>${bars(count(prof("mobility_constraints")), "mobility_constraints")}
+  <h4>兴趣</h4>${bars(count(prof("interest_tags")), "interest_tags")}
+  <h4>讨厌</h4>${bars(count(prof("hate_tags")), "hate_tags")}</div>`);
+panels.push(`<div class="panel"><h3>交通与休息偏好</h3>
+  ${bars(count(prof("transport_preferences")), "transport_preferences")}
+  <h4>休息</h4>${bars(count(prof("rest_preferences")), "rest_preferences")}</div>`);
+panels.push(`<div class="panel"><h3>硬约束类型</h3>${bars(count(unique.flatMap(c => Object.keys(meta(c).hard_constraints))), "hard")}</div>`);
+panels.push(`<div class="panel"><h3>目的地环境风险</h3>${bars(count(unique.flatMap(c => meta(c).city_context?.seasonal_advisories || [])), "advisory")}
+  <h4>环境提示类型</h4>${bars(count(unique.flatMap(c => (meta(c).soft_constraints.environment_hints || []).map(h => h.type))), "envhint")}</div>`);
+panels.push(`<div class="panel"><h3>后续轮次要求落实的更新</h3>${bars(count(D.cases.flatMap(c => c.turns.slice(1).flatMap(t => t.must_update))), "update")}</div>`);
+document.getElementById("statPanels").innerHTML = panels.join("");
+
+/* persona matrix */
+document.getElementById("matrix").innerHTML = `<thead><tr>
+  <th>画像</th><th>同行人</th><th>行动与节奏</th><th>兴趣</th><th>讨厌</th><th>交通与休息</th><th>目的地风险</th><th>规划时要遵守的画像规则</th></tr></thead>
+  <tbody>${unique.map(c => {
+    const m = meta(c), p = m.observable_profile;
+    const twin = D.cases.find(x => x.pair_of === c.id);
+    return `<tr>
+      <th>${esc(note(c).persona)}<small>${crowd(c)}　${shortId(c.id)}${twin ? "、" + shortId(twin.id) : ""}</small>
+        <button class="linkbtn" data-id="${c.id}">查看 case</button></th>
+      <td class="people">${esc(people(c))}<br><small style="color:var(--muted)">${peopleNotes(c).map(esc).join("<br>")}</small><br>住宿：${esc(L("accommodation_style", p.accommodation_style))}</td>
+      <td>${tags(p.mobility_constraints, "mobility_constraints", "warn")}${tags(p.physical_rules, "physical_rules")}${tags(p.schedule_rules.map(s => s), "schedule_rules")}</td>
+      <td>${tags(p.interest_tags, "interest_tags")}</td>
+      <td>${tags(p.hate_tags, "hate_tags")}</td>
+      <td>${tags(p.transport_preferences, "transport_preferences")}${tags(p.rest_preferences, "rest_preferences")}</td>
+      <td>${tags(m.city_context?.seasonal_advisories || [], "advisory", "risk")}</td>
+      <td>${m.user_profile.rules.map(r => `<span class="tag" title="${esc(r.planner_obligation)}">${esc(L("rules", r.rule_id))}</span>`).join("")}</td>
+    </tr>`;
+  }).join("")}</tbody>`;
+
+/* detail */
+const FIELD = {
+  hotel_name: "酒店", hotel_score: "评分", hotel_price: "每晚价格", acceptable_hotel_names: "可接受酒店",
+  restaurant_name: "餐厅", distance_meters: "距离（米）", price_per_person: "人均", acceptable_restaurant_names: "可接受餐厅",
+  attraction_name: "景点", min_budget: "预算下限", max_budget: "预算上限", minimum_feasible_budget: "最低可行花费",
+  depart_date: "出发", return_date: "返回", days: "天数", people_number: "人数", room_number: "房间数",
+  route_mode: "方式", origin: "出发地", destinations: "目的地", estimated_breakdown: "最低花费构成",
+  adults: "成人", children: "孩子", elders: "老人",
+  restaurant_rating: "餐厅评分", attraction_names: "景点", attraction_ratings: "景点评分",
+  acceptable_attraction_names: "可接受景点", banned_attraction_names: "不可安排的景点",
+  transportation: "交通", accommodation: "住宿", meals: "餐饮", attractions: "门票",
+  decoration_time: "装修时间", year_threshold: "年份门槛", direction: "方向", is_direct: "直达",
+  outbound_flight_no: "去程航班", outbound_airline: "航司", outbound_dep_time: "去程出发", outbound_duration: "去程时长",
+  inbound_flight_no: "返程航班", inbound_train_no: "返程车次", inbound_train_type: "返程车型", inbound_arr_time: "返程到达", inbound_price: "返程价格",
+  acceptable_outbound_flight_nos: "可接受去程航班", acceptable_inbound_flight_nos: "可接受返程航班", acceptable_inbound_train_nos: "可接受返程车次",
+  seat_class: "舱位", start_hour: "开始时间", end_hour: "结束时间", time_range: "时间段",
+  party_composition: "人员构成", type: "类型", basis: "依据", profile_budget_rule: "画像预算规则",
+};
+const SKIP = new Set(["constraint_context", "constraint_type", "budget_policy", "is_unsat", "budget_slack_ratio", "estimated_meal_slots", "outbound_route_index", "inbound_route_index"]);
+function fmt(v) {
+  if (Array.isArray(v)) return v.map(x => typeof x === "object" ? JSON.stringify(x) : x).join("；");
+  if (v && typeof v === "object") return Object.entries(v).map(([k, x]) => `${FIELD[k] || k} ${typeof x === "object" ? JSON.stringify(x) : x}`).join("，");
+  return v;
+}
+function refAnswer(hc) {
+  return Object.entries(hc).filter(([k]) => !SKIP.has(k)).map(([k, v]) => `<span class="kv"><i>${esc(FIELD[k] || k)}：</i>${esc(fmt(v))}</span>`).join("") || "—";
+}
+
+function renderCase(id) {
+  const c = D.cases.find(x => x.id === id) || D.cases[0];
+  const m = meta(c), n = note(c);
+  document.querySelectorAll("#caseNav button").forEach(b => b.dataset.id === c.id ? b.setAttribute("aria-current", "true") : b.removeAttribute("aria-current"));
+  const hard = Object.entries(m.hard_constraints);
+  const soft = m.soft_constraints;
+  const turnsHtml = c.turns.map((t, i) => {
+    const [zh, why] = (n.turns || [])[i] || ["", ""];
+    const upd = t.must_update.map(u => `<span class="tag">${esc(L("update", u))}</span>`).join("");
+    const keep = t.must_preserve.map(u => L("hard", u));
+    const oracle = t.oracle_state_after_turn || {};
+    return `<li class="turn">
+      <div class="rail">${shape(t.response_expectation)}</div>
+      <div class="body">
+        <div class="top"><b>T${i}　用户</b><span class="badge ${t.response_expectation}">期望：${esc(L("mode", t.response_expectation))}</span></div>
+        <p class="say">${esc(zh)}</p>
+        <p class="en">${esc(t.utterance)}</p>
+        ${why ? `<p class="note">${esc(why)}</p>` : ""}
+        <div class="chips">本轮要落实：${upd}</div>
+        <div class="chips">需要保留：${keep.length ? keep.map(k => `<span class="tag">${esc(k)}</span>`).join("") : "—（首轮）"}</div>
+        ${(t.blocking_constraints || []).length ? `<div class="block">冲突或缺失：${t.blocking_constraints.map(esc).join("；")}</div>` : ""}
+        ${t.unsolved_reason ? `<div class="block">无解原因：${esc(t.unsolved_reason)}</div>` : ""}
+        <details><summary>本轮结束后的标注状态</summary><pre>${esc(JSON.stringify({
+          仍有效的硬约束: (oracle.active_hard_constraints || []).map(k => L("hard", k)),
+          用户状态变化: oracle.active_user_state_deltas || [],
+          请求消解记录: oracle.active_request_resolutions || [],
+        }, null, 2))}</pre></details>
+      </div></li>`;
+  }).join("");
+
+  document.getElementById("caseView").innerHTML = `
+    <div class="case-head">
+      <h3>${esc(n.persona)}</h3>
+      <p class="sub">${grp(n.group)}　${c.id}　${esc(L("interaction", c.interaction_type))}　${esc(n.scene)}</p>
+    </div>
+    ${c.pair_note ? `<p class="block" style="background:#EAF1FB;border-radius:8px;padding:8px 12px">改编说明：与 ${shortId(c.pair_of)} 成对。${esc(n.pair || c.pair_note)}</p>` : ""}
+    <div class="facts">
+      <div><span>路线</span><b>${esc(route(c))}</b></div>
+      <div><span>日期</span><b>${m.depart_date} 至 ${m.return_date.slice(5)}</b></div>
+      <div><span>天数</span><b>${m.days} 天</b></div>
+      <div><span>人数与房间</span><b>${m.people_number} 人　${m.room_number} 间</b></div>
+      <div><span>城际交通</span><b>${esc({ flight: "飞机", train: "火车" }[m.route_mode] || m.route_mode || "—")}</b></div>
+      <div><span>人群</span><b>${crowd(c)}</b></div>
+    </div>
+    <div class="goal"><div><b>考察点</b>${esc(n.focus)}</div><div class="bad"><b>关键失败</b>${esc(n.fail)}</div></div>
+
+    <h4>对话与每轮期望</h4>
+    <ol class="turns">${turnsHtml}</ol>
+
+    <h4>硬约束与参考答案</h4>
+    <table class="ref"><thead><tr><th>约束</th><th>用户原意</th><th>参考答案（来自数据库）</th></tr></thead><tbody>
+      ${hard.map(([k, v]) => `<tr><td class="name">${esc(L("hard", k))}</td><td class="ctx">${esc(v.constraint_context || v.constraint_type || "")}</td><td>${refAnswer(v)}</td></tr>`).join("")}
+    </tbody></table>
+
+    <h4>同行人与画像规则</h4>
+    <p>${esc(people(c))}${peopleNotes(c).length ? "（" + peopleNotes(c).map(esc).join("；") + "）" : ""}</p>
+    <table class="ref"><thead><tr><th>画像规则</th><th>规划时的义务</th><th>评估依据</th></tr></thead><tbody>
+      ${m.user_profile.rules.map(r => `<tr><td class="name">${esc(L("rules", r.rule_id))}</td><td class="ctx">${esc(r.planner_obligation)}</td><td class="ctx">${esc((r.evaluation_basis || []).join("，"))}</td></tr>`).join("")}
+    </tbody></table>
+
+    <h4>软性心愿与环境提示</h4>
+    <ul class="plain">
+      ${(soft.city_soft_wishes || []).map(w => `<li>顺路心愿：<span class="ctx">${esc(w)}</span></li>`).join("")}
+      ${soft.profile_soft_wish ? `<li>画像心愿：${esc(soft.profile_soft_wish)}</li>` : ""}
+      ${(soft.environment_hints || []).map(h => `<li><span class="tag risk">${esc(L("envhint", h.type))}</span>${esc(h.hint)}</li>`).join("")}
+      ${(m.city_context?.seasonal_advisories || []).length ? `<li>目的地环境：${tags(m.city_context.seasonal_advisories, "advisory", "risk")}</li>` : ""}
+    </ul>`;
+}
+
+document.getElementById("caseNav").innerHTML = D.cases.map(c => `<button data-id="${c.id}">
+  ${esc(note(c).persona)}<small>${shortId(c.id)}　${esc(note(c).group)}　${esc(route(c))}</small>
+  <span class="dots">${c.turns.map(t => shape(t.response_expectation, true)).join("")}</span></button>`).join("");
+
+function select(id, scroll) {
+  renderCase(id);
+  history.replaceState(null, "", "#" + id);
+  if (scroll) document.getElementById("detail").scrollIntoView();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-id]");
+  if (!b) return;
+  select(b.dataset.id, !b.closest("#caseNav"));
+});
+document.getElementById("showEn").addEventListener("change", e => document.body.classList.toggle("show-en", e.target.checked));
+const initial = decodeURIComponent(location.hash.slice(1));
+renderCase(D.cases.some(c => c.id === initial) ? initial : D.cases[0].id);
+</script>
+</body>
+</html>

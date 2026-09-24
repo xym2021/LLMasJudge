@@ -1,0 +1,2770 @@
+{
+  "llm_reported_overall": {
+    "score_1_5": 3.1538,
+    "score": 0.5384,
+    "raw_score_1_5": 3.1538,
+    "raw_score": 0.5384,
+    "score_normalized_from": "score_1_5",
+    "score_scale_consistent": true,
+    "source": "LLM self-reported overall score for comparison only",
+    "authoritative": false,
+    "aggregation": "activity-count-weighted average of chunk-level LLM self-reported overall scores",
+    "chunk_score_scale_inconsistent_count": 0
+  },
+  "profile_summary": {
+    "party": {
+      "has_child": true,
+      "has_elder": true
+    },
+    "comfort_sensitivities": {
+      "budget": "high",
+      "environment": "medium",
+      "fatigue": "high",
+      "schedule": "high"
+    },
+    "interest_preferences": {
+      "comfort": true,
+      "scenery": true
+    },
+    "sensitivity_flags": {
+      "budget_sensitive": true,
+      "fatigue_sensitive": true,
+      "schedule_sensitive": true
+    },
+    "profile_uncertainties": []
+  },
+  "activity_simulations": [
+    {
+      "item_ref": "D1-A1",
+      "day": 1,
+      "activity_index": 1,
+      "activity": {
+        "type": "buffer",
+        "name": "Arrive at Zhuhai Railway Station, security check and boarding wait",
+        "time_slot": "07:40-08:10"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Short 30-min buffer, but starts before 8am causing minor fatigue for elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this indoor buffer.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Early start at 07:40 adds schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A1",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A1]",
+          "claim": "Buffer starts before 8am, short duration.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A2",
+      "day": 1,
+      "activity_index": 2,
+      "activity": {
+        "type": "travel_intercity_public",
+        "name": "Guangzhou South",
+        "time_slot": "08:10-09:16"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "66-min train ride is moderate; seated travel reduces fatigue.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this train segment.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Follows early buffer, but train is on time and moderate duration.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Cost 70 CNY with moderate relevance; budget-sensitive profile feels minor pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A2",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A2]",
+          "claim": "Moderate-duration train, cost 70 with moderate budget relevance.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A3",
+      "day": 1,
+      "activity_index": 3,
+      "activity": {
+        "type": "buffer",
+        "name": "Deplaning/exiting station",
+        "time_slot": "09:16-09:31"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short 15-min buffer allows quick recovery after train.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short buffer keeps schedule on track without pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A3",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A3]",
+          "claim": "Short buffer with no flags, no cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A4",
+      "day": 1,
+      "activity_index": 4,
+      "activity": {
+        "type": "travel_city",
+        "name": "Dongshankou Arts District",
+        "time_slot": "09:31-10:02"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short 31-min taxi ride is comfortable for elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short transfer keeps schedule smooth.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost 45 CNY, low budget pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A4",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A4]",
+          "claim": "Short taxi ride, minor cost, local transport flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A5",
+      "day": 1,
+      "activity_index": 5,
+      "activity": {
+        "type": "attraction",
+        "name": "Dongshankou Arts District",
+        "time_slot": "10:02-12:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long 148-min walking/standing visit may cause fatigue for elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Environment includes heat and rain risks; no direct discomfort but potential.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long attraction fits schedule but leaves little buffer before lunch.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Free attraction, no cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Free attraction aligns with budget sensitivity, but no scenery/comfort evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A5",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A5]",
+          "claim": "Long free attraction, no flags other than attraction.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A6",
+      "day": 1,
+      "activity_index": 6,
+      "activity": {
+        "type": "meal",
+        "name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+        "time_slot": "12:30-13:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "60-min seated meal provides rest after long attraction.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for indoor meal.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Meal at standard lunch time, moderate duration fits schedule.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost 41 CNY, low budget pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Meal is moderate cost, but no evidence of preference alignment.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A6",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A6]",
+          "claim": "Moderate-duration meal, minor cost 41.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A7",
+      "day": 1,
+      "activity_index": 7,
+      "activity": {
+        "type": "travel_city",
+        "name": "Guangdong Museum of Art (Ersha Island Branch)",
+        "time_slot": "13:30-13:36"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Very brief 6-min taxi ride, minimal physical effort.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Very short transfer, no schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost 12.5 CNY, very low budget pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A7",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A7]",
+          "claim": "Brief 6-min taxi, minor cost, local transport flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A8",
+      "day": 1,
+      "activity_index": 8,
+      "activity": {
+        "type": "attraction",
+        "name": "Guangdong Museum of Art (Ersha Island Branch)",
+        "time_slot": "13:36-15:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long 114-min standing/walking visit may cause fatigue for elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Environment includes heat and rain risks; no direct discomfort but potential.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long attraction in afternoon, no buffer after, but ends at 15:30 reasonable.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Free attraction, no cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Free attraction aligns with budget sensitivity, but no scenery/comfort evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A8",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A8]",
+          "claim": "Long free attraction, no flags other than attraction.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A9",
+      "day": 1,
+      "activity_index": 9,
+      "activity": {
+        "type": "travel_city",
+        "name": "Sheraton Guangzhou Yuexiu Hotel",
+        "time_slot": "15:30-15:36"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Brief 6-min taxi ride, low physical demand.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this short taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short transfer fits well into the afternoon schedule.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (12.4 CNY) for a budget-sensitive traveler; low impact.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A9",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A9]",
+          "claim": "Brief 6-min taxi ride with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A10",
+      "day": 1,
+      "activity_index": 10,
+      "activity": {
+        "type": "hotel",
+        "name": "Sheraton Guangzhou Yuexiu Hotel",
+        "time_slot": "15:36-17:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Long 114-min rest period with explicit rest flag; excellent for fatigue-sensitive traveler.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for hotel stay.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Generous rest window before dinner; schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance for hotel stay.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Comfort preference supported by rest opportunity.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A10",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A10]",
+          "claim": "Long hotel stay with explicit rest flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A11",
+      "day": 1,
+      "activity_index": 11,
+      "activity": {
+        "type": "travel_city",
+        "name": "Xu Bo Guan",
+        "time_slot": "17:30-17:35"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Very short 5-min taxi ride, minimal physical effort.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this transfer.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Quick transfer to dinner; schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (12.2 CNY) for budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A11",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A11]",
+          "claim": "Brief 5-min taxi ride with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A12",
+      "day": 1,
+      "activity_index": 12,
+      "activity": {
+        "type": "meal",
+        "name": "Xu Bo Guan",
+        "time_slot": "17:35-19:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Moderate 85-min seated meal, low physical demand.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this indoor meal.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Dinner at a reasonable hour; schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Moderate cost (100 CNY) for budget-sensitive traveler; some pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Meal is neutral; no evidence of scenery or comfort preference alignment.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A12",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A12]",
+          "claim": "Moderate-cost dinner with moderate budget relevance.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A13",
+      "day": 1,
+      "activity_index": 13,
+      "activity": {
+        "type": "travel_city",
+        "name": "Sheraton Guangzhou Yuexiu Hotel",
+        "time_slot": "19:00-19:05"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Very short 5-min taxi ride, minimal physical effort.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this transfer.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Quick return to hotel after dinner; schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (12.2 CNY) for budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A13",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A13]",
+          "claim": "Brief 5-min taxi ride with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A14",
+      "day": 1,
+      "activity_index": 14,
+      "activity": {
+        "type": "hotel",
+        "name": "Sheraton Guangzhou Yuexiu Hotel",
+        "time_slot": "19:05-22:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Long 175-min rest period with explicit rest flag; excellent for fatigue-sensitive traveler.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for hotel stay.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Evening rest ends at 22:00; reasonable for schedule-sensitive traveler.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance for hotel stay.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Comfort preference supported by extended rest opportunity.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A14",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A14]",
+          "claim": "Long hotel stay with explicit rest flag and ends after 21:00.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A1",
+      "day": 2,
+      "activity_index": 1,
+      "activity": {
+        "type": "buffer",
+        "name": "Late start, breakfast at hotel, check-out",
+        "time_slot": "09:00-10:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "60-min buffer with explicit rest flag; excellent for fatigue-sensitive traveler.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this buffer.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Late start at 09:00; very schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance for buffer.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Comfort preference supported by relaxed morning.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A1",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A1]",
+          "claim": "Moderate 60-min buffer with explicit rest flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A2",
+      "day": 2,
+      "activity_index": 2,
+      "activity": {
+        "type": "travel_city",
+        "name": "Guangdong Science Center",
+        "time_slot": "10:00-10:22"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short 22-min taxi ride, low physical demand.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this transfer.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Morning transfer after a buffer; schedule-friendly.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Minor cost (32.5 CNY) but budget-sensitive traveler may feel slight pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A2",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A2]",
+          "claim": "Short 22-min taxi ride with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A3",
+      "day": 2,
+      "activity_index": 3,
+      "activity": {
+        "type": "attraction",
+        "name": "Guangdong Science Center",
+        "time_slot": "10:22-12:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long duration (98 min) may cause fatigue for elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor attraction, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Morning start, moderate slot, but tight transition to next activity.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Cost 60 CNY, minor relevance, but budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No interest or comfort preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A3",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A3]",
+          "claim": "Long attraction duration, minor cost relevance.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A4",
+      "day": 2,
+      "activity_index": 4,
+      "activity": {
+        "type": "travel_city",
+        "name": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+        "time_slot": "12:00-12:29"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short taxi ride (29 min) is low physical burden.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor transport, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Immediately follows attraction, tight but short.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Cost 41.3 CNY, minor relevance, budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A4",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A4]",
+          "claim": "Short taxi ride, minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A5",
+      "day": 2,
+      "activity_index": 5,
+      "activity": {
+        "type": "meal",
+        "name": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+        "time_slot": "12:29-13:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Sitting meal provides rest, moderate duration (61 min).",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor meal, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Lunch at reasonable time, but tight before next activity.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Cost 39 CNY, minor relevance, budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this restaurant.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A5",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A5]",
+          "claim": "Moderate meal duration, minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A6",
+      "day": 2,
+      "activity_index": 6,
+      "activity": {
+        "type": "travel_city",
+        "name": "Baiyun Mountain",
+        "time_slot": "13:30-13:39"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Very brief taxi ride (9 min) minimal burden.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor transport, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Tight transition from meal, but very short.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Cost 15.6 CNY, minor relevance, budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A6",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A6]",
+          "claim": "Brief taxi ride, minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A7",
+      "day": 2,
+      "activity_index": 7,
+      "activity": {
+        "type": "attraction",
+        "name": "Baiyun Mountain",
+        "time_slot": "13:39-15:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Long outdoor activity (111 min) may fatigue elder/child.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Outdoor marker present in hot/humid city, but no direct discomfort.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Afternoon slot, but long duration may feel tight.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Free activity, no cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Scenery interest aligns with traveler preference.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A7",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A7]",
+          "claim": "Long outdoor attraction, free, scenery interest.",
+          "score_impact": "mixed"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A8",
+      "day": 2,
+      "activity_index": 8,
+      "activity": {
+        "type": "travel_city",
+        "name": "Guangzhou South",
+        "time_slot": "15:30-16:16"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Moderate taxi ride (46 min) after long hike.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor transport, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Directly follows attraction, moderate duration.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Moderate cost (63.4 CNY) for budget-sensitive traveler.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A8",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A8]",
+          "claim": "Moderate taxi ride, moderate cost relevance.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A9",
+      "day": 2,
+      "activity_index": 9,
+      "activity": {
+        "type": "buffer",
+        "name": "Free time near Guangzhou South, dinner optional",
+        "time_slot": "16:16-17:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Explicit rest/recovery buffer helps fatigue.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Moderate buffer provides schedule relief.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A9",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A9]",
+          "claim": "Explicit rest/recovery buffer, moderate duration.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A10",
+      "day": 2,
+      "activity_index": 10,
+      "activity": {
+        "type": "buffer",
+        "name": "Arrive at Guangzhou South Railway Station, security check and boarding wait",
+        "time_slot": "17:30-18:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Short wait, standing possible but brief.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor station, no environment evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short buffer before departure, reasonable.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A10",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A10]",
+          "claim": "Short buffer, no cost.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item_ref": "D2-A11",
+      "day": 2,
+      "activity_index": 11,
+      "activity": {
+        "type": "travel_intercity_public",
+        "name": "Zhuhai Railway Station",
+        "time_slot": "18:00-19:06"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Seated train for 66 min, moderate duration, no fatigue flags.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor train, no weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Evening slot is acceptable; no tightness or early/late stress.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "70 CNY cost with moderate relevance; budget-sensitive but no limit.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transport activity.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A11",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A11]",
+          "claim": "66-min train ride with moderate budget cost relevance and no discomfort flags.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A12",
+      "day": 2,
+      "activity_index": 12,
+      "activity": {
+        "type": "buffer",
+        "name": "Deplaning/exiting station",
+        "time_slot": "19:06-19:21"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Short 15-min buffer, minimal physical demand.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor station, no weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Short buffer but adequate for deplaning; no tightness flags.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost associated.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for buffer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A12",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A12]",
+          "claim": "15-min buffer with no cost or discomfort flags.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "experience_dimensions": {
+    "physical_comfort": {
+      "score_1_5": 3.4615,
+      "score": 3.4615,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "physical_comfort"
+    },
+    "schedule_comfort": {
+      "score_1_5": 3.4615,
+      "score": 3.4615,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "schedule_comfort"
+    },
+    "environmental_comfort": {
+      "score_1_5": 3.0,
+      "score": 3.0,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "environmental_comfort"
+    },
+    "budget_comfort": {
+      "score_1_5": 3.1538,
+      "score": 3.1538,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "budget_comfort"
+    },
+    "preference_satisfaction": {
+      "score_1_5": 3.1667,
+      "score": 3.1667,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "preference_satisfaction"
+    }
+  },
+  "trace_faithfulness": {
+    "chunked": true,
+    "chunk_count": 4,
+    "all_chunks_trace_faithful": true
+  },
+  "missing_evidence": [
+    "No environmental comfort evidence for any activity.",
+    "No attraction or sightseeing activities; only transfers, hotel, meal, and buffer."
+  ],
+  "audit_notes": {
+    "strategy": "chunked LLM simulation; final artifact revalidated against full experience trace",
+    "chunk_notes": [
+      [],
+      [
+        "All expected activity refs are present.",
+        "Confidence is high for all activities due to direct trace evidence.",
+        "Budget dimension is applicable due to budget-sensitive profile and moderate-cost dinner."
+      ],
+      [
+        "Activity refs D2-A3 to D2-A10 match expected_activity_refs exactly.",
+        "No environment discomfort directly evidenced; outdoor marker used for environmental_comfort.",
+        "Budget limit null, but budget-sensitive flag makes budget_comfort applicable."
+      ],
+      [
+        "PLAN day 1 but trace day 2; used trace item_ref as authoritative.",
+        "Budget limit null; budget_comfort scored based on moderate relevance and sensitivity."
+      ]
+    ]
+  },
+  "chunking": {
+    "enabled": true,
+    "chunk_size": 8,
+    "chunk_count": 4,
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "activity_refs": [
+          "D1-A1",
+          "D1-A2",
+          "D1-A3",
+          "D1-A4",
+          "D1-A5",
+          "D1-A6",
+          "D1-A7",
+          "D1-A8"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.5,
+        "score_1_5": 3.0,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 2,
+        "activity_refs": [
+          "D1-A9",
+          "D1-A10",
+          "D1-A11",
+          "D1-A12",
+          "D1-A13",
+          "D1-A14",
+          "D2-A1",
+          "D2-A2"
+        ],
+        "llm_reported_score": 0.625,
+        "llm_reported_score_1_5": 3.5,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.5,
+        "llm_score_scale_consistent": null,
+        "score": 0.75,
+        "score_1_5": 4.0,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 3,
+        "activity_refs": [
+          "D2-A3",
+          "D2-A4",
+          "D2-A5",
+          "D2-A6",
+          "D2-A7",
+          "D2-A8",
+          "D2-A9",
+          "D2-A10"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.5,
+        "score_1_5": 3.0,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 4,
+        "activity_refs": [
+          "D2-A11",
+          "D2-A12"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.5,
+        "score_1_5": 3.0,
+        "trace_faithful": true
+      }
+    ]
+  },
+  "input_experience_trace": {
+    "method": "Traveler Experience Trace",
+    "rubric": {
+      "scale": "1-5, higher is better",
+      "anchors": {
+        "5": "very good: strongly matched to the user with low burden",
+        "4": "good: mostly comfortable with only minor issues",
+        "3": "medium: acceptable, but with visible tradeoffs",
+        "2": "poor: executable but clearly uncomfortable or stressful",
+        "1": "very poor: severe discomfort, stress, or profile conflict"
+      },
+      "dimension_groups": {
+        "physical": [
+          "physical_comfort",
+          "environmental_comfort"
+        ],
+        "psychological": [
+          "schedule_comfort",
+          "budget_comfort",
+          "preference_satisfaction"
+        ]
+      }
+    },
+    "turn_context": {
+      "current_turn_state_available": true,
+      "turn_selector_used": true
+    },
+    "profile_source": {
+      "used_observable_profile": true,
+      "used_user_profile": true,
+      "used_oracle_state_after_turn": true
+    },
+    "user_model": {
+      "profile_source": {
+        "used_observable_profile": true,
+        "used_user_profile": true,
+        "used_oracle_state_after_turn": true
+      },
+      "party": {
+        "has_child": true,
+        "has_elder": true,
+        "raw_evidence": [
+          "party_composition",
+          "adults",
+          "1",
+          "children",
+          "elders",
+          "age",
+          "69",
+          "mobility_note",
+          "sensitive to cold",
+          "budget_range",
+          "4000",
+          "7500"
+        ]
+      },
+      "sensitivities": {
+        "fatigue": "high",
+        "environment": "medium",
+        "schedule_stress": "high",
+        "budget_stress": "high",
+        "preference_reward": "high"
+      },
+      "positive_preferences": {
+        "food": false,
+        "scenery": true,
+        "comfort": true
+      },
+      "negative_preferences": {
+        "fatigue_sensitive": true,
+        "weather_sensitive": false,
+        "schedule_sensitive": true,
+        "budget_sensitive": true
+      },
+      "raw_signal_excerpt": [
+        "party_composition",
+        "adults",
+        "1",
+        "children",
+        "elders",
+        "age",
+        "69",
+        "mobility_note",
+        "sensitive to cold",
+        "budget_range",
+        "4000",
+        "7500",
+        "accommodation_style",
+        "luxury",
+        "mobility_constraints",
+        "knee_issue",
+        "physical_rules",
+        "avoid_long_walk",
+        "schedule_rules",
+        "relaxed",
+        "interest_tags",
+        "nature",
+        "park",
+        "hate_tags"
+      ]
+    },
+    "environment": {
+      "risk_tags": [
+        "heat",
+        "hot",
+        "rain",
+        "typhoon"
+      ],
+      "raw_context_excerpt": [
+        "cantonese_dim_sum_timing",
+        "coastal_humid_heat",
+        "heritage_hotspot_queue",
+        "major_metro_crowd",
+        "mega_city_metro_transfer",
+        "night_food_crowd_city",
+        "rainy_humid_city",
+        "summer_heat_city",
+        "theme_park_reservation_city",
+        "typhoon_risk"
+      ]
+    },
+    "budget": {
+      "applicable": true,
+      "reason": "budget-sensitive profile signal",
+      "budget_limit": null,
+      "estimated_total": 2089.1,
+      "remaining_margin_level": "unknown"
+    },
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D1-A11",
+      "D1-A12",
+      "D1-A13",
+      "D1-A14",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D2-A10",
+      "D2-A11",
+      "D2-A12"
+    ],
+    "activity_count": 26,
+    "activity_trace": [
+      {
+        "item_ref": "D1-A1",
+        "event": {
+          "item_ref": "D1-A1",
+          "day": 1,
+          "activity_index": 1,
+          "type": "buffer",
+          "name": "Arrive at Zhuhai Railway Station, security check and boarding wait",
+          "time_slot": "07:40-08:10",
+          "duration_minutes": 30,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[0]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 30,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "starts_before_8am"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A2",
+        "event": {
+          "item_ref": "D1-A2",
+          "day": 1,
+          "activity_index": 2,
+          "type": "travel_intercity_public",
+          "name": "Guangzhou South",
+          "time_slot": "08:10-09:16",
+          "duration_minutes": 66,
+          "mode": "train",
+          "cost": 70.0,
+          "source": "plan.daily_plans[0].activities[1]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_intercity_public",
+          "duration_minutes": 66,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "intercity_transport"
+          ],
+          "cost": 70.0,
+          "budget_cost_relevance": "moderate"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A3",
+        "event": {
+          "item_ref": "D1-A3",
+          "day": 1,
+          "activity_index": 3,
+          "type": "buffer",
+          "name": "Deplaning/exiting station",
+          "time_slot": "09:16-09:31",
+          "duration_minutes": 15,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[2]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 15,
+          "duration_bucket": "short",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A4",
+        "event": {
+          "item_ref": "D1-A4",
+          "day": 1,
+          "activity_index": 4,
+          "type": "travel_city",
+          "name": "Dongshankou Arts District",
+          "time_slot": "09:31-10:02",
+          "duration_minutes": 31,
+          "mode": "taxi",
+          "cost": 45.0,
+          "source": "plan.daily_plans[0].activities[3]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 31,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 45.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A5",
+        "event": {
+          "item_ref": "D1-A5",
+          "day": 1,
+          "activity_index": 5,
+          "type": "attraction",
+          "name": "Dongshankou Arts District",
+          "time_slot": "10:02-12:30",
+          "duration_minutes": 148,
+          "mode": null,
+          "cost": 0.0,
+          "source": "plan.daily_plans[0].activities[4]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 148,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A6",
+        "event": {
+          "item_ref": "D1-A6",
+          "day": 1,
+          "activity_index": 6,
+          "type": "meal",
+          "name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+          "time_slot": "12:30-13:30",
+          "duration_minutes": 60,
+          "mode": null,
+          "cost": 41.0,
+          "source": "plan.daily_plans[0].activities[5]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 60,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 41.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A7",
+        "event": {
+          "item_ref": "D1-A7",
+          "day": 1,
+          "activity_index": 7,
+          "type": "travel_city",
+          "name": "Guangdong Museum of Art (Ersha Island Branch)",
+          "time_slot": "13:30-13:36",
+          "duration_minutes": 6,
+          "mode": "taxi",
+          "cost": 12.5,
+          "source": "plan.daily_plans[0].activities[6]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 6,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 12.5,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A8",
+        "event": {
+          "item_ref": "D1-A8",
+          "day": 1,
+          "activity_index": 8,
+          "type": "attraction",
+          "name": "Guangdong Museum of Art (Ersha Island Branch)",
+          "time_slot": "13:36-15:30",
+          "duration_minutes": 114,
+          "mode": null,
+          "cost": 0.0,
+          "source": "plan.daily_plans[0].activities[7]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 114,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A9",
+        "event": {
+          "item_ref": "D1-A9",
+          "day": 1,
+          "activity_index": 9,
+          "type": "travel_city",
+          "name": "Sheraton Guangzhou Yuexiu Hotel",
+          "time_slot": "15:30-15:36",
+          "duration_minutes": 6,
+          "mode": "taxi",
+          "cost": 12.4,
+          "source": "plan.daily_plans[0].activities[8]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 6,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 12.4,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A10",
+        "event": {
+          "item_ref": "D1-A10",
+          "day": 1,
+          "activity_index": 10,
+          "type": "hotel",
+          "name": "Sheraton Guangzhou Yuexiu Hotel",
+          "time_slot": "15:36-17:30",
+          "duration_minutes": 114,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[9]"
+        },
+        "experience_facts": {
+          "activity_type": "hotel",
+          "duration_minutes": 114,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "explicit_rest_or_recovery"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A11",
+        "event": {
+          "item_ref": "D1-A11",
+          "day": 1,
+          "activity_index": 11,
+          "type": "travel_city",
+          "name": "Xu Bo Guan",
+          "time_slot": "17:30-17:35",
+          "duration_minutes": 5,
+          "mode": "taxi",
+          "cost": 12.2,
+          "source": "plan.daily_plans[0].activities[10]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 5,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 12.2,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A12",
+        "event": {
+          "item_ref": "D1-A12",
+          "day": 1,
+          "activity_index": 12,
+          "type": "meal",
+          "name": "Xu Bo Guan",
+          "time_slot": "17:35-19:00",
+          "duration_minutes": 85,
+          "mode": null,
+          "cost": 100.0,
+          "source": "plan.daily_plans[0].activities[11]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 85,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 100.0,
+          "budget_cost_relevance": "moderate"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A13",
+        "event": {
+          "item_ref": "D1-A13",
+          "day": 1,
+          "activity_index": 13,
+          "type": "travel_city",
+          "name": "Sheraton Guangzhou Yuexiu Hotel",
+          "time_slot": "19:00-19:05",
+          "duration_minutes": 5,
+          "mode": "taxi",
+          "cost": 12.2,
+          "source": "plan.daily_plans[0].activities[12]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 5,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 12.2,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A14",
+        "event": {
+          "item_ref": "D1-A14",
+          "day": 1,
+          "activity_index": 14,
+          "type": "hotel",
+          "name": "Sheraton Guangzhou Yuexiu Hotel",
+          "time_slot": "19:05-22:00",
+          "duration_minutes": 175,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[13]"
+        },
+        "experience_facts": {
+          "activity_type": "hotel",
+          "duration_minutes": 175,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "explicit_rest_or_recovery",
+            "ends_after_21"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A1",
+        "event": {
+          "item_ref": "D2-A1",
+          "day": 2,
+          "activity_index": 1,
+          "type": "buffer",
+          "name": "Late start, breakfast at hotel, check-out",
+          "time_slot": "09:00-10:00",
+          "duration_minutes": 60,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[1].activities[0]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 60,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "explicit_rest_or_recovery"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A2",
+        "event": {
+          "item_ref": "D2-A2",
+          "day": 2,
+          "activity_index": 2,
+          "type": "travel_city",
+          "name": "Guangdong Science Center",
+          "time_slot": "10:00-10:22",
+          "duration_minutes": 22,
+          "mode": "taxi",
+          "cost": 32.5,
+          "source": "plan.daily_plans[1].activities[1]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 22,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 32.5,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A3",
+        "event": {
+          "item_ref": "D2-A3",
+          "day": 2,
+          "activity_index": 3,
+          "type": "attraction",
+          "name": "Guangdong Science Center",
+          "time_slot": "10:22-12:00",
+          "duration_minutes": 98,
+          "mode": null,
+          "cost": 60.0,
+          "source": "plan.daily_plans[1].activities[2]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 98,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction"
+          ],
+          "cost": 60.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A4",
+        "event": {
+          "item_ref": "D2-A4",
+          "day": 2,
+          "activity_index": 4,
+          "type": "travel_city",
+          "name": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+          "time_slot": "12:00-12:29",
+          "duration_minutes": 29,
+          "mode": "taxi",
+          "cost": 41.3,
+          "source": "plan.daily_plans[1].activities[3]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 29,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 41.3,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A5",
+        "event": {
+          "item_ref": "D2-A5",
+          "day": 2,
+          "activity_index": 5,
+          "type": "meal",
+          "name": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+          "time_slot": "12:29-13:30",
+          "duration_minutes": 61,
+          "mode": null,
+          "cost": 39.0,
+          "source": "plan.daily_plans[1].activities[4]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 61,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 39.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A6",
+        "event": {
+          "item_ref": "D2-A6",
+          "day": 2,
+          "activity_index": 6,
+          "type": "travel_city",
+          "name": "Baiyun Mountain",
+          "time_slot": "13:30-13:39",
+          "duration_minutes": 9,
+          "mode": "taxi",
+          "cost": 15.6,
+          "source": "plan.daily_plans[1].activities[5]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 9,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 15.6,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A7",
+        "event": {
+          "item_ref": "D2-A7",
+          "day": 2,
+          "activity_index": 7,
+          "type": "attraction",
+          "name": "Baiyun Mountain",
+          "time_slot": "13:39-15:30",
+          "duration_minutes": 111,
+          "mode": null,
+          "cost": 0.0,
+          "source": "plan.daily_plans[1].activities[6]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 111,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction",
+            "outdoor_marker_present"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A8",
+        "event": {
+          "item_ref": "D2-A8",
+          "day": 2,
+          "activity_index": 8,
+          "type": "travel_city",
+          "name": "Guangzhou South",
+          "time_slot": "15:30-16:16",
+          "duration_minutes": 46,
+          "mode": "taxi",
+          "cost": 63.4,
+          "source": "plan.daily_plans[1].activities[7]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 46,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 63.4,
+          "budget_cost_relevance": "moderate"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A9",
+        "event": {
+          "item_ref": "D2-A9",
+          "day": 2,
+          "activity_index": 9,
+          "type": "buffer",
+          "name": "Free time near Guangzhou South, dinner optional",
+          "time_slot": "16:16-17:30",
+          "duration_minutes": 74,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[1].activities[8]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 74,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "explicit_rest_or_recovery"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A10",
+        "event": {
+          "item_ref": "D2-A10",
+          "day": 2,
+          "activity_index": 10,
+          "type": "buffer",
+          "name": "Arrive at Guangzhou South Railway Station, security check and boarding wait",
+          "time_slot": "17:30-18:00",
+          "duration_minutes": 30,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[1].activities[9]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 30,
+          "duration_bucket": "short",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A11",
+        "event": {
+          "item_ref": "D2-A11",
+          "day": 2,
+          "activity_index": 11,
+          "type": "travel_intercity_public",
+          "name": "Zhuhai Railway Station",
+          "time_slot": "18:00-19:06",
+          "duration_minutes": 66,
+          "mode": "train",
+          "cost": 70.0,
+          "source": "plan.daily_plans[1].activities[10]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_intercity_public",
+          "duration_minutes": 66,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "intercity_transport"
+          ],
+          "cost": 70.0,
+          "budget_cost_relevance": "moderate"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A12",
+        "event": {
+          "item_ref": "D2-A12",
+          "day": 2,
+          "activity_index": 12,
+          "type": "buffer",
+          "name": "Deplaning/exiting station",
+          "time_slot": "19:06-19:21",
+          "duration_minutes": 15,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[1].activities[11]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 15,
+          "duration_bucket": "short",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      }
+    ],
+    "trace_audit": {
+      "all_plan_activities_traced": true,
+      "missing_evidence": [],
+      "allowed_claim_sources": [
+        "plan.daily_plans[].activities[]",
+        "query_record.meta_info.observable_profile",
+        "query_record.meta_info.user_profile",
+        "query_record.turns[].oracle_state_after_turn"
+      ]
+    }
+  },
+  "simulator_model": "deepseek-v4-flash",
+  "turn_id": 2,
+  "activity_count_check": {
+    "input_activity_count": 26,
+    "simulated_activity_count": 26,
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D1-A11",
+      "D1-A12",
+      "D1-A13",
+      "D1-A14",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D2-A10",
+      "D2-A11",
+      "D2-A12"
+    ],
+    "simulated_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D1-A11",
+      "D1-A12",
+      "D1-A13",
+      "D1-A14",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D2-A10",
+      "D2-A11",
+      "D2-A12"
+    ],
+    "missing_activity_refs": [],
+    "duplicate_activity_refs": [],
+    "unexpected_activity_refs": [],
+    "all_activities_simulated": true
+  },
+  "trace_faithfulness_check": {
+    "status": "ok",
+    "faithful": true,
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D1-A11",
+      "D1-A12",
+      "D1-A13",
+      "D1-A14",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D2-A10",
+      "D2-A11",
+      "D2-A12"
+    ],
+    "simulated_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D1-A11",
+      "D1-A12",
+      "D1-A13",
+      "D1-A14",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D2-A10",
+      "D2-A11",
+      "D2-A12"
+    ],
+    "missing_activity_refs": [],
+    "unexpected_activity_refs": [],
+    "duplicate_activity_refs": [],
+    "items_without_evidence": [],
+    "invalid_dimension_items": [],
+    "ungrounded_evidence_items": []
+  },
+  "score_recalculation": {
+    "authoritative": true,
+    "source": "code mean of applicable experience_dimensions.score_1_5",
+    "llm_reported_score_1_5": 3.1538,
+    "llm_reported_score": 0.5384,
+    "llm_raw_score_1_5": 3.1538,
+    "llm_raw_score": 0.5384,
+    "llm_score_scale_consistent": true,
+    "recomputed_score_1_5": 3.2487,
+    "recomputed_score": 0.5622,
+    "score_inconsistency": true,
+    "excluded_dimensions": [],
+    "missing_dimensions": []
+  },
+  "runtime": {
+    "llm_calls": 4,
+    "tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 13498,
+      "prompt_tokens": 18537,
+      "total_tokens": 32035
+    },
+    "token_usage_status": "available",
+    "llm_call_usage": [
+      {
+        "call_index": 1,
+        "completion_tokens": 4081,
+        "prompt_tokens": 5023,
+        "total_tokens": 9104,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        }
+      },
+      {
+        "call_index": 2,
+        "completion_tokens": 3962,
+        "prompt_tokens": 5120,
+        "total_tokens": 9082,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      },
+      {
+        "call_index": 3,
+        "completion_tokens": 3897,
+        "prompt_tokens": 5013,
+        "total_tokens": 8910,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      },
+      {
+        "call_index": 4,
+        "completion_tokens": 1558,
+        "prompt_tokens": 3381,
+        "total_tokens": 4939,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      }
+    ],
+    "model": "deepseek-v4-flash",
+    "status": "completed"
+  }
+}

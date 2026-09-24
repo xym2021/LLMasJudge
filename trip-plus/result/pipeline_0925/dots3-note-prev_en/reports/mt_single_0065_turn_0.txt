@@ -1,0 +1,68 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: Taiyuan to Xi'an
+Accommodation: Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), ¥150/room/night
+08:16-11:17 | travel_intercity_public | train D2507, Taiyuan South - Xi'an North, Second Class Seat, ¥178.5/person
+11:17-11:47 | buffer | exiting station
+11:47-12:17 | travel_city | Xi'an North Station - Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), taxi, 15042m, 30m, ¥33.1
+12:17-12:47 | hotel | check-in, Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)
+12:47-13:00 | travel_city | Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch) - Shaanxi History Museum, taxi, 6572m, 13m, ¥16.1
+13:00-14:30 | meal | lunch, Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch), ¥308/person
+14:30-14:32 | buffer | walk to attraction
+14:32-17:02 | attraction | Shaanxi History Museum, ¥50/person
+17:02-17:11 | travel_city | Shaanxi History Museum - Muslim Quarter, taxi, 4361m, 9m, ¥11.7
+17:11-19:30 | attraction | Muslim Quarter, ¥0/person
+19:30-20:30 | meal | dinner, Wushan Paper-Wrapped Fish (Minleyuan Main Store), ¥54/person
+20:30-20:35 | travel_city | Muslim Quarter - Xi'an Bell Tower, walking, 445m, 5m, ¥0
+20:35-20:47 | travel_city | Xi'an Bell Tower - Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), taxi, 6156m, 12m, ¥15.3
+20:47 | hotel | rest, Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)
+
+Day 2 (2026-05-01):
+Current City: Xi'an
+Accommodation: Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), ¥150/room/night
+08:30-08:41 | travel_city | Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch) - Xi'an Botanical Garden Children's Garden, taxi, 5458m, 11m, ¥13.9
+08:41-09:00 | buffer | wait for opening
+09:00-11:30 | attraction | Xi'an Botanical Garden Children's Garden, ¥30/person
+11:30-11:44 | travel_city | Xi'an Botanical Garden Children's Garden - Weike Coffee (Wangzuo Qujiang Branch), walking, 1205m, 14m, ¥0
+11:44-12:44 | meal | lunch, Weike Coffee (Wangzuo Qujiang Branch), ¥58/person
+12:44-12:53 | travel_city | Weike Coffee (Wangzuo Qujiang Branch) - Big Wild Goose Pagoda, taxi, 4688m, 9m, ¥12.4
+12:53-15:30 | attraction | Big Wild Goose Pagoda, ¥40/person
+15:30-15:36 | travel_city | Big Wild Goose Pagoda - Grand Tang Mall, walking, 485m, 6m, ¥0
+15:36-18:00 | attraction | Grand Tang Mall, ¥0/person
+18:00-18:11 | travel_city | Grand Tang Mall - Haidilao Hot Pot (Jiefang Road Branch), taxi, 5585m, 11m, ¥14.2
+18:11-19:30 | meal | dinner, Haidilao Hot Pot (Jiefang Road Branch), ¥96/person
+19:30-19:39 | travel_city | Haidilao Hot Pot (Jiefang Road Branch) - Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), taxi, 4623m, 9m, ¥12.2
+19:39 | hotel | rest, Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)
+
+Day 3 (2026-05-02):
+Current City: Xi'an
+Accommodation: Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), ¥150/room/night
+08:30-08:43 | travel_city | Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch) - Xi'an City Wall, taxi, 6377m, 13m, ¥15.8
+08:43-11:30 | attraction | Xi'an City Wall, ¥60/person
+11:30-11:33 | travel_city | Xi'an City Wall - Xi'an People's Coffee XACOFFEE, walking, 230m, 3m, ¥0
+11:33-12:33 | meal | lunch, Xi'an People's Coffee XACOFFEE, ¥32/person
+12:33-12:58 | travel_city | Xi'an People's Coffee XACOFFEE - Xi'an Bell Tower, walking, 2063m, 25m, ¥0
+12:58-15:30 | attraction | Xi'an Bell Tower, ¥50/person
+15:30-15:38 | travel_city | Xi'an Bell Tower - Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), taxi, 2216m, 8m, ¥9
+15:38-17:00 | buffer | rest / walk around
+17:00-18:30 | meal | dinner, Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), ¥81/person
+18:30-18:39 | travel_city | Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) - Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch), taxi, 4531m, 9m, ¥12.1
+18:39 | hotel | rest, Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)
+
+Day 4 (2026-05-03):
+Current City: Xi'an to Taiyuan
+Accommodation: -
+05:30-06:00 | hotel | check-out, Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)
+06:00-06:30 | travel_city | Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch) - Xi'an North Station, taxi, 15042m, 30m, ¥33.1
+06:30-07:20 | buffer | security/waiting
+07:20-10:59 | travel_intercity_public | train D2506, Xi'an North - Taiyuan South, First Class Seat, ¥286/person
+10:59-11:15 | buffer | exiting station
+
+**Budget Summary**:
+**Transportation: 684.3 RMB**. Intercity tickets = 178.5 + 286 = 464.5 RMB. Intracity transport = 219.8 RMB.
+**Accommodation: 450 RMB**. 150 RMB/room/night * 1 room * 3 nights.
+**Meals: 629 RMB**. 308 + 54 + 58 + 96 + 32 + 81 = 629 RMB.
+**Attractions & Tickets: 230 RMB**. 50 + 0 + 30 + 40 + 0 + 60 + 50 = 230 RMB.
+**Other: 0 RMB**
+**Total Estimated Budget: 1993.3 RMB**
+</plan>

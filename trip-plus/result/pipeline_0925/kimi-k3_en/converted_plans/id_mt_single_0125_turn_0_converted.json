@@ -1,0 +1,293 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "from Shanghai to Hong Kong",
+      "activities": [
+        {
+          "time_slot": "06:30-08:00",
+          "type": "buffer",
+          "details": {
+            "description": "airport security and waiting at Shanghai Pudong International Airport"
+          }
+        },
+        {
+          "time_slot": "08:00-10:40",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "flight",
+            "number": "HO1307",
+            "from": "Shanghai Pudong International Airport",
+            "to": "Hong Kong International Airport",
+            "cost": 2455,
+            "seat_class": "Economy"
+          }
+        },
+        {
+          "time_slot": "10:40-11:10",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, baggage claim, and exiting the airport"
+          }
+        },
+        {
+          "time_slot": "11:10-11:58",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong International Airport",
+            "to": "Hong Kong Ding Dian Hotel",
+            "mode": "taxi",
+            "distance": "23.9 km",
+            "duration": "48 min",
+            "cost": 186.8
+          }
+        },
+        {
+          "time_slot": "11:58-12:30",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in and short rest",
+            "name": "Hong Kong Ding Dian Hotel"
+          }
+        },
+        {
+          "time_slot": "12:30-13:14",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong Ding Dian Hotel",
+            "to": "Ping Shan Heritage Trail",
+            "mode": "taxi",
+            "distance": "21.9 km",
+            "duration": "44 min",
+            "cost": 174.2
+          }
+        },
+        {
+          "time_slot": "13:14-14:14",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Ping Shan Old Place Restaurant",
+            "cost": 65
+          }
+        },
+        {
+          "time_slot": "14:14-14:17",
+          "type": "travel_city",
+          "details": {
+            "from": "Ping Shan Old Place Restaurant",
+            "to": "Ping Shan Heritage Trail",
+            "mode": "walking",
+            "distance": "0.3 km",
+            "duration": "3 min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "14:17-16:17",
+          "type": "attraction",
+          "details": {
+            "name": "Ping Shan Heritage Trail",
+            "city": "Hong Kong",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "16:17-17:05",
+          "type": "travel_city",
+          "details": {
+            "from": "Ping Shan Heritage Trail",
+            "to": "Peak Tram",
+            "mode": "taxi",
+            "distance": "24.2 km",
+            "duration": "48 min",
+            "cost": 188
+          }
+        },
+        {
+          "time_slot": "17:05-19:05",
+          "type": "attraction",
+          "details": {
+            "name": "Peak Tram",
+            "city": "Hong Kong",
+            "cost": 80
+          }
+        },
+        {
+          "time_slot": "19:05-19:15",
+          "type": "travel_city",
+          "details": {
+            "from": "Peak Tram",
+            "to": "Hong Kong Ding Dian Hotel",
+            "mode": "taxi",
+            "distance": "4.8 km",
+            "duration": "10 min",
+            "cost": 54.5
+          }
+        },
+        {
+          "time_slot": "19:15-20:00",
+          "type": "hotel",
+          "details": {
+            "activity": "rest",
+            "name": "Hong Kong Ding Dian Hotel"
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "Hong Kong Ding Dian Hotel",
+        "price_per_night": 250
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Hong Kong",
+      "activities": [
+        {
+          "time_slot": "09:00-09:26",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong Ding Dian Hotel",
+            "to": "Hong Kong Disneyland",
+            "mode": "taxi",
+            "distance": "13.2 km",
+            "duration": "26 min",
+            "cost": 120
+          }
+        },
+        {
+          "time_slot": "09:26-10:00",
+          "type": "buffer",
+          "details": {
+            "description": "park entry and ticket check"
+          }
+        },
+        {
+          "time_slot": "10:00-17:30",
+          "type": "attraction",
+          "details": {
+            "name": "Hong Kong Disneyland",
+            "city": "Hong Kong",
+            "cost": 90
+          }
+        },
+        {
+          "time_slot": "17:30-17:32",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong Disneyland",
+            "to": "River View Restaurant",
+            "mode": "walking",
+            "distance": "0.2 km",
+            "duration": "2 min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "17:32-18:32",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "River View Restaurant",
+            "cost": 119
+          }
+        },
+        {
+          "time_slot": "18:32-18:59",
+          "type": "travel_city",
+          "details": {
+            "from": "River View Restaurant",
+            "to": "Hong Kong Ding Dian Hotel",
+            "mode": "taxi",
+            "distance": "13.4 km",
+            "duration": "27 min",
+            "cost": 120
+          }
+        },
+        {
+          "time_slot": "18:59-20:00",
+          "type": "hotel",
+          "details": {
+            "activity": "rest",
+            "name": "Hong Kong Ding Dian Hotel"
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "Hong Kong Ding Dian Hotel",
+        "price_per_night": 250
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "from Hong Kong to Shanghai",
+      "activities": [
+        {
+          "time_slot": "09:00-09:20",
+          "type": "hotel",
+          "details": {
+            "activity": "check-out",
+            "name": "Hong Kong Ding Dian Hotel"
+          }
+        },
+        {
+          "time_slot": "09:20-10:08",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong Ding Dian Hotel",
+            "to": "Hong Kong International Airport",
+            "mode": "taxi",
+            "distance": "23.9 km",
+            "duration": "48 min",
+            "cost": 186.8
+          }
+        },
+        {
+          "time_slot": "10:08-11:20",
+          "type": "buffer",
+          "details": {
+            "description": "airport security and waiting"
+          }
+        },
+        {
+          "time_slot": "11:20-12:50",
+          "type": "buffer",
+          "details": {
+            "description": "boarding wait for return flight"
+          }
+        },
+        {
+          "time_slot": "12:50-15:10",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "flight",
+            "number": "FM3012",
+            "from": "Hong Kong International Airport",
+            "to": "Hongqiao International Airport",
+            "cost": 951,
+            "seat_class": "Economy"
+          }
+        },
+        {
+          "time_slot": "15:10-15:40",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning and exiting the airport"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 7762.8,
+    "accommodation": 500,
+    "meals": 368,
+    "attractions_and_tickets": 420,
+    "other": 0,
+    "total_estimated_budget": 9130.3
+  }
+}

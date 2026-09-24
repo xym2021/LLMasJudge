@@ -1,0 +1,385 @@
+{
+ "order": [
+  "dots3-note-prev",
+  "kimi-k3",
+  "deepseek-flash"
+ ],
+ "board": {
+  "deepseek-flash": {
+   "metrics": {
+    "resp_acc": 1.0,
+    "fulfill": 1.0,
+    "preserve": 1.0,
+    "feas": 0.5555555555555555,
+    "hard": 0.7529750000000001,
+    "soft": 0.8958499999999999,
+    "user_sim": null,
+    "plan_avg": 0.7347935185185185,
+    "rule_total": 0.8673967592592593,
+    "total7": 0.8673967592592593,
+    "pass_rate": 0.0,
+    "win": 0.5714285714285714
+   },
+   "n_turns": 4,
+   "n_cases": 1,
+   "verdict": {
+    "不合格": 4
+   },
+   "mode": {
+    "plan": {
+     "ok": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   },
+   "judge_b": {
+    "B1_clarification_or_no_solution_quality": {
+     "not_applicable": 4
+    },
+    "B2_change_transparency": {
+     "not_applicable": 1,
+     "partial": 2,
+     "pass": 1
+    },
+    "B3_proactive_risk_and_profile": {
+     "not_applicable": 3,
+     "partial": 1
+    },
+    "B4_factual_boundary": {
+     "fail": 2,
+     "partial": 1,
+     "pass": 1
+    }
+   },
+   "feas_fail": [
+    [
+     "城际衔接连贯",
+     4
+    ],
+    [
+     "跨天位置连续",
+     4
+    ],
+    [
+     "每晚住处可追溯",
+     4
+    ],
+    [
+     "每天以回住处结束",
+     4
+    ],
+    [
+     "必要正餐齐全",
+     4
+    ],
+    [
+     "每天安排了景点",
+     4
+    ],
+    [
+     "酒店真实存在且价格一致",
+     4
+    ],
+    [
+     "换乘时间合理",
+     4
+    ]
+   ],
+   "hard_fail": [
+    [
+     "人数",
+     4
+    ],
+    [
+     "同行人构成",
+     3
+    ]
+   ],
+   "soft_family": {
+    "舒适与节奏": 0.6875,
+    "交通便利": 1.0,
+    "兴趣匹配": 1.0
+   },
+   "subdim": {
+    "行程天数": 1.0,
+    "路线与住宿连续": 0.2,
+    "每日内容覆盖": 0.0,
+    "地点真实性": 0.5833333333333333,
+    "交通真实性": 0.875,
+    "时间与换乘": 0.5,
+    "营业与停留时长": 0.9,
+    "城际缓冲": 0.0,
+    "budget_arithmetic_feasible": 0.75
+   },
+   "a_dims": {},
+   "itype": {
+    "user_state_evolution": {
+     "resp_acc": 1.0,
+     "fulfill": 1.0
+    }
+   },
+   "cost": {
+    "llm_calls": 23.5,
+    "tool_calls": 52.25,
+    "tokens": 436207.25,
+    "elapsed": 128.40578663349152
+   }
+  },
+  "kimi-k3": {
+   "metrics": {
+    "resp_acc": 1.0,
+    "fulfill": 0.8571428571428571,
+    "preserve": 1.0,
+    "feas": 0.8484126984126984,
+    "hard": 0.9353714285714286,
+    "soft": 0.6904571428571428,
+    "user_sim": 0.5173,
+    "plan_avg": 0.7478853174603175,
+    "rule_total": 0.8885640211640212,
+    "total7": 0.8355263038548753,
+    "pass_rate": 0.0,
+    "win": 0.2857142857142857
+   },
+   "n_turns": 7,
+   "n_cases": 2,
+   "verdict": {
+    "不合格": 7
+   },
+   "mode": {
+    "plan": {
+     "ok": 7,
+     "n": 7,
+     "acc": 1.0
+    }
+   },
+   "judge_b": {
+    "B1_clarification_or_no_solution_quality": {
+     "not_applicable": 7
+    },
+    "B2_change_transparency": {
+     "not_applicable": 2,
+     "fail": 2,
+     "partial": 2,
+     "pass": 1
+    },
+    "B3_proactive_risk_and_profile": {
+     "not_applicable": 5,
+     "fail": 2
+    },
+    "B4_factual_boundary": {
+     "partial": 1,
+     "insufficient_evidence": 4,
+     "pass": 2
+    }
+   },
+   "feas_fail": [
+    [
+     "必要正餐齐全",
+     7
+    ],
+    [
+     "景点停留时长合理",
+     4
+    ],
+    [
+     "城际交通留足缓冲",
+     4
+    ],
+    [
+     "景点在开放时间内",
+     3
+    ],
+    [
+     "费用计算正确",
+     2
+    ],
+    [
+     "酒店真实存在且价格一致",
+     1
+    ]
+   ],
+   "hard_fail": [
+    [
+     "人数",
+     2
+    ],
+    [
+     "同行人构成",
+     1
+    ]
+   ],
+   "soft_family": {
+    "舒适与节奏": 0.2857142857142857,
+    "交通便利": 1.0,
+    "兴趣匹配": 0.7857142857142857
+   },
+   "subdim": {
+    "行程天数": 1.0,
+    "路线与住宿连续": 1.0,
+    "每日内容覆盖": 0.5,
+    "地点真实性": 0.9523809523809523,
+    "交通真实性": 1.0,
+    "时间与换乘": 1.0,
+    "营业与停留时长": 0.7999999999999999,
+    "城际缓冲": 0.42857142857142855,
+    "budget_arithmetic_feasible": 0.7142857142857143
+   },
+   "a_dims": {
+    "身体舒适": 0.516025,
+    "环境舒适": 0.5,
+    "日程舒适": 0.47435,
+    "预算舒适": 0.6153875,
+    "偏好满足": 0.480775
+   },
+   "itype": {
+    "user_state_evolution": {
+     "resp_acc": 1.0,
+     "fulfill": 0.875
+    },
+    "environment_driven_replanning": {
+     "resp_acc": 1.0,
+     "fulfill": 0.8333333333333334
+    }
+   },
+   "cost": {
+    "llm_calls": 3.5714285714285716,
+    "tool_calls": 9.142857142857142,
+    "tokens": 43542.0,
+    "elapsed": 49.44572574751718
+   }
+  },
+  "dots3-note-prev": {
+   "metrics": {
+    "resp_acc": 1.0,
+    "fulfill": 1.0,
+    "preserve": 1.0,
+    "feas": 0.8555555555555555,
+    "hard": 1.0,
+    "soft": 0.5,
+    "user_sim": 0.5983,
+    "plan_avg": 0.7384638888888889,
+    "rule_total": 0.8925925925925927,
+    "total7": 0.8505507936507938,
+    "pass_rate": 0.0,
+    "win": 0.8571428571428571
+   },
+   "n_turns": 3,
+   "n_cases": 1,
+   "verdict": {
+    "不合格": 3
+   },
+   "mode": {
+    "plan": {
+     "ok": 3,
+     "n": 3,
+     "acc": 1.0
+    }
+   },
+   "judge_b": {
+    "B1_clarification_or_no_solution_quality": {
+     "not_applicable": 3
+    },
+    "B2_change_transparency": {
+     "not_applicable": 1,
+     "partial": 2
+    },
+    "B3_proactive_risk_and_profile": {
+     "not_applicable": 3
+    },
+    "B4_factual_boundary": {
+     "pass": 2,
+     "insufficient_evidence": 1
+    }
+   },
+   "feas_fail": [
+    [
+     "城际交通留足缓冲",
+     3
+    ],
+    [
+     "城际交通与数据库一致",
+     2
+    ],
+    [
+     "用餐在营业时间内",
+     1
+    ]
+   ],
+   "hard_fail": [],
+   "soft_family": {
+    "舒适与节奏": 0.0,
+    "交通便利": 1.0,
+    "兴趣匹配": 0.5
+   },
+   "subdim": {
+    "行程天数": 1.0,
+    "路线与住宿连续": 1.0,
+    "每日内容覆盖": 1.0,
+    "地点真实性": 1.0,
+    "交通真实性": 0.6666666666666666,
+    "时间与换乘": 1.0,
+    "营业与停留时长": 0.9333333333333332,
+    "城际缓冲": 0.0,
+    "budget_arithmetic_feasible": 1.0
+   },
+   "a_dims": {
+    "身体舒适": 0.60345,
+    "环境舒适": 0.5,
+    "日程舒适": 0.7069,
+    "预算舒适": 0.681025,
+    "偏好满足": 0.5
+   },
+   "itype": {
+    "environment_driven_replanning": {
+     "resp_acc": 1.0,
+     "fulfill": 1.0
+    }
+   },
+   "cost": {
+    "llm_calls": 5.0,
+    "tool_calls": 13.666666666666666,
+    "tokens": 66883.66666666667,
+    "elapsed": 132.80766812960306
+   }
+  }
+ },
+ "common_cases": [],
+ "common": {},
+ "metrics": [
+  {
+   "key": "resp_acc",
+   "zh": "回应准确率",
+   "group": "interaction"
+  },
+  {
+   "key": "fulfill",
+   "zh": "请求落实",
+   "group": "interaction"
+  },
+  {
+   "key": "preserve",
+   "zh": "意图保留",
+   "group": "interaction"
+  },
+  {
+   "key": "feas",
+   "zh": "可行性",
+   "group": "plan"
+  },
+  {
+   "key": "hard",
+   "zh": "硬约束",
+   "group": "plan"
+  },
+  {
+   "key": "soft",
+   "zh": "软偏好",
+   "group": "plan"
+  },
+  {
+   "key": "user_sim",
+   "zh": "用户模拟",
+   "group": "plan"
+  }
+ ]
+}

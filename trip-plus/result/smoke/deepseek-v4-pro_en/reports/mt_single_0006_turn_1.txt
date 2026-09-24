@@ -1,0 +1,48 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: Zhuhai → Guangzhou
+Accommodation: Sheraton Guangzhou Yuexiu Hotel, ¥1329/room/night
+07:40-08:10 | buffer | Arrive at Zhuhai Railway Station, security check and boarding wait
+08:10-09:16 | travel_intercity_public | Intercity C7608, Zhuhai Railway Station - Guangzhou South, Second Class Seat, ¥70/person
+09:16-09:31 | buffer | Deplaning/exiting station
+09:31-10:02 | travel_city | Guangzhou South - Dongshankou Arts District, taxi, 15.7 km, 31 min, ¥45
+10:02-12:30 | attraction | Dongshankou Arts District, ¥0/person
+12:30-13:30 | meal | lunch, Kowloon Ice Room (Guangzhou Yingxiong Square Branch), ¥41/person
+13:30-13:36 | travel_city | Dongshankou Arts District - Guangdong Museum of Art (Ersha Island Branch), taxi, 3.2 km, 6 min, ¥12.5
+13:36-15:30 | attraction | Guangdong Museum of Art (Ersha Island Branch), ¥0/person (advance reservation recommended)
+15:30-15:35 | travel_city | Guangdong Museum of Art (Ersha Island Branch) - Canton Tower, taxi, 2.5 km, 5 min, ¥12
+15:35-17:00 | attraction | Canton Tower, ¥149/person (advance reservation recommended)
+17:00-17:17 | travel_city | Canton Tower - Chen Clan Ancestral Hall, taxi, 8.4 km, 17 min, ¥26
+17:17-18:00 | attraction | Chen Clan Ancestral Hall, ¥0/person
+18:00-18:17 | travel_city | Chen Clan Ancestral Hall - Sheraton Guangzhou Yuexiu Hotel, taxi, ~8.4 km, 17 min, ¥26
+18:17-19:30 | hotel | Check-in and rest, Sheraton Guangzhou Yuexiu Hotel
+19:30-21:00 | meal | dinner, Xu Bo Guan, ¥100/person
+21:00-21:10 | travel_city | Xu Bo Guan - Sheraton Guangzhou Yuexiu Hotel, taxi, ~3.7 km, 7 min, ¥13.8
+21:10-22:30 | hotel | Rest, Sheraton Guangzhou Yuexiu Hotel
+
+Day 2 (2026-05-01):
+Current City: Guangzhou → Zhuhai
+Accommodation: -
+09:00-10:00 | buffer | Late start, breakfast at hotel, check-out
+10:00-10:31 | travel_city | Sheraton Guangzhou Yuexiu Hotel - Guangdong Science Center, taxi, ~15.5 km, 31 min, ¥44.4
+10:31-12:00 | attraction | Guangdong Science Center, ¥60/person
+12:00-13:00 | meal | lunch, Saizeriya Italian Restaurant (Tianhe Xintiandi Branch), ¥39/person
+13:00-13:17 | travel_city | Saizeriya Italian Restaurant (Tianhe Xintiandi Branch) - Canton Tower, taxi, ~8.4 km, 17 min, ¥26.1
+13:17-14:30 | attraction | Canton Tower, ¥149/person
+14:30-14:38 | travel_city | Canton Tower - Pearl River Night Cruise, taxi, 3.7 km, 8 min, ¥13.9
+14:38-16:00 | attraction | Pearl River Night Cruise, ¥98/person
+16:00-16:17 | travel_city | Pearl River Night Cruise - Baiyun Mountain, taxi, 8.5 km, 17 min, ¥26.2
+16:17-17:30 | attraction | Baiyun Mountain, ¥0/person
+17:30-18:16 | travel_city | Baiyun Mountain - Guangzhou South, taxi, 22.8 km, 46 min, ¥63.4
+18:16-18:46 | buffer | Arrive at Guangzhou South Railway Station, security check and boarding wait
+18:46-19:52 | travel_intercity_public | Intercity C7729, Guangzhou South - Zhuhai Railway Station, Second Class Seat, ¥70/person
+19:52-20:07 | buffer | Deplaning/exiting station
+
+**Budget Summary**:
+**Transportation: ¥280 RMB**. Intercity tickets = ¥70 × 2 people × 2 trips = ¥280. Intracity taxi = (45 + 12.5 + 12 + 26 + 26 + 13.8 + 44.4 + 26.1 + 13.9 + 26.2 + 63.4) = ¥309.3 (per vehicle, 1 vehicle for 2 people).
+**Accommodation: ¥1329 RMB**. ¥1329 × 1 room × 1 night.
+**Meals: ¥360 RMB**. (41 + 100 + 39) × 2 people.
+**Attractions & Tickets: ¥912 RMB**. (149 + 149 + 60 + 98) × 2 people.
+**Other: ¥0 RMB**
+**Total Estimated Budget: ¥2881.3 RMB**
+</plan>

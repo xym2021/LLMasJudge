@@ -1,0 +1,60 @@
+{
+  "mode": "user_simulation_only",
+  "simulator_model": "deepseek-v4-flash",
+  "simulator_model_name": "deepseek-v4-flash",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "api_key_env": "QWEN_LLM_API_KEY",
+  "query_file": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\2_评测集_cases\\query_10.json",
+  "database_dir": "database\\sample\\en",
+  "output_root": "result\\pipeline_0925\\kimi-k3_en\\judge_a",
+  "reuse_existing": false,
+  "runs": [
+    {
+      "display_name": "kimi-k3",
+      "source_result_dir": "result\\pipeline_0925\\kimi-k3_en",
+      "source_summary": "result\\pipeline_0925\\kimi-k3_en\\evaluation\\_summary.json",
+      "output_summary": "result\\pipeline_0925\\kimi-k3_en\\judge_a\\kimi_k3\\user_simulation_summary.json",
+      "user_simulation_dir": "result\\pipeline_0925\\kimi-k3_en\\judge_a\\kimi_k3\\user_simulations",
+      "source_metrics": {
+        "all_response_user_sim": null,
+        "successful_plan_user_sim": null,
+        "user_sim_success_count": 0,
+        "user_sim_failed_count": 0,
+        "runtime_totals": {
+          "llm_calls": 0,
+          "tool_calls": 0,
+          "tool_executions": 0,
+          "duplicate_tool_calls": 0,
+          "tool_errors": 0,
+          "token_usage": null,
+          "token_usage_status": "unavailable",
+          "token_usage_available_count": 0,
+          "token_usage_missing_count": 0
+        }
+      },
+      "status": "ok",
+      "elapsed_seconds": 156.31,
+      "new_metrics": {
+        "mean_score": 0.4923,
+        "mean_score_1_5": 2.9692,
+        "ok": 1,
+        "failed": 0,
+        "skipped": 0,
+        "runtime_totals": {
+          "llm_calls": 5,
+          "tool_calls": 0,
+          "tool_errors": 0,
+          "token_usage": {
+            "completion_tokens": 19391,
+            "prompt_tokens": 25280,
+            "total_tokens": 44671
+          },
+          "token_usage_available_count": 1,
+          "token_usage_missing_count": 0,
+          "token_usage_status": "available"
+        }
+      },
+      "simulation_artifact_count": 2
+    }
+  ]
+}

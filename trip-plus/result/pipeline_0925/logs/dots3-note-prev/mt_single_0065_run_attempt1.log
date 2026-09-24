@@ -1,0 +1,189 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe run.py --model dots3-note-prev --test-data C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\_cases\mt_single_0065.json --output-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925 --database-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en --workers 1 --rerun-ids mt_single_0065
+
+================================================================================
+Trip-Plus Integrated Runner
+================================================================================
+Default model:      dots3-note-prev
+Inference model:    dots3-note-prev
+Conversion model:   dots3-note-prev
+Evaluation model:   dots3-note-prev
+LLM user simulator: Standalone only (python -m simulation.run_user_simulation)
+Language:           en
+Workers:            1
+Local vLLM cap:     4
+Max LLM calls:      100
+Test data:          C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\_cases\mt_single_0065.json
+Output directory:   C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en
+Database directory: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en
+Tool schema:        C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\tools\tool_schema_en.json
+Pipeline steps:     1. Inference → 2. Conversion → 3. Evaluation
+Start from:         Inference
+================================================================================
+
+
+================================================================================
+STEP 1: Agent Inference
+================================================================================
+  🔄 User-specified IDs to rerun: ['mt_single_0065']
+  📝 Total IDs: 1
+  🔄 Filtered 1 samples to 1 samples for rerun
+
+================================================================================
+Agent Inference
+================================================================================
+Model: dots3-note-prev
+Language: en
+Samples: 1
+Workers: 1
+================================================================================
+
+  🔎 Preflight sample DBs: resolving/verifying 1 samples before inference
+     sample DB preflight 1/1
+
+🚀 Processing sample: mt_single_0065
+   🔁 Processing turn: mt_single_0065_turn_0
+   📊 LLM calls: 9, Tool calls: 50 (executed: 50, duplicate: 0)
+✅ Sample mt_single_0065_turn_0 completed in 274.34s
+   🔁 Processing turn: mt_single_0065_turn_1
+   📊 LLM calls: 3, Tool calls: 10 (executed: 10, duplicate: 0)
+✅ Sample mt_single_0065_turn_1 completed in 169.32s
+   🔁 Processing turn: mt_single_0065_turn_2
+   📊 LLM calls: 1, Tool calls: 0 (executed: 0, duplicate: 0)
+✅ Sample mt_single_0065_turn_2 completed in 43.11s
+   🔁 Processing turn: mt_single_0065_turn_3
+   📊 LLM calls: 7, Tool calls: 37 (executed: 36, duplicate: 1)
+✅ Sample mt_single_0065_turn_3 completed in 190.33s
+
+✅ Inference completed in 677.13s
+   Total samples: 1
+   Success: 1
+   Failed: 0
+
+================================================================================
+STEP 2: Plan Conversion
+================================================================================
+  🔍 Auto-detected missing converted plans
+  📝 Missing IDs (4): ['mt_single_0065_turn_0', 'mt_single_0065_turn_1', 'mt_single_0065_turn_2', 'mt_single_0065_turn_3']
+  🔄 Will convert reports for these IDs
+⏭️  Skipped 3 existing files
+
+================================================================================
+📊 Found 4 report files to convert
+🚀 Using 1 concurrent workers
+📂 Input Directory: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en\reports
+📂 Output Directory: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en\converted_plans
+🌐 Language: en
+🤖 Conversion Model: dots3-note-prev
+================================================================================
+
+
+================================================================================
+🚀 [Thread Started] Processing Sample ID: mt_single_0065_turn_0
+   Input File: mt_single_0065_turn_0.txt
+================================================================================
+✅ Sample mt_single_0065_turn_0 conversion completed deterministically
+   Output File: id_mt_single_0065_turn_0_converted.json
+
+
+================================================================================
+🚀 [Thread Started] Processing Sample ID: mt_single_0065_turn_1
+   Input File: mt_single_0065_turn_1.txt
+================================================================================
+✅ Sample mt_single_0065_turn_1 conversion completed deterministically
+   Output File: id_mt_single_0065_turn_1_converted.json
+
+
+================================================================================
+🚀 [Thread Started] Processing Sample ID: mt_single_0065_turn_2
+   Input File: mt_single_0065_turn_2.txt
+================================================================================
+✅ Sample mt_single_0065_turn_2 conversion completed deterministically
+   Output File: id_mt_single_0065_turn_2_converted.json
+
+
+================================================================================
+🚀 [Thread Started] Processing Sample ID: mt_single_0065_turn_3
+   Input File: mt_single_0065_turn_3.txt
+================================================================================
+✅ Sample mt_single_0065_turn_3 conversion completed deterministically
+   Output File: id_mt_single_0065_turn_3_converted.json
+
+
+================================================================================
+✅ All report conversions completed!
+================================================================================
+📊 Statistics:
+   - Total Files: 4
+   - Success: 4
+   - Failed: 0
+   - Total Time: 0.45 seconds
+   - Average Time: 0.11 seconds/file
+   - Output Directory: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en\converted_plans
+================================================================================
+
+
+✅ Conversion completed in 0.45s
+   Total files: 7
+   Converted: 4
+   Skipped: 3
+
+================================================================================
+STEP 3: Plan Evaluation
+================================================================================
+  Model label: dots3-note-prev
+  Language: en
+  Database directory: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en
+  Test data: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\_cases\mt_single_0065.json
+  🎯 Evaluating user-specified rerun-ids subset: 1 samples
+  Workers: 1
+
+🚀 Using 1 threads for multi-turn evaluation
+
+✅ Multi-turn evaluation completed in 0.81s
+   Evaluated turns: 4
+   Missing turn plans: 0
+   Per-turn score files: 4
+   Summary: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en\evaluation\_summary.json
+   Full debug summary: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en\evaluation\debug\multiturn_summary_full.json
+   Multi-turn metrics:
+     Response mode accuracy: 1.00
+     Fulfillment score: 1.00
+     Preserve score: 1.00
+   Core plan metrics:
+     Plan feasibility: 0.77
+     Hard constraint score: 0.96
+     Soft preference score: 0.88
+     Requirement score: 0.92
+     Strict hard pass rate: 0.75
+     Strict soft pass rate: 0.00
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+Inference:  1/1 succeeded
+Conversion: 4/7 converted
+Evaluation: Evaluated turns = 4
+            Missing turn plans = 0
+            Response mode accuracy = 1.00
+            Fulfillment score = 1.00
+            Preserve score = 1.00
+            Plan feasibility = 0.77
+            Hard constraint score = 0.96
+            Soft preference score = 0.88
+            Requirement score = 0.92
+            Strict hard pass rate = 0.75
+            Strict soft pass rate = 0.00
+
+Results saved to: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\dots3-note-prev_en
+================================================================================
+
+✅ Model 'dots3-note-prev' | Language 'en' completed in 678.40s (11.3 minutes)
+
+================================================================================
+OVERALL SUMMARY
+================================================================================
+Languages run: en
+Total time: 678.40s (11.3 minutes)
+================================================================================
+
+✅ All pipelines completed successfully!

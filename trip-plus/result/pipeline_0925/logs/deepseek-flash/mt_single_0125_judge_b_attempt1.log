@@ -1,0 +1,6 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe C:\Users\Lenovo\Desktop\xhs笔试\3_自动评估\run_judge_b.py C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\deepseek-v4-flash_en mt_single_0125 --model deepseek-v4-flash --workers 4
+
+mt_single_0125_turn_1: {'B1': 'not_applicable', 'B2': 'partial', 'B3': 'not_applicable', 'B4': 'pass'} flags=[] (16.8s)
+mt_single_0125_turn_0: {'B1': 'not_applicable', 'B2': 'not_applicable', 'B3': 'not_applicable', 'B4': 'partial'} flags=[] (18.5s)
+mt_single_0125_turn_2: {'B1': 'not_applicable', 'B2': 'partial', 'B3': 'not_applicable', 'B4': 'pass'} flags=[] (19.4s)
+wrote C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\deepseek-v4-flash_en\judge_b\summary.md

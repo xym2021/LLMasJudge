@@ -1,0 +1,52 @@
+<plan>
+Day 1 (2026-05-01):
+Current City: Shanghai to Hong Kong
+Accommodation: Hong Kong Sofitel Soho Hotel, ¥1070/room/night
+06:30-08:00 | buffer | Arrive Shanghai Pudong International Airport, check-in, security and customs wait
+08:00-10:40 | travel_intercity_public | Juneyao Airlines HO1307, Shanghai Pudong International Airport - Hong Kong International Airport, Economy Class, ¥2455/person (direct, 160 min, shortest available)
+10:40-11:10 | buffer | Deplaning, immigration, baggage claim, exiting Hong Kong International Airport
+11:10-11:54 | travel_city | Hong Kong International Airport - Hong Kong Sofitel Soho Hotel, taxi, 22.1 km, 44 min, ¥175.4
+11:55-12:05 | hotel | Luggage drop-off and early-arrival rest, Hong Kong Sofitel Soho Hotel
+12:05-12:15 | travel_city | Hong Kong Sofitel Soho Hotel - Shing Hing Eatery, taxi, 2.3 km, 8 min, ¥29.9
+12:15-13:30 | meal | lunch, Shing Hing Eatery, ¥100/person
+13:35-13:45 | travel_city | Shing Hing Eatery - Peak Tram, taxi, 3.3 km, 8 min, ¥39.3
+13:45-14:00 | buffer | Weekend/holiday ticket and funicular queue wait at Peak Tram
+14:00-17:00 | attraction | Peak Tram, ¥80/person
+17:10-17:20 | travel_city | Peak Tram - Yun Gui Xiang Rice Noodle Specialty Shop (Tsim Sha Tsui Branch), taxi, 2.8 km, 8 min, ¥35.6
+17:30-18:45 | meal | dinner, Yun Gui Xiang Rice Noodle Specialty Shop (Tsim Sha Tsui Branch), ¥62/person
+18:55-19:05 | travel_city | Yun Gui Xiang Rice Noodle Specialty Shop (Tsim Sha Tsui Branch) - Hong Kong Sofitel Soho Hotel, taxi, 2.8 km, 8 min, ¥35.6
+19:10-19:30 | hotel | Formal check-in and rest, Hong Kong Sofitel Soho Hotel
+
+Day 2 (2026-05-02):
+Current City: Hong Kong
+Accommodation: Hong Kong Sofitel Soho Hotel, ¥1070/room/night
+08:00-08:30 | hotel | Breakfast at the hotel, prepare for the day (drizzle day, light rain gear)
+08:30-09:16 | travel_city | Hong Kong Sofitel Soho Hotel - Ping Shan Heritage Trail, taxi, 23.2 km, 46 min, ¥181.7
+09:20-12:00 | attraction | Ping Shan Heritage Trail, ¥40/person
+12:00-12:05 | travel_city | Ping Shan Heritage Trail - Ping Shan Old Place Restaurant, walking, 290 m, 3 min, ¥0
+12:05-13:20 | meal | lunch, Ping Shan Old Place Restaurant, ¥65/person
+13:30-14:00 | travel_city | Ping Shan Old Place Restaurant - Hong Kong Disneyland, taxi, 15.0 km, 30 min, ¥131.3
+14:00-17:30 | attraction | Hong Kong Disneyland, ¥90/person
+17:30-18:45 | meal | dinner, River View Restaurant, ¥119/person
+18:45-20:45 | attraction | Hong Kong Disneyland (evening park time and night show viewing)
+20:50-21:15 | travel_city | Hong Kong Disneyland - Hong Kong Sofitel Soho Hotel, taxi, 11.6 km, 23 min, ¥108.6
+21:15-21:30 | hotel | Return and rest, Hong Kong Sofitel Soho Hotel
+
+Day 3 (2026-05-03):
+Current City: Hong Kong to Shanghai
+Accommodation: -
+08:30-09:30 | hotel | Breakfast at the hotel, pack luggage, Hong Kong Sofitel Soho Hotel
+09:30-10:15 | hotel | Check-out procedures, Hong Kong Sofitel Soho Hotel
+10:15-10:59 | travel_city | Hong Kong Sofitel Soho Hotel - Hong Kong International Airport, taxi, 22.1 km, 44 min, ¥175.4
+11:00-12:50 | buffer | Airport check-in, security and immigration wait (90-minute pre-flight buffer)
+12:50-15:10 | travel_intercity_public | Shanghai Airlines FM3012, Hong Kong International Airport - Hongqiao International Airport, Economy Class, ¥951/person (direct, 140 min, shortest available)
+15:10-15:40 | buffer | Deplaning, exiting Hongqiao International Airport
+
+**Budget Summary**:
+**Transportation: 7725 RMB**. Intercity flights = (2455 + 951) × 2 people = 6812 RMB; intracity taxis = (175.4 + 29.9 + 39.3 + 35.6 + 35.6 + 181.7 + 131.3 + 108.6 + 175.4) × 1 vehicle = 912.8 RMB (2 people share one taxi), walking segments 0 RMB.
+**Accommodation: 2140 RMB**. 1070 RMB/room/night × 1 room × 2 nights.
+**Meals: 692 RMB**. (100 + 62 + 65 + 119) × 2 people.
+**Attractions & Tickets: 420 RMB**. (80 + 40 + 90) × 2 people.
+**Other: 0 RMB**
+**Total Estimated Budget: 10977 RMB**
+</plan>

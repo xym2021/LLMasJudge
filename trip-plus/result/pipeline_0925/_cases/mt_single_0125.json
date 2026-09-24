@@ -1,0 +1,464 @@
+[
+  {
+    "id": "mt_single_0125",
+    "base_query_id": "single_0125",
+    "query": "We are flying from Shanghai to Hong Kong for our honeymoon, departing on May 1, 2026 (Friday) and returning on May 3, 2026 (Sunday). It is a three-day trip for just the two of us, sharing one room. We really want a direct flight with the shortest duration so we aren't stuck in the air too long. For food, I heard Ping Shan Heritage Trail is amazing, so let's eat at the highest-rated spot nearby. Our budget is between 8200 and 12100 yuan. Also, please make sure we visit \"Peak Tram\" and \"Hong Kong Disneyland\".",
+    "interaction_type": "environment_driven_replanning",
+    "turns": [
+      {
+        "turn_id": 0,
+        "utterance": "We are flying from Shanghai to Hong Kong for our honeymoon, departing on May 1, 2026 (Friday) and returning on May 3, 2026 (Sunday). It is a three-day trip for just the two of us, sharing one room. We really want a direct flight with the shortest duration so we aren't stuck in the air too long. For food, I heard Ping Shan Heritage Trail is amazing, so let's eat at the highest-rated spot nearby. Our budget is between 8200 and 12100 yuan. Also, please make sure we visit \"Peak Tram\" and \"Hong Kong Disneyland\".",
+        "must_preserve": [],
+        "must_update": [
+          "initial_plan"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_crowd_queue_initial_must_visit",
+            "budget_constraint",
+            "flight_shortest_duration_direct",
+            "restaurant_highest_rated",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": []
+        }
+      },
+      {
+        "turn_id": 1,
+        "utterance": "It looks like our flight is arriving 30 minutes later than planned. Could we build in some buffer time after we land for checking in, eating, or just resting? We'd prefer to keep the first day light with no more than two attractions.",
+        "must_preserve": [
+          "budget_constraint",
+          "flight_shortest_duration_direct",
+          "restaurant_highest_rated",
+          "attraction_crowd_queue_initial_must_visit",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "environment_aware_replanning"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_crowd_queue_initial_must_visit",
+            "budget_constraint",
+            "flight_shortest_duration_direct",
+            "restaurant_highest_rated",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [],
+          "active_environment_events": [
+            {
+              "factor": "transport_disruption",
+              "type": "transport_disruption",
+              "city": "Hong Kong",
+              "message": "I checked, and the flight arrival time is 30 minutes later than originally scheduled.",
+              "expected_adjustments": [
+                {
+                  "check": "first_day_light_after_transport_delay",
+                  "max_first_day_attractions": 2,
+                  "requires_buffer_or_hotel_after_intercity": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": 2,
+        "utterance": "I noticed that the popular spots in Hong Kong get really crowded between 10:00 and 12:00. Please keep \"Peak Tram\" and \"Hong Kong Disneyland\" on the list, but don't schedule them during that window. Also, let's time our main meal to avoid the 12:00-13:00 slot.",
+        "must_preserve": [
+          "budget_constraint",
+          "flight_shortest_duration_direct",
+          "restaurant_highest_rated",
+          "attraction_crowd_queue_initial_must_visit",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "environment_aware_replanning"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_crowd_queue_initial_must_visit",
+            "budget_constraint",
+            "flight_shortest_duration_direct",
+            "restaurant_highest_rated",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [],
+          "active_environment_events": [
+            {
+              "factor": "transport_disruption",
+              "type": "transport_disruption",
+              "city": "Hong Kong",
+              "message": "I checked, and the flight arrival time is 30 minutes later than originally scheduled.",
+              "expected_adjustments": [
+                {
+                  "check": "first_day_light_after_transport_delay",
+                  "max_first_day_attractions": 2,
+                  "requires_buffer_or_hotel_after_intercity": true
+                }
+              ]
+            },
+            {
+              "factor": "crowd_queue_risk",
+              "type": "holiday_or_hotspot_queue",
+              "city": "Hong Kong",
+              "message": "I just checked, and there are a lot of people at the popular attractions in Hong Kong from 10:00 to 12:00 in the morning.",
+              "expected_adjustments": [
+                {
+                  "check": "avoid_peak_meal_window",
+                  "peak_window": [
+                    720,
+                    780
+                  ]
+                },
+                {
+                  "check": "avoid_peak_attraction_window",
+                  "peak_window": [
+                    600,
+                    720
+                  ],
+                  "target_attractions": [
+                    "Peak Tram",
+                    "Hong Kong Disneyland"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "meta_info": {
+      "base_query_meta": {
+        "org": "Shanghai",
+        "dest": [
+          "Hong Kong"
+        ],
+        "days": 3,
+        "depart_date": "2026-05-01",
+        "depart_weekday": 5,
+        "return_date": "2026-05-03",
+        "people_number": 2,
+        "room_number": 1,
+        "solution_status": "sat",
+        "observable_profile": {
+          "party_composition": {
+            "adults": 2,
+            "children": [],
+            "elders": []
+          },
+          "budget_range": [
+            4000,
+            8000
+          ],
+          "accommodation_style": "luxury",
+          "mobility_constraints": [
+            "cold_sensitive"
+          ],
+          "physical_rules": [
+            "standard_walking"
+          ],
+          "schedule_rules": [
+            "moderate"
+          ],
+          "interest_tags": [
+            "nature",
+            "park"
+          ],
+          "hate_tags": [
+            "overpacked_schedule"
+          ],
+          "transport_preferences": [
+            "prefer_flight"
+          ],
+          "rest_preferences": []
+        },
+        "user_profile": {
+          "party_type": "couple",
+          "rule_ids": [
+            "weather_avoid_cold_exposure",
+            "schedule_pacing",
+            "transport_prefer_flight",
+            "interest_outdoor_nature"
+          ],
+          "rules": [
+            {
+              "rule_id": "weather_avoid_cold_exposure",
+              "category": "weather",
+              "trigger": "cold_sensitive observed",
+              "planner_obligation": "Avoid long outdoor exposure in cold periods.",
+              "evaluation_basis": [
+                "weather.temperature_min_c",
+                "outdoor attraction timing",
+                "local_transport mode"
+              ]
+            },
+            {
+              "rule_id": "schedule_pacing",
+              "category": "schedule",
+              "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+              "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+              "evaluation_basis": [
+                "daily activity count",
+                "rest blocks",
+                "first activity start time"
+              ],
+              "preference_variants": [
+                "relaxed"
+              ]
+            },
+            {
+              "rule_id": "transport_prefer_flight",
+              "category": "transport",
+              "trigger": "transport_preferences includes prefer_flight",
+              "planner_obligation": "Prefer flight when feasible.",
+              "evaluation_basis": [
+                "transport.mode",
+                "price",
+                "duration"
+              ]
+            },
+            {
+              "rule_id": "interest_outdoor_nature",
+              "category": "interest",
+              "trigger": "interest_tags includes nature; interest_tags includes park",
+              "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+              "evaluation_basis": [
+                "attraction_type",
+                "rating",
+                "ticket_price"
+              ]
+            }
+          ],
+          "derivation_context": {
+            "days": 3,
+            "dest_price_level": "medium",
+            "upper_budget_per_person_day": 1533.3,
+            "party_size": 2,
+            "physical_rule_seeds": [
+              "standard_walking"
+            ],
+            "schedule_rule_seeds": [
+              "moderate"
+            ]
+          }
+        },
+        "hard_constraints": {
+          "restaurant_highest_rated": {
+            "constraint_context": "Please arrange a meal at the highest-rated restaurant near 'Ping Shan Heritage Trail' during the trip.",
+            "constraint_type": "superlative_highest_rated_restaurant",
+            "attraction_name": "Ping Shan Heritage Trail",
+            "restaurant_name": "Ping Shan Old Place Restaurant",
+            "restaurant_rating": 4.4,
+            "price_per_person": 65.0,
+            "acceptable_restaurant_names": [
+              "Ping Shan Old Place Restaurant"
+            ],
+            "acceptable_restaurant_options": [
+              {
+                "restaurant_name": "Ping Shan Old Place Restaurant",
+                "price_per_person": 65.0,
+                "restaurant_rating": 4.4,
+                "nearby_attraction_name": "Ping Shan Heritage Trail",
+                "cuisine_type": "Chinese Restaurant",
+                "tags": [
+                  "Catering Services",
+                  "Chinese Restaurant"
+                ],
+                "opening_time": "08:00",
+                "closing_time": "21:00"
+              }
+            ]
+          },
+          "flight_shortest_duration_direct": {
+            "constraint_context": "For the outbound journey, I prefer to fly and need to select the direct flight with the shortest duration.",
+            "constraint_type": "superlative_shortest_duration",
+            "direction": "Outbound",
+            "outbound_flight_no": "HO1307",
+            "outbound_route_index": 42,
+            "outbound_airline": "Juneyao Airlines",
+            "outbound_duration": 160,
+            "outbound_dep_time": "2026-05-01 08:00:00",
+            "is_direct": true,
+            "acceptable_outbound_flight_nos": [
+              "HO1307",
+              "FM809",
+              "MU8629",
+              "FM3027",
+              "MU723",
+              "HX239"
+            ],
+            "acceptable_outbound_flight_options": [
+              {
+                "flight_no": "HO1307",
+                "airline": "Juneyao Airlines",
+                "seat_class": "Economy",
+                "price": 2455.0,
+                "dep_datetime": "2026-05-01 08:00:00",
+                "arr_datetime": "2026-05-01 10:40:00",
+                "manufacturer": "Airbus",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              },
+              {
+                "flight_no": "FM809",
+                "airline": "Shanghai Airlines",
+                "seat_class": "Economy",
+                "price": 2713.0,
+                "dep_datetime": "2026-05-01 15:00:00",
+                "arr_datetime": "2026-05-01 17:40:00",
+                "manufacturer": "Boeing",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              },
+              {
+                "flight_no": "MU8629",
+                "airline": "China Eastern Airlines",
+                "seat_class": "Economy",
+                "price": 2711.0,
+                "dep_datetime": "2026-05-01 15:00:00",
+                "arr_datetime": "2026-05-01 17:40:00",
+                "manufacturer": "Boeing",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              },
+              {
+                "flight_no": "FM3027",
+                "airline": "Shanghai Airlines",
+                "seat_class": "Economy",
+                "price": 1723.0,
+                "dep_datetime": "2026-05-01 18:25:00",
+                "arr_datetime": "2026-05-01 21:05:00",
+                "manufacturer": "Unknown",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              },
+              {
+                "flight_no": "MU723",
+                "airline": "China Eastern Airlines",
+                "seat_class": "Economy",
+                "price": 1721.0,
+                "dep_datetime": "2026-05-01 18:25:00",
+                "arr_datetime": "2026-05-01 21:05:00",
+                "manufacturer": "Unknown",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              },
+              {
+                "flight_no": "HX239",
+                "airline": "Hong Kong Airlines",
+                "seat_class": "Economy",
+                "price": 1645.0,
+                "dep_datetime": "2026-05-01 19:15:00",
+                "arr_datetime": "2026-05-01 21:55:00",
+                "manufacturer": "Airbus",
+                "origin_city": "Shanghai",
+                "destination_city": "Hong Kong"
+              }
+            ]
+          },
+          "budget_constraint": {
+            "minimum_feasible_budget": 8300,
+            "estimated_meal_slots": 3,
+            "estimated_breakdown": {
+              "transportation": 4530.0,
+              "accommodation": 3300.0,
+              "meals": 390.0,
+              "attractions": 0.0
+            },
+            "is_unsat": false,
+            "min_budget": 8200,
+            "max_budget": 12100,
+            "budget_slack_ratio": 1.4757,
+            "budget_policy": {
+              "type": "db_feasible_cost_plus_profile_slack",
+              "profile_budget_rule": "budget_unspecified",
+              "basis": [
+                "intercity_transport",
+                "hotel_nights",
+                "restaurant_meals",
+                "attraction_tickets"
+              ]
+            },
+            "constraint_type": "budget_range_total"
+          },
+          "attraction_crowd_queue_initial_must_visit": {
+            "constraint_context": "Initial request requires keeping explicit crowd/queue target attractions unless a later event removes them.",
+            "constraint_type": "crowd_queue_initial_must_visit",
+            "attraction_names": [
+              "Peak Tram",
+              "Hong Kong Disneyland"
+            ]
+          },
+          "trip_date_range_required": {
+            "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+            "depart_date": "2026-05-01",
+            "return_date": "2026-05-03",
+            "days": 3
+          },
+          "party_size_required": {
+            "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+            "people_number": 2
+          },
+          "room_count_required": {
+            "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+            "room_number": 1
+          },
+          "intercity_round_trip_mode_required": {
+            "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+            "route_mode": "flight",
+            "origin": "Shanghai",
+            "destinations": [
+              "Hong Kong"
+            ]
+          }
+        },
+        "soft_constraints": {
+          "city_soft_wishes": [
+            "I recently came across Hong Kong Disneyland online, and if it's on the way, I'd quite like to check it out."
+          ],
+          "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+          "environment_hints": [
+            {
+              "type": "cross_border",
+              "hint": "For cross-border areas like Hong Kong, it's best to confirm visa endorsements, local network connectivity, and payment methods in advance.",
+              "reason": "Cross-border destinations require additional consideration for documents, entry procedures, roaming/SIM cards, and local payment methods. Travel companions are more sensitive to physical comfort."
+            }
+          ]
+        },
+        "city_context": {
+          "city_tags": [
+            "coastal_humid_heat",
+            "cross_border_region",
+            "ferry_island_transfer",
+            "local_currency_hkd",
+            "mega_city_metro_transfer",
+            "mobile_roaming_or_esim",
+            "octopus_transit_payment",
+            "summer_heat_city",
+            "theme_park_reservation_city",
+            "typhoon_risk",
+            "winter_warm_escape_city"
+          ]
+        },
+        "route_mode": "flight"
+      }
+    }
+  }
+]

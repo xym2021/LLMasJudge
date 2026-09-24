@@ -1,0 +1,445 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "from Taiyuan to Xi'an",
+      "activities": [
+        {
+          "time_slot": "07:30-08:00",
+          "type": "buffer",
+          "details": {
+            "description": "arrive at Taiyuan South for ticket check and security"
+          }
+        },
+        {
+          "time_slot": "08:16-11:17",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2507",
+            "from": "Taiyuan South",
+            "to": "Xi'an North",
+            "cost": 178.5,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:17-11:35",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning/exiting and station exit"
+          }
+        },
+        {
+          "time_slot": "11:35-12:00",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an North",
+            "to": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "mode": "taxi",
+            "distance": "11.4km",
+            "duration": "23min",
+            "cost": 25.7
+          }
+        },
+        {
+          "time_slot": "12:00-12:30",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in and short rest",
+            "name": "Xi'an Xinyu Hotel (Changle East Road Branch)"
+          }
+        },
+        {
+          "time_slot": "12:30-12:40",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "to": "Xi'an Bell Tower",
+            "mode": "taxi",
+            "distance": "2.6km",
+            "duration": "8min",
+            "cost": 9
+          }
+        },
+        {
+          "time_slot": "12:40-14:40",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Bell Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "14:40-14:45",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Bell Tower",
+            "to": "Xi'an Drum Tower",
+            "mode": "walking",
+            "duration": "4min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "14:45-15:45",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Drum Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "15:45-15:50",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Drum Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "duration": "3min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "15:50-17:20",
+          "type": "attraction",
+          "details": {
+            "name": "Muslim Quarter",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "17:20-17:40",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "mode": "walking",
+            "distance": "1.7km",
+            "duration": "20min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "17:40-19:10",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "cost": 96
+          }
+        },
+        {
+          "time_slot": "19:10-19:30",
+          "type": "travel_city",
+          "details": {
+            "from": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "to": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "mode": "walking",
+            "distance": "1.6km",
+            "duration": "19min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:30-22:00",
+          "type": "hotel",
+          "details": {
+            "activity": "rest",
+            "name": "Xi'an Xinyu Hotel (Changle East Road Branch)"
+          }
+        }
+      ],
+      "date": "2026-04-30",
+      "accommodation": {
+        "name": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "08:30-08:45",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "to": "Shaanxi History Museum",
+            "mode": "taxi",
+            "distance": "6.1km",
+            "duration": "12min",
+            "cost": 15.2
+          }
+        },
+        {
+          "time_slot": "08:45-11:45",
+          "type": "attraction",
+          "details": {
+            "name": "Shaanxi History Museum",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "11:45-11:55",
+          "type": "travel_city",
+          "details": {
+            "from": "Shaanxi History Museum",
+            "to": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "mode": "taxi",
+            "distance": "4.8km",
+            "duration": "10min",
+            "cost": 12.7
+          }
+        },
+        {
+          "time_slot": "11:55-13:25",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "cost": 54
+          }
+        },
+        {
+          "time_slot": "13:25-13:40",
+          "type": "travel_city",
+          "details": {
+            "from": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "to": "Big Wild Goose Pagoda",
+            "mode": "taxi",
+            "distance": "5.4km",
+            "duration": "11min",
+            "cost": 13.8
+          }
+        },
+        {
+          "time_slot": "13:40-16:40",
+          "type": "attraction",
+          "details": {
+            "name": "Big Wild Goose Pagoda",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "16:40-16:50",
+          "type": "travel_city",
+          "details": {
+            "from": "Big Wild Goose Pagoda",
+            "to": "Grand Tang Mall",
+            "mode": "walking",
+            "duration": "6min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "16:50-18:50",
+          "type": "attraction",
+          "details": {
+            "name": "Grand Tang Mall",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:50-19:05",
+          "type": "travel_city",
+          "details": {
+            "from": "Grand Tang Mall",
+            "to": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "mode": "taxi",
+            "distance": "7.2km",
+            "duration": "14min",
+            "cost": 17.4
+          }
+        },
+        {
+          "time_slot": "19:05-21:30",
+          "type": "hotel",
+          "details": {
+            "activity": "rest",
+            "name": "Xi'an Xinyu Hotel (Changle East Road Branch)"
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "08:30-08:50",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "to": "Xi'an Botanical Garden Children's Garden",
+            "mode": "taxi",
+            "distance": "9.7km",
+            "duration": "19min",
+            "cost": 22.4
+          }
+        },
+        {
+          "time_slot": "08:50-11:50",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Botanical Garden Children's Garden",
+            "city": "Xi'an",
+            "cost": 30
+          }
+        },
+        {
+          "time_slot": "11:50-12:05",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Botanical Garden Children's Garden",
+            "to": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "mode": "walking",
+            "distance": "1.2km",
+            "duration": "14min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "12:05-13:35",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "cost": 58
+          }
+        },
+        {
+          "time_slot": "13:35-13:50",
+          "type": "travel_city",
+          "details": {
+            "from": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "taxi",
+            "distance": "7.7km",
+            "duration": "15min",
+            "cost": 18.4
+          }
+        },
+        {
+          "time_slot": "13:50-16:50",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "16:50-17:00",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower, Xi'an City Wall",
+            "to": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "mode": "taxi",
+            "distance": "2.8km",
+            "duration": "8min",
+            "cost": 9
+          }
+        },
+        {
+          "time_slot": "17:00-18:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "cost": 81
+          }
+        },
+        {
+          "time_slot": "18:30-18:45",
+          "type": "travel_city",
+          "details": {
+            "from": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "to": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "mode": "walking",
+            "duration": "12min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:45-21:30",
+          "type": "hotel",
+          "details": {
+            "activity": "rest",
+            "name": "Xi'an Xinyu Hotel (Changle East Road Branch)"
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 4,
+      "current_city": "from Xi'an to Taiyuan",
+      "activities": [
+        {
+          "time_slot": "06:30-06:55",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Xinyu Hotel (Changle East Road Branch)",
+            "to": "Xi'an North",
+            "mode": "taxi",
+            "distance": "11.4km",
+            "duration": "23min",
+            "cost": 25.7
+          }
+        },
+        {
+          "time_slot": "06:55-07:20",
+          "type": "buffer",
+          "details": {
+            "description": "arrive at Xi'an North for ticket check and security"
+          }
+        },
+        {
+          "time_slot": "07:20-10:59",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2506",
+            "from": "Xi'an North",
+            "to": "Taiyuan South",
+            "cost": 178,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "10:59-11:15",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning/exiting and station exit"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 356.5,
+    "accommodation": 390,
+    "meals": 289,
+    "attractions_and_tickets": 210,
+    "other": 0,
+    "total_estimated_budget": 1464.8
+  }
+}

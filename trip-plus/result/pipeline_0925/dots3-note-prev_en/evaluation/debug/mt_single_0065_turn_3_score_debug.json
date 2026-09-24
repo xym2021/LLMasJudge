@@ -1,0 +1,1420 @@
+{
+  "sample_id": "mt_single_0065_turn_3",
+  "scores": {
+    "feasibility_score": 0.7722222222222221,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.75,
+    "requirement_score": 0.875,
+    "llm_user_simulation_score": null
+  },
+  "feasibility_details": {
+    "score": 0.7722222222222221,
+    "strict_feasibility": 0.0,
+    "passed_checks": 17,
+    "total_checks": 22,
+    "dimensions": {
+      "structure_completeness": {
+        "weight": 0.3333333333333333,
+        "score": 0.8666666666666667,
+        "weighted_score": 0.28888888888888886,
+        "subdimensions": {
+          "valid_trip_duration": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "valid_trip_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "route_and_stay_continuity": {
+            "score": 0.6,
+            "passed": 3,
+            "total": 5,
+            "checks": [
+              {
+                "name": "closed_loop_route_structure",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "seamless_intercity_transfers",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "day_boundary_continuity",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "traceable_accommodation",
+                "passed": false,
+                "message": "Accommodation not traceable on days: [2, 3]"
+              },
+              {
+                "name": "ends_with_accommodation",
+                "passed": false,
+                "message": "Last activity not hotel on days: [1, 2, 3]"
+              }
+            ]
+          },
+          "daily_content_coverage": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "essential_meal_coverage",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "essential_attraction_coverage",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "evidence_validity": {
+        "weight": 0.3333333333333333,
+        "score": 0.75,
+        "weighted_score": 0.25,
+        "subdimensions": {
+          "poi_grounding_valid": {
+            "score": 1.0,
+            "passed": 3,
+            "total": 3,
+            "checks": [
+              {
+                "name": "validated_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_meals",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "transport_grounding_valid": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "validated_transportation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "local_move_sanity",
+                "passed": false,
+                "message": "Local travel records implausible: [\"D1: Xi'an North Station->Junyuan Inn missing local transport fields: ['duration']\", \"D1: Junyuan Inn->Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch) missing local transport fields: ['duration']\", \"D1: Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)->Shaanxi History Museum missing local transport fields: ['duration']\", \"D1: Shaanxi History Museum->Muslim Quarter missing local transport fields: ['duration']\", \"D1: Muslim Quarter->Wushan Paper-Wrapped Fish (Minleyuan Main Store) missing local transport fields: ['duration']\", \"D1: Wushan Paper-Wrapped Fish (Minleyuan Main Store)->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D1: Xi'an Bell Tower->Junyuan Inn missing local transport fields: ['duration']\", \"D2: Junyuan Inn->Xi'an Botanical Garden Children's Garden missing local transport fields: ['duration']\", \"D2: Xi'an Botanical Garden Children's Garden->Weike Coffee (Wangzuo Qujiang Branch) missing local transport fields: ['duration']\", \"D2: Weike Coffee (Wangzuo Qujiang Branch)->Big Wild Goose Pagoda missing local transport fields: ['duration']\", \"D2: Big Wild Goose Pagoda->Grand Tang Mall missing local transport fields: ['duration']\", \"D2: Grand Tang Mall->Haidilao Hot Pot (Jiefang Road Branch) missing local transport fields: ['duration']\", \"D2: Haidilao Hot Pot (Jiefang Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D3: Junyuan Inn->Xi'an City Wall missing local transport fields: ['duration']\", \"D3: Xi'an City Wall->Xi'an People's Coffee XACOFFEE missing local transport fields: ['duration']\", \"D3: Xi'an People's Coffee XACOFFEE->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D3: Xi'an Bell Tower->Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) missing local transport fields: ['duration']\", \"D3: Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D4: Junyuan Inn->Xi'an North Station missing local transport fields: ['duration']\"]"
+              }
+            ]
+          }
+        }
+      },
+      "execution_operability": {
+        "weight": 0.3333333333333333,
+        "score": 0.7,
+        "weighted_score": 0.2333333333333333,
+        "subdimensions": {
+          "time_and_transfer_feasible": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "no_time_overlaps",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_transfer_time",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "venue_and_duration_feasible": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5,
+            "checks": [
+              {
+                "name": "attraction_visit_within_opening_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "dining_within_service_hours",
+                "passed": false,
+                "message": "Meal time not within business hours: ['Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)(14:06-15:06 not within 11:00-14:00)']"
+              },
+              {
+                "name": "avoidance_of_closure_days",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_duration_at_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_meal_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "intercity_buffer_feasible": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 1,
+            "checks": [
+              {
+                "name": "intercity_buffer_adequacy",
+                "passed": false,
+                "message": "Intercity buffer inadequate: ['D1: intercity train before-buffer 0min < required 30min', 'D4: intercity train before-buffer 20min < required 30min']"
+              }
+            ]
+          },
+          "budget_arithmetic_feasible": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "cost_calculation_correctness",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "subdimensions": {
+      "valid_trip_duration": {
+        "score": 1.0,
+        "passed": 1,
+        "total": 1,
+        "checks": [
+          {
+            "name": "valid_trip_duration",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "route_and_stay_continuity": {
+        "score": 0.6,
+        "passed": 3,
+        "total": 5,
+        "checks": [
+          {
+            "name": "closed_loop_route_structure",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "seamless_intercity_transfers",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "day_boundary_continuity",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "traceable_accommodation",
+            "passed": false,
+            "message": "Accommodation not traceable on days: [2, 3]"
+          },
+          {
+            "name": "ends_with_accommodation",
+            "passed": false,
+            "message": "Last activity not hotel on days: [1, 2, 3]"
+          }
+        ]
+      },
+      "daily_content_coverage": {
+        "score": 1.0,
+        "passed": 2,
+        "total": 2,
+        "checks": [
+          {
+            "name": "essential_meal_coverage",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "essential_attraction_coverage",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "poi_grounding_valid": {
+        "score": 1.0,
+        "passed": 3,
+        "total": 3,
+        "checks": [
+          {
+            "name": "validated_accommodation",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "validated_attractions",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "validated_meals",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "transport_grounding_valid": {
+        "score": 0.5,
+        "passed": 1,
+        "total": 2,
+        "checks": [
+          {
+            "name": "validated_transportation",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "local_move_sanity",
+            "passed": false,
+            "message": "Local travel records implausible: [\"D1: Xi'an North Station->Junyuan Inn missing local transport fields: ['duration']\", \"D1: Junyuan Inn->Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch) missing local transport fields: ['duration']\", \"D1: Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)->Shaanxi History Museum missing local transport fields: ['duration']\", \"D1: Shaanxi History Museum->Muslim Quarter missing local transport fields: ['duration']\", \"D1: Muslim Quarter->Wushan Paper-Wrapped Fish (Minleyuan Main Store) missing local transport fields: ['duration']\", \"D1: Wushan Paper-Wrapped Fish (Minleyuan Main Store)->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D1: Xi'an Bell Tower->Junyuan Inn missing local transport fields: ['duration']\", \"D2: Junyuan Inn->Xi'an Botanical Garden Children's Garden missing local transport fields: ['duration']\", \"D2: Xi'an Botanical Garden Children's Garden->Weike Coffee (Wangzuo Qujiang Branch) missing local transport fields: ['duration']\", \"D2: Weike Coffee (Wangzuo Qujiang Branch)->Big Wild Goose Pagoda missing local transport fields: ['duration']\", \"D2: Big Wild Goose Pagoda->Grand Tang Mall missing local transport fields: ['duration']\", \"D2: Grand Tang Mall->Haidilao Hot Pot (Jiefang Road Branch) missing local transport fields: ['duration']\", \"D2: Haidilao Hot Pot (Jiefang Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D3: Junyuan Inn->Xi'an City Wall missing local transport fields: ['duration']\", \"D3: Xi'an City Wall->Xi'an People's Coffee XACOFFEE missing local transport fields: ['duration']\", \"D3: Xi'an People's Coffee XACOFFEE->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D3: Xi'an Bell Tower->Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) missing local transport fields: ['duration']\", \"D3: Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D4: Junyuan Inn->Xi'an North Station missing local transport fields: ['duration']\"]"
+          }
+        ]
+      },
+      "time_and_transfer_feasible": {
+        "score": 1.0,
+        "passed": 2,
+        "total": 2,
+        "checks": [
+          {
+            "name": "no_time_overlaps",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "reasonable_transfer_time",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "venue_and_duration_feasible": {
+        "score": 0.8,
+        "passed": 4,
+        "total": 5,
+        "checks": [
+          {
+            "name": "attraction_visit_within_opening_hours",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "dining_within_service_hours",
+            "passed": false,
+            "message": "Meal time not within business hours: ['Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)(14:06-15:06 not within 11:00-14:00)']"
+          },
+          {
+            "name": "avoidance_of_closure_days",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "reasonable_duration_at_attractions",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "reasonable_meal_duration",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "intercity_buffer_feasible": {
+        "score": 0.0,
+        "passed": 0,
+        "total": 1,
+        "checks": [
+          {
+            "name": "intercity_buffer_adequacy",
+            "passed": false,
+            "message": "Intercity buffer inadequate: ['D1: intercity train before-buffer 0min < required 30min', 'D4: intercity train before-buffer 20min < required 30min']"
+          }
+        ]
+      },
+      "budget_arithmetic_feasible": {
+        "score": 1.0,
+        "passed": 1,
+        "total": 1,
+        "checks": [
+          {
+            "name": "cost_calculation_correctness",
+            "passed": true,
+            "message": null
+          }
+        ]
+      }
+    },
+    "checks": {
+      "valid_trip_duration": {
+        "passed": true,
+        "message": null
+      },
+      "closed_loop_route_structure": {
+        "passed": true,
+        "message": null
+      },
+      "seamless_intercity_transfers": {
+        "passed": true,
+        "message": null
+      },
+      "day_boundary_continuity": {
+        "passed": true,
+        "message": null
+      },
+      "validated_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "validated_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "validated_meals": {
+        "passed": true,
+        "message": null
+      },
+      "validated_transportation": {
+        "passed": true,
+        "message": null
+      },
+      "traceable_accommodation": {
+        "passed": false,
+        "message": "Accommodation not traceable on days: [2, 3]"
+      },
+      "ends_with_accommodation": {
+        "passed": false,
+        "message": "Last activity not hotel on days: [1, 2, 3]"
+      },
+      "essential_meal_coverage": {
+        "passed": true,
+        "message": null
+      },
+      "essential_attraction_coverage": {
+        "passed": true,
+        "message": null
+      },
+      "no_time_overlaps": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_transfer_time": {
+        "passed": true,
+        "message": null
+      },
+      "local_move_sanity": {
+        "passed": false,
+        "message": "Local travel records implausible: [\"D1: Xi'an North Station->Junyuan Inn missing local transport fields: ['duration']\", \"D1: Junyuan Inn->Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch) missing local transport fields: ['duration']\", \"D1: Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)->Shaanxi History Museum missing local transport fields: ['duration']\", \"D1: Shaanxi History Museum->Muslim Quarter missing local transport fields: ['duration']\", \"D1: Muslim Quarter->Wushan Paper-Wrapped Fish (Minleyuan Main Store) missing local transport fields: ['duration']\", \"D1: Wushan Paper-Wrapped Fish (Minleyuan Main Store)->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D1: Xi'an Bell Tower->Junyuan Inn missing local transport fields: ['duration']\", \"D2: Junyuan Inn->Xi'an Botanical Garden Children's Garden missing local transport fields: ['duration']\", \"D2: Xi'an Botanical Garden Children's Garden->Weike Coffee (Wangzuo Qujiang Branch) missing local transport fields: ['duration']\", \"D2: Weike Coffee (Wangzuo Qujiang Branch)->Big Wild Goose Pagoda missing local transport fields: ['duration']\", \"D2: Big Wild Goose Pagoda->Grand Tang Mall missing local transport fields: ['duration']\", \"D2: Grand Tang Mall->Haidilao Hot Pot (Jiefang Road Branch) missing local transport fields: ['duration']\", \"D2: Haidilao Hot Pot (Jiefang Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D3: Junyuan Inn->Xi'an City Wall missing local transport fields: ['duration']\", \"D3: Xi'an City Wall->Xi'an People's Coffee XACOFFEE missing local transport fields: ['duration']\", \"D3: Xi'an People's Coffee XACOFFEE->Xi'an Bell Tower missing local transport fields: ['duration']\", \"D3: Xi'an Bell Tower->Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) missing local transport fields: ['duration']\", \"D3: Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)->Junyuan Inn missing local transport fields: ['duration']\", \"D4: Junyuan Inn->Xi'an North Station missing local transport fields: ['duration']\"]"
+      },
+      "attraction_visit_within_opening_hours": {
+        "passed": true,
+        "message": null
+      },
+      "dining_within_service_hours": {
+        "passed": false,
+        "message": "Meal time not within business hours: ['Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)(14:06-15:06 not within 11:00-14:00)']"
+      },
+      "avoidance_of_closure_days": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_duration_at_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_meal_duration": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_buffer_adequacy": {
+        "passed": false,
+        "message": "Intercity buffer inadequate: ['D1: intercity train before-buffer 0min < required 30min', 'D4: intercity train before-buffer 20min < required 30min']"
+      },
+      "cost_calculation_correctness": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "requirement_details": {
+    "score": 0.875,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "hard_constraint_ratio": 1.0,
+    "hard_constraints_passed": 8,
+    "hard_constraints_total": 8,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.75,
+    "soft_preferences": {
+      "score": 0.75,
+      "checks": [
+        {
+          "rule_id": "mobility_accessibility",
+          "applicable": true,
+          "score": 0.5,
+          "passed": false,
+          "severity": "minor",
+          "violation_level": "minor",
+          "message": "local movement or outdoor load has a profile violation",
+          "signals": {
+            "long_local_transfers": 2,
+            "very_long_local_transfers": 0,
+            "daily_local_transfer_minutes": {
+              "1": 189,
+              "2": 128,
+              "3": 118,
+              "4": 73
+            },
+            "avg_daily_local_transfer_minutes": 127.0,
+            "daily_outdoor_minutes": [
+              127,
+              450,
+              160
+            ],
+            "source_rule_ids": [
+              "mobility_accessibility"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_local_transfer_minutes",
+                "value": 189.0,
+                "soft_boundary": 240,
+                "hard_boundary": 300,
+                "severity": "none",
+                "unit": "minutes"
+              },
+              {
+                "name": "route_long_local_transfer_count",
+                "value": 2,
+                "minor_at": 2,
+                "major_at": 4,
+                "severity": "minor"
+              },
+              {
+                "name": "route_very_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 2,
+                "severity": "none"
+              }
+            ]
+          },
+          "raw_signals": {
+            "long_local_transfers": 2,
+            "very_long_local_transfers": 0,
+            "daily_local_transfer_minutes": {
+              "1": 189,
+              "2": 128,
+              "3": 118,
+              "4": 73
+            },
+            "avg_daily_local_transfer_minutes": 127.0,
+            "daily_outdoor_minutes": [
+              127,
+              450,
+              160
+            ],
+            "source_rule_ids": [
+              "mobility_accessibility"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_local_transfer_minutes",
+                "value": 189.0,
+                "soft_boundary": 240,
+                "hard_boundary": 300,
+                "severity": "none",
+                "unit": "minutes"
+              },
+              {
+                "name": "route_long_local_transfer_count",
+                "value": 2,
+                "minor_at": 2,
+                "major_at": 4,
+                "severity": "minor"
+              },
+              {
+                "name": "route_very_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 2,
+                "severity": "none"
+              }
+            ]
+          },
+          "thresholds": {
+            "long_local_transfer_minutes": 60.0,
+            "very_long_local_transfer_minutes": 90.0,
+            "max_daily_local_transfer_minutes": 240,
+            "high_outdoor_minutes": 240,
+            "very_high_outdoor_minutes": 360
+          },
+          "threshold_source": "benchmark_design_rubric",
+          "violations": [
+            {
+              "name": "max_daily_local_transfer_minutes",
+              "value": 189.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "route_long_local_transfer_count",
+              "value": 2,
+              "minor_at": 2,
+              "major_at": 4,
+              "severity": "minor"
+            },
+            {
+              "name": "route_very_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            }
+          ],
+          "threshold_sources": {
+            "long_local_transfer_minutes": "benchmark_design_rubric",
+            "very_long_local_transfer_minutes": "benchmark_design_rubric",
+            "max_daily_local_transfer_minutes": "benchmark_design_rubric",
+            "high_outdoor_minutes": "human_rubric_with_db_outdoor_classification",
+            "very_high_outdoor_minutes": "human_rubric_with_db_outdoor_classification"
+          },
+          "canonical_rule_id": "mobility_accessibility",
+          "input_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "source_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "preference_family": "comfort_and_pace",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "daily attraction count",
+            "travel_city.duration",
+            "rest blocks"
+          ]
+        },
+        {
+          "rule_id": "schedule_pacing",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "schedule has a profile pacing violation",
+          "signals": {
+            "daily_attraction_counts": [
+              2,
+              3,
+              2,
+              0
+            ],
+            "rest_days": 3,
+            "early_starts": 1,
+            "late_ends": 2,
+            "max_day_span_hours": 13.7833,
+            "pacing_variant": "moderate",
+            "source_rule_ids": [
+              "schedule_pacing"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_attraction_count",
+                "value": 3.0,
+                "soft_boundary": 4,
+                "hard_boundary": 6,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "avg_daily_attraction_count",
+                "value": 1.75,
+                "soft_boundary": 4,
+                "hard_boundary": 5,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "max_day_span_hours",
+                "value": 13.7833,
+                "soft_boundary": 12,
+                "hard_boundary": 13.5,
+                "severity": "major",
+                "unit": "hours"
+              },
+              {
+                "name": "late_end_hours_after_21",
+                "value": 1.1333,
+                "soft_boundary": 0,
+                "hard_boundary": 1,
+                "severity": "major",
+                "unit": "hours"
+              }
+            ]
+          },
+          "raw_signals": {
+            "daily_attraction_counts": [
+              2,
+              3,
+              2,
+              0
+            ],
+            "rest_days": 3,
+            "early_starts": 1,
+            "late_ends": 2,
+            "max_day_span_hours": 13.7833,
+            "pacing_variant": "moderate",
+            "source_rule_ids": [
+              "schedule_pacing"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_attraction_count",
+                "value": 3.0,
+                "soft_boundary": 4,
+                "hard_boundary": 6,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "avg_daily_attraction_count",
+                "value": 1.75,
+                "soft_boundary": 4,
+                "hard_boundary": 5,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "max_day_span_hours",
+                "value": 13.7833,
+                "soft_boundary": 12,
+                "hard_boundary": 13.5,
+                "severity": "major",
+                "unit": "hours"
+              },
+              {
+                "name": "late_end_hours_after_21",
+                "value": 1.1333,
+                "soft_boundary": 0,
+                "hard_boundary": 1,
+                "severity": "major",
+                "unit": "hours"
+              }
+            ]
+          },
+          "thresholds": {
+            "max_daily_attraction_count": {
+              "none": "<=4",
+              "minor": "5-6",
+              "major": ">=7"
+            },
+            "avg_daily_attraction_count": {
+              "none": "<=4",
+              "minor": ">4 and <=5",
+              "major": ">5"
+            },
+            "max_day_span_hours": {
+              "none": "<=12",
+              "minor": ">12 and <=13.5",
+              "major": ">13.5"
+            },
+            "late_end": {
+              "none": "<=21:00",
+              "minor": "21:00-22:00",
+              "major": ">22:00"
+            }
+          },
+          "threshold_source": "benchmark_design_rubric",
+          "violations": [
+            {
+              "name": "max_daily_attraction_count",
+              "value": 3.0,
+              "soft_boundary": 4,
+              "hard_boundary": 6,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "avg_daily_attraction_count",
+              "value": 1.75,
+              "soft_boundary": 4,
+              "hard_boundary": 5,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "max_day_span_hours",
+              "value": 13.7833,
+              "soft_boundary": 12,
+              "hard_boundary": 13.5,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "late_end_hours_after_21",
+              "value": 1.1333,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "major",
+              "unit": "hours"
+            }
+          ],
+          "canonical_rule_id": "schedule_pacing",
+          "input_rule_ids": [
+            "schedule_pacing"
+          ],
+          "source_rule_ids": [
+            "schedule_pacing"
+          ],
+          "preference_family": "comfort_and_pace",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "daily attraction count",
+            "travel_city.duration",
+            "rest blocks"
+          ]
+        },
+        {
+          "rule_id": "transport_avoid_red_eye",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "signals": {
+            "modes": [
+              "train",
+              "train"
+            ],
+            "early_departures": 0,
+            "late_arrivals": 0,
+            "red_eye_segments": 0,
+            "transfer_mentions": 0,
+            "structured_transfer_segments": 0,
+            "structured_transfer_count": 0,
+            "violations": [
+              {
+                "name": "red_eye_segments",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 1,
+                "severity": "none"
+              },
+              {
+                "name": "late_arrivals",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 3,
+                "severity": "none"
+              }
+            ]
+          },
+          "raw_signals": {
+            "modes": [
+              "train",
+              "train"
+            ],
+            "early_departures": 0,
+            "late_arrivals": 0,
+            "red_eye_segments": 0,
+            "transfer_mentions": 0,
+            "structured_transfer_segments": 0,
+            "structured_transfer_count": 0,
+            "violations": [
+              {
+                "name": "red_eye_segments",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 1,
+                "severity": "none"
+              },
+              {
+                "name": "late_arrivals",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 3,
+                "severity": "none"
+              }
+            ]
+          },
+          "thresholds": {
+            "early_departure_before": "07:00",
+            "late_arrival_after": "21:00",
+            "red_eye_departure_before": "06:00",
+            "red_eye_arrival_after": "22:00"
+          },
+          "threshold_source": "human_rubric",
+          "violations": [
+            {
+              "name": "red_eye_segments",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 1,
+              "severity": "none"
+            },
+            {
+              "name": "late_arrivals",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 3,
+              "severity": "none"
+            }
+          ],
+          "canonical_rule_id": "transport_avoid_red_eye",
+          "input_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "source_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "preference_family": "transport_convenience",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "travel_intercity_public.time_slot",
+            "details.mode",
+            "details.transfers"
+          ]
+        },
+        {
+          "rule_id": "interest_culture",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "plan includes profile-matching interest content",
+          "signals": {
+            "matched_items": 5,
+            "candidate_items": 7,
+            "exact_db_entity_matches": 7,
+            "fallback_marker_matches": 0,
+            "markers": [
+              "ancient",
+              "history",
+              "historic",
+              "historical",
+              "museum",
+              "ruins",
+              "memorial",
+              "culture",
+              "cultural",
+              "temple",
+              "city wall",
+              "exhibition",
+              "gallery",
+              "science"
+            ],
+            "source_rule_ids": [
+              "interest_culture"
+            ],
+            "preference_variants": []
+          },
+          "raw_signals": {
+            "matched_items": 5,
+            "candidate_items": 7,
+            "exact_db_entity_matches": 7,
+            "fallback_marker_matches": 0,
+            "markers": [
+              "ancient",
+              "history",
+              "historic",
+              "historical",
+              "museum",
+              "ruins",
+              "memorial",
+              "culture",
+              "cultural",
+              "temple",
+              "city wall",
+              "exhibition",
+              "gallery",
+              "science"
+            ],
+            "source_rule_ids": [
+              "interest_culture"
+            ],
+            "preference_variants": []
+          },
+          "thresholds": {
+            "min_matching_items": 2
+          },
+          "threshold_source": "database_type_or_tags_exact_match",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 5,
+              "target": 2,
+              "severity": "none"
+            }
+          ],
+          "canonical_rule_id": "interest_culture",
+          "input_rule_ids": [
+            "interest_culture"
+          ],
+          "source_rule_ids": [
+            "interest_culture"
+          ],
+          "preference_family": "interest_match",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "exact DB entity match",
+            "database.attraction_type/tags",
+            "database.restaurant.cuisine/tags"
+          ]
+        }
+      ],
+      "preference_family_scores": [
+        {
+          "family": "comfort_and_pace",
+          "score": 0.25,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "mobility_accessibility",
+            "schedule_pacing"
+          ]
+        },
+        {
+          "family": "transport_convenience",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "transport_avoid_red_eye"
+          ]
+        },
+        {
+          "family": "interest_match",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "interest_culture"
+          ]
+        }
+      ],
+      "active_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "requested_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "unsupported_rule_ids": [],
+      "evaluated_count": 4,
+      "evaluated_family_count": 3,
+      "compiled_count": 4,
+      "not_applicable_count": 0
+    },
+    "components": [
+      {
+        "name": "hard_constraint_score",
+        "score": 1.0,
+        "weight": 1.0
+      },
+      {
+        "name": "soft_preference_score",
+        "score": 0.75,
+        "weight": 1.0
+      }
+    ],
+    "constraints": {
+      "attraction_require_popular_hotspot": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "hotel_turn_added_1": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_composition_required": {
+        "passed": true,
+        "message": null
+      }
+    },
+    "hard_constraints": {
+      "score": 1.0,
+      "constraints": {
+        "attraction_require_popular_hotspot": {
+          "passed": true,
+          "message": null
+        },
+        "restaurant_closest_to_attraction": {
+          "passed": true,
+          "message": null
+        },
+        "trip_date_range_required": {
+          "passed": true,
+          "message": null
+        },
+        "room_count_required": {
+          "passed": true,
+          "message": null
+        },
+        "intercity_round_trip_mode_required": {
+          "passed": true,
+          "message": null
+        },
+        "hotel_turn_added_1": {
+          "passed": true,
+          "message": null
+        },
+        "party_size_required": {
+          "passed": true,
+          "message": null
+        },
+        "party_composition_required": {
+          "passed": true,
+          "message": null
+        }
+      }
+    }
+  },
+  "hard_constraint_details": {
+    "score": 1.0,
+    "constraints": {
+      "attraction_require_popular_hotspot": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "hotel_turn_added_1": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_composition_required": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "diagnostics": {
+    "delivered_itinerary": true
+  },
+  "turn_alignment": {
+    "fulfillment_score": 1.0,
+    "preserve_score": 1.0,
+    "preserve_check_count": 5,
+    "preserve_error_count": 0,
+    "preserve_error_rate": 0.0,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": true,
+        "message": null,
+        "details": {
+          "response_expectation": "plan",
+          "expected_mode": "plan",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "hotel_turn_added_1",
+        "passed": true,
+        "message": null,
+        "details": {
+          "constraint_context": "Multi-turn user requested adding hotel: Junyuan Inn",
+          "constraint_type": "turn_added_hotel_requirement",
+          "hotel_name": "Junyuan Inn",
+          "acceptable_hotel_names": [
+            "Junyuan Inn"
+          ],
+          "requirement_type": "homestay",
+          "hotel_star": "",
+          "hotel_score": "4.9",
+          "hotel_price": "140",
+          "required_service_label": null,
+          "services": [
+            "Accommodation Service",
+            "Hotel"
+          ],
+          "source": "sample_db.hotels"
+        }
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "attraction_require_popular_hotspot",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "restaurant_closest_to_attraction",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "room_count_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": true,
+        "message": null
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": null,
+      "environment_adaptation_success": null
+    }
+  },
+  "ground_truth": {
+    "sample_id": "mt_single_0065",
+    "base_query_id": "single_0065",
+    "turn_id": 3,
+    "interaction_type": "user_state_evolution",
+    "must_preserve": [
+      "attraction_require_popular_hotspot",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+      "hotel_requirement"
+    ],
+    "inferred_must_update": [
+      "hotel_requirement"
+    ],
+    "current_user_state_deltas": [
+      {
+        "hotel_requirement": {
+          "hotel_name": "Junyuan Inn",
+          "candidate_reference": {
+            "name": "Junyuan Inn",
+            "requirement_type": "homestay",
+            "utterance": "Actually, I'd like to switch to a homestay or apartment. Please book \"Junyuan Inn\".",
+            "score": "4.9",
+            "price": "140",
+            "hotel_star": "",
+            "services": [
+              "Accommodation Service",
+              "Hotel"
+            ],
+            "acceptable_hotel_names": [
+              "Junyuan Inn"
+            ],
+            "source": "sample_db.hotels"
+          }
+        }
+      }
+    ],
+    "oracle_state_after_turn": {
+      "active_hard_constraints": [
+        "attraction_require_popular_hotspot",
+        "restaurant_closest_to_attraction",
+        "trip_date_range_required",
+        "room_count_required",
+        "intercity_round_trip_mode_required"
+      ],
+      "active_user_state_deltas": [
+        {
+          "party_update": {
+            "party_subtype": "elder_added",
+            "added_elders": 1,
+            "new_people_number": 2,
+            "new_room_number": 1,
+            "adaptation_requirements": [
+              "elder_friendly_pacing",
+              "avoid_strenuous_walk",
+              "update_ticket_count"
+            ]
+          }
+        },
+        {
+          "late_start_request": {
+            "day": 2,
+            "earliest_start_time": "10:30",
+            "earliest_start_minutes": 630,
+            "scope": "first_formal_activity"
+          }
+        },
+        {
+          "hotel_requirement": {
+            "hotel_name": "Junyuan Inn",
+            "candidate_reference": {
+              "name": "Junyuan Inn",
+              "requirement_type": "homestay",
+              "utterance": "Actually, I'd like to switch to a homestay or apartment. Please book \"Junyuan Inn\".",
+              "score": "4.9",
+              "price": "140",
+              "hotel_star": "",
+              "services": [
+                "Accommodation Service",
+                "Hotel"
+              ],
+              "acceptable_hotel_names": [
+                "Junyuan Inn"
+              ],
+              "source": "sample_db.hotels"
+            }
+          }
+        }
+      ]
+    },
+    "verification_oracle": {},
+    "generated_hard_constraints": {
+      "hotel_turn_added_1": {
+        "constraint_context": "Multi-turn user requested adding hotel: Junyuan Inn",
+        "constraint_type": "turn_added_hotel_requirement",
+        "hotel_name": "Junyuan Inn",
+        "acceptable_hotel_names": [
+          "Junyuan Inn"
+        ],
+        "requirement_type": "homestay",
+        "hotel_star": "",
+        "hotel_score": "4.9",
+        "hotel_price": "140",
+        "required_service_label": null,
+        "services": [
+          "Accommodation Service",
+          "Hotel"
+        ],
+        "source": "sample_db.hotels"
+      }
+    },
+    "current_generated_hard_constraints": {
+      "hotel_turn_added_1": {
+        "constraint_context": "Multi-turn user requested adding hotel: Junyuan Inn",
+        "constraint_type": "turn_added_hotel_requirement",
+        "hotel_name": "Junyuan Inn",
+        "acceptable_hotel_names": [
+          "Junyuan Inn"
+        ],
+        "requirement_type": "homestay",
+        "hotel_star": "",
+        "hotel_score": "4.9",
+        "hotel_price": "140",
+        "required_service_label": null,
+        "services": [
+          "Accommodation Service",
+          "Hotel"
+        ],
+        "source": "sample_db.hotels"
+      }
+    },
+    "expected_solution_status": "sat",
+    "response_expectation": "plan"
+  },
+  "plan_file": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\dots3-note-prev_en\\converted_plans\\id_mt_single_0065_turn_3_converted.json",
+  "query": "I've changed my mind on accommodation; I'd prefer a homestay or apartment now, so please book \"Junyuan Inn\".",
+  "source_files": {
+    "converted_plan": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\dots3-note-prev_en\\converted_plans\\id_mt_single_0065_turn_3_converted.json",
+    "report": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\dots3-note-prev_en\\reports\\mt_single_0065_turn_3.txt",
+    "trajectory": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\dots3-note-prev_en\\trajectories\\mt_single_0065_turn_3.json"
+  },
+  "runtime": {
+    "elapsed_time": 190.33433413505554,
+    "llm_calls": 7,
+    "tool_calls": 37,
+    "tool_executions": 36,
+    "duplicate_tool_calls": 1,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 12021,
+      "prompt_tokens": 105208,
+      "total_tokens": 117229
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0065"
+}

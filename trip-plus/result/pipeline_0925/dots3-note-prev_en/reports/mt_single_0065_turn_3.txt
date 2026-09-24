@@ -1,0 +1,68 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: Taiyuan to Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+08:16-11:17 | travel_intercity_public | train D2507, Taiyuan South - Xi'an North, Second Class Seat, ¥178.5/person
+11:17-11:47 | buffer | exiting station
+11:47-13:00 | travel_city | Xi'an North Station - Junyuan Inn, taxi, 36361m, 73m, ¥76
+13:00-13:30 | hotel | check-in, Junyuan Inn
+13:30-14:06 | travel_city | Junyuan Inn - Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch), taxi, 17926m, 36m, ¥39
+14:06-15:06 | meal | lunch, Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch), ¥308/person
+15:06-15:14 | travel_city | Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch) - Shaanxi History Museum, taxi, 2690m, 8m, ¥9
+15:14-17:44 | attraction | Shaanxi History Museum, ¥50/person
+17:44-17:53 | travel_city | Shaanxi History Museum - Muslim Quarter, taxi, 4361m, 9m, ¥12
+17:53-20:00 | attraction | Muslim Quarter, ¥0/person
+20:00-20:08 | travel_city | Muslim Quarter - Wushan Paper-Wrapped Fish (Minleyuan Main Store), taxi, 2179m, 8m, ¥9
+20:08-21:08 | meal | dinner, Wushan Paper-Wrapped Fish (Minleyuan Main Store), ¥54/person
+21:08-21:16 | travel_city | Wushan Paper-Wrapped Fish (Minleyuan Main Store) - Xi'an Bell Tower, taxi, 1980m, 8m, ¥9
+21:16-22:03 | travel_city | Xi'an Bell Tower - Junyuan Inn, taxi, 23353m, 47m, ¥49.7
+22:03 | hotel | rest, Junyuan Inn
+
+Day 2 (2026-05-01):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+10:30-11:10 | travel_city | Junyuan Inn - Xi'an Botanical Garden Children's Garden, taxi, 19762m, 40m, ¥42.5
+11:10-13:40 | attraction | Xi'an Botanical Garden Children's Garden, ¥30/person
+13:40-13:54 | travel_city | Xi'an Botanical Garden Children's Garden - Weike Coffee (Wangzuo Qujiang Branch), walking, 1205m, 14m, ¥0
+13:54-14:54 | meal | lunch, Weike Coffee (Wangzuo Qujiang Branch), ¥58/person
+14:54-15:03 | travel_city | Weike Coffee (Wangzuo Qujiang Branch) - Big Wild Goose Pagoda, taxi, 4688m, 9m, ¥12.4
+15:03-17:33 | attraction | Big Wild Goose Pagoda, ¥40/person
+17:33-17:39 | travel_city | Big Wild Goose Pagoda - Grand Tang Mall, walking, 485m, 6m, ¥0
+17:39-20:09 | attraction | Grand Tang Mall, ¥0/person
+20:09-20:20 | travel_city | Grand Tang Mall - Haidilao Hot Pot (Jiefang Road Branch), taxi, 5585m, 11m, ¥14.2
+20:20-21:20 | meal | dinner, Haidilao Hot Pot (Jiefang Road Branch), ¥96/person
+21:20-22:08 | travel_city | Haidilao Hot Pot (Jiefang Road Branch) - Junyuan Inn, taxi, 24000m, 48m, ¥51
+22:08 | hotel | rest, Junyuan Inn
+
+Day 3 (2026-05-02):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+08:30-09:20 | travel_city | Junyuan Inn - Xi'an City Wall, taxi, 25187m, 50m, ¥53
+09:20-12:00 | attraction | Xi'an City Wall, ¥60/person
+12:00-12:03 | travel_city | Xi'an City Wall - Xi'an People's Coffee XACOFFEE, walking, 230m, 3m, ¥0
+12:03-13:03 | meal | lunch, Xi'an People's Coffee XACOFFEE, ¥32/person
+13:03-13:11 | travel_city | Xi'an People's Coffee XACOFFEE - Xi'an Bell Tower, taxi, 2063m, 8m, ¥9
+13:11-15:30 | attraction | Xi'an Bell Tower, ¥50/person
+15:30-15:38 | travel_city | Xi'an Bell Tower - Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), taxi, 2216m, 8m, ¥9
+15:38-17:00 | buffer | rest / walk around
+17:00-18:30 | meal | dinner, Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), ¥81/person
+18:30-19:19 | travel_city | Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) - Junyuan Inn, taxi, 24731m, 49m, ¥52
+19:19 | hotel | rest, Junyuan Inn
+
+Day 4 (2026-05-03):
+Current City: Xi'an to Taiyuan
+Accommodation: -
+05:17-05:47 | hotel | check-out, Junyuan Inn
+05:47-07:00 | travel_city | Junyuan Inn - Xi'an North Station, taxi, 36361m, 73m, ¥76
+07:00-07:20 | buffer | security/waiting
+07:20-10:59 | travel_intercity_public | train D2506, Xi'an North - Taiyuan South, First Class Seat, ¥286/person
+10:59-11:15 | buffer | exiting station
+
+**Budget Summary**:
+**Transportation: 1451.8 RMB**. Intercity tickets = (178.5 + 286) * 2 = 929 RMB. Intracity transport = 522.8 RMB.
+**Accommodation: 420 RMB**. 140 RMB/room/night * 1 room * 3 nights.
+**Meals: 1258 RMB**. (308 + 54 + 58 + 96 + 32 + 81) * 2 = 1258 RMB.
+**Attractions & Tickets: 460 RMB**. (50 + 0 + 30 + 40 + 0 + 60 + 50) * 2 = 460 RMB.
+**Other: 0 RMB**
+**Total Estimated Budget: 3589.8 RMB**
+</plan>

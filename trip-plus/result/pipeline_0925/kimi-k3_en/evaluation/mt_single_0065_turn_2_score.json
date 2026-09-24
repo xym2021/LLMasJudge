@@ -1,0 +1,623 @@
+{
+  "sample_id": "mt_single_0065_turn_2",
+  "scores": {
+    "feasibility_score": 0.8444444444444444,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.8333,
+    "requirement_score": 0.9166,
+    "llm_user_simulation_score": null
+  },
+  "feasibility_details": {
+    "score": 0.8444444444444444,
+    "strict_feasibility": 0.0,
+    "passed_checks": 19,
+    "total_checks": 22,
+    "dimensions": {
+      "structure_completeness": {
+        "weight": 0.3333333333333333,
+        "score": 0.8333333333333334,
+        "weighted_score": 0.2777777777777778,
+        "subdimensions": {
+          "valid_trip_duration": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "valid_trip_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "route_and_stay_continuity": {
+            "score": 1.0,
+            "passed": 5,
+            "total": 5,
+            "checks": [
+              {
+                "name": "closed_loop_route_structure",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "seamless_intercity_transfers",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "day_boundary_continuity",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "traceable_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "ends_with_accommodation",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "daily_content_coverage": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "essential_meal_coverage",
+                "passed": false,
+                "message": "Meal necessity: 3/4 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+              },
+              {
+                "name": "essential_attraction_coverage",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "evidence_validity": {
+        "weight": 0.3333333333333333,
+        "score": 1.0,
+        "weighted_score": 0.3333333333333333,
+        "subdimensions": {
+          "poi_grounding_valid": {
+            "score": 1.0,
+            "passed": 3,
+            "total": 3,
+            "checks": [
+              {
+                "name": "validated_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_meals",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "transport_grounding_valid": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "validated_transportation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "local_move_sanity",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "execution_operability": {
+        "weight": 0.3333333333333333,
+        "score": 0.7,
+        "weighted_score": 0.2333333333333333,
+        "subdimensions": {
+          "time_and_transfer_feasible": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "no_time_overlaps",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_transfer_time",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "venue_and_duration_feasible": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5,
+            "checks": [
+              {
+                "name": "attraction_visit_within_opening_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "dining_within_service_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "avoidance_of_closure_days",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_duration_at_attractions",
+                "passed": false,
+                "message": "Attraction visit duration unreasonable: [\"Xi'an Drum Tower: plan has 1.0h not in recommended 2.0-4.0h\", 'Muslim Quarter: plan has 1.5h not in recommended 2.0-4.0h']"
+              },
+              {
+                "name": "reasonable_meal_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "intercity_buffer_feasible": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 1,
+            "checks": [
+              {
+                "name": "intercity_buffer_adequacy",
+                "passed": false,
+                "message": "Intercity buffer inadequate: ['D4: intercity train before-buffer 25min < required 30min']"
+              }
+            ]
+          },
+          "budget_arithmetic_feasible": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "cost_calculation_correctness",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "checks": {
+      "valid_trip_duration": {
+        "passed": true,
+        "message": null
+      },
+      "closed_loop_route_structure": {
+        "passed": true,
+        "message": null
+      },
+      "seamless_intercity_transfers": {
+        "passed": true,
+        "message": null
+      },
+      "day_boundary_continuity": {
+        "passed": true,
+        "message": null
+      },
+      "validated_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "validated_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "validated_meals": {
+        "passed": true,
+        "message": null
+      },
+      "validated_transportation": {
+        "passed": true,
+        "message": null
+      },
+      "traceable_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "ends_with_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "essential_meal_coverage": {
+        "passed": false,
+        "message": "Meal necessity: 3/4 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+      },
+      "essential_attraction_coverage": {
+        "passed": true,
+        "message": null
+      },
+      "no_time_overlaps": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_transfer_time": {
+        "passed": true,
+        "message": null
+      },
+      "local_move_sanity": {
+        "passed": true,
+        "message": null
+      },
+      "attraction_visit_within_opening_hours": {
+        "passed": true,
+        "message": null
+      },
+      "dining_within_service_hours": {
+        "passed": true,
+        "message": null
+      },
+      "avoidance_of_closure_days": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_duration_at_attractions": {
+        "passed": false,
+        "message": "Attraction visit duration unreasonable: [\"Xi'an Drum Tower: plan has 1.0h not in recommended 2.0-4.0h\", 'Muslim Quarter: plan has 1.5h not in recommended 2.0-4.0h']"
+      },
+      "reasonable_meal_duration": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_buffer_adequacy": {
+        "passed": false,
+        "message": "Intercity buffer inadequate: ['D4: intercity train before-buffer 25min < required 30min']"
+      },
+      "cost_calculation_correctness": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "requirement_details": {
+    "score": 0.9166,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "hard_constraint_ratio": 1.0,
+    "hard_constraints_passed": 7,
+    "hard_constraints_total": 7,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.8333,
+    "soft_preferences": {
+      "score": 0.8333,
+      "checks": [
+        {
+          "rule_id": "mobility_accessibility",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "mobility burden is compatible with profile",
+          "violations": [
+            {
+              "name": "max_daily_local_transfer_minutes",
+              "value": 85.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "route_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 2,
+              "major_at": 4,
+              "severity": "none"
+            },
+            {
+              "name": "route_very_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "schedule_pacing",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "schedule has a profile pacing violation",
+          "violations": [
+            {
+              "name": "max_daily_attraction_count",
+              "value": 3.0,
+              "soft_boundary": 4,
+              "hard_boundary": 6,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "avg_daily_attraction_count",
+              "value": 2.0,
+              "soft_boundary": 4,
+              "hard_boundary": 5,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "max_day_span_hours",
+              "value": 14.5,
+              "soft_boundary": 12,
+              "hard_boundary": 13.5,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "late_end_hours_after_21",
+              "value": 1.5,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "major",
+              "unit": "hours"
+            }
+          ],
+          "source_rule_ids": [
+            "schedule_pacing"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "transport_avoid_red_eye",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "violations": [
+            {
+              "name": "red_eye_segments",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 1,
+              "severity": "none"
+            },
+            {
+              "name": "late_arrivals",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 3,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "preference_family": "transport_convenience"
+        },
+        {
+          "rule_id": "interest_culture",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "plan includes profile-matching interest content",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 5,
+              "target": 2,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "interest_culture"
+          ],
+          "preference_family": "interest_match"
+        }
+      ],
+      "preference_family_scores": [
+        {
+          "family": "comfort_and_pace",
+          "score": 0.5,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "mobility_accessibility",
+            "schedule_pacing"
+          ]
+        },
+        {
+          "family": "transport_convenience",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "transport_avoid_red_eye"
+          ]
+        },
+        {
+          "family": "interest_match",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "interest_culture"
+          ]
+        }
+      ],
+      "active_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "requested_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "unsupported_rule_ids": [],
+      "evaluated_count": 4,
+      "evaluated_family_count": 3,
+      "compiled_count": 4,
+      "not_applicable_count": 0
+    },
+    "components": [
+      {
+        "name": "hard_constraint_score",
+        "score": 1.0,
+        "weight": 1.0
+      },
+      {
+        "name": "soft_preference_score",
+        "score": 0.8333,
+        "weight": 1.0
+      }
+    ],
+    "constraints": {
+      "attraction_require_popular_hotspot": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_composition_required": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "diagnostics": {
+    "delivered_itinerary": true
+  },
+  "turn_alignment": {
+    "fulfillment_score": 1.0,
+    "preserve_score": 1.0,
+    "preserve_check_count": 5,
+    "preserve_error_count": 0,
+    "preserve_error_rate": 0.0,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": true,
+        "message": null,
+        "details": {
+          "response_expectation": "plan",
+          "expected_mode": "plan",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "late_start_request",
+        "passed": true,
+        "message": null,
+        "details": {
+          "day": 2,
+          "earliest_start_minutes": 630,
+          "actual_first_formal_start_minutes": 630
+        }
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "attraction_require_popular_hotspot",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "restaurant_closest_to_attraction",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "room_count_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": true,
+        "message": null
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": 1.0,
+      "request_resolution_success": null,
+      "environment_adaptation_success": null
+    }
+  },
+  "query": "On Day 2, we want to start a bit later. Please schedule all official attractions and intra-city transfers after 10:30 AM.",
+  "runtime": {
+    "elapsed_time": 35.71358251571655,
+    "llm_calls": 1,
+    "tool_calls": 0,
+    "tool_executions": 0,
+    "duplicate_tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 1830,
+      "prompt_tokens": 9882,
+      "total_tokens": 11712
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0065"
+}

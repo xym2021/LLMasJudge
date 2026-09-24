@@ -1,0 +1,64 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: from Taiyuan to Xi'an
+Accommodation: Junyuan Inn, ¥130/room/night
+07:30-08:00 | buffer | arrive at Taiyuan South for ticket check and security
+08:16-11:17 | travel_intercity_public | train D2507, Taiyuan South - Xi'an North, Second Class Seat, ¥178.5/person
+11:17-11:35 | buffer | deplaning/exiting and station exit
+11:35-12:00 | travel_city | Xi'an North - Junyuan Inn, taxi, 11.4km, 23min, ¥25.7
+12:00-12:30 | hotel | check-in and short rest, Junyuan Inn
+12:30-12:40 | travel_city | Junyuan Inn - Xi'an Bell Tower, taxi, 2.6km, 8min, ¥9
+12:40-14:40 | attraction | Xi'an Bell Tower, ¥50/person
+14:40-14:45 | travel_city | Xi'an Bell Tower - Xi'an Drum Tower, walking, 335m, 4min, ¥0
+14:45-15:45 | attraction | Xi'an Drum Tower, ¥50/person
+15:45-15:50 | travel_city | Xi'an Drum Tower - Muslim Quarter, walking, 229m, 3min, ¥0
+15:50-17:20 | attraction | Muslim Quarter, ¥0/person
+17:20-17:40 | travel_city | Muslim Quarter - Haidilao Hot Pot (Jiefang Road Branch), walking, 1.7km, 20min, ¥0
+17:40-19:10 | meal | dinner, Haidilao Hot Pot (Jiefang Road Branch), ¥96/person
+19:10-19:30 | travel_city | Haidilao Hot Pot (Jiefang Road Branch) - Junyuan Inn, walking, 1.6km, 19min, ¥0
+19:30-22:00 | hotel | rest, Junyuan Inn
+
+Day 2 (2026-05-01):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥130/room/night
+10:30-10:45 | travel_city | Junyuan Inn - Shaanxi History Museum, taxi, 6.1km, 12min, ¥15.2
+10:45-13:45 | attraction | Shaanxi History Museum, ¥50/person
+13:45-13:55 | travel_city | Shaanxi History Museum - Wushan Paper-Wrapped Fish (Minleyuan Main Store), taxi, 4.8km, 10min, ¥12.7
+13:55-15:25 | meal | lunch, Wushan Paper-Wrapped Fish (Minleyuan Main Store), ¥54/person
+15:25-15:40 | travel_city | Wushan Paper-Wrapped Fish (Minleyuan Main Store) - Big Wild Goose Pagoda, taxi, 5.4km, 11min, ¥13.8
+15:40-18:40 | attraction | Big Wild Goose Pagoda, ¥40/person
+18:40-18:50 | travel_city | Big Wild Goose Pagoda - Grand Tang Mall, walking, 485m, 6min, ¥0
+18:50-20:50 | attraction | Grand Tang Mall, ¥0/person
+20:50-21:05 | travel_city | Grand Tang Mall - Junyuan Inn, taxi, 7.2km, 14min, ¥17.4
+21:05-22:30 | hotel | rest, Junyuan Inn
+
+Day 3 (2026-05-02):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥130/room/night
+08:30-08:50 | travel_city | Junyuan Inn - Xi'an Botanical Garden Children's Garden, taxi, 9.7km, 19min, ¥22.4
+08:50-11:50 | attraction | Xi'an Botanical Garden Children's Garden, ¥30/person
+11:50-12:05 | travel_city | Xi'an Botanical Garden Children's Garden - Weike Coffee (Wangzuo Qujiang Branch), walking, 1.2km, 14min, ¥0
+12:05-13:35 | meal | lunch, Weike Coffee (Wangzuo Qujiang Branch), ¥58/person
+13:35-13:50 | travel_city | Weike Coffee (Wangzuo Qujiang Branch) - Yongning Gate Tower, Xi'an City Wall, taxi, 7.7km, 15min, ¥18.4
+13:50-16:50 | attraction | Yongning Gate Tower, Xi'an City Wall, ¥40/person
+16:50-17:00 | travel_city | Yongning Gate Tower, Xi'an City Wall - Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), taxi, 2.8km, 8min, ¥9
+17:00-18:30 | meal | dinner, Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), ¥81/person
+18:30-18:45 | travel_city | Halal Jinxiang Qiangguo Fish (Dongwu Road Branch) - Junyuan Inn, walking, 986m, 12min, ¥0
+18:45-21:30 | hotel | rest, Junyuan Inn
+
+Day 4 (2026-05-03):
+Current City: from Xi'an to Taiyuan
+Accommodation: -
+06:30-06:55 | travel_city | Junyuan Inn - Xi'an North, taxi, 11.4km, 23min, ¥25.7
+06:55-07:20 | buffer | arrive at Xi'an North for ticket check and security
+07:20-10:59 | travel_intercity_public | train D2506, Xi'an North - Taiyuan South, Second Class Seat, ¥178/person
+10:59-11:15 | buffer | deplaning/exiting and station exit
+
+**Budget Summary**:
+**Transportation: 882.3 RMB**. Intercity tickets = ¥178.5 (outbound) + ¥178 (return) = ¥356.5 per person * 2 people = ¥713. Intracity transport = ¥25.7 + ¥9 + ¥15.2 + ¥12.7 + ¥13.8 + ¥17.4 + ¥22.4 + ¥18.4 + ¥9 + ¥25.7 = ¥169.3 (taxi per vehicle, 1 vehicle for 2 people). Total transportation = ¥882.3.
+**Accommodation: 390 RMB**. ¥130/room/night * 1 room * 3 nights = ¥390.
+**Meals: 578 RMB**. ¥96 + ¥54 + ¥58 + ¥81 = ¥289 per person * 2 people = ¥578.
+**Attractions & Tickets: 520 RMB**. ¥50 (Bell Tower) + ¥50 (Drum Tower) + ¥50 (Shaanxi History Museum) + ¥40 (Big Wild Goose Pagoda) + ¥30 (Botanical Garden Children's Garden) + ¥40 (City Wall) = ¥260 per person * 2 people = ¥520.
+**Other: 0 RMB**
+**Total Estimated Budget: 2370.3 RMB**
+</plan>

@@ -1,0 +1,397 @@
+[
+  {
+    "id": "mt_single_0006P",
+    "base_query_id": "single_0006",
+    "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+    "interaction_type": "request_resolution",
+    "turns": [
+      {
+        "turn_id": 0,
+        "utterance": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+        "must_preserve": [],
+        "must_update": [
+          "initial_plan"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "restaurant_cheapest_nearby_attraction",
+            "train_latest_arrival_direct",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": []
+        }
+      },
+      {
+        "turn_id": 1,
+        "utterance": "I was hoping to fit in at least four popular spots each day and walk most of the way, but my mom's knees come first. So please cap it at 2 attractions per day and use subway or taxi instead of long walks.",
+        "must_preserve": [
+          "restaurant_cheapest_nearby_attraction",
+          "train_latest_arrival_direct",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "resolved_pacing_limit"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "restaurant_cheapest_nearby_attraction",
+            "train_latest_arrival_direct",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [],
+          "active_request_resolutions": [
+            {
+              "ambiguous_or_conflicting_request": {
+                "request": "at least 4 attractions per day and walking-first local transfers",
+                "requested_min_attractions_per_day": 4,
+                "conflicts_with_profile_rules": [
+                  "mobility_accessibility",
+                  "schedule_pacing"
+                ]
+              }
+            },
+            {
+              "resolved_pacing_limit": {
+                "priority": "comfort and feasible pacing outrank packed attraction coverage",
+                "max_attractions_per_day": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": 2,
+        "utterance": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+        "must_preserve": [
+          "restaurant_cheapest_nearby_attraction",
+          "train_latest_arrival_direct",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "resolved_pacing_limit",
+          "route_preference"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "restaurant_cheapest_nearby_attraction",
+            "train_latest_arrival_direct",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [
+            {
+              "route_preference": {
+                "preference": "prefer low-transfer subway or taxi over forced long walking",
+                "preferred_modes": [
+                  "subway",
+                  "taxi"
+                ],
+                "avoid": [
+                  "forced_long_walks",
+                  "excessive_subway_transfers"
+                ]
+              }
+            }
+          ],
+          "active_request_resolutions": [
+            {
+              "ambiguous_or_conflicting_request": {
+                "request": "at least 4 attractions per day and walking-first local transfers",
+                "requested_min_attractions_per_day": 4,
+                "conflicts_with_profile_rules": [
+                  "mobility_accessibility",
+                  "schedule_pacing"
+                ]
+              }
+            },
+            {
+              "resolved_pacing_limit": {
+                "priority": "comfort and feasible pacing outrank packed attraction coverage",
+                "max_attractions_per_day": 2
+              },
+              "route_preference": {
+                "preference": "prefer low-transfer subway or taxi over forced long walking",
+                "preferred_modes": [
+                  "subway",
+                  "taxi"
+                ],
+                "avoid": [
+                  "forced_long_walks",
+                  "excessive_subway_transfers"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "meta_info": {
+      "base_query_meta": {
+        "org": "Zhuhai",
+        "dest": [
+          "Guangzhou"
+        ],
+        "days": 2,
+        "depart_date": "2026-04-30",
+        "depart_weekday": 4,
+        "return_date": "2026-05-01",
+        "people_number": 2,
+        "room_number": 1,
+        "solution_status": "sat",
+        "observable_profile": {
+          "party_composition": {
+            "adults": 1,
+            "children": [],
+            "elders": [
+              {
+                "age": 69,
+                "mobility_note": "sensitive to cold"
+              }
+            ]
+          },
+          "budget_range": [
+            4000,
+            7500
+          ],
+          "accommodation_style": "luxury",
+          "mobility_constraints": [
+            "knee_issue"
+          ],
+          "physical_rules": [
+            "avoid_long_walk"
+          ],
+          "schedule_rules": [
+            "relaxed"
+          ],
+          "interest_tags": [
+            "nature",
+            "park"
+          ],
+          "hate_tags": [
+            "long_local_transfer"
+          ],
+          "transport_preferences": [
+            "prefer_direct",
+            "avoid_transfer"
+          ],
+          "rest_preferences": [
+            "late_start"
+          ]
+        },
+        "user_profile": {
+          "party_type": "family_with_elder",
+          "rule_ids": [
+            "mobility_accessibility",
+            "schedule_pacing",
+            "transport_avoid_transfer",
+            "interest_outdoor_nature"
+          ],
+          "rules": [
+            {
+              "rule_id": "mobility_accessibility",
+              "category": "mobility",
+              "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+              "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+              "evaluation_basis": [
+                "local_transport.distance_meters",
+                "duration_minutes",
+                "daily activity count",
+                "local_transport.duration_minutes",
+                "distance_meters",
+                "route continuity"
+              ],
+              "preference_variants": [
+                "walking_sensitive",
+                "route_transfer_sensitive"
+              ]
+            },
+            {
+              "rule_id": "schedule_pacing",
+              "category": "schedule",
+              "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+              "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+              "evaluation_basis": [
+                "daily activity count",
+                "rest blocks",
+                "first activity start time"
+              ],
+              "preference_variants": [
+                "relaxed"
+              ]
+            },
+            {
+              "rule_id": "transport_avoid_transfer",
+              "category": "transport",
+              "trigger": "transport_preferences includes avoid_transfer; transport_preferences includes prefer_direct",
+              "planner_obligation": "Avoid transfer-heavy transport.; Prefer direct intercity options.",
+              "evaluation_basis": [
+                "transfers",
+                "duration"
+              ]
+            },
+            {
+              "rule_id": "interest_outdoor_nature",
+              "category": "interest",
+              "trigger": "interest_tags includes nature; interest_tags includes park",
+              "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+              "evaluation_basis": [
+                "attraction_type",
+                "rating",
+                "ticket_price"
+              ]
+            }
+          ],
+          "derivation_context": {
+            "days": 2,
+            "dest_price_level": "medium",
+            "upper_budget_per_person_day": 2156.2,
+            "party_size": 2,
+            "physical_rule_seeds": [
+              "avoid_long_walk"
+            ],
+            "schedule_rule_seeds": [
+              "relaxed"
+            ]
+          }
+        },
+        "hard_constraints": {
+          "train_latest_arrival_direct": {
+            "constraint_context": "For the return trip, choose the latest-arriving direct train.",
+            "constraint_type": "superlative_latest_arrival",
+            "inbound_train_no": "C7729",
+            "inbound_route_index": 10553,
+            "inbound_train_type": "Intercity",
+            "inbound_arr_time": "2026-05-01 23:06:00",
+            "inbound_price": 70.0,
+            "is_direct": true,
+            "acceptable_inbound_train_nos": [
+              "C7729"
+            ],
+            "acceptable_inbound_train_options": [
+              {
+                "train_no": "C7729",
+                "route_index": 10553,
+                "segment_index": 1,
+                "train_type": "Intercity",
+                "seat_class": "Second Class Seat",
+                "price": 70.0,
+                "dep_datetime": "2026-05-01 22:07:00",
+                "arr_datetime": "2026-05-01 23:06:00",
+                "origin_city": "Guangzhou",
+                "destination_city": "Zhuhai"
+              }
+            ]
+          },
+          "restaurant_cheapest_nearby_attraction": {
+            "constraint_context": "Arrange one meal at the cheapest restaurant near Dongshankou Arts District.",
+            "constraint_type": "superlative_cheapest_nearby_attraction",
+            "attraction_name": "Dongshankou Arts District",
+            "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+            "price_per_person": 41.0,
+            "acceptable_restaurant_names": [
+              "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)"
+            ],
+            "acceptable_restaurant_options": [
+              {
+                "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+                "price_per_person": 41.0,
+                "restaurant_rating": 4.6,
+                "nearby_attraction_name": "Dongshankou Arts District",
+                "cuisine_type": "Dining Related",
+                "tags": [
+                  "Waiting Area Available",
+                  "Online Queueing",
+                  "Outdoor Seating",
+                  "Birthday Set Meal Service"
+                ],
+                "opening_time": "10:30",
+                "closing_time": "21:00"
+              }
+            ]
+          },
+          "trip_date_range_required": {
+            "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+            "depart_date": "2026-04-30",
+            "return_date": "2026-05-01",
+            "days": 2
+          },
+          "party_size_required": {
+            "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+            "people_number": 2
+          },
+          "room_count_required": {
+            "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+            "room_number": 1
+          },
+          "intercity_round_trip_mode_required": {
+            "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+            "route_mode": "train",
+            "origin": "Zhuhai",
+            "destinations": [
+              "Guangzhou"
+            ]
+          },
+          "party_composition_required": {
+            "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+            "people_number": 2,
+            "party_composition": {
+              "adults": 1,
+              "children": [],
+              "elders": [
+                {
+                  "age": 69,
+                  "mobility_note": "sensitive to cold"
+                }
+              ]
+            }
+          }
+        },
+        "soft_constraints": {
+          "city_soft_wishes": [
+            "If it fits the route, I would like to visit Taikoo Hui."
+          ],
+          "profile_soft_wish": "Average stamina; minimize hassle and avoid long periods of continuous walking.",
+          "environment_hints": [
+            {
+              "type": "reservation",
+              "hint": "Popular venues and attractions should be reserved in advance; do not leave key visits undecided.",
+              "reason": "Real-name reservations, capacity limits, or popular ticketing can affect key attraction feasibility."
+            }
+          ]
+        },
+        "city_context": {
+          "city_tags": [
+            "cantonese_dim_sum_timing",
+            "coastal_humid_heat",
+            "heritage_hotspot_queue",
+            "major_metro_crowd",
+            "mega_city_metro_transfer",
+            "night_food_crowd_city",
+            "rainy_humid_city",
+            "summer_heat_city",
+            "theme_park_reservation_city",
+            "typhoon_risk"
+          ]
+        },
+        "route_mode": "train"
+      }
+    },
+    "pair_of": "mt_single_0006",
+    "pair_note": "Only T1 changes: the user states that the elder's knee comfort outranks attraction count and fixes the cap at 2 per day. Expected mode flips from clarification to plan."
+  }
+]

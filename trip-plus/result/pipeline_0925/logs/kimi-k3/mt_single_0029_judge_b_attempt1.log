@@ -1,0 +1,6 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe C:\Users\Lenovo\Desktop\xhs笔试\3_自动评估\run_judge_b.py C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en mt_single_0029 --model deepseek-v4-flash --workers 4
+
+mt_single_0029_turn_0: {'B1': 'not_applicable', 'B2': 'not_applicable', 'B3': 'partial', 'B4': 'fail'} flags=[] (16.0s)
+mt_single_0029_turn_1: {'B1': 'not_applicable', 'B2': 'fail', 'B3': 'partial', 'B4': 'insufficient_evidence'} flags=[] (16.9s)
+mt_single_0029_turn_2: {'B1': 'not_applicable', 'B2': 'partial', 'B3': 'partial', 'B4': 'insufficient_evidence'} flags=[] (24.5s)
+wrote C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_b\summary.md

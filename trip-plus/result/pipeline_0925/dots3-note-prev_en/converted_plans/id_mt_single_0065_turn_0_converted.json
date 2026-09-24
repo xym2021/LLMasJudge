@@ -1,0 +1,422 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "Taiyuan to Xi'an",
+      "activities": [
+        {
+          "time_slot": "08:16-11:17",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2507",
+            "from": "Taiyuan South",
+            "to": "Xi'an North",
+            "cost": 178.5,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:17-11:47",
+          "type": "buffer",
+          "details": {
+            "description": "exiting station"
+          }
+        },
+        {
+          "time_slot": "11:47-12:17",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an North Station",
+            "to": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "mode": "taxi",
+            "cost": 33.1
+          }
+        },
+        {
+          "time_slot": "12:17-12:47",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in",
+            "name": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)"
+          }
+        },
+        {
+          "time_slot": "12:47-13:00",
+          "type": "travel_city",
+          "details": {
+            "from": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "to": "Shaanxi History Museum",
+            "mode": "taxi",
+            "cost": 16.1
+          }
+        },
+        {
+          "time_slot": "13:00-14:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Mingjia Family Banquet • Seafood Qingdao Cuisine • Courtyard Restaurant (Qujiang Branch)",
+            "cost": 308
+          }
+        },
+        {
+          "time_slot": "14:30-14:32",
+          "type": "buffer",
+          "details": {
+            "description": "walk to attraction"
+          }
+        },
+        {
+          "time_slot": "14:32-17:02",
+          "type": "attraction",
+          "details": {
+            "name": "Shaanxi History Museum",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "17:02-17:11",
+          "type": "travel_city",
+          "details": {
+            "from": "Shaanxi History Museum",
+            "to": "Muslim Quarter",
+            "mode": "taxi",
+            "cost": 11.7
+          }
+        },
+        {
+          "time_slot": "17:11-19:30",
+          "type": "attraction",
+          "details": {
+            "name": "Muslim Quarter",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:30-20:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "cost": 54
+          }
+        },
+        {
+          "time_slot": "20:30-20:35",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Xi'an Bell Tower",
+            "mode": "walking",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "20:35-20:47",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Bell Tower",
+            "to": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "mode": "taxi",
+            "cost": 15.3
+          }
+        }
+      ],
+      "date": "2026-04-30",
+      "accommodation": {
+        "name": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+        "price_per_night": 150
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "08:30-08:41",
+          "type": "travel_city",
+          "details": {
+            "from": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "to": "Xi'an Botanical Garden Children's Garden",
+            "mode": "taxi",
+            "cost": 13.9
+          }
+        },
+        {
+          "time_slot": "08:41-09:00",
+          "type": "buffer",
+          "details": {
+            "description": "wait for opening"
+          }
+        },
+        {
+          "time_slot": "09:00-11:30",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Botanical Garden Children's Garden",
+            "city": "Xi'an",
+            "cost": 30
+          }
+        },
+        {
+          "time_slot": "11:30-11:44",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Botanical Garden Children's Garden",
+            "to": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "mode": "walking",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "11:44-12:44",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "cost": 58
+          }
+        },
+        {
+          "time_slot": "12:44-12:53",
+          "type": "travel_city",
+          "details": {
+            "from": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "to": "Big Wild Goose Pagoda",
+            "mode": "taxi",
+            "cost": 12.4
+          }
+        },
+        {
+          "time_slot": "12:53-15:30",
+          "type": "attraction",
+          "details": {
+            "name": "Big Wild Goose Pagoda",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "15:30-15:36",
+          "type": "travel_city",
+          "details": {
+            "from": "Big Wild Goose Pagoda",
+            "to": "Grand Tang Mall",
+            "mode": "walking",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "15:36-18:00",
+          "type": "attraction",
+          "details": {
+            "name": "Grand Tang Mall",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:00-18:11",
+          "type": "travel_city",
+          "details": {
+            "from": "Grand Tang Mall",
+            "to": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "mode": "taxi",
+            "cost": 14.2
+          }
+        },
+        {
+          "time_slot": "18:11-19:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "cost": 96
+          }
+        },
+        {
+          "time_slot": "19:30-19:39",
+          "type": "travel_city",
+          "details": {
+            "from": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "to": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "mode": "taxi",
+            "cost": 12.2
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+        "price_per_night": 150
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "08:30-08:43",
+          "type": "travel_city",
+          "details": {
+            "from": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "to": "Xi'an City Wall",
+            "mode": "taxi",
+            "cost": 15.8
+          }
+        },
+        {
+          "time_slot": "08:43-11:30",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 60
+          }
+        },
+        {
+          "time_slot": "11:30-11:33",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an City Wall",
+            "to": "Xi'an People's Coffee XACOFFEE",
+            "mode": "walking",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "11:33-12:33",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Xi'an People's Coffee XACOFFEE",
+            "cost": 32
+          }
+        },
+        {
+          "time_slot": "12:33-12:58",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an People's Coffee XACOFFEE",
+            "to": "Xi'an Bell Tower",
+            "mode": "walking",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "12:58-15:30",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Bell Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "15:30-15:38",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Bell Tower",
+            "to": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "mode": "taxi",
+            "cost": 9
+          }
+        },
+        {
+          "time_slot": "15:38-17:00",
+          "type": "buffer",
+          "details": {
+            "description": "rest / walk around"
+          }
+        },
+        {
+          "time_slot": "17:00-18:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "cost": 81
+          }
+        },
+        {
+          "time_slot": "18:30-18:39",
+          "type": "travel_city",
+          "details": {
+            "from": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "to": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "mode": "taxi",
+            "cost": 12.1
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+        "price_per_night": 150
+      }
+    },
+    {
+      "day_number": 4,
+      "current_city": "Xi'an to Taiyuan",
+      "activities": [
+        {
+          "time_slot": "05:30-06:00",
+          "type": "hotel",
+          "details": {
+            "activity": "check-out",
+            "name": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)"
+          }
+        },
+        {
+          "time_slot": "06:00-06:30",
+          "type": "travel_city",
+          "details": {
+            "from": "Jinxi Hotel (Xingfu Lindai Hansenzhai Metro Station Branch)",
+            "to": "Xi'an North Station",
+            "mode": "taxi",
+            "cost": 33.1
+          }
+        },
+        {
+          "time_slot": "06:30-07:20",
+          "type": "buffer",
+          "details": {
+            "description": "security/waiting"
+          }
+        },
+        {
+          "time_slot": "07:20-10:59",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2506",
+            "from": "Xi'an North",
+            "to": "Taiyuan South",
+            "cost": 286,
+            "seat_class": "First Class Seat"
+          }
+        },
+        {
+          "time_slot": "10:59-11:15",
+          "type": "buffer",
+          "details": {
+            "description": "exiting station"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 684.3,
+    "accommodation": 450,
+    "meals": 629,
+    "attractions_and_tickets": 230,
+    "other": 0,
+    "total_estimated_budget": 1993.3
+  }
+}

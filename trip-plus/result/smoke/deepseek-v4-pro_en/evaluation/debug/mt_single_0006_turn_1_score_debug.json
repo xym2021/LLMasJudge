@@ -1,0 +1,154 @@
+{
+  "sample_id": "mt_single_0006_turn_1",
+  "evaluation_mode": "response_expectation_mismatch",
+  "scores": {
+    "feasibility_score": 0.0,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.0,
+    "strict_soft_preference": null,
+    "soft_preference_score": null,
+    "requirement_score": 0.0,
+    "llm_user_simulation_score": null
+  },
+  "response_expectation_details": {
+    "name": "response_expectation",
+    "passed": false,
+    "message": "Expected clarification response for response_expectation=clarification, got plan.",
+    "details": {
+      "response_expectation": "clarification",
+      "expected_mode": "clarification",
+      "actual_mode": "plan",
+      "actual_status": "",
+      "has_daily_plans": true
+    }
+  },
+  "turn_alignment": {
+    "fulfillment_score": 0.0,
+    "preserve_score": null,
+    "preserve_check_count": 0,
+    "preserve_error_count": 0,
+    "preserve_error_rate": null,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": false,
+        "message": "Expected clarification response for response_expectation=clarification, got plan.",
+        "details": {
+          "response_expectation": "clarification",
+          "expected_mode": "clarification",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "priority_clarification",
+        "passed": false,
+        "message": "Expected a clarification/conflict response without daily_plans"
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "restaurant_cheapest_nearby_attraction",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "train_latest_arrival_direct",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "room_count_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": 0.0,
+      "environment_adaptation_success": null
+    }
+  },
+  "ground_truth": {
+    "sample_id": "mt_single_0006",
+    "base_query_id": "single_0006",
+    "turn_id": 1,
+    "interaction_type": "request_resolution",
+    "must_preserve": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+      "priority_clarification"
+    ],
+    "inferred_must_update": [],
+    "current_user_state_deltas": [],
+    "oracle_state_after_turn": {
+      "active_hard_constraints": [
+        "restaurant_cheapest_nearby_attraction",
+        "train_latest_arrival_direct",
+        "trip_date_range_required",
+        "room_count_required",
+        "intercity_round_trip_mode_required"
+      ],
+      "active_user_state_deltas": [],
+      "active_request_resolutions": [
+        {
+          "ambiguous_or_conflicting_request": {
+            "request": "at least 4 attractions per day and walking-first local transfers",
+            "requested_min_attractions_per_day": 4,
+            "conflicts_with_profile_rules": [
+              "mobility_accessibility",
+              "schedule_pacing"
+            ]
+          }
+        }
+      ]
+    },
+    "verification_oracle": {},
+    "generated_hard_constraints": {},
+    "current_generated_hard_constraints": {},
+    "expected_solution_status": "sat",
+    "response_expectation": "clarification"
+  },
+  "plan_file": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_1_converted.json",
+  "query": "I was wondering if it's possible to fit in at least four popular spots each day and handle most of the local travel just by walking around.",
+  "source_files": {
+    "converted_plan": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_1_converted.json",
+    "report": "result\\smoke\\deepseek-v4-pro_en\\reports\\mt_single_0006_turn_1.txt",
+    "trajectory": "result\\smoke\\deepseek-v4-pro_en\\trajectories\\mt_single_0006_turn_1.json"
+  },
+  "runtime": {
+    "elapsed_time": 34.75507211685181,
+    "llm_calls": 5,
+    "tool_calls": 20,
+    "tool_executions": 20,
+    "duplicate_tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 2870,
+      "prompt_tokens": 49431,
+      "total_tokens": 52301,
+      "prompt_cache_hit_tokens": 44416,
+      "prompt_cache_miss_tokens": 5015
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0006"
+}

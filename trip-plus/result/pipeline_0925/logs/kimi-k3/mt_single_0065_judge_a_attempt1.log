@@ -1,0 +1,17 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe -m simulation.run_user_simulation --simulator-model deepseek-v4-flash --result-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en --query-file C:\Users\Lenovo\Desktop\xhs笔试\2_评测集_cases\query_10.json --database-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en --target-id mt_single_0065 --output-root C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_a --workers 1
+
+OpenAI-compatible user simulation
+Simulator: deepseek-v4-flash via https://dashscope.aliyuncs.com/compatible-mode/v1
+Output root: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_a
+Mode: user_simulation_only
+Query records: 1
+Runs: 1
+
+[1/1] kimi-k3
+  source: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en
+  output: C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_a\kimi_k3
+  eligible final-turn plans: 1 / 1
+    [1/1] ok mt_single_0065_turn_3 score=0.4923
+  done: ok=1 failed=0 skipped=0 mean_score=0.4923 elapsed=156.31s
+
+Manifest written to C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_a\manifest.json

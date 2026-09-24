@@ -1,0 +1,440 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "Taiyuan → Xi'an",
+      "activities": [
+        {
+          "time_slot": "07:46-08:16",
+          "type": "buffer",
+          "details": {
+            "description": "security check, boarding at Taiyuan South"
+          }
+        },
+        {
+          "time_slot": "08:16-11:17",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2507",
+            "from": "Taiyuan South",
+            "to": "Xi'an North",
+            "cost": 178.5,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:17-11:47",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, exiting station"
+          }
+        },
+        {
+          "time_slot": "11:47-12:10",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an North",
+            "to": "Xinyuexin Hotel",
+            "mode": "taxi",
+            "distance": "~11.4km",
+            "duration": "23min",
+            "cost": 25.7
+          }
+        },
+        {
+          "time_slot": "12:10-12:30",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in",
+            "name": "drop luggage at Xinyuexin Hotel"
+          }
+        },
+        {
+          "time_slot": "12:30-12:43",
+          "type": "travel_city",
+          "details": {
+            "from": "Xinyuexin Hotel",
+            "to": "Big Wild Goose Pagoda",
+            "mode": "taxi",
+            "distance": "~6.7km",
+            "duration": "13min",
+            "cost": 16.4
+          }
+        },
+        {
+          "time_slot": "12:43-14:43",
+          "type": "attraction",
+          "details": {
+            "name": "Big Wild Goose Pagoda",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "14:43-14:56",
+          "type": "travel_city",
+          "details": {
+            "from": "Big Wild Goose Pagoda",
+            "to": "Shaanxi History Museum",
+            "mode": "taxi",
+            "distance": "~1.1km",
+            "duration": "13min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "14:56-16:56",
+          "type": "attraction",
+          "details": {
+            "name": "Shaanxi History Museum",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "16:56-17:04",
+          "type": "travel_city",
+          "details": {
+            "from": "Shaanxi History Museum",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "taxi",
+            "distance": "~3.1km",
+            "duration": "8min",
+            "cost": 9.3
+          }
+        },
+        {
+          "time_slot": "17:04-19:04",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "19:04-19:19",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "distance": "1.2km",
+            "duration": "15min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:19-20:19",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "cost": 54
+          }
+        },
+        {
+          "time_slot": "20:19-20:27",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Xinyuexin Hotel",
+            "mode": "taxi",
+            "distance": "~2.5km",
+            "duration": "8min",
+            "cost": 9
+          }
+        }
+      ],
+      "date": "2026-04-30",
+      "accommodation": {
+        "name": "Xinyuexin Hotel (Xi'an Zhangba Liulu Metro Station Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "10:30-10:38",
+          "type": "travel_city",
+          "details": {
+            "from": "Xinyuexin Hotel",
+            "to": "Xi'an Bell Tower",
+            "mode": "taxi",
+            "distance": "~2.6km",
+            "duration": "8min",
+            "cost": 9
+          }
+        },
+        {
+          "time_slot": "10:38-12:38",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Bell Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "12:38-12:48",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Bell Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "duration": "5min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "12:48-13:48",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "cost": 96
+          }
+        },
+        {
+          "time_slot": "13:48-15:48",
+          "type": "attraction",
+          "details": {
+            "name": "Muslim Quarter",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "15:48-16:00",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "walking",
+            "distance": "1.2km",
+            "duration": "15min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "16:00-18:00",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "18:00-18:10",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Xi'an Drum Tower",
+            "mode": "walking",
+            "duration": "10min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:10-19:10",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Drum Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "19:10-19:13",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Drum Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "duration": "3min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:13-20:13",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "cost": 81
+          }
+        },
+        {
+          "time_slot": "20:13-20:21",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Xinyuexin Hotel",
+            "mode": "taxi",
+            "distance": "~2.5km",
+            "duration": "8min",
+            "cost": 9
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "Xinyuexin Hotel (Xi'an Zhangba Liulu Metro Station Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "09:00-09:17",
+          "type": "travel_city",
+          "details": {
+            "from": "Xinyuexin Hotel",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "taxi",
+            "distance": "~3.3km",
+            "duration": "8min",
+            "cost": 9.6
+          }
+        },
+        {
+          "time_slot": "09:17-11:17",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "11:17-11:38",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Xi'an Botanical Garden Children's Garden",
+            "mode": "taxi",
+            "distance": "~8.7km",
+            "duration": "17min",
+            "cost": 20.4
+          }
+        },
+        {
+          "time_slot": "11:38-12:38",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "cost": 58
+          }
+        },
+        {
+          "time_slot": "12:38-14:38",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Botanical Garden Children's Garden",
+            "city": "Xi'an",
+            "cost": 30
+          }
+        },
+        {
+          "time_slot": "14:38-14:50",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Botanical Garden Children's Garden",
+            "to": "Grand Tang Mall",
+            "mode": "taxi",
+            "distance": "~5.8km",
+            "duration": "12min",
+            "cost": 14.7
+          }
+        },
+        {
+          "time_slot": "14:50-17:50",
+          "type": "attraction",
+          "details": {
+            "name": "Grand Tang Mall",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "17:50-18:04",
+          "type": "travel_city",
+          "details": {
+            "from": "Grand Tang Mall",
+            "to": "Xinyuexin Hotel",
+            "mode": "taxi",
+            "distance": "~7.2km",
+            "duration": "14min",
+            "cost": 17.4
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "Xinyuexin Hotel (Xi'an Zhangba Liulu Metro Station Branch)",
+        "price_per_night": 130
+      }
+    },
+    {
+      "day_number": 4,
+      "current_city": "Xi'an → Taiyuan",
+      "activities": [
+        {
+          "time_slot": "07:30-07:53",
+          "type": "travel_city",
+          "details": {
+            "from": "Xinyuexin Hotel",
+            "to": "Xi'an North",
+            "mode": "taxi",
+            "distance": "~11.4km",
+            "duration": "23min",
+            "cost": 25.7
+          }
+        },
+        {
+          "time_slot": "07:53-08:12",
+          "type": "buffer",
+          "details": {
+            "description": "security check, boarding at Xi'an North"
+          }
+        },
+        {
+          "time_slot": "08:12-11:23",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2532",
+            "from": "Xi'an North",
+            "to": "Taiyuan South",
+            "cost": 178,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:23-11:53",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, exiting station"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 763.4,
+    "accommodation": 390,
+    "meals": 578,
+    "attractions_and_tickets": 580,
+    "other": 0,
+    "total_estimated_budget": 2311.4
+  }
+}

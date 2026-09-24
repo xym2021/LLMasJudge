@@ -1,0 +1,60 @@
+{
+  "mode": "user_simulation_only",
+  "simulator_model": "deepseek-v4-flash",
+  "simulator_model_name": "deepseek-v4-flash",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "api_key_env": "QWEN_LLM_API_KEY",
+  "query_file": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\2_评测集_cases\\query_10.json",
+  "database_dir": "database\\sample\\en",
+  "output_root": "result\\pipeline_0925\\dots3-note-prev_en\\judge_a",
+  "reuse_existing": false,
+  "runs": [
+    {
+      "display_name": "dots3-note-prev",
+      "source_result_dir": "result\\pipeline_0925\\dots3-note-prev_en",
+      "source_summary": "result\\pipeline_0925\\dots3-note-prev_en\\evaluation\\_summary.json",
+      "output_summary": "result\\pipeline_0925\\dots3-note-prev_en\\judge_a\\dots3_note_prev\\user_simulation_summary.json",
+      "user_simulation_dir": "result\\pipeline_0925\\dots3-note-prev_en\\judge_a\\dots3_note_prev\\user_simulations",
+      "source_metrics": {
+        "all_response_user_sim": null,
+        "successful_plan_user_sim": null,
+        "user_sim_success_count": 0,
+        "user_sim_failed_count": 0,
+        "runtime_totals": {
+          "llm_calls": 0,
+          "tool_calls": 0,
+          "tool_executions": 0,
+          "duplicate_tool_calls": 0,
+          "tool_errors": 0,
+          "token_usage": null,
+          "token_usage_status": "unavailable",
+          "token_usage_available_count": 0,
+          "token_usage_missing_count": 0
+        }
+      },
+      "status": "ok",
+      "elapsed_seconds": 120.2,
+      "new_metrics": {
+        "mean_score": 0.5983,
+        "mean_score_1_5": 3.3931,
+        "ok": 1,
+        "failed": 0,
+        "skipped": 0,
+        "runtime_totals": {
+          "llm_calls": 4,
+          "tool_calls": 0,
+          "tool_errors": 0,
+          "token_usage": {
+            "completion_tokens": 14814,
+            "prompt_tokens": 19496,
+            "total_tokens": 34310
+          },
+          "token_usage_available_count": 1,
+          "token_usage_missing_count": 0,
+          "token_usage_status": "available"
+        }
+      },
+      "simulation_artifact_count": 1
+    }
+  ]
+}

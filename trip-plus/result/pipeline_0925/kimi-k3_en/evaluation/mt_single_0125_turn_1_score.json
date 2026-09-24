@@ -1,0 +1,641 @@
+{
+  "sample_id": "mt_single_0125_turn_1",
+  "scores": {
+    "feasibility_score": 0.9277777777777778,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.5,
+    "requirement_score": 0.75,
+    "llm_user_simulation_score": null
+  },
+  "feasibility_details": {
+    "score": 0.9277777777777778,
+    "strict_feasibility": 0.0,
+    "passed_checks": 20,
+    "total_checks": 22,
+    "dimensions": {
+      "structure_completeness": {
+        "weight": 0.3333333333333333,
+        "score": 0.8333333333333334,
+        "weighted_score": 0.2777777777777778,
+        "subdimensions": {
+          "valid_trip_duration": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "valid_trip_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "route_and_stay_continuity": {
+            "score": 1.0,
+            "passed": 5,
+            "total": 5,
+            "checks": [
+              {
+                "name": "closed_loop_route_structure",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "seamless_intercity_transfers",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "day_boundary_continuity",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "traceable_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "ends_with_accommodation",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "daily_content_coverage": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "essential_meal_coverage",
+                "passed": false,
+                "message": "Meal necessity: 1/3 days correct; Violations: D1: Arrival 10:00-15:00, must arrange dinner after arrival; D2: Non-intercity day must arrange lunch and dinner"
+              },
+              {
+                "name": "essential_attraction_coverage",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "evidence_validity": {
+        "weight": 0.3333333333333333,
+        "score": 1.0,
+        "weighted_score": 0.3333333333333333,
+        "subdimensions": {
+          "poi_grounding_valid": {
+            "score": 1.0,
+            "passed": 3,
+            "total": 3,
+            "checks": [
+              {
+                "name": "validated_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_meals",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "transport_grounding_valid": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "validated_transportation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "local_move_sanity",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "execution_operability": {
+        "weight": 0.3333333333333333,
+        "score": 0.95,
+        "weighted_score": 0.31666666666666665,
+        "subdimensions": {
+          "time_and_transfer_feasible": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "no_time_overlaps",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_transfer_time",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "venue_and_duration_feasible": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5,
+            "checks": [
+              {
+                "name": "attraction_visit_within_opening_hours",
+                "passed": false,
+                "message": "Attraction opening hours mismatch: ['Ping Shan Heritage Trail(14:47-16:47 not within 09:00-13:00)']"
+              },
+              {
+                "name": "dining_within_service_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "avoidance_of_closure_days",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_duration_at_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_meal_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "intercity_buffer_feasible": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "intercity_buffer_adequacy",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "budget_arithmetic_feasible": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "cost_calculation_correctness",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "checks": {
+      "valid_trip_duration": {
+        "passed": true,
+        "message": null
+      },
+      "closed_loop_route_structure": {
+        "passed": true,
+        "message": null
+      },
+      "seamless_intercity_transfers": {
+        "passed": true,
+        "message": null
+      },
+      "day_boundary_continuity": {
+        "passed": true,
+        "message": null
+      },
+      "validated_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "validated_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "validated_meals": {
+        "passed": true,
+        "message": null
+      },
+      "validated_transportation": {
+        "passed": true,
+        "message": null
+      },
+      "traceable_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "ends_with_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "essential_meal_coverage": {
+        "passed": false,
+        "message": "Meal necessity: 1/3 days correct; Violations: D1: Arrival 10:00-15:00, must arrange dinner after arrival; D2: Non-intercity day must arrange lunch and dinner"
+      },
+      "essential_attraction_coverage": {
+        "passed": true,
+        "message": null
+      },
+      "no_time_overlaps": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_transfer_time": {
+        "passed": true,
+        "message": null
+      },
+      "local_move_sanity": {
+        "passed": true,
+        "message": null
+      },
+      "attraction_visit_within_opening_hours": {
+        "passed": false,
+        "message": "Attraction opening hours mismatch: ['Ping Shan Heritage Trail(14:47-16:47 not within 09:00-13:00)']"
+      },
+      "dining_within_service_hours": {
+        "passed": true,
+        "message": null
+      },
+      "avoidance_of_closure_days": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_duration_at_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_meal_duration": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_buffer_adequacy": {
+        "passed": true,
+        "message": null
+      },
+      "cost_calculation_correctness": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "requirement_details": {
+    "score": 0.75,
+    "strict_hard_constraint": 1.0,
+    "hard_constraint_score": 1.0,
+    "hard_constraint_ratio": 1.0,
+    "hard_constraints_passed": 8,
+    "hard_constraints_total": 8,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.5,
+    "soft_preferences": {
+      "score": 0.5,
+      "checks": [
+        {
+          "rule_id": "weather_avoid_cold_exposure",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "weather exposure has a profile violation",
+          "violations": [
+            {
+              "name": "cold_outdoor_minutes",
+              "value": 450.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "major",
+              "unit": "minutes"
+            },
+            {
+              "name": "late_cold_outdoor_minutes",
+              "value": 0.0,
+              "soft_boundary": 90,
+              "hard_boundary": 120,
+              "severity": "none",
+              "unit": "minutes"
+            }
+          ],
+          "source_rule_ids": [
+            "weather_avoid_cold_exposure"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "schedule_pacing",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "schedule has a profile pacing violation",
+          "violations": [
+            {
+              "name": "max_daily_attraction_count",
+              "value": 2.0,
+              "soft_boundary": 3,
+              "hard_boundary": 4,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "avg_daily_attraction_count",
+              "value": 1.0,
+              "soft_boundary": 3,
+              "hard_boundary": 4,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "max_day_span_hours",
+              "value": 14.0,
+              "soft_boundary": 10,
+              "hard_boundary": 12,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "early_start_hours_before_08",
+              "value": 1.5,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "late_end_hours_after_21",
+              "value": 0.0,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "none",
+              "unit": "hours"
+            }
+          ],
+          "source_rule_ids": [
+            "schedule_pacing"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "transport_prefer_flight",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "violations": [
+            {
+              "name": "preferred_flight_mode_missing",
+              "value": false,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "transport_prefer_flight"
+          ],
+          "preference_family": "transport_convenience"
+        },
+        {
+          "rule_id": "interest_outdoor_nature",
+          "applicable": true,
+          "score": 0.5,
+          "passed": false,
+          "severity": "minor",
+          "violation_level": "minor",
+          "message": "plan has weak evidence for this interest",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 1,
+              "target": 2,
+              "severity": "minor"
+            }
+          ],
+          "source_rule_ids": [
+            "interest_outdoor_nature"
+          ],
+          "preference_family": "interest_match"
+        }
+      ],
+      "preference_family_scores": [
+        {
+          "family": "comfort_and_pace",
+          "score": 0.0,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "weather_avoid_cold_exposure",
+            "schedule_pacing"
+          ]
+        },
+        {
+          "family": "transport_convenience",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "transport_prefer_flight"
+          ]
+        },
+        {
+          "family": "interest_match",
+          "score": 0.5,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "interest_outdoor_nature"
+          ]
+        }
+      ],
+      "active_rule_ids": [
+        "weather_avoid_cold_exposure",
+        "schedule_pacing",
+        "transport_prefer_flight",
+        "interest_outdoor_nature"
+      ],
+      "requested_rule_ids": [
+        "weather_avoid_cold_exposure",
+        "schedule_pacing",
+        "transport_prefer_flight",
+        "interest_outdoor_nature"
+      ],
+      "unsupported_rule_ids": [],
+      "evaluated_count": 4,
+      "evaluated_family_count": 3,
+      "compiled_count": 4,
+      "not_applicable_count": 0
+    },
+    "components": [
+      {
+        "name": "hard_constraint_score",
+        "score": 1.0,
+        "weight": 1.0
+      },
+      {
+        "name": "soft_preference_score",
+        "score": 0.5,
+        "weight": 1.0
+      }
+    ],
+    "constraints": {
+      "restaurant_highest_rated": {
+        "passed": true,
+        "message": null
+      },
+      "flight_shortest_duration_direct": {
+        "passed": true,
+        "message": null
+      },
+      "budget_constraint": {
+        "passed": true,
+        "message": null
+      },
+      "attraction_crowd_queue_initial_must_visit": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": true,
+        "message": null
+      }
+    }
+  },
+  "diagnostics": {
+    "delivered_itinerary": true
+  },
+  "turn_alignment": {
+    "fulfillment_score": 1.0,
+    "preserve_score": 1.0,
+    "preserve_check_count": 7,
+    "preserve_error_count": 0,
+    "preserve_error_rate": 0.0,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": true,
+        "message": null,
+        "details": {
+          "response_expectation": "plan",
+          "expected_mode": "plan",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "environment_aware_replanning",
+        "passed": true,
+        "message": null,
+        "details": {
+          "event_adjustment_checks": [
+            {
+              "name": "first_day_light_after_transport_delay",
+              "passed": true,
+              "message": null,
+              "event_factor": "transport_disruption",
+              "event_type": "transport_disruption",
+              "details": {
+                "check": "first_day_light_after_transport_delay",
+                "max_first_day_attractions": 2,
+                "requires_buffer_or_hotel_after_intercity": true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "budget_constraint",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "flight_shortest_duration_direct",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "restaurant_highest_rated",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "attraction_crowd_queue_initial_must_visit",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "room_count_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": true,
+        "message": null
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": null,
+      "environment_adaptation_success": 1.0
+    }
+  },
+  "query": "It looks like our flight is arriving 30 minutes later than planned. Could we build in some buffer time after we land for checking in, eating, or just resting? We'd prefer to keep the first day light with no more than two attractions.",
+  "runtime": {
+    "elapsed_time": 24.017892599105835,
+    "llm_calls": 1,
+    "tool_calls": 0,
+    "tool_executions": 0,
+    "duplicate_tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 1035,
+      "prompt_tokens": 7269,
+      "total_tokens": 8304
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0125"
+}

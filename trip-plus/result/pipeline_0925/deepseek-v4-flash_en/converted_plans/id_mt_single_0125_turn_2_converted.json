@@ -1,0 +1,287 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "Shanghai → Hong Kong",
+      "activities": [
+        {
+          "time_slot": "06:30-08:00",
+          "type": "buffer",
+          "details": {
+            "description": "security check and boarding at Shanghai Pudong International Airport"
+          }
+        },
+        {
+          "time_slot": "08:00-10:40",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "flight",
+            "number": "HO1307",
+            "from": "Shanghai Pudong International Airport",
+            "to": "Hong Kong International Airport",
+            "cost": 2455,
+            "seat_class": "Economy"
+          }
+        },
+        {
+          "time_slot": "10:40-11:30",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, baggage claim, and freshen up"
+          }
+        },
+        {
+          "time_slot": "11:30-12:18",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong International Airport",
+            "to": "1881 Heritage Hotel",
+            "mode": "taxi",
+            "distance": "~24km",
+            "duration": "48min",
+            "cost": 186.8
+          }
+        },
+        {
+          "time_slot": "12:18-13:30",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in and rest",
+            "name": "1881 Heritage Hotel"
+          }
+        },
+        {
+          "time_slot": "13:30-13:38",
+          "type": "travel_city",
+          "details": {
+            "from": "1881 Heritage Hotel",
+            "to": "Peak Tram",
+            "mode": "taxi",
+            "distance": "~2.3km",
+            "duration": "8min",
+            "cost": 29.9
+          }
+        },
+        {
+          "time_slot": "13:38-16:00",
+          "type": "attraction",
+          "details": {
+            "name": "Peak Tram",
+            "city": "Hong Kong",
+            "cost": 80
+          }
+        },
+        {
+          "time_slot": "16:00-16:08",
+          "type": "travel_city",
+          "details": {
+            "from": "Peak Tram",
+            "to": "Black Tea",
+            "mode": "taxi",
+            "distance": "~2.7km",
+            "duration": "8min",
+            "cost": 33.7
+          }
+        },
+        {
+          "time_slot": "16:08-17:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Black Tea",
+            "cost": 76
+          }
+        },
+        {
+          "time_slot": "17:30-17:36",
+          "type": "travel_city",
+          "details": {
+            "from": "Black Tea",
+            "to": "1881 Heritage Hotel",
+            "mode": "walking",
+            "duration": "6min",
+            "cost": 0
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "1881 Heritage Hotel",
+        "price_per_night": 940
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Hong Kong",
+      "activities": [
+        {
+          "time_slot": "08:00-08:47",
+          "type": "travel_city",
+          "details": {
+            "from": "1881 Heritage Hotel",
+            "to": "Ping Shan Heritage Trail",
+            "mode": "taxi",
+            "distance": "~23.7km",
+            "duration": "47min",
+            "cost": 185.5
+          }
+        },
+        {
+          "time_slot": "08:47-11:00",
+          "type": "attraction",
+          "details": {
+            "name": "Ping Shan Heritage Trail",
+            "city": "Hong Kong",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "11:00-11:03",
+          "type": "travel_city",
+          "details": {
+            "from": "Ping Shan Heritage Trail",
+            "to": "Ping Shan Old Place Restaurant",
+            "mode": "walking",
+            "duration": "3min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "11:03-12:00",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Ping Shan Old Place Restaurant",
+            "cost": 65
+          }
+        },
+        {
+          "time_slot": "12:00-12:30",
+          "type": "travel_city",
+          "details": {
+            "from": "Ping Shan Old Place Restaurant",
+            "to": "Hong Kong Disneyland",
+            "mode": "taxi",
+            "distance": "~15km",
+            "duration": "30min",
+            "cost": 131.3
+          }
+        },
+        {
+          "time_slot": "12:30-19:00",
+          "type": "attraction",
+          "details": {
+            "name": "Hong Kong Disneyland",
+            "city": "Hong Kong",
+            "cost": 90
+          }
+        },
+        {
+          "time_slot": "19:00-19:02",
+          "type": "travel_city",
+          "details": {
+            "from": "Hong Kong Disneyland",
+            "to": "River View Restaurant",
+            "mode": "walking",
+            "duration": "2min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:02-20:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "River View Restaurant",
+            "cost": 119
+          }
+        },
+        {
+          "time_slot": "20:30-20:57",
+          "type": "travel_city",
+          "details": {
+            "from": "River View Restaurant",
+            "to": "1881 Heritage Hotel",
+            "mode": "taxi",
+            "distance": "~13.3km",
+            "duration": "27min",
+            "cost": 120
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "1881 Heritage Hotel",
+        "price_per_night": 940
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "Hong Kong → Shanghai",
+      "activities": [
+        {
+          "time_slot": "08:00-09:00",
+          "type": "buffer",
+          "details": {
+            "description": "check-out, 1881 Heritage Hotel"
+          }
+        },
+        {
+          "time_slot": "09:00-09:48",
+          "type": "travel_city",
+          "details": {
+            "from": "1881 Heritage Hotel",
+            "to": "Hong Kong International Airport",
+            "mode": "taxi",
+            "distance": "~24km",
+            "duration": "48min",
+            "cost": 186.8
+          }
+        },
+        {
+          "time_slot": "09:48-11:20",
+          "type": "buffer",
+          "details": {
+            "description": "airport check-in and security (90 min before departure)"
+          }
+        },
+        {
+          "time_slot": "11:20-12:50",
+          "type": "buffer",
+          "details": {
+            "description": "waiting at gate and boarding"
+          }
+        },
+        {
+          "time_slot": "12:50-15:10",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "flight",
+            "number": "FM3012",
+            "from": "Hong Kong International Airport",
+            "to": "Hongqiao International Airport",
+            "cost": 951,
+            "seat_class": "Economy"
+          }
+        },
+        {
+          "time_slot": "15:10-15:40",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning and baggage claim"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 7686.2,
+    "accommodation": 1880,
+    "meals": 520,
+    "attractions_and_tickets": 420,
+    "other": 0,
+    "total_estimated_budget": 10506.2
+  }
+}

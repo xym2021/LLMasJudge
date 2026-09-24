@@ -1,0 +1,3797 @@
+{
+  "total_samples": 1,
+  "evaluated_turns": 3,
+  "missing_turn_plans": 0,
+  "metrics": {
+    "feasibility_score": 0.7250000000000001,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.7143,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.79165,
+    "requirement_score": 0.75295,
+    "llm_user_simulation_score": null,
+    "fulfillment_score": 0.5555555555555555,
+    "preserve_score": 1.0,
+    "preserve_error_rate": 0.0,
+    "response_mode_accuracy": 0.6666666666666666
+  },
+  "metric_groups": {
+    "all_responses": {
+      "feasibility_score": 0.4833333333333334,
+      "strict_feasibility": 0.0,
+      "strict_hard_constraint": 0.0,
+      "hard_constraint_score": 0.4762,
+      "strict_soft_preference": 0.0,
+      "soft_preference_score": 0.5277666666666666,
+      "requirement_score": 0.5019666666666667,
+      "llm_user_simulation_score": null,
+      "evaluated_turn_count": 3,
+      "score_counts": {
+        "feasibility_score": 3,
+        "strict_feasibility": 3,
+        "strict_hard_constraint": 3,
+        "hard_constraint_score": 3,
+        "strict_soft_preference": 2,
+        "soft_preference_score": 2,
+        "requirement_score": 3,
+        "llm_user_simulation_score": 0
+      },
+      "score_denominators": {
+        "feasibility_score": 3,
+        "strict_feasibility": 3,
+        "strict_hard_constraint": 3,
+        "hard_constraint_score": 3,
+        "strict_soft_preference": 3,
+        "soft_preference_score": 3,
+        "requirement_score": 3,
+        "llm_user_simulation_score": 0
+      },
+      "plan_requirement_denominator": 2,
+      "llm_user_simulation_denominator": 1,
+      "definition": "Coverage over all evaluated responses. Plan-scoped score averages impute missing, non-plan, or inapplicable turn scores as 0 over all evaluated turns, so this group reflects end-to-end response coverage. Score counts report observed non-null scores; score denominators report the averaging denominator."
+    },
+    "successful_plans": {
+      "feasibility_score": 0.7250000000000001,
+      "strict_feasibility": 0.0,
+      "strict_hard_constraint": 0.0,
+      "hard_constraint_score": 0.7143,
+      "strict_soft_preference": 0.0,
+      "soft_preference_score": 0.79165,
+      "requirement_score": 0.75295,
+      "llm_user_simulation_score": null,
+      "evaluated_turn_count": 2,
+      "score_counts": {
+        "feasibility_score": 2,
+        "strict_feasibility": 2,
+        "strict_hard_constraint": 2,
+        "hard_constraint_score": 2,
+        "strict_soft_preference": 2,
+        "soft_preference_score": 2,
+        "requirement_score": 2,
+        "llm_user_simulation_score": 0
+      },
+      "llm_user_simulation_denominator": 1,
+      "definition": "Conditional average over turns where the benchmark expected a plan and the model delivered a parseable plan. Missing or inapplicable scores are not imputed as 0."
+    }
+  },
+  "reporting_metrics": {
+    "overall": {
+      "turn_count": 3,
+      "expected_response_mode_counts": {
+        "clarification": 1,
+        "plan": 2
+      },
+      "actual_response_mode_counts": {
+        "plan": 3
+      },
+      "expected_plan_turn_count": 2,
+      "delivered_plan_turn_count": 3,
+      "response_mode_accuracy": 0.6666666666666666,
+      "fulfillment_score": 0.5555555555555555,
+      "preserve_score": 1.0,
+      "plan_feasibility": 0.7250000000000001,
+      "cumulative_requirement_satisfaction": 0.75295,
+      "hard_all_pass_rate": 0.0,
+      "hard_all_pass_rate_filtered": 0.0,
+      "end_to_end_requirement_strict": 0.0,
+      "hard_all_pass_count": 0.0,
+      "preserve_error_count": 0,
+      "preserve_check_count": 5,
+      "preserve_error_rate": 0.0,
+      "soft_preference_failure_count": 3,
+      "plan_feasibility_evaluated_count": 2,
+      "cumulative_requirement_evaluated_count": 2,
+      "strict_requirement_evaluated_count": 2
+    },
+    "by_turn": {
+      "T0": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "plan": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 1,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 1.0,
+        "fulfillment_score": 1.0,
+        "preserve_score": null,
+        "plan_feasibility": 0.7166666666666667,
+        "cumulative_requirement_satisfaction": 0.7321,
+        "hard_all_pass_rate": 0.0,
+        "hard_all_pass_rate_filtered": 0.0,
+        "end_to_end_requirement_strict": 0.0,
+        "hard_all_pass_count": 0.0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 0,
+        "preserve_error_rate": null,
+        "soft_preference_failure_count": 2,
+        "plan_feasibility_evaluated_count": 1,
+        "cumulative_requirement_evaluated_count": 1,
+        "strict_requirement_evaluated_count": 1
+      },
+      "T1": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "clarification": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 0,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 0.0,
+        "fulfillment_score": 0.0,
+        "preserve_score": null,
+        "plan_feasibility": null,
+        "cumulative_requirement_satisfaction": null,
+        "hard_all_pass_rate": null,
+        "hard_all_pass_rate_filtered": null,
+        "end_to_end_requirement_strict": null,
+        "hard_all_pass_count": 0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 0,
+        "preserve_error_rate": null,
+        "soft_preference_failure_count": 0,
+        "plan_feasibility_evaluated_count": 0,
+        "cumulative_requirement_evaluated_count": 0,
+        "strict_requirement_evaluated_count": 0
+      },
+      "T2": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "plan": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 1,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 1.0,
+        "fulfillment_score": 0.6666666666666666,
+        "preserve_score": 1.0,
+        "plan_feasibility": 0.7333333333333334,
+        "cumulative_requirement_satisfaction": 0.7738,
+        "hard_all_pass_rate": 0.0,
+        "hard_all_pass_rate_filtered": 0.0,
+        "end_to_end_requirement_strict": 0.0,
+        "hard_all_pass_count": 0.0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 5,
+        "preserve_error_rate": 0.0,
+        "soft_preference_failure_count": 1,
+        "plan_feasibility_evaluated_count": 1,
+        "cumulative_requirement_evaluated_count": 1,
+        "strict_requirement_evaluated_count": 1
+      }
+    },
+    "by_turn_and_type": {
+      "T0": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "plan": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 1,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 1.0,
+          "fulfillment_score": 1.0,
+          "preserve_score": null,
+          "plan_feasibility": 0.7166666666666667,
+          "cumulative_requirement_satisfaction": 0.7321,
+          "hard_all_pass_rate": 0.0,
+          "hard_all_pass_rate_filtered": 0.0,
+          "end_to_end_requirement_strict": 0.0,
+          "hard_all_pass_count": 0.0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 0,
+          "preserve_error_rate": null,
+          "soft_preference_failure_count": 2,
+          "plan_feasibility_evaluated_count": 1,
+          "cumulative_requirement_evaluated_count": 1,
+          "strict_requirement_evaluated_count": 1
+        }
+      },
+      "T1": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "clarification": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 0,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 0.0,
+          "fulfillment_score": 0.0,
+          "preserve_score": null,
+          "plan_feasibility": null,
+          "cumulative_requirement_satisfaction": null,
+          "hard_all_pass_rate": null,
+          "hard_all_pass_rate_filtered": null,
+          "end_to_end_requirement_strict": null,
+          "hard_all_pass_count": 0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 0,
+          "preserve_error_rate": null,
+          "soft_preference_failure_count": 0,
+          "plan_feasibility_evaluated_count": 0,
+          "cumulative_requirement_evaluated_count": 0,
+          "strict_requirement_evaluated_count": 0
+        }
+      },
+      "T2": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "plan": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 1,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 1.0,
+          "fulfillment_score": 0.6666666666666666,
+          "preserve_score": 1.0,
+          "plan_feasibility": 0.7333333333333334,
+          "cumulative_requirement_satisfaction": 0.7738,
+          "hard_all_pass_rate": 0.0,
+          "hard_all_pass_rate_filtered": 0.0,
+          "end_to_end_requirement_strict": 0.0,
+          "hard_all_pass_count": 0.0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 5,
+          "preserve_error_rate": 0.0,
+          "soft_preference_failure_count": 1,
+          "plan_feasibility_evaluated_count": 1,
+          "cumulative_requirement_evaluated_count": 1,
+          "strict_requirement_evaluated_count": 1
+        }
+      }
+    },
+    "definitions": {
+      "response_mode_accuracy": "Whether each turn uses the expected response mode: plan, clarification, or no-solution.",
+      "fulfillment_score": "Whether the current turn's requested update or response requirement is handled correctly.",
+      "preserve_score": "Whether historical hard constraints listed in must_preserve remain satisfied.",
+      "plan_feasibility": "Feasibility averaged only over turns where a plan is expected and a plan is delivered.",
+      "cumulative_requirement_satisfaction": "Active hard constraints plus active soft preferences, averaged only over delivered expected-plan turns.",
+      "hard_all_pass_rate": "Share of expected-plan turns where a delivered plan satisfies every active hard constraint; missing or non-plan responses count as failures.",
+      "hard_all_pass_rate_filtered": "Reference metric: share of delivered expected-plan turns where every active hard constraint passes.",
+      "end_to_end_requirement_strict": "Strict requirement score over all expected-plan turns. Missing/non-plan responses score 0; delivered plans average hard_all_pass and active soft-preference score.",
+      "preserve_error_count": "Failed preserved historical hard constraints. Active soft preferences are included in cumulative_requirement_satisfaction."
+    }
+  },
+  "breakdowns": {
+    "user_state_update_success": null,
+    "request_resolution_success": 0.3333333333333333,
+    "environment_adaptation_success": null
+  },
+  "diagnostics": {
+    "llm_user_simulation_success_count": 0,
+    "llm_user_simulation_failed_count": 0,
+    "llm_user_simulation_scope": "final_turn_only",
+    "runtime_totals": {
+      "llm_calls": 23,
+      "tool_calls": 56,
+      "tool_executions": 53,
+      "duplicate_tool_calls": 3,
+      "tool_errors": 0,
+      "token_usage": {
+        "completion_tokens": 8275,
+        "prompt_tokens": 247761,
+        "total_tokens": 256036,
+        "prompt_cache_hit_tokens": 224768,
+        "prompt_cache_miss_tokens": 22993
+      },
+      "token_usage_status": "available",
+      "token_usage_available_count": 3,
+      "token_usage_missing_count": 0
+    },
+    "llm_user_simulation_runtime_totals": {
+      "llm_calls": 0,
+      "tool_calls": 0,
+      "tool_executions": 0,
+      "duplicate_tool_calls": 0,
+      "tool_errors": 0,
+      "token_usage": null,
+      "token_usage_status": "unavailable",
+      "token_usage_available_count": 0,
+      "token_usage_missing_count": 0
+    },
+    "preserve_error_count": 0,
+    "preserve_check_count": 5,
+    "preserve_error_rate": 0.0,
+    "missing_turn_plans": 0,
+    "response_mode_accuracy_by_turn": {
+      "T0": 1.0,
+      "T1": 0.0,
+      "T2": 1.0
+    },
+    "response_mode_accuracy_by_type": {
+      "request_resolution": 0.6666666666666666
+    },
+    "response_mode_confusion": {
+      "expected_clarification__got_plan": 1
+    },
+    "first_response_mode_mismatch_turn_distribution": {
+      "T1": 1
+    }
+  },
+  "missing_turns": [],
+  "results": [
+    {
+      "sample_id": "mt_single_0006",
+      "base_query_id": "single_0006",
+      "interaction_type": "request_resolution",
+      "database_path": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\database\\sample\\en\\id_0006",
+      "turn_results": [
+        {
+          "turn_id": 0,
+          "success": true,
+          "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_0",
+            "scores": {
+              "feasibility_score": 0.7166666666666667,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.75,
+              "requirement_score": 0.7321,
+              "llm_user_simulation_score": null
+            },
+            "feasibility_details": {
+              "score": 0.7166666666666667,
+              "strict_feasibility": 0.0,
+              "passed_checks": 16,
+              "total_checks": 22,
+              "dimensions": {
+                "structure_completeness": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.7000000000000001,
+                  "weighted_score": 0.23333333333333334,
+                  "subdimensions": {
+                    "valid_trip_duration": {
+                      "score": 1.0,
+                      "passed": 1,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "valid_trip_duration",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "route_and_stay_continuity": {
+                      "score": 0.6,
+                      "passed": 3,
+                      "total": 5,
+                      "checks": [
+                        {
+                          "name": "closed_loop_route_structure",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "seamless_intercity_transfers",
+                          "passed": false,
+                          "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                        },
+                        {
+                          "name": "day_boundary_continuity",
+                          "passed": false,
+                          "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                        },
+                        {
+                          "name": "traceable_accommodation",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "ends_with_accommodation",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "daily_content_coverage": {
+                      "score": 0.5,
+                      "passed": 1,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "essential_meal_coverage",
+                          "passed": false,
+                          "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                        },
+                        {
+                          "name": "essential_attraction_coverage",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    }
+                  }
+                },
+                "evidence_validity": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.75,
+                  "weighted_score": 0.25,
+                  "subdimensions": {
+                    "poi_grounding_valid": {
+                      "score": 1.0,
+                      "passed": 3,
+                      "total": 3,
+                      "checks": [
+                        {
+                          "name": "validated_accommodation",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "validated_attractions",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "validated_meals",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "transport_grounding_valid": {
+                      "score": 0.5,
+                      "passed": 1,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "validated_transportation",
+                          "passed": false,
+                          "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                        },
+                        {
+                          "name": "local_move_sanity",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    }
+                  }
+                },
+                "execution_operability": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.7,
+                  "weighted_score": 0.2333333333333333,
+                  "subdimensions": {
+                    "time_and_transfer_feasible": {
+                      "score": 1.0,
+                      "passed": 2,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "no_time_overlaps",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "reasonable_transfer_time",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "venue_and_duration_feasible": {
+                      "score": 0.8,
+                      "passed": 4,
+                      "total": 5,
+                      "checks": [
+                        {
+                          "name": "attraction_visit_within_opening_hours",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "dining_within_service_hours",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "avoidance_of_closure_days",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "reasonable_duration_at_attractions",
+                          "passed": false,
+                          "message": "Attraction visit duration unreasonable: ['Baiyun Mountain: plan has 2.25h not in recommended 1.0-2.0h']"
+                        },
+                        {
+                          "name": "reasonable_meal_duration",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "intercity_buffer_feasible": {
+                      "score": 1.0,
+                      "passed": 1,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "intercity_buffer_adequacy",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "budget_arithmetic_feasible": {
+                      "score": 0.0,
+                      "passed": 0,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "cost_calculation_correctness",
+                          "passed": false,
+                          "message": "Budget subtotal sum mismatch: subtotals sum to 1829.00, but total_estimated_budget is 2112.90 (subtotals={'transportation': 140.0, 'accommodation': 1329.0, 'meals': 360.0, 'attractions_and_tickets': 0.0, 'other': 0.0})"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "subdimensions": {
+                "valid_trip_duration": {
+                  "score": 1.0,
+                  "passed": 1,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "valid_trip_duration",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "route_and_stay_continuity": {
+                  "score": 0.6,
+                  "passed": 3,
+                  "total": 5,
+                  "checks": [
+                    {
+                      "name": "closed_loop_route_structure",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "seamless_intercity_transfers",
+                      "passed": false,
+                      "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                    },
+                    {
+                      "name": "day_boundary_continuity",
+                      "passed": false,
+                      "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                    },
+                    {
+                      "name": "traceable_accommodation",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "ends_with_accommodation",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "daily_content_coverage": {
+                  "score": 0.5,
+                  "passed": 1,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "essential_meal_coverage",
+                      "passed": false,
+                      "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                    },
+                    {
+                      "name": "essential_attraction_coverage",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "poi_grounding_valid": {
+                  "score": 1.0,
+                  "passed": 3,
+                  "total": 3,
+                  "checks": [
+                    {
+                      "name": "validated_accommodation",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "validated_attractions",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "validated_meals",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "transport_grounding_valid": {
+                  "score": 0.5,
+                  "passed": 1,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "validated_transportation",
+                      "passed": false,
+                      "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                    },
+                    {
+                      "name": "local_move_sanity",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "time_and_transfer_feasible": {
+                  "score": 1.0,
+                  "passed": 2,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "no_time_overlaps",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "reasonable_transfer_time",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "venue_and_duration_feasible": {
+                  "score": 0.8,
+                  "passed": 4,
+                  "total": 5,
+                  "checks": [
+                    {
+                      "name": "attraction_visit_within_opening_hours",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "dining_within_service_hours",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "avoidance_of_closure_days",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "reasonable_duration_at_attractions",
+                      "passed": false,
+                      "message": "Attraction visit duration unreasonable: ['Baiyun Mountain: plan has 2.25h not in recommended 1.0-2.0h']"
+                    },
+                    {
+                      "name": "reasonable_meal_duration",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "intercity_buffer_feasible": {
+                  "score": 1.0,
+                  "passed": 1,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "intercity_buffer_adequacy",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "budget_arithmetic_feasible": {
+                  "score": 0.0,
+                  "passed": 0,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "cost_calculation_correctness",
+                      "passed": false,
+                      "message": "Budget subtotal sum mismatch: subtotals sum to 1829.00, but total_estimated_budget is 2112.90 (subtotals={'transportation': 140.0, 'accommodation': 1329.0, 'meals': 360.0, 'attractions_and_tickets': 0.0, 'other': 0.0})"
+                    }
+                  ]
+                }
+              },
+              "checks": {
+                "valid_trip_duration": {
+                  "passed": true,
+                  "message": null
+                },
+                "closed_loop_route_structure": {
+                  "passed": true,
+                  "message": null
+                },
+                "seamless_intercity_transfers": {
+                  "passed": false,
+                  "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                },
+                "day_boundary_continuity": {
+                  "passed": false,
+                  "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                },
+                "validated_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_attractions": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_meals": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_transportation": {
+                  "passed": false,
+                  "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                },
+                "traceable_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "ends_with_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "essential_meal_coverage": {
+                  "passed": false,
+                  "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                },
+                "essential_attraction_coverage": {
+                  "passed": true,
+                  "message": null
+                },
+                "no_time_overlaps": {
+                  "passed": true,
+                  "message": null
+                },
+                "reasonable_transfer_time": {
+                  "passed": true,
+                  "message": null
+                },
+                "local_move_sanity": {
+                  "passed": true,
+                  "message": null
+                },
+                "attraction_visit_within_opening_hours": {
+                  "passed": true,
+                  "message": null
+                },
+                "dining_within_service_hours": {
+                  "passed": true,
+                  "message": null
+                },
+                "avoidance_of_closure_days": {
+                  "passed": true,
+                  "message": null
+                },
+                "reasonable_duration_at_attractions": {
+                  "passed": false,
+                  "message": "Attraction visit duration unreasonable: ['Baiyun Mountain: plan has 2.25h not in recommended 1.0-2.0h']"
+                },
+                "reasonable_meal_duration": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_buffer_adequacy": {
+                  "passed": true,
+                  "message": null
+                },
+                "cost_calculation_correctness": {
+                  "passed": false,
+                  "message": "Budget subtotal sum mismatch: subtotals sum to 1829.00, but total_estimated_budget is 2112.90 (subtotals={'transportation': 140.0, 'accommodation': 1329.0, 'meals': 360.0, 'attractions_and_tickets': 0.0, 'other': 0.0})"
+                }
+              }
+            },
+            "requirement_details": {
+              "score": 0.7321,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "hard_constraint_ratio": 0.7143,
+              "hard_constraints_passed": 5,
+              "hard_constraints_total": 7,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.75,
+              "soft_preferences": {
+                "score": 0.75,
+                "checks": [
+                  {
+                    "rule_id": "mobility_accessibility",
+                    "applicable": true,
+                    "score": 0.5,
+                    "passed": false,
+                    "severity": "minor",
+                    "violation_level": "minor",
+                    "message": "local movement or outdoor load has a profile violation",
+                    "signals": {
+                      "long_local_transfers": 0,
+                      "very_long_local_transfers": 0,
+                      "daily_local_transfer_minutes": {
+                        "1": 55,
+                        "2": 74
+                      },
+                      "avg_daily_local_transfer_minutes": 64.5,
+                      "daily_outdoor_minutes": [
+                        242
+                      ],
+                      "source_rule_ids": [
+                        "mobility_accessibility"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_local_transfer_minutes",
+                          "value": 74.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 300,
+                          "severity": "none",
+                          "unit": "minutes"
+                        },
+                        {
+                          "name": "route_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 2,
+                          "major_at": 4,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "route_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 3,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "max_daily_outdoor_minutes",
+                          "value": 242.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 360,
+                          "severity": "minor",
+                          "unit": "minutes"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "long_local_transfers": 0,
+                      "very_long_local_transfers": 0,
+                      "daily_local_transfer_minutes": {
+                        "1": 55,
+                        "2": 74
+                      },
+                      "avg_daily_local_transfer_minutes": 64.5,
+                      "daily_outdoor_minutes": [
+                        242
+                      ],
+                      "source_rule_ids": [
+                        "mobility_accessibility"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_local_transfer_minutes",
+                          "value": 74.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 300,
+                          "severity": "none",
+                          "unit": "minutes"
+                        },
+                        {
+                          "name": "route_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 2,
+                          "major_at": 4,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "route_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 3,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "max_daily_outdoor_minutes",
+                          "value": 242.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 360,
+                          "severity": "minor",
+                          "unit": "minutes"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "long_local_transfer_minutes": 60.0,
+                      "very_long_local_transfer_minutes": 90.0,
+                      "max_daily_local_transfer_minutes": 240,
+                      "high_outdoor_minutes": 240,
+                      "very_high_outdoor_minutes": 360
+                    },
+                    "threshold_source": "benchmark_design_rubric",
+                    "violations": [
+                      {
+                        "name": "max_daily_local_transfer_minutes",
+                        "value": 74.0,
+                        "soft_boundary": 240,
+                        "hard_boundary": 300,
+                        "severity": "none",
+                        "unit": "minutes"
+                      },
+                      {
+                        "name": "route_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 2,
+                        "major_at": 4,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "route_very_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "mobility_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 3,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "mobility_very_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "max_daily_outdoor_minutes",
+                        "value": 242.0,
+                        "soft_boundary": 240,
+                        "hard_boundary": 360,
+                        "severity": "minor",
+                        "unit": "minutes"
+                      }
+                    ],
+                    "threshold_sources": {
+                      "long_local_transfer_minutes": "benchmark_design_rubric",
+                      "very_long_local_transfer_minutes": "benchmark_design_rubric",
+                      "max_daily_local_transfer_minutes": "benchmark_design_rubric",
+                      "high_outdoor_minutes": "human_rubric_with_db_outdoor_classification",
+                      "very_high_outdoor_minutes": "human_rubric_with_db_outdoor_classification"
+                    },
+                    "canonical_rule_id": "mobility_accessibility",
+                    "input_rule_ids": [
+                      "mobility_accessibility"
+                    ],
+                    "source_rule_ids": [
+                      "mobility_accessibility"
+                    ],
+                    "preference_family": "comfort_and_pace",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "daily attraction count",
+                      "travel_city.duration",
+                      "rest blocks"
+                    ]
+                  },
+                  {
+                    "rule_id": "schedule_pacing",
+                    "applicable": true,
+                    "score": 0.0,
+                    "passed": false,
+                    "severity": "major",
+                    "violation_level": "major",
+                    "message": "schedule has a profile pacing violation",
+                    "signals": {
+                      "daily_attraction_counts": [
+                        2,
+                        2
+                      ],
+                      "rest_days": 2,
+                      "early_starts": 1,
+                      "late_ends": 1,
+                      "max_day_span_hours": 14.3333,
+                      "pacing_variant": "relaxed",
+                      "source_rule_ids": [
+                        "schedule_pacing"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "avg_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "max_day_span_hours",
+                          "value": 14.3333,
+                          "soft_boundary": 10,
+                          "hard_boundary": 12,
+                          "severity": "major",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "early_start_hours_before_08",
+                          "value": 0.3333,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "late_end_hours_after_21",
+                          "value": 1.0,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "daily_attraction_counts": [
+                        2,
+                        2
+                      ],
+                      "rest_days": 2,
+                      "early_starts": 1,
+                      "late_ends": 1,
+                      "max_day_span_hours": 14.3333,
+                      "pacing_variant": "relaxed",
+                      "source_rule_ids": [
+                        "schedule_pacing"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "avg_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "max_day_span_hours",
+                          "value": 14.3333,
+                          "soft_boundary": 10,
+                          "hard_boundary": 12,
+                          "severity": "major",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "early_start_hours_before_08",
+                          "value": 0.3333,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "late_end_hours_after_21",
+                          "value": 1.0,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "max_daily_attraction_count": {
+                        "none": "<=3",
+                        "minor": "4",
+                        "major": ">=5"
+                      },
+                      "avg_daily_attraction_count": {
+                        "none": "<=3",
+                        "minor": ">3 and <=4",
+                        "major": ">4"
+                      },
+                      "max_day_span_hours": {
+                        "none": "<=10",
+                        "minor": ">10 and <=12",
+                        "major": ">12"
+                      },
+                      "early_start": {
+                        "none": ">=08:00",
+                        "minor": "07:00-08:00",
+                        "major": "<07:00"
+                      },
+                      "late_end": {
+                        "none": "<=21:00",
+                        "minor": "21:00-22:00",
+                        "major": ">22:00"
+                      },
+                      "rest_block": {
+                        "none": "present",
+                        "minor": "missing",
+                        "major": "missing with dense day"
+                      }
+                    },
+                    "threshold_source": "benchmark_design_rubric",
+                    "violations": [
+                      {
+                        "name": "max_daily_attraction_count",
+                        "value": 2.0,
+                        "soft_boundary": 3,
+                        "hard_boundary": 4,
+                        "severity": "none",
+                        "unit": "visits"
+                      },
+                      {
+                        "name": "avg_daily_attraction_count",
+                        "value": 2.0,
+                        "soft_boundary": 3,
+                        "hard_boundary": 4,
+                        "severity": "none",
+                        "unit": "visits"
+                      },
+                      {
+                        "name": "max_day_span_hours",
+                        "value": 14.3333,
+                        "soft_boundary": 10,
+                        "hard_boundary": 12,
+                        "severity": "major",
+                        "unit": "hours"
+                      },
+                      {
+                        "name": "early_start_hours_before_08",
+                        "value": 0.3333,
+                        "soft_boundary": 0,
+                        "hard_boundary": 1,
+                        "severity": "minor",
+                        "unit": "hours"
+                      },
+                      {
+                        "name": "late_end_hours_after_21",
+                        "value": 1.0,
+                        "soft_boundary": 0,
+                        "hard_boundary": 1,
+                        "severity": "minor",
+                        "unit": "hours"
+                      }
+                    ],
+                    "canonical_rule_id": "schedule_pacing",
+                    "input_rule_ids": [
+                      "schedule_pacing"
+                    ],
+                    "source_rule_ids": [
+                      "schedule_pacing"
+                    ],
+                    "preference_family": "comfort_and_pace",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "daily attraction count",
+                      "travel_city.duration",
+                      "rest blocks"
+                    ]
+                  },
+                  {
+                    "rule_id": "transport_avoid_transfer",
+                    "applicable": true,
+                    "score": 1.0,
+                    "passed": true,
+                    "severity": "none",
+                    "violation_level": "none",
+                    "message": "transport timing/mode is compatible with profile",
+                    "signals": {
+                      "modes": [
+                        "train",
+                        "train"
+                      ],
+                      "early_departures": 0,
+                      "late_arrivals": 0,
+                      "red_eye_segments": 0,
+                      "transfer_mentions": 0,
+                      "structured_transfer_segments": 0,
+                      "structured_transfer_count": 0,
+                      "violations": [
+                        {
+                          "name": "transfer_mentions",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_segments",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "modes": [
+                        "train",
+                        "train"
+                      ],
+                      "early_departures": 0,
+                      "late_arrivals": 0,
+                      "red_eye_segments": 0,
+                      "transfer_mentions": 0,
+                      "structured_transfer_segments": 0,
+                      "structured_transfer_count": 0,
+                      "violations": [
+                        {
+                          "name": "transfer_mentions",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_segments",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "early_departure_before": "07:00",
+                      "late_arrival_after": "21:00",
+                      "red_eye_departure_before": "06:00",
+                      "red_eye_arrival_after": "22:00"
+                    },
+                    "threshold_source": "human_rubric",
+                    "violations": [
+                      {
+                        "name": "transfer_mentions",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "structured_transfer_segments",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "structured_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      }
+                    ],
+                    "canonical_rule_id": "transport_avoid_transfer",
+                    "input_rule_ids": [
+                      "transport_avoid_transfer"
+                    ],
+                    "source_rule_ids": [
+                      "transport_avoid_transfer"
+                    ],
+                    "preference_family": "transport_convenience",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "travel_intercity_public.time_slot",
+                      "details.mode",
+                      "details.transfers"
+                    ]
+                  },
+                  {
+                    "rule_id": "interest_outdoor_nature",
+                    "applicable": true,
+                    "score": 1.0,
+                    "passed": true,
+                    "severity": "none",
+                    "violation_level": "none",
+                    "message": "plan includes profile-matching interest content",
+                    "signals": {
+                      "matched_items": 2,
+                      "candidate_items": 4,
+                      "exact_db_entity_matches": 4,
+                      "fallback_marker_matches": 0,
+                      "markers": [
+                        "mountain",
+                        "lake",
+                        "bay",
+                        "sea",
+                        "beach",
+                        "park",
+                        "forest",
+                        "grassland",
+                        "wetland",
+                        "canyon",
+                        "nature",
+                        "natural",
+                        "garden"
+                      ],
+                      "source_rule_ids": [
+                        "interest_outdoor_nature"
+                      ],
+                      "preference_variants": []
+                    },
+                    "raw_signals": {
+                      "matched_items": 2,
+                      "candidate_items": 4,
+                      "exact_db_entity_matches": 4,
+                      "fallback_marker_matches": 0,
+                      "markers": [
+                        "mountain",
+                        "lake",
+                        "bay",
+                        "sea",
+                        "beach",
+                        "park",
+                        "forest",
+                        "grassland",
+                        "wetland",
+                        "canyon",
+                        "nature",
+                        "natural",
+                        "garden"
+                      ],
+                      "source_rule_ids": [
+                        "interest_outdoor_nature"
+                      ],
+                      "preference_variants": []
+                    },
+                    "thresholds": {
+                      "min_matching_items": 2
+                    },
+                    "threshold_source": "database_type_or_tags_exact_match",
+                    "violations": [
+                      {
+                        "name": "profile_interest_matched_items",
+                        "value": 2,
+                        "target": 2,
+                        "severity": "none"
+                      }
+                    ],
+                    "canonical_rule_id": "interest_outdoor_nature",
+                    "input_rule_ids": [
+                      "interest_outdoor_nature"
+                    ],
+                    "source_rule_ids": [
+                      "interest_outdoor_nature"
+                    ],
+                    "preference_family": "interest_match",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "exact DB entity match",
+                      "database.attraction_type/tags",
+                      "database.restaurant.cuisine/tags"
+                    ]
+                  }
+                ],
+                "preference_family_scores": [
+                  {
+                    "family": "comfort_and_pace",
+                    "score": 0.25,
+                    "evaluated_count": 2,
+                    "rule_ids": [
+                      "mobility_accessibility",
+                      "schedule_pacing"
+                    ]
+                  },
+                  {
+                    "family": "transport_convenience",
+                    "score": 1.0,
+                    "evaluated_count": 1,
+                    "rule_ids": [
+                      "transport_avoid_transfer"
+                    ]
+                  },
+                  {
+                    "family": "interest_match",
+                    "score": 1.0,
+                    "evaluated_count": 1,
+                    "rule_ids": [
+                      "interest_outdoor_nature"
+                    ]
+                  }
+                ],
+                "active_rule_ids": [
+                  "mobility_accessibility",
+                  "schedule_pacing",
+                  "transport_avoid_transfer",
+                  "interest_outdoor_nature"
+                ],
+                "requested_rule_ids": [
+                  "mobility_accessibility",
+                  "schedule_pacing",
+                  "transport_avoid_transfer",
+                  "interest_outdoor_nature"
+                ],
+                "unsupported_rule_ids": [],
+                "evaluated_count": 4,
+                "evaluated_family_count": 3,
+                "compiled_count": 4,
+                "not_applicable_count": 0
+              },
+              "components": [
+                {
+                  "name": "hard_constraint_score",
+                  "score": 0.7142857142857143,
+                  "weight": 1.0
+                },
+                {
+                  "name": "soft_preference_score",
+                  "score": 0.75,
+                  "weight": 1.0
+                }
+              ],
+              "constraints": {
+                "train_latest_arrival_direct": {
+                  "passed": true,
+                  "message": null
+                },
+                "restaurant_cheapest_nearby_attraction": {
+                  "passed": true,
+                  "message": null
+                },
+                "trip_date_range_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "room_count_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_round_trip_mode_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "party_size_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                },
+                "party_composition_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                }
+              },
+              "hard_constraints": {
+                "score": 0.0,
+                "constraints": {
+                  "train_latest_arrival_direct": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "restaurant_cheapest_nearby_attraction": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "trip_date_range_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "room_count_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "intercity_round_trip_mode_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "party_size_required": {
+                    "passed": false,
+                    "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                  },
+                  "party_composition_required": {
+                    "passed": false,
+                    "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                  }
+                }
+              }
+            },
+            "hard_constraint_details": {
+              "score": 0.0,
+              "constraints": {
+                "train_latest_arrival_direct": {
+                  "passed": true,
+                  "message": null
+                },
+                "restaurant_cheapest_nearby_attraction": {
+                  "passed": true,
+                  "message": null
+                },
+                "trip_date_range_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "room_count_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_round_trip_mode_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "party_size_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                },
+                "party_composition_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=140.00, expected=463.70"
+                }
+              }
+            },
+            "diagnostics": {
+              "delivered_itinerary": true
+            },
+            "turn_alignment": {
+              "fulfillment_score": 1.0,
+              "preserve_score": null,
+              "preserve_check_count": 0,
+              "preserve_error_count": 0,
+              "preserve_error_rate": null,
+              "fulfillment_checks": [
+                {
+                  "name": "initial_plan",
+                  "passed": true,
+                  "message": null
+                },
+                {
+                  "name": "response_expectation",
+                  "passed": true,
+                  "message": null,
+                  "details": {
+                    "response_expectation": "plan",
+                    "expected_mode": "plan",
+                    "actual_mode": "plan",
+                    "actual_status": "",
+                    "has_daily_plans": true
+                  }
+                }
+              ],
+              "preserve_checks": [],
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": null,
+                "environment_adaptation_success": null
+              }
+            },
+            "ground_truth": {
+              "sample_id": "mt_single_0006",
+              "base_query_id": "single_0006",
+              "turn_id": 0,
+              "interaction_type": "request_resolution",
+              "must_preserve": [],
+              "must_update": [
+                "initial_plan"
+              ],
+              "inferred_must_update": [],
+              "current_user_state_deltas": [],
+              "oracle_state_after_turn": {
+                "active_hard_constraints": [
+                  "restaurant_cheapest_nearby_attraction",
+                  "train_latest_arrival_direct",
+                  "trip_date_range_required",
+                  "room_count_required",
+                  "intercity_round_trip_mode_required"
+                ],
+                "active_user_state_deltas": []
+              },
+              "verification_oracle": {},
+              "generated_hard_constraints": {},
+              "current_generated_hard_constraints": {},
+              "expected_solution_status": "sat",
+              "response_expectation": "plan"
+            },
+            "plan_file": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_0_converted.json",
+            "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+            "source_files": {
+              "converted_plan": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_0_converted.json",
+              "report": "result\\smoke\\deepseek-v4-pro_en\\reports\\mt_single_0006_turn_0.txt",
+              "trajectory": "result\\smoke\\deepseek-v4-pro_en\\trajectories\\mt_single_0006_turn_0.json"
+            },
+            "runtime": {
+              "elapsed_time": 38.82850193977356,
+              "llm_calls": 9,
+              "tool_calls": 20,
+              "tool_executions": 20,
+              "duplicate_tool_calls": 0,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2540,
+                "prompt_tokens": 93501,
+                "total_tokens": 96041,
+                "prompt_cache_hit_tokens": 80128,
+                "prompt_cache_miss_tokens": 13373
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "query_id": "mt_single_0006"
+          }
+        },
+        {
+          "turn_id": 1,
+          "success": true,
+          "query": "I was wondering if it's possible to fit in at least four popular spots each day and handle most of the local travel just by walking around.",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_1",
+            "evaluation_mode": "response_expectation_mismatch",
+            "scores": {
+              "feasibility_score": 0.0,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.0,
+              "strict_soft_preference": null,
+              "soft_preference_score": null,
+              "requirement_score": 0.0,
+              "llm_user_simulation_score": null
+            },
+            "response_expectation_details": {
+              "name": "response_expectation",
+              "passed": false,
+              "message": "Expected clarification response for response_expectation=clarification, got plan.",
+              "details": {
+                "response_expectation": "clarification",
+                "expected_mode": "clarification",
+                "actual_mode": "plan",
+                "actual_status": "",
+                "has_daily_plans": true
+              }
+            },
+            "turn_alignment": {
+              "fulfillment_score": 0.0,
+              "preserve_score": null,
+              "preserve_check_count": 0,
+              "preserve_error_count": 0,
+              "preserve_error_rate": null,
+              "fulfillment_checks": [
+                {
+                  "name": "response_expectation",
+                  "passed": false,
+                  "message": "Expected clarification response for response_expectation=clarification, got plan.",
+                  "details": {
+                    "response_expectation": "clarification",
+                    "expected_mode": "clarification",
+                    "actual_mode": "plan",
+                    "actual_status": "",
+                    "has_daily_plans": true
+                  }
+                },
+                {
+                  "name": "priority_clarification",
+                  "passed": false,
+                  "message": "Expected a clarification/conflict response without daily_plans"
+                }
+              ],
+              "preserve_checks": [
+                {
+                  "name": "restaurant_cheapest_nearby_attraction",
+                  "passed": null,
+                  "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+                },
+                {
+                  "name": "train_latest_arrival_direct",
+                  "passed": null,
+                  "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+                },
+                {
+                  "name": "trip_date_range_required",
+                  "passed": null,
+                  "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+                },
+                {
+                  "name": "room_count_required",
+                  "passed": null,
+                  "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+                },
+                {
+                  "name": "intercity_round_trip_mode_required",
+                  "passed": null,
+                  "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+                }
+              ],
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": 0.0,
+                "environment_adaptation_success": null
+              }
+            },
+            "ground_truth": {
+              "sample_id": "mt_single_0006",
+              "base_query_id": "single_0006",
+              "turn_id": 1,
+              "interaction_type": "request_resolution",
+              "must_preserve": [
+                "restaurant_cheapest_nearby_attraction",
+                "train_latest_arrival_direct",
+                "trip_date_range_required",
+                "room_count_required",
+                "intercity_round_trip_mode_required"
+              ],
+              "must_update": [
+                "priority_clarification"
+              ],
+              "inferred_must_update": [],
+              "current_user_state_deltas": [],
+              "oracle_state_after_turn": {
+                "active_hard_constraints": [
+                  "restaurant_cheapest_nearby_attraction",
+                  "train_latest_arrival_direct",
+                  "trip_date_range_required",
+                  "room_count_required",
+                  "intercity_round_trip_mode_required"
+                ],
+                "active_user_state_deltas": [],
+                "active_request_resolutions": [
+                  {
+                    "ambiguous_or_conflicting_request": {
+                      "request": "at least 4 attractions per day and walking-first local transfers",
+                      "requested_min_attractions_per_day": 4,
+                      "conflicts_with_profile_rules": [
+                        "mobility_accessibility",
+                        "schedule_pacing"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "verification_oracle": {},
+              "generated_hard_constraints": {},
+              "current_generated_hard_constraints": {},
+              "expected_solution_status": "sat",
+              "response_expectation": "clarification"
+            },
+            "plan_file": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_1_converted.json",
+            "query": "I was wondering if it's possible to fit in at least four popular spots each day and handle most of the local travel just by walking around.",
+            "source_files": {
+              "converted_plan": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_1_converted.json",
+              "report": "result\\smoke\\deepseek-v4-pro_en\\reports\\mt_single_0006_turn_1.txt",
+              "trajectory": "result\\smoke\\deepseek-v4-pro_en\\trajectories\\mt_single_0006_turn_1.json"
+            },
+            "runtime": {
+              "elapsed_time": 34.75507211685181,
+              "llm_calls": 5,
+              "tool_calls": 20,
+              "tool_executions": 20,
+              "duplicate_tool_calls": 0,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2870,
+                "prompt_tokens": 49431,
+                "total_tokens": 52301,
+                "prompt_cache_hit_tokens": 44416,
+                "prompt_cache_miss_tokens": 5015
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "query_id": "mt_single_0006"
+          }
+        },
+        {
+          "turn_id": 2,
+          "success": true,
+          "query": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_2",
+            "scores": {
+              "feasibility_score": 0.7333333333333334,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.8333,
+              "requirement_score": 0.7738,
+              "llm_user_simulation_score": null
+            },
+            "feasibility_details": {
+              "score": 0.7333333333333334,
+              "strict_feasibility": 0.0,
+              "passed_checks": 17,
+              "total_checks": 22,
+              "dimensions": {
+                "structure_completeness": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.7000000000000001,
+                  "weighted_score": 0.23333333333333334,
+                  "subdimensions": {
+                    "valid_trip_duration": {
+                      "score": 1.0,
+                      "passed": 1,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "valid_trip_duration",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "route_and_stay_continuity": {
+                      "score": 0.6,
+                      "passed": 3,
+                      "total": 5,
+                      "checks": [
+                        {
+                          "name": "closed_loop_route_structure",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "seamless_intercity_transfers",
+                          "passed": false,
+                          "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                        },
+                        {
+                          "name": "day_boundary_continuity",
+                          "passed": false,
+                          "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                        },
+                        {
+                          "name": "traceable_accommodation",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "ends_with_accommodation",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "daily_content_coverage": {
+                      "score": 0.5,
+                      "passed": 1,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "essential_meal_coverage",
+                          "passed": false,
+                          "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                        },
+                        {
+                          "name": "essential_attraction_coverage",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    }
+                  }
+                },
+                "evidence_validity": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.75,
+                  "weighted_score": 0.25,
+                  "subdimensions": {
+                    "poi_grounding_valid": {
+                      "score": 1.0,
+                      "passed": 3,
+                      "total": 3,
+                      "checks": [
+                        {
+                          "name": "validated_accommodation",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "validated_attractions",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "validated_meals",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "transport_grounding_valid": {
+                      "score": 0.5,
+                      "passed": 1,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "validated_transportation",
+                          "passed": false,
+                          "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                        },
+                        {
+                          "name": "local_move_sanity",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    }
+                  }
+                },
+                "execution_operability": {
+                  "weight": 0.3333333333333333,
+                  "score": 0.75,
+                  "weighted_score": 0.25,
+                  "subdimensions": {
+                    "time_and_transfer_feasible": {
+                      "score": 1.0,
+                      "passed": 2,
+                      "total": 2,
+                      "checks": [
+                        {
+                          "name": "no_time_overlaps",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "reasonable_transfer_time",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "venue_and_duration_feasible": {
+                      "score": 1.0,
+                      "passed": 5,
+                      "total": 5,
+                      "checks": [
+                        {
+                          "name": "attraction_visit_within_opening_hours",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "dining_within_service_hours",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "avoidance_of_closure_days",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "reasonable_duration_at_attractions",
+                          "passed": true,
+                          "message": null
+                        },
+                        {
+                          "name": "reasonable_meal_duration",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "intercity_buffer_feasible": {
+                      "score": 1.0,
+                      "passed": 1,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "intercity_buffer_adequacy",
+                          "passed": true,
+                          "message": null
+                        }
+                      ]
+                    },
+                    "budget_arithmetic_feasible": {
+                      "score": 0.0,
+                      "passed": 0,
+                      "total": 1,
+                      "checks": [
+                        {
+                          "name": "cost_calculation_correctness",
+                          "passed": false,
+                          "message": "Budget accuracy failed: Plan total=2089.10, Calculated total=2336.10 (Transportation=527.10, Accommodation=1329.00, Meals=360.00, Attractions=120.00), Error rate=11.82% (exceeds 10% threshold)"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "subdimensions": {
+                "valid_trip_duration": {
+                  "score": 1.0,
+                  "passed": 1,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "valid_trip_duration",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "route_and_stay_continuity": {
+                  "score": 0.6,
+                  "passed": 3,
+                  "total": 5,
+                  "checks": [
+                    {
+                      "name": "closed_loop_route_structure",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "seamless_intercity_transfers",
+                      "passed": false,
+                      "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                    },
+                    {
+                      "name": "day_boundary_continuity",
+                      "passed": false,
+                      "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                    },
+                    {
+                      "name": "traceable_accommodation",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "ends_with_accommodation",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "daily_content_coverage": {
+                  "score": 0.5,
+                  "passed": 1,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "essential_meal_coverage",
+                      "passed": false,
+                      "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                    },
+                    {
+                      "name": "essential_attraction_coverage",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "poi_grounding_valid": {
+                  "score": 1.0,
+                  "passed": 3,
+                  "total": 3,
+                  "checks": [
+                    {
+                      "name": "validated_accommodation",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "validated_attractions",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "validated_meals",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "transport_grounding_valid": {
+                  "score": 0.5,
+                  "passed": 1,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "validated_transportation",
+                      "passed": false,
+                      "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                    },
+                    {
+                      "name": "local_move_sanity",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "time_and_transfer_feasible": {
+                  "score": 1.0,
+                  "passed": 2,
+                  "total": 2,
+                  "checks": [
+                    {
+                      "name": "no_time_overlaps",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "reasonable_transfer_time",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "venue_and_duration_feasible": {
+                  "score": 1.0,
+                  "passed": 5,
+                  "total": 5,
+                  "checks": [
+                    {
+                      "name": "attraction_visit_within_opening_hours",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "dining_within_service_hours",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "avoidance_of_closure_days",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "reasonable_duration_at_attractions",
+                      "passed": true,
+                      "message": null
+                    },
+                    {
+                      "name": "reasonable_meal_duration",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "intercity_buffer_feasible": {
+                  "score": 1.0,
+                  "passed": 1,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "intercity_buffer_adequacy",
+                      "passed": true,
+                      "message": null
+                    }
+                  ]
+                },
+                "budget_arithmetic_feasible": {
+                  "score": 0.0,
+                  "passed": 0,
+                  "total": 1,
+                  "checks": [
+                    {
+                      "name": "cost_calculation_correctness",
+                      "passed": false,
+                      "message": "Budget accuracy failed: Plan total=2089.10, Calculated total=2336.10 (Transportation=527.10, Accommodation=1329.00, Meals=360.00, Attractions=120.00), Error rate=11.82% (exceeds 10% threshold)"
+                    }
+                  ]
+                }
+              },
+              "checks": {
+                "valid_trip_duration": {
+                  "passed": true,
+                  "message": null
+                },
+                "closed_loop_route_structure": {
+                  "passed": true,
+                  "message": null
+                },
+                "seamless_intercity_transfers": {
+                  "passed": false,
+                  "message": "Location tracking inconsistent: [\"D1: current_city is 'Zhuhai → Guangzhou' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Zhuhai → Guangzhou')\", \"D2: current_city is 'Guangzhou → Zhuhai' but current location should be 'Zhuhai', missing intercity transportation info (should be written as 'from Zhuhai to Guangzhou → Zhuhai')\"]"
+                },
+                "day_boundary_continuity": {
+                  "passed": false,
+                  "message": "Day boundary continuity mismatch: [\"D1->D2: previous night stays in 'Guangzhou' but next day starts from 'Guangzhou → Zhuhai'\"]"
+                },
+                "validated_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_attractions": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_meals": {
+                  "passed": true,
+                  "message": null
+                },
+                "validated_transportation": {
+                  "passed": false,
+                  "message": "Segment mismatch: ['C7608 Zhuhai Railway Station 08:10-09:16 -> Guangzhou South does not match any DB segment; candidates: Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70; Zhuhai Railway Station 06:41 -> Guangzhou South 07:54 @ 70', 'C7729 Guangzhou South 18:00-19:06 -> Zhuhai Railway Station does not match any DB segment; candidates: Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70; Guangzhou South 22:07 -> Zhuhai Railway Station 23:06 @ 70']"
+                },
+                "traceable_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "ends_with_accommodation": {
+                  "passed": true,
+                  "message": null
+                },
+                "essential_meal_coverage": {
+                  "passed": false,
+                  "message": "Meal necessity: 1/2 days correct; Violations: D2: Non-intercity day must arrange lunch and dinner"
+                },
+                "essential_attraction_coverage": {
+                  "passed": true,
+                  "message": null
+                },
+                "no_time_overlaps": {
+                  "passed": true,
+                  "message": null
+                },
+                "reasonable_transfer_time": {
+                  "passed": true,
+                  "message": null
+                },
+                "local_move_sanity": {
+                  "passed": true,
+                  "message": null
+                },
+                "attraction_visit_within_opening_hours": {
+                  "passed": true,
+                  "message": null
+                },
+                "dining_within_service_hours": {
+                  "passed": true,
+                  "message": null
+                },
+                "avoidance_of_closure_days": {
+                  "passed": true,
+                  "message": null
+                },
+                "reasonable_duration_at_attractions": {
+                  "passed": true,
+                  "message": null
+                },
+                "reasonable_meal_duration": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_buffer_adequacy": {
+                  "passed": true,
+                  "message": null
+                },
+                "cost_calculation_correctness": {
+                  "passed": false,
+                  "message": "Budget accuracy failed: Plan total=2089.10, Calculated total=2336.10 (Transportation=527.10, Accommodation=1329.00, Meals=360.00, Attractions=120.00), Error rate=11.82% (exceeds 10% threshold)"
+                }
+              }
+            },
+            "requirement_details": {
+              "score": 0.7738,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "hard_constraint_ratio": 0.7143,
+              "hard_constraints_passed": 5,
+              "hard_constraints_total": 7,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.8333,
+              "soft_preferences": {
+                "score": 0.8333,
+                "checks": [
+                  {
+                    "rule_id": "mobility_accessibility",
+                    "applicable": true,
+                    "score": 1.0,
+                    "passed": true,
+                    "severity": "none",
+                    "violation_level": "none",
+                    "message": "mobility burden is compatible with profile",
+                    "signals": {
+                      "long_local_transfers": 0,
+                      "very_long_local_transfers": 0,
+                      "daily_local_transfer_minutes": {
+                        "1": 53,
+                        "2": 106
+                      },
+                      "avg_daily_local_transfer_minutes": 79.5,
+                      "daily_outdoor_minutes": [
+                        209
+                      ],
+                      "source_rule_ids": [
+                        "mobility_accessibility"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_local_transfer_minutes",
+                          "value": 106.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 300,
+                          "severity": "none",
+                          "unit": "minutes"
+                        },
+                        {
+                          "name": "route_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 2,
+                          "major_at": 4,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "route_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 3,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "max_daily_outdoor_minutes",
+                          "value": 209.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 360,
+                          "severity": "none",
+                          "unit": "minutes"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "long_local_transfers": 0,
+                      "very_long_local_transfers": 0,
+                      "daily_local_transfer_minutes": {
+                        "1": 53,
+                        "2": 106
+                      },
+                      "avg_daily_local_transfer_minutes": 79.5,
+                      "daily_outdoor_minutes": [
+                        209
+                      ],
+                      "source_rule_ids": [
+                        "mobility_accessibility"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_local_transfer_minutes",
+                          "value": 106.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 300,
+                          "severity": "none",
+                          "unit": "minutes"
+                        },
+                        {
+                          "name": "route_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 2,
+                          "major_at": 4,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "route_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 3,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "mobility_very_long_local_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "max_daily_outdoor_minutes",
+                          "value": 209.0,
+                          "soft_boundary": 240,
+                          "hard_boundary": 360,
+                          "severity": "none",
+                          "unit": "minutes"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "long_local_transfer_minutes": 60.0,
+                      "very_long_local_transfer_minutes": 90.0,
+                      "max_daily_local_transfer_minutes": 240,
+                      "high_outdoor_minutes": 240,
+                      "very_high_outdoor_minutes": 360
+                    },
+                    "threshold_source": "benchmark_design_rubric",
+                    "violations": [
+                      {
+                        "name": "max_daily_local_transfer_minutes",
+                        "value": 106.0,
+                        "soft_boundary": 240,
+                        "hard_boundary": 300,
+                        "severity": "none",
+                        "unit": "minutes"
+                      },
+                      {
+                        "name": "route_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 2,
+                        "major_at": 4,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "route_very_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "mobility_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 3,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "mobility_very_long_local_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "max_daily_outdoor_minutes",
+                        "value": 209.0,
+                        "soft_boundary": 240,
+                        "hard_boundary": 360,
+                        "severity": "none",
+                        "unit": "minutes"
+                      }
+                    ],
+                    "threshold_sources": {
+                      "long_local_transfer_minutes": "benchmark_design_rubric",
+                      "very_long_local_transfer_minutes": "benchmark_design_rubric",
+                      "max_daily_local_transfer_minutes": "benchmark_design_rubric",
+                      "high_outdoor_minutes": "human_rubric_with_db_outdoor_classification",
+                      "very_high_outdoor_minutes": "human_rubric_with_db_outdoor_classification"
+                    },
+                    "canonical_rule_id": "mobility_accessibility",
+                    "input_rule_ids": [
+                      "mobility_accessibility"
+                    ],
+                    "source_rule_ids": [
+                      "mobility_accessibility"
+                    ],
+                    "preference_family": "comfort_and_pace",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "daily attraction count",
+                      "travel_city.duration",
+                      "rest blocks"
+                    ]
+                  },
+                  {
+                    "rule_id": "schedule_pacing",
+                    "applicable": true,
+                    "score": 0.0,
+                    "passed": false,
+                    "severity": "major",
+                    "violation_level": "major",
+                    "message": "schedule has a profile pacing violation",
+                    "signals": {
+                      "daily_attraction_counts": [
+                        2,
+                        2
+                      ],
+                      "rest_days": 2,
+                      "early_starts": 1,
+                      "late_ends": 1,
+                      "max_day_span_hours": 14.3333,
+                      "pacing_variant": "relaxed",
+                      "source_rule_ids": [
+                        "schedule_pacing"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "avg_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "max_day_span_hours",
+                          "value": 14.3333,
+                          "soft_boundary": 10,
+                          "hard_boundary": 12,
+                          "severity": "major",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "early_start_hours_before_08",
+                          "value": 0.3333,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "late_end_hours_after_21",
+                          "value": 1.0,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "daily_attraction_counts": [
+                        2,
+                        2
+                      ],
+                      "rest_days": 2,
+                      "early_starts": 1,
+                      "late_ends": 1,
+                      "max_day_span_hours": 14.3333,
+                      "pacing_variant": "relaxed",
+                      "source_rule_ids": [
+                        "schedule_pacing"
+                      ],
+                      "violations": [
+                        {
+                          "name": "max_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "avg_daily_attraction_count",
+                          "value": 2.0,
+                          "soft_boundary": 3,
+                          "hard_boundary": 4,
+                          "severity": "none",
+                          "unit": "visits"
+                        },
+                        {
+                          "name": "max_day_span_hours",
+                          "value": 14.3333,
+                          "soft_boundary": 10,
+                          "hard_boundary": 12,
+                          "severity": "major",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "early_start_hours_before_08",
+                          "value": 0.3333,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        },
+                        {
+                          "name": "late_end_hours_after_21",
+                          "value": 1.0,
+                          "soft_boundary": 0,
+                          "hard_boundary": 1,
+                          "severity": "minor",
+                          "unit": "hours"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "max_daily_attraction_count": {
+                        "none": "<=3",
+                        "minor": "4",
+                        "major": ">=5"
+                      },
+                      "avg_daily_attraction_count": {
+                        "none": "<=3",
+                        "minor": ">3 and <=4",
+                        "major": ">4"
+                      },
+                      "max_day_span_hours": {
+                        "none": "<=10",
+                        "minor": ">10 and <=12",
+                        "major": ">12"
+                      },
+                      "early_start": {
+                        "none": ">=08:00",
+                        "minor": "07:00-08:00",
+                        "major": "<07:00"
+                      },
+                      "late_end": {
+                        "none": "<=21:00",
+                        "minor": "21:00-22:00",
+                        "major": ">22:00"
+                      },
+                      "rest_block": {
+                        "none": "present",
+                        "minor": "missing",
+                        "major": "missing with dense day"
+                      }
+                    },
+                    "threshold_source": "benchmark_design_rubric",
+                    "violations": [
+                      {
+                        "name": "max_daily_attraction_count",
+                        "value": 2.0,
+                        "soft_boundary": 3,
+                        "hard_boundary": 4,
+                        "severity": "none",
+                        "unit": "visits"
+                      },
+                      {
+                        "name": "avg_daily_attraction_count",
+                        "value": 2.0,
+                        "soft_boundary": 3,
+                        "hard_boundary": 4,
+                        "severity": "none",
+                        "unit": "visits"
+                      },
+                      {
+                        "name": "max_day_span_hours",
+                        "value": 14.3333,
+                        "soft_boundary": 10,
+                        "hard_boundary": 12,
+                        "severity": "major",
+                        "unit": "hours"
+                      },
+                      {
+                        "name": "early_start_hours_before_08",
+                        "value": 0.3333,
+                        "soft_boundary": 0,
+                        "hard_boundary": 1,
+                        "severity": "minor",
+                        "unit": "hours"
+                      },
+                      {
+                        "name": "late_end_hours_after_21",
+                        "value": 1.0,
+                        "soft_boundary": 0,
+                        "hard_boundary": 1,
+                        "severity": "minor",
+                        "unit": "hours"
+                      }
+                    ],
+                    "canonical_rule_id": "schedule_pacing",
+                    "input_rule_ids": [
+                      "schedule_pacing"
+                    ],
+                    "source_rule_ids": [
+                      "schedule_pacing"
+                    ],
+                    "preference_family": "comfort_and_pace",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "daily attraction count",
+                      "travel_city.duration",
+                      "rest blocks"
+                    ]
+                  },
+                  {
+                    "rule_id": "transport_avoid_transfer",
+                    "applicable": true,
+                    "score": 1.0,
+                    "passed": true,
+                    "severity": "none",
+                    "violation_level": "none",
+                    "message": "transport timing/mode is compatible with profile",
+                    "signals": {
+                      "modes": [
+                        "train",
+                        "train"
+                      ],
+                      "early_departures": 0,
+                      "late_arrivals": 0,
+                      "red_eye_segments": 0,
+                      "transfer_mentions": 0,
+                      "structured_transfer_segments": 0,
+                      "structured_transfer_count": 0,
+                      "violations": [
+                        {
+                          "name": "transfer_mentions",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_segments",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        }
+                      ]
+                    },
+                    "raw_signals": {
+                      "modes": [
+                        "train",
+                        "train"
+                      ],
+                      "early_departures": 0,
+                      "late_arrivals": 0,
+                      "red_eye_segments": 0,
+                      "transfer_mentions": 0,
+                      "structured_transfer_segments": 0,
+                      "structured_transfer_count": 0,
+                      "violations": [
+                        {
+                          "name": "transfer_mentions",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_segments",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        },
+                        {
+                          "name": "structured_transfer_count",
+                          "value": 0,
+                          "minor_at": 1,
+                          "major_at": 2,
+                          "severity": "none"
+                        }
+                      ]
+                    },
+                    "thresholds": {
+                      "early_departure_before": "07:00",
+                      "late_arrival_after": "21:00",
+                      "red_eye_departure_before": "06:00",
+                      "red_eye_arrival_after": "22:00"
+                    },
+                    "threshold_source": "human_rubric",
+                    "violations": [
+                      {
+                        "name": "transfer_mentions",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "structured_transfer_segments",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      },
+                      {
+                        "name": "structured_transfer_count",
+                        "value": 0,
+                        "minor_at": 1,
+                        "major_at": 2,
+                        "severity": "none"
+                      }
+                    ],
+                    "canonical_rule_id": "transport_avoid_transfer",
+                    "input_rule_ids": [
+                      "transport_avoid_transfer"
+                    ],
+                    "source_rule_ids": [
+                      "transport_avoid_transfer"
+                    ],
+                    "preference_family": "transport_convenience",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "travel_intercity_public.time_slot",
+                      "details.mode",
+                      "details.transfers"
+                    ]
+                  },
+                  {
+                    "rule_id": "interest_outdoor_nature",
+                    "applicable": true,
+                    "score": 1.0,
+                    "passed": true,
+                    "severity": "none",
+                    "violation_level": "none",
+                    "message": "plan includes profile-matching interest content",
+                    "signals": {
+                      "matched_items": 2,
+                      "candidate_items": 4,
+                      "exact_db_entity_matches": 4,
+                      "fallback_marker_matches": 0,
+                      "markers": [
+                        "mountain",
+                        "lake",
+                        "bay",
+                        "sea",
+                        "beach",
+                        "park",
+                        "forest",
+                        "grassland",
+                        "wetland",
+                        "canyon",
+                        "nature",
+                        "natural",
+                        "garden"
+                      ],
+                      "source_rule_ids": [
+                        "interest_outdoor_nature"
+                      ],
+                      "preference_variants": []
+                    },
+                    "raw_signals": {
+                      "matched_items": 2,
+                      "candidate_items": 4,
+                      "exact_db_entity_matches": 4,
+                      "fallback_marker_matches": 0,
+                      "markers": [
+                        "mountain",
+                        "lake",
+                        "bay",
+                        "sea",
+                        "beach",
+                        "park",
+                        "forest",
+                        "grassland",
+                        "wetland",
+                        "canyon",
+                        "nature",
+                        "natural",
+                        "garden"
+                      ],
+                      "source_rule_ids": [
+                        "interest_outdoor_nature"
+                      ],
+                      "preference_variants": []
+                    },
+                    "thresholds": {
+                      "min_matching_items": 2
+                    },
+                    "threshold_source": "database_type_or_tags_exact_match",
+                    "violations": [
+                      {
+                        "name": "profile_interest_matched_items",
+                        "value": 2,
+                        "target": 2,
+                        "severity": "none"
+                      }
+                    ],
+                    "canonical_rule_id": "interest_outdoor_nature",
+                    "input_rule_ids": [
+                      "interest_outdoor_nature"
+                    ],
+                    "source_rule_ids": [
+                      "interest_outdoor_nature"
+                    ],
+                    "preference_family": "interest_match",
+                    "source": "user_profile.rules",
+                    "score_type": "0_0.5_1",
+                    "evidence_basis": [
+                      "exact DB entity match",
+                      "database.attraction_type/tags",
+                      "database.restaurant.cuisine/tags"
+                    ]
+                  }
+                ],
+                "preference_family_scores": [
+                  {
+                    "family": "comfort_and_pace",
+                    "score": 0.5,
+                    "evaluated_count": 2,
+                    "rule_ids": [
+                      "mobility_accessibility",
+                      "schedule_pacing"
+                    ]
+                  },
+                  {
+                    "family": "transport_convenience",
+                    "score": 1.0,
+                    "evaluated_count": 1,
+                    "rule_ids": [
+                      "transport_avoid_transfer"
+                    ]
+                  },
+                  {
+                    "family": "interest_match",
+                    "score": 1.0,
+                    "evaluated_count": 1,
+                    "rule_ids": [
+                      "interest_outdoor_nature"
+                    ]
+                  }
+                ],
+                "active_rule_ids": [
+                  "mobility_accessibility",
+                  "schedule_pacing",
+                  "transport_avoid_transfer",
+                  "interest_outdoor_nature"
+                ],
+                "requested_rule_ids": [
+                  "mobility_accessibility",
+                  "schedule_pacing",
+                  "transport_avoid_transfer",
+                  "interest_outdoor_nature"
+                ],
+                "unsupported_rule_ids": [],
+                "evaluated_count": 4,
+                "evaluated_family_count": 3,
+                "compiled_count": 4,
+                "not_applicable_count": 0
+              },
+              "components": [
+                {
+                  "name": "hard_constraint_score",
+                  "score": 0.7142857142857143,
+                  "weight": 1.0
+                },
+                {
+                  "name": "soft_preference_score",
+                  "score": 0.8333,
+                  "weight": 1.0
+                }
+              ],
+              "constraints": {
+                "train_latest_arrival_direct": {
+                  "passed": true,
+                  "message": null
+                },
+                "restaurant_cheapest_nearby_attraction": {
+                  "passed": true,
+                  "message": null
+                },
+                "trip_date_range_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "room_count_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_round_trip_mode_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "party_size_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                },
+                "party_composition_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                }
+              },
+              "hard_constraints": {
+                "score": 0.0,
+                "constraints": {
+                  "train_latest_arrival_direct": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "restaurant_cheapest_nearby_attraction": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "trip_date_range_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "room_count_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "intercity_round_trip_mode_required": {
+                    "passed": true,
+                    "message": null
+                  },
+                  "party_size_required": {
+                    "passed": false,
+                    "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                  },
+                  "party_composition_required": {
+                    "passed": false,
+                    "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                  }
+                }
+              }
+            },
+            "hard_constraint_details": {
+              "score": 0.0,
+              "constraints": {
+                "train_latest_arrival_direct": {
+                  "passed": true,
+                  "message": null
+                },
+                "restaurant_cheapest_nearby_attraction": {
+                  "passed": true,
+                  "message": null
+                },
+                "trip_date_range_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "room_count_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "intercity_round_trip_mode_required": {
+                  "passed": true,
+                  "message": null
+                },
+                "party_size_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                },
+                "party_composition_required": {
+                  "passed": false,
+                  "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=280.00, expected=527.10"
+                }
+              }
+            },
+            "diagnostics": {
+              "delivered_itinerary": true
+            },
+            "turn_alignment": {
+              "fulfillment_score": 0.6666666666666666,
+              "preserve_score": 1.0,
+              "preserve_check_count": 5,
+              "preserve_error_count": 0,
+              "preserve_error_rate": 0.0,
+              "fulfillment_checks": [
+                {
+                  "name": "response_expectation",
+                  "passed": true,
+                  "message": null,
+                  "details": {
+                    "response_expectation": "plan",
+                    "expected_mode": "plan",
+                    "actual_mode": "plan",
+                    "actual_status": "",
+                    "has_daily_plans": true
+                  }
+                },
+                {
+                  "name": "resolved_pacing_limit",
+                  "passed": true,
+                  "message": null,
+                  "details": {
+                    "max_attractions_per_day": 2,
+                    "violations": []
+                  }
+                },
+                {
+                  "name": "route_preference",
+                  "passed": false,
+                  "message": "Soft preference score 0.50 < 0.75",
+                  "details": {
+                    "score": 0.5,
+                    "checks": [
+                      {
+                        "rule_id": "mobility_accessibility",
+                        "applicable": true,
+                        "score": 1.0,
+                        "passed": true,
+                        "severity": "none",
+                        "violation_level": "none",
+                        "message": "mobility burden is compatible with profile",
+                        "signals": {
+                          "long_local_transfers": 0,
+                          "very_long_local_transfers": 0,
+                          "daily_local_transfer_minutes": {
+                            "1": 53,
+                            "2": 106
+                          },
+                          "avg_daily_local_transfer_minutes": 79.5,
+                          "daily_outdoor_minutes": [
+                            209
+                          ],
+                          "source_rule_ids": [
+                            "mobility_accessibility"
+                          ],
+                          "violations": [
+                            {
+                              "name": "max_daily_local_transfer_minutes",
+                              "value": 106.0,
+                              "soft_boundary": 240,
+                              "hard_boundary": 300,
+                              "severity": "none",
+                              "unit": "minutes"
+                            },
+                            {
+                              "name": "route_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 2,
+                              "major_at": 4,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "route_very_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 2,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "mobility_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 3,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "mobility_very_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 2,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "max_daily_outdoor_minutes",
+                              "value": 209.0,
+                              "soft_boundary": 240,
+                              "hard_boundary": 360,
+                              "severity": "none",
+                              "unit": "minutes"
+                            }
+                          ]
+                        },
+                        "raw_signals": {
+                          "long_local_transfers": 0,
+                          "very_long_local_transfers": 0,
+                          "daily_local_transfer_minutes": {
+                            "1": 53,
+                            "2": 106
+                          },
+                          "avg_daily_local_transfer_minutes": 79.5,
+                          "daily_outdoor_minutes": [
+                            209
+                          ],
+                          "source_rule_ids": [
+                            "mobility_accessibility"
+                          ],
+                          "violations": [
+                            {
+                              "name": "max_daily_local_transfer_minutes",
+                              "value": 106.0,
+                              "soft_boundary": 240,
+                              "hard_boundary": 300,
+                              "severity": "none",
+                              "unit": "minutes"
+                            },
+                            {
+                              "name": "route_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 2,
+                              "major_at": 4,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "route_very_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 2,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "mobility_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 3,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "mobility_very_long_local_transfer_count",
+                              "value": 0,
+                              "minor_at": 1,
+                              "major_at": 2,
+                              "severity": "none"
+                            },
+                            {
+                              "name": "max_daily_outdoor_minutes",
+                              "value": 209.0,
+                              "soft_boundary": 240,
+                              "hard_boundary": 360,
+                              "severity": "none",
+                              "unit": "minutes"
+                            }
+                          ]
+                        },
+                        "thresholds": {
+                          "long_local_transfer_minutes": 60.0,
+                          "very_long_local_transfer_minutes": 90.0,
+                          "max_daily_local_transfer_minutes": 240,
+                          "high_outdoor_minutes": 240,
+                          "very_high_outdoor_minutes": 360
+                        },
+                        "threshold_source": "benchmark_design_rubric",
+                        "violations": [
+                          {
+                            "name": "max_daily_local_transfer_minutes",
+                            "value": 106.0,
+                            "soft_boundary": 240,
+                            "hard_boundary": 300,
+                            "severity": "none",
+                            "unit": "minutes"
+                          },
+                          {
+                            "name": "route_long_local_transfer_count",
+                            "value": 0,
+                            "minor_at": 2,
+                            "major_at": 4,
+                            "severity": "none"
+                          },
+                          {
+                            "name": "route_very_long_local_transfer_count",
+                            "value": 0,
+                            "minor_at": 1,
+                            "major_at": 2,
+                            "severity": "none"
+                          },
+                          {
+                            "name": "mobility_long_local_transfer_count",
+                            "value": 0,
+                            "minor_at": 1,
+                            "major_at": 3,
+                            "severity": "none"
+                          },
+                          {
+                            "name": "mobility_very_long_local_transfer_count",
+                            "value": 0,
+                            "minor_at": 1,
+                            "major_at": 2,
+                            "severity": "none"
+                          },
+                          {
+                            "name": "max_daily_outdoor_minutes",
+                            "value": 209.0,
+                            "soft_boundary": 240,
+                            "hard_boundary": 360,
+                            "severity": "none",
+                            "unit": "minutes"
+                          }
+                        ],
+                        "threshold_sources": {
+                          "long_local_transfer_minutes": "benchmark_design_rubric",
+                          "very_long_local_transfer_minutes": "benchmark_design_rubric",
+                          "max_daily_local_transfer_minutes": "benchmark_design_rubric",
+                          "high_outdoor_minutes": "human_rubric_with_db_outdoor_classification",
+                          "very_high_outdoor_minutes": "human_rubric_with_db_outdoor_classification"
+                        },
+                        "canonical_rule_id": "mobility_accessibility",
+                        "input_rule_ids": [
+                          "mobility_accessibility"
+                        ],
+                        "source_rule_ids": [
+                          "mobility_accessibility"
+                        ],
+                        "preference_family": "comfort_and_pace",
+                        "source": "user_profile.rules",
+                        "score_type": "0_0.5_1",
+                        "evidence_basis": [
+                          "daily attraction count",
+                          "travel_city.duration",
+                          "rest blocks"
+                        ]
+                      },
+                      {
+                        "rule_id": "schedule_pacing",
+                        "applicable": true,
+                        "score": 0.0,
+                        "passed": false,
+                        "severity": "major",
+                        "violation_level": "major",
+                        "message": "schedule has a profile pacing violation",
+                        "signals": {
+                          "daily_attraction_counts": [
+                            2,
+                            2
+                          ],
+                          "rest_days": 2,
+                          "early_starts": 1,
+                          "late_ends": 1,
+                          "max_day_span_hours": 14.3333,
+                          "pacing_variant": "relaxed",
+                          "source_rule_ids": [
+                            "schedule_pacing"
+                          ],
+                          "violations": [
+                            {
+                              "name": "max_daily_attraction_count",
+                              "value": 2.0,
+                              "soft_boundary": 3,
+                              "hard_boundary": 4,
+                              "severity": "none",
+                              "unit": "visits"
+                            },
+                            {
+                              "name": "avg_daily_attraction_count",
+                              "value": 2.0,
+                              "soft_boundary": 3,
+                              "hard_boundary": 4,
+                              "severity": "none",
+                              "unit": "visits"
+                            },
+                            {
+                              "name": "max_day_span_hours",
+                              "value": 14.3333,
+                              "soft_boundary": 10,
+                              "hard_boundary": 12,
+                              "severity": "major",
+                              "unit": "hours"
+                            },
+                            {
+                              "name": "early_start_hours_before_08",
+                              "value": 0.3333,
+                              "soft_boundary": 0,
+                              "hard_boundary": 1,
+                              "severity": "minor",
+                              "unit": "hours"
+                            },
+                            {
+                              "name": "late_end_hours_after_21",
+                              "value": 1.0,
+                              "soft_boundary": 0,
+                              "hard_boundary": 1,
+                              "severity": "minor",
+                              "unit": "hours"
+                            }
+                          ]
+                        },
+                        "raw_signals": {
+                          "daily_attraction_counts": [
+                            2,
+                            2
+                          ],
+                          "rest_days": 2,
+                          "early_starts": 1,
+                          "late_ends": 1,
+                          "max_day_span_hours": 14.3333,
+                          "pacing_variant": "relaxed",
+                          "source_rule_ids": [
+                            "schedule_pacing"
+                          ],
+                          "violations": [
+                            {
+                              "name": "max_daily_attraction_count",
+                              "value": 2.0,
+                              "soft_boundary": 3,
+                              "hard_boundary": 4,
+                              "severity": "none",
+                              "unit": "visits"
+                            },
+                            {
+                              "name": "avg_daily_attraction_count",
+                              "value": 2.0,
+                              "soft_boundary": 3,
+                              "hard_boundary": 4,
+                              "severity": "none",
+                              "unit": "visits"
+                            },
+                            {
+                              "name": "max_day_span_hours",
+                              "value": 14.3333,
+                              "soft_boundary": 10,
+                              "hard_boundary": 12,
+                              "severity": "major",
+                              "unit": "hours"
+                            },
+                            {
+                              "name": "early_start_hours_before_08",
+                              "value": 0.3333,
+                              "soft_boundary": 0,
+                              "hard_boundary": 1,
+                              "severity": "minor",
+                              "unit": "hours"
+                            },
+                            {
+                              "name": "late_end_hours_after_21",
+                              "value": 1.0,
+                              "soft_boundary": 0,
+                              "hard_boundary": 1,
+                              "severity": "minor",
+                              "unit": "hours"
+                            }
+                          ]
+                        },
+                        "thresholds": {
+                          "max_daily_attraction_count": {
+                            "none": "<=3",
+                            "minor": "4",
+                            "major": ">=5"
+                          },
+                          "avg_daily_attraction_count": {
+                            "none": "<=3",
+                            "minor": ">3 and <=4",
+                            "major": ">4"
+                          },
+                          "max_day_span_hours": {
+                            "none": "<=10",
+                            "minor": ">10 and <=12",
+                            "major": ">12"
+                          },
+                          "early_start": {
+                            "none": ">=08:00",
+                            "minor": "07:00-08:00",
+                            "major": "<07:00"
+                          },
+                          "late_end": {
+                            "none": "<=21:00",
+                            "minor": "21:00-22:00",
+                            "major": ">22:00"
+                          },
+                          "rest_block": {
+                            "none": "present",
+                            "minor": "missing",
+                            "major": "missing with dense day"
+                          }
+                        },
+                        "threshold_source": "benchmark_design_rubric",
+                        "violations": [
+                          {
+                            "name": "max_daily_attraction_count",
+                            "value": 2.0,
+                            "soft_boundary": 3,
+                            "hard_boundary": 4,
+                            "severity": "none",
+                            "unit": "visits"
+                          },
+                          {
+                            "name": "avg_daily_attraction_count",
+                            "value": 2.0,
+                            "soft_boundary": 3,
+                            "hard_boundary": 4,
+                            "severity": "none",
+                            "unit": "visits"
+                          },
+                          {
+                            "name": "max_day_span_hours",
+                            "value": 14.3333,
+                            "soft_boundary": 10,
+                            "hard_boundary": 12,
+                            "severity": "major",
+                            "unit": "hours"
+                          },
+                          {
+                            "name": "early_start_hours_before_08",
+                            "value": 0.3333,
+                            "soft_boundary": 0,
+                            "hard_boundary": 1,
+                            "severity": "minor",
+                            "unit": "hours"
+                          },
+                          {
+                            "name": "late_end_hours_after_21",
+                            "value": 1.0,
+                            "soft_boundary": 0,
+                            "hard_boundary": 1,
+                            "severity": "minor",
+                            "unit": "hours"
+                          }
+                        ],
+                        "canonical_rule_id": "schedule_pacing",
+                        "input_rule_ids": [
+                          "schedule_pacing"
+                        ],
+                        "source_rule_ids": [
+                          "schedule_pacing"
+                        ],
+                        "preference_family": "comfort_and_pace",
+                        "source": "user_profile.rules",
+                        "score_type": "0_0.5_1",
+                        "evidence_basis": [
+                          "daily attraction count",
+                          "travel_city.duration",
+                          "rest blocks"
+                        ]
+                      }
+                    ],
+                    "preference_family_scores": [
+                      {
+                        "family": "comfort_and_pace",
+                        "score": 0.5,
+                        "evaluated_count": 2,
+                        "rule_ids": [
+                          "mobility_accessibility",
+                          "schedule_pacing"
+                        ]
+                      }
+                    ],
+                    "active_rule_ids": [
+                      "mobility_accessibility",
+                      "schedule_pacing"
+                    ],
+                    "requested_rule_ids": [
+                      "mobility_accessibility",
+                      "schedule_pacing"
+                    ],
+                    "unsupported_rule_ids": [],
+                    "evaluated_count": 2,
+                    "evaluated_family_count": 1,
+                    "compiled_count": 2,
+                    "not_applicable_count": 0
+                  }
+                }
+              ],
+              "preserve_checks": [
+                {
+                  "name": "restaurant_cheapest_nearby_attraction",
+                  "passed": true,
+                  "message": null
+                },
+                {
+                  "name": "train_latest_arrival_direct",
+                  "passed": true,
+                  "message": null
+                },
+                {
+                  "name": "trip_date_range_required",
+                  "passed": true,
+                  "message": null
+                },
+                {
+                  "name": "room_count_required",
+                  "passed": true,
+                  "message": null
+                },
+                {
+                  "name": "intercity_round_trip_mode_required",
+                  "passed": true,
+                  "message": null
+                }
+              ],
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": 0.6666666666666666,
+                "environment_adaptation_success": null
+              }
+            },
+            "ground_truth": {
+              "sample_id": "mt_single_0006",
+              "base_query_id": "single_0006",
+              "turn_id": 2,
+              "interaction_type": "request_resolution",
+              "must_preserve": [
+                "restaurant_cheapest_nearby_attraction",
+                "train_latest_arrival_direct",
+                "trip_date_range_required",
+                "room_count_required",
+                "intercity_round_trip_mode_required"
+              ],
+              "must_update": [
+                "resolved_pacing_limit",
+                "route_preference"
+              ],
+              "inferred_must_update": [],
+              "current_user_state_deltas": [
+                {
+                  "route_preference": {
+                    "preference": "prefer low-transfer subway or taxi over forced long walking",
+                    "preferred_modes": [
+                      "subway",
+                      "taxi"
+                    ],
+                    "avoid": [
+                      "forced_long_walks",
+                      "excessive_subway_transfers"
+                    ]
+                  }
+                }
+              ],
+              "oracle_state_after_turn": {
+                "active_hard_constraints": [
+                  "restaurant_cheapest_nearby_attraction",
+                  "train_latest_arrival_direct",
+                  "trip_date_range_required",
+                  "room_count_required",
+                  "intercity_round_trip_mode_required"
+                ],
+                "active_user_state_deltas": [
+                  {
+                    "route_preference": {
+                      "preference": "prefer low-transfer subway or taxi over forced long walking",
+                      "preferred_modes": [
+                        "subway",
+                        "taxi"
+                      ],
+                      "avoid": [
+                        "forced_long_walks",
+                        "excessive_subway_transfers"
+                      ]
+                    }
+                  }
+                ],
+                "active_request_resolutions": [
+                  {
+                    "ambiguous_or_conflicting_request": {
+                      "request": "at least 4 attractions per day and walking-first local transfers",
+                      "requested_min_attractions_per_day": 4,
+                      "conflicts_with_profile_rules": [
+                        "mobility_accessibility",
+                        "schedule_pacing"
+                      ]
+                    }
+                  },
+                  {
+                    "resolved_pacing_limit": {
+                      "priority": "comfort and feasible pacing outrank packed attraction coverage",
+                      "max_attractions_per_day": 2
+                    },
+                    "route_preference": {
+                      "preference": "prefer low-transfer subway or taxi over forced long walking",
+                      "preferred_modes": [
+                        "subway",
+                        "taxi"
+                      ],
+                      "avoid": [
+                        "forced_long_walks",
+                        "excessive_subway_transfers"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "verification_oracle": {},
+              "generated_hard_constraints": {},
+              "current_generated_hard_constraints": {},
+              "expected_solution_status": "sat",
+              "response_expectation": "plan"
+            },
+            "plan_file": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_2_converted.json",
+            "query": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+            "source_files": {
+              "converted_plan": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_2_converted.json",
+              "report": "result\\smoke\\deepseek-v4-pro_en\\reports\\mt_single_0006_turn_2.txt",
+              "trajectory": "result\\smoke\\deepseek-v4-pro_en\\trajectories\\mt_single_0006_turn_2.json"
+            },
+            "runtime": {
+              "elapsed_time": 39.286017179489136,
+              "llm_calls": 9,
+              "tool_calls": 16,
+              "tool_executions": 13,
+              "duplicate_tool_calls": 3,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2865,
+                "prompt_tokens": 104829,
+                "total_tokens": 107694,
+                "prompt_cache_hit_tokens": 100224,
+                "prompt_cache_miss_tokens": 4605
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "query_id": "mt_single_0006"
+          }
+        }
+      ]
+    }
+  ]
+}

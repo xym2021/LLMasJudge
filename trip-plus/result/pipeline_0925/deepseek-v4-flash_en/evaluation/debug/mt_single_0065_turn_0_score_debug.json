@@ -1,0 +1,1241 @@
+{
+  "sample_id": "mt_single_0065_turn_0",
+  "scores": {
+    "feasibility_score": 0.46388888888888885,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.8333,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.9167,
+    "requirement_score": 0.875,
+    "llm_user_simulation_score": null
+  },
+  "feasibility_details": {
+    "score": 0.46388888888888885,
+    "strict_feasibility": 0.0,
+    "passed_checks": 10,
+    "total_checks": 22,
+    "dimensions": {
+      "structure_completeness": {
+        "weight": 0.3333333333333333,
+        "score": 0.39999999999999997,
+        "weighted_score": 0.1333333333333333,
+        "subdimensions": {
+          "valid_trip_duration": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "valid_trip_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "route_and_stay_continuity": {
+            "score": 0.2,
+            "passed": 1,
+            "total": 5,
+            "checks": [
+              {
+                "name": "closed_loop_route_structure",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "seamless_intercity_transfers",
+                "passed": false,
+                "message": "Location tracking inconsistent: [\"D1: current_city is 'Taiyuan → Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Taiyuan → Xi'an')\", \"D2: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D3: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D4: current_city is 'Xi'an → Taiyuan' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an → Taiyuan')\"]"
+              },
+              {
+                "name": "day_boundary_continuity",
+                "passed": false,
+                "message": "Day boundary continuity mismatch: [\"D3->D4: previous night stays in 'Xi'an' but next day starts from 'Xi'an → Taiyuan'\"]"
+              },
+              {
+                "name": "traceable_accommodation",
+                "passed": false,
+                "message": "Accommodation not traceable on days: [2, 3]"
+              },
+              {
+                "name": "ends_with_accommodation",
+                "passed": false,
+                "message": "Last activity not hotel on days: [1, 2, 3]"
+              }
+            ]
+          },
+          "daily_content_coverage": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 2,
+            "checks": [
+              {
+                "name": "essential_meal_coverage",
+                "passed": false,
+                "message": "Meal necessity: 0/4 days correct; Violations: D1: Non-intercity day must arrange lunch and dinner; D2: Non-intercity day must arrange lunch and dinner; D3: Non-intercity day must arrange lunch and dinner; D4: Non-intercity day must arrange lunch and dinner"
+              },
+              {
+                "name": "essential_attraction_coverage",
+                "passed": false,
+                "message": "Attraction arrangements unreasonable: D4: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 0.0 hours, 0 attractions)"
+              }
+            ]
+          }
+        }
+      },
+      "evidence_validity": {
+        "weight": 0.3333333333333333,
+        "score": 0.6666666666666666,
+        "weighted_score": 0.2222222222222222,
+        "subdimensions": {
+          "poi_grounding_valid": {
+            "score": 0.3333333333333333,
+            "passed": 1,
+            "total": 3,
+            "checks": [
+              {
+                "name": "validated_accommodation",
+                "passed": false,
+                "message": "Hotels not in database: ['drop luggage at Xinyuexin Hotel']"
+              },
+              {
+                "name": "validated_attractions",
+                "passed": false,
+                "message": "Attraction price mismatch: [\"Xi'an City Wall: plan has 40 ≠ database 60\"]"
+              },
+              {
+                "name": "validated_meals",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "transport_grounding_valid": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "validated_transportation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "local_move_sanity",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "execution_operability": {
+        "weight": 0.3333333333333333,
+        "score": 0.325,
+        "weighted_score": 0.10833333333333334,
+        "subdimensions": {
+          "time_and_transfer_feasible": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "no_time_overlaps",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_transfer_time",
+                "passed": false,
+                "message": "Anchor transfer time unreasonable: [\"D2:Weike Coffee (Wangzuo Qujiang Branch)->Xi'an Botanical Garden Children's Garden query got commute time 16min, plan shows gap 0min (after excluding buffer 0min), below minimum 10min\\nD2:Weike Coffee (Wangzuo Qujiang Branch)(34.210537,109.014307)->Xi'an Botanical Garden Children's Garden(34.209845,109.027389) \"]; Unable to evaluate pairs: [\"D1:Xi'an North->drop luggage at Xinyuexin Hotel\", 'D1:drop luggage at Xinyuexin Hotel->Big Wild Goose Pagoda']"
+              }
+            ]
+          },
+          "venue_and_duration_feasible": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5,
+            "checks": [
+              {
+                "name": "attraction_visit_within_opening_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "dining_within_service_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "avoidance_of_closure_days",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_duration_at_attractions",
+                "passed": false,
+                "message": "Attraction visit duration unreasonable: [\"Xi'an Bell Tower: plan has 0.95h not in recommended 2.0-4.0h\", 'Muslim Quarter: plan has 1.0h not in recommended 2.0-4.0h']"
+              },
+              {
+                "name": "reasonable_meal_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "intercity_buffer_feasible": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 1,
+            "checks": [
+              {
+                "name": "intercity_buffer_adequacy",
+                "passed": false,
+                "message": "Intercity buffer inadequate: ['D4: intercity train before-buffer 19min < required 30min']"
+              }
+            ]
+          },
+          "budget_arithmetic_feasible": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 1,
+            "checks": [
+              {
+                "name": "cost_calculation_correctness",
+                "passed": false,
+                "message": "Budget accuracy failed: Plan total=1249.20, Calculated total=1427.10 (Transportation=509.10, Accommodation=390.00, Meals=208.00, Attractions=320.00), Error rate=14.24% (exceeds 10% threshold)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "subdimensions": {
+      "valid_trip_duration": {
+        "score": 1.0,
+        "passed": 1,
+        "total": 1,
+        "checks": [
+          {
+            "name": "valid_trip_duration",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "route_and_stay_continuity": {
+        "score": 0.2,
+        "passed": 1,
+        "total": 5,
+        "checks": [
+          {
+            "name": "closed_loop_route_structure",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "seamless_intercity_transfers",
+            "passed": false,
+            "message": "Location tracking inconsistent: [\"D1: current_city is 'Taiyuan → Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Taiyuan → Xi'an')\", \"D2: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D3: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D4: current_city is 'Xi'an → Taiyuan' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an → Taiyuan')\"]"
+          },
+          {
+            "name": "day_boundary_continuity",
+            "passed": false,
+            "message": "Day boundary continuity mismatch: [\"D3->D4: previous night stays in 'Xi'an' but next day starts from 'Xi'an → Taiyuan'\"]"
+          },
+          {
+            "name": "traceable_accommodation",
+            "passed": false,
+            "message": "Accommodation not traceable on days: [2, 3]"
+          },
+          {
+            "name": "ends_with_accommodation",
+            "passed": false,
+            "message": "Last activity not hotel on days: [1, 2, 3]"
+          }
+        ]
+      },
+      "daily_content_coverage": {
+        "score": 0.0,
+        "passed": 0,
+        "total": 2,
+        "checks": [
+          {
+            "name": "essential_meal_coverage",
+            "passed": false,
+            "message": "Meal necessity: 0/4 days correct; Violations: D1: Non-intercity day must arrange lunch and dinner; D2: Non-intercity day must arrange lunch and dinner; D3: Non-intercity day must arrange lunch and dinner; D4: Non-intercity day must arrange lunch and dinner"
+          },
+          {
+            "name": "essential_attraction_coverage",
+            "passed": false,
+            "message": "Attraction arrangements unreasonable: D4: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 0.0 hours, 0 attractions)"
+          }
+        ]
+      },
+      "poi_grounding_valid": {
+        "score": 0.3333333333333333,
+        "passed": 1,
+        "total": 3,
+        "checks": [
+          {
+            "name": "validated_accommodation",
+            "passed": false,
+            "message": "Hotels not in database: ['drop luggage at Xinyuexin Hotel']"
+          },
+          {
+            "name": "validated_attractions",
+            "passed": false,
+            "message": "Attraction price mismatch: [\"Xi'an City Wall: plan has 40 ≠ database 60\"]"
+          },
+          {
+            "name": "validated_meals",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "transport_grounding_valid": {
+        "score": 1.0,
+        "passed": 2,
+        "total": 2,
+        "checks": [
+          {
+            "name": "validated_transportation",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "local_move_sanity",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "time_and_transfer_feasible": {
+        "score": 0.5,
+        "passed": 1,
+        "total": 2,
+        "checks": [
+          {
+            "name": "no_time_overlaps",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "reasonable_transfer_time",
+            "passed": false,
+            "message": "Anchor transfer time unreasonable: [\"D2:Weike Coffee (Wangzuo Qujiang Branch)->Xi'an Botanical Garden Children's Garden query got commute time 16min, plan shows gap 0min (after excluding buffer 0min), below minimum 10min\\nD2:Weike Coffee (Wangzuo Qujiang Branch)(34.210537,109.014307)->Xi'an Botanical Garden Children's Garden(34.209845,109.027389) \"]; Unable to evaluate pairs: [\"D1:Xi'an North->drop luggage at Xinyuexin Hotel\", 'D1:drop luggage at Xinyuexin Hotel->Big Wild Goose Pagoda']"
+          }
+        ]
+      },
+      "venue_and_duration_feasible": {
+        "score": 0.8,
+        "passed": 4,
+        "total": 5,
+        "checks": [
+          {
+            "name": "attraction_visit_within_opening_hours",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "dining_within_service_hours",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "avoidance_of_closure_days",
+            "passed": true,
+            "message": null
+          },
+          {
+            "name": "reasonable_duration_at_attractions",
+            "passed": false,
+            "message": "Attraction visit duration unreasonable: [\"Xi'an Bell Tower: plan has 0.95h not in recommended 2.0-4.0h\", 'Muslim Quarter: plan has 1.0h not in recommended 2.0-4.0h']"
+          },
+          {
+            "name": "reasonable_meal_duration",
+            "passed": true,
+            "message": null
+          }
+        ]
+      },
+      "intercity_buffer_feasible": {
+        "score": 0.0,
+        "passed": 0,
+        "total": 1,
+        "checks": [
+          {
+            "name": "intercity_buffer_adequacy",
+            "passed": false,
+            "message": "Intercity buffer inadequate: ['D4: intercity train before-buffer 19min < required 30min']"
+          }
+        ]
+      },
+      "budget_arithmetic_feasible": {
+        "score": 0.0,
+        "passed": 0,
+        "total": 1,
+        "checks": [
+          {
+            "name": "cost_calculation_correctness",
+            "passed": false,
+            "message": "Budget accuracy failed: Plan total=1249.20, Calculated total=1427.10 (Transportation=509.10, Accommodation=390.00, Meals=208.00, Attractions=320.00), Error rate=14.24% (exceeds 10% threshold)"
+          }
+        ]
+      }
+    },
+    "checks": {
+      "valid_trip_duration": {
+        "passed": true,
+        "message": null
+      },
+      "closed_loop_route_structure": {
+        "passed": true,
+        "message": null
+      },
+      "seamless_intercity_transfers": {
+        "passed": false,
+        "message": "Location tracking inconsistent: [\"D1: current_city is 'Taiyuan → Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Taiyuan → Xi'an')\", \"D2: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D3: current_city is 'Xi'an' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an')\", \"D4: current_city is 'Xi'an → Taiyuan' but current location should be 'Taiyuan', missing intercity transportation info (should be written as 'from Taiyuan to Xi'an → Taiyuan')\"]"
+      },
+      "day_boundary_continuity": {
+        "passed": false,
+        "message": "Day boundary continuity mismatch: [\"D3->D4: previous night stays in 'Xi'an' but next day starts from 'Xi'an → Taiyuan'\"]"
+      },
+      "validated_accommodation": {
+        "passed": false,
+        "message": "Hotels not in database: ['drop luggage at Xinyuexin Hotel']"
+      },
+      "validated_attractions": {
+        "passed": false,
+        "message": "Attraction price mismatch: [\"Xi'an City Wall: plan has 40 ≠ database 60\"]"
+      },
+      "validated_meals": {
+        "passed": true,
+        "message": null
+      },
+      "validated_transportation": {
+        "passed": true,
+        "message": null
+      },
+      "traceable_accommodation": {
+        "passed": false,
+        "message": "Accommodation not traceable on days: [2, 3]"
+      },
+      "ends_with_accommodation": {
+        "passed": false,
+        "message": "Last activity not hotel on days: [1, 2, 3]"
+      },
+      "essential_meal_coverage": {
+        "passed": false,
+        "message": "Meal necessity: 0/4 days correct; Violations: D1: Non-intercity day must arrange lunch and dinner; D2: Non-intercity day must arrange lunch and dinner; D3: Non-intercity day must arrange lunch and dinner; D4: Non-intercity day must arrange lunch and dinner"
+      },
+      "essential_attraction_coverage": {
+        "passed": false,
+        "message": "Attraction arrangements unreasonable: D4: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 0.0 hours, 0 attractions)"
+      },
+      "no_time_overlaps": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_transfer_time": {
+        "passed": false,
+        "message": "Anchor transfer time unreasonable: [\"D2:Weike Coffee (Wangzuo Qujiang Branch)->Xi'an Botanical Garden Children's Garden query got commute time 16min, plan shows gap 0min (after excluding buffer 0min), below minimum 10min\\nD2:Weike Coffee (Wangzuo Qujiang Branch)(34.210537,109.014307)->Xi'an Botanical Garden Children's Garden(34.209845,109.027389) \"]; Unable to evaluate pairs: [\"D1:Xi'an North->drop luggage at Xinyuexin Hotel\", 'D1:drop luggage at Xinyuexin Hotel->Big Wild Goose Pagoda']"
+      },
+      "local_move_sanity": {
+        "passed": true,
+        "message": null
+      },
+      "attraction_visit_within_opening_hours": {
+        "passed": true,
+        "message": null
+      },
+      "dining_within_service_hours": {
+        "passed": true,
+        "message": null
+      },
+      "avoidance_of_closure_days": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_duration_at_attractions": {
+        "passed": false,
+        "message": "Attraction visit duration unreasonable: [\"Xi'an Bell Tower: plan has 0.95h not in recommended 2.0-4.0h\", 'Muslim Quarter: plan has 1.0h not in recommended 2.0-4.0h']"
+      },
+      "reasonable_meal_duration": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_buffer_adequacy": {
+        "passed": false,
+        "message": "Intercity buffer inadequate: ['D4: intercity train before-buffer 19min < required 30min']"
+      },
+      "cost_calculation_correctness": {
+        "passed": false,
+        "message": "Budget accuracy failed: Plan total=1249.20, Calculated total=1427.10 (Transportation=509.10, Accommodation=390.00, Meals=208.00, Attractions=320.00), Error rate=14.24% (exceeds 10% threshold)"
+      }
+    }
+  },
+  "requirement_details": {
+    "score": 0.875,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.8333,
+    "hard_constraint_ratio": 0.8333,
+    "hard_constraints_passed": 5,
+    "hard_constraints_total": 6,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.9167,
+    "soft_preferences": {
+      "score": 0.9167,
+      "checks": [
+        {
+          "rule_id": "mobility_accessibility",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "mobility burden is compatible with profile",
+          "signals": {
+            "long_local_transfers": 0,
+            "very_long_local_transfers": 0,
+            "daily_local_transfer_minutes": {
+              "1": 69,
+              "2": 64,
+              "3": 60,
+              "4": 23
+            },
+            "avg_daily_local_transfer_minutes": 54.0,
+            "daily_outdoor_minutes": [
+              60,
+              360,
+              300
+            ],
+            "source_rule_ids": [
+              "mobility_accessibility"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_local_transfer_minutes",
+                "value": 69.0,
+                "soft_boundary": 240,
+                "hard_boundary": 300,
+                "severity": "none",
+                "unit": "minutes"
+              },
+              {
+                "name": "route_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 2,
+                "major_at": 4,
+                "severity": "none"
+              },
+              {
+                "name": "route_very_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 2,
+                "severity": "none"
+              }
+            ]
+          },
+          "raw_signals": {
+            "long_local_transfers": 0,
+            "very_long_local_transfers": 0,
+            "daily_local_transfer_minutes": {
+              "1": 69,
+              "2": 64,
+              "3": 60,
+              "4": 23
+            },
+            "avg_daily_local_transfer_minutes": 54.0,
+            "daily_outdoor_minutes": [
+              60,
+              360,
+              300
+            ],
+            "source_rule_ids": [
+              "mobility_accessibility"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_local_transfer_minutes",
+                "value": 69.0,
+                "soft_boundary": 240,
+                "hard_boundary": 300,
+                "severity": "none",
+                "unit": "minutes"
+              },
+              {
+                "name": "route_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 2,
+                "major_at": 4,
+                "severity": "none"
+              },
+              {
+                "name": "route_very_long_local_transfer_count",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 2,
+                "severity": "none"
+              }
+            ]
+          },
+          "thresholds": {
+            "long_local_transfer_minutes": 60.0,
+            "very_long_local_transfer_minutes": 90.0,
+            "max_daily_local_transfer_minutes": 240,
+            "high_outdoor_minutes": 240,
+            "very_high_outdoor_minutes": 360
+          },
+          "threshold_source": "benchmark_design_rubric",
+          "violations": [
+            {
+              "name": "max_daily_local_transfer_minutes",
+              "value": 69.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "route_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 2,
+              "major_at": 4,
+              "severity": "none"
+            },
+            {
+              "name": "route_very_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            }
+          ],
+          "threshold_sources": {
+            "long_local_transfer_minutes": "benchmark_design_rubric",
+            "very_long_local_transfer_minutes": "benchmark_design_rubric",
+            "max_daily_local_transfer_minutes": "benchmark_design_rubric",
+            "high_outdoor_minutes": "human_rubric_with_db_outdoor_classification",
+            "very_high_outdoor_minutes": "human_rubric_with_db_outdoor_classification"
+          },
+          "canonical_rule_id": "mobility_accessibility",
+          "input_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "source_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "preference_family": "comfort_and_pace",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "daily attraction count",
+            "travel_city.duration",
+            "rest blocks"
+          ]
+        },
+        {
+          "rule_id": "schedule_pacing",
+          "applicable": true,
+          "score": 0.5,
+          "passed": false,
+          "severity": "minor",
+          "violation_level": "minor",
+          "message": "schedule has a profile pacing violation",
+          "signals": {
+            "daily_attraction_counts": [
+              4,
+              3,
+              3,
+              0
+            ],
+            "rest_days": 0,
+            "early_starts": 2,
+            "late_ends": 0,
+            "max_day_span_hours": 12.45,
+            "pacing_variant": "moderate",
+            "source_rule_ids": [
+              "schedule_pacing"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_attraction_count",
+                "value": 4.0,
+                "soft_boundary": 4,
+                "hard_boundary": 6,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "avg_daily_attraction_count",
+                "value": 2.5,
+                "soft_boundary": 4,
+                "hard_boundary": 5,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "max_day_span_hours",
+                "value": 12.45,
+                "soft_boundary": 12,
+                "hard_boundary": 13.5,
+                "severity": "minor",
+                "unit": "hours"
+              },
+              {
+                "name": "late_end_hours_after_21",
+                "value": 0.0,
+                "soft_boundary": 0,
+                "hard_boundary": 1,
+                "severity": "none",
+                "unit": "hours"
+              }
+            ]
+          },
+          "raw_signals": {
+            "daily_attraction_counts": [
+              4,
+              3,
+              3,
+              0
+            ],
+            "rest_days": 0,
+            "early_starts": 2,
+            "late_ends": 0,
+            "max_day_span_hours": 12.45,
+            "pacing_variant": "moderate",
+            "source_rule_ids": [
+              "schedule_pacing"
+            ],
+            "violations": [
+              {
+                "name": "max_daily_attraction_count",
+                "value": 4.0,
+                "soft_boundary": 4,
+                "hard_boundary": 6,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "avg_daily_attraction_count",
+                "value": 2.5,
+                "soft_boundary": 4,
+                "hard_boundary": 5,
+                "severity": "none",
+                "unit": "visits"
+              },
+              {
+                "name": "max_day_span_hours",
+                "value": 12.45,
+                "soft_boundary": 12,
+                "hard_boundary": 13.5,
+                "severity": "minor",
+                "unit": "hours"
+              },
+              {
+                "name": "late_end_hours_after_21",
+                "value": 0.0,
+                "soft_boundary": 0,
+                "hard_boundary": 1,
+                "severity": "none",
+                "unit": "hours"
+              }
+            ]
+          },
+          "thresholds": {
+            "max_daily_attraction_count": {
+              "none": "<=4",
+              "minor": "5-6",
+              "major": ">=7"
+            },
+            "avg_daily_attraction_count": {
+              "none": "<=4",
+              "minor": ">4 and <=5",
+              "major": ">5"
+            },
+            "max_day_span_hours": {
+              "none": "<=12",
+              "minor": ">12 and <=13.5",
+              "major": ">13.5"
+            },
+            "late_end": {
+              "none": "<=21:00",
+              "minor": "21:00-22:00",
+              "major": ">22:00"
+            }
+          },
+          "threshold_source": "benchmark_design_rubric",
+          "violations": [
+            {
+              "name": "max_daily_attraction_count",
+              "value": 4.0,
+              "soft_boundary": 4,
+              "hard_boundary": 6,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "avg_daily_attraction_count",
+              "value": 2.5,
+              "soft_boundary": 4,
+              "hard_boundary": 5,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "max_day_span_hours",
+              "value": 12.45,
+              "soft_boundary": 12,
+              "hard_boundary": 13.5,
+              "severity": "minor",
+              "unit": "hours"
+            },
+            {
+              "name": "late_end_hours_after_21",
+              "value": 0.0,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "none",
+              "unit": "hours"
+            }
+          ],
+          "canonical_rule_id": "schedule_pacing",
+          "input_rule_ids": [
+            "schedule_pacing"
+          ],
+          "source_rule_ids": [
+            "schedule_pacing"
+          ],
+          "preference_family": "comfort_and_pace",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "daily attraction count",
+            "travel_city.duration",
+            "rest blocks"
+          ]
+        },
+        {
+          "rule_id": "transport_avoid_red_eye",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "signals": {
+            "modes": [
+              "train",
+              "train"
+            ],
+            "early_departures": 0,
+            "late_arrivals": 0,
+            "red_eye_segments": 0,
+            "transfer_mentions": 0,
+            "structured_transfer_segments": 0,
+            "structured_transfer_count": 0,
+            "violations": [
+              {
+                "name": "red_eye_segments",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 1,
+                "severity": "none"
+              },
+              {
+                "name": "late_arrivals",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 3,
+                "severity": "none"
+              }
+            ]
+          },
+          "raw_signals": {
+            "modes": [
+              "train",
+              "train"
+            ],
+            "early_departures": 0,
+            "late_arrivals": 0,
+            "red_eye_segments": 0,
+            "transfer_mentions": 0,
+            "structured_transfer_segments": 0,
+            "structured_transfer_count": 0,
+            "violations": [
+              {
+                "name": "red_eye_segments",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 1,
+                "severity": "none"
+              },
+              {
+                "name": "late_arrivals",
+                "value": 0,
+                "minor_at": 1,
+                "major_at": 3,
+                "severity": "none"
+              }
+            ]
+          },
+          "thresholds": {
+            "early_departure_before": "07:00",
+            "late_arrival_after": "21:00",
+            "red_eye_departure_before": "06:00",
+            "red_eye_arrival_after": "22:00"
+          },
+          "threshold_source": "human_rubric",
+          "violations": [
+            {
+              "name": "red_eye_segments",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 1,
+              "severity": "none"
+            },
+            {
+              "name": "late_arrivals",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 3,
+              "severity": "none"
+            }
+          ],
+          "canonical_rule_id": "transport_avoid_red_eye",
+          "input_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "source_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "preference_family": "transport_convenience",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "travel_intercity_public.time_slot",
+            "details.mode",
+            "details.transfers"
+          ]
+        },
+        {
+          "rule_id": "interest_culture",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "plan includes profile-matching interest content",
+          "signals": {
+            "matched_items": 7,
+            "candidate_items": 10,
+            "exact_db_entity_matches": 10,
+            "fallback_marker_matches": 0,
+            "markers": [
+              "ancient",
+              "history",
+              "historic",
+              "historical",
+              "museum",
+              "ruins",
+              "memorial",
+              "culture",
+              "cultural",
+              "temple",
+              "city wall",
+              "exhibition",
+              "gallery",
+              "science"
+            ],
+            "source_rule_ids": [
+              "interest_culture"
+            ],
+            "preference_variants": []
+          },
+          "raw_signals": {
+            "matched_items": 7,
+            "candidate_items": 10,
+            "exact_db_entity_matches": 10,
+            "fallback_marker_matches": 0,
+            "markers": [
+              "ancient",
+              "history",
+              "historic",
+              "historical",
+              "museum",
+              "ruins",
+              "memorial",
+              "culture",
+              "cultural",
+              "temple",
+              "city wall",
+              "exhibition",
+              "gallery",
+              "science"
+            ],
+            "source_rule_ids": [
+              "interest_culture"
+            ],
+            "preference_variants": []
+          },
+          "thresholds": {
+            "min_matching_items": 2
+          },
+          "threshold_source": "database_type_or_tags_exact_match",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 7,
+              "target": 2,
+              "severity": "none"
+            }
+          ],
+          "canonical_rule_id": "interest_culture",
+          "input_rule_ids": [
+            "interest_culture"
+          ],
+          "source_rule_ids": [
+            "interest_culture"
+          ],
+          "preference_family": "interest_match",
+          "source": "user_profile.rules",
+          "score_type": "0_0.5_1",
+          "evidence_basis": [
+            "exact DB entity match",
+            "database.attraction_type/tags",
+            "database.restaurant.cuisine/tags"
+          ]
+        }
+      ],
+      "preference_family_scores": [
+        {
+          "family": "comfort_and_pace",
+          "score": 0.75,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "mobility_accessibility",
+            "schedule_pacing"
+          ]
+        },
+        {
+          "family": "transport_convenience",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "transport_avoid_red_eye"
+          ]
+        },
+        {
+          "family": "interest_match",
+          "score": 1.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "interest_culture"
+          ]
+        }
+      ],
+      "active_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "requested_rule_ids": [
+        "mobility_accessibility",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "interest_culture"
+      ],
+      "unsupported_rule_ids": [],
+      "evaluated_count": 4,
+      "evaluated_family_count": 3,
+      "compiled_count": 4,
+      "not_applicable_count": 0
+    },
+    "components": [
+      {
+        "name": "hard_constraint_score",
+        "score": 0.8333333333333334,
+        "weight": 1.0
+      },
+      {
+        "name": "soft_preference_score",
+        "score": 0.9167,
+        "weight": 1.0
+      }
+    ],
+    "constraints": {
+      "attraction_require_popular_hotspot": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": false,
+        "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=381.20, expected=509.10; attractions: plan=270.00, expected=320.00"
+      }
+    },
+    "hard_constraints": {
+      "score": 0.0,
+      "constraints": {
+        "attraction_require_popular_hotspot": {
+          "passed": true,
+          "message": null
+        },
+        "restaurant_closest_to_attraction": {
+          "passed": true,
+          "message": null
+        },
+        "trip_date_range_required": {
+          "passed": true,
+          "message": null
+        },
+        "room_count_required": {
+          "passed": true,
+          "message": null
+        },
+        "intercity_round_trip_mode_required": {
+          "passed": true,
+          "message": null
+        },
+        "party_size_required": {
+          "passed": false,
+          "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=381.20, expected=509.10; attractions: plan=270.00, expected=320.00"
+        }
+      }
+    }
+  },
+  "hard_constraint_details": {
+    "score": 0.0,
+    "constraints": {
+      "attraction_require_popular_hotspot": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": false,
+        "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=381.20, expected=509.10; attractions: plan=270.00, expected=320.00"
+      }
+    }
+  },
+  "diagnostics": {
+    "delivered_itinerary": true
+  },
+  "turn_alignment": {
+    "fulfillment_score": 1.0,
+    "preserve_score": null,
+    "preserve_check_count": 0,
+    "preserve_error_count": 0,
+    "preserve_error_rate": null,
+    "fulfillment_checks": [
+      {
+        "name": "initial_plan",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "response_expectation",
+        "passed": true,
+        "message": null,
+        "details": {
+          "response_expectation": "plan",
+          "expected_mode": "plan",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      }
+    ],
+    "preserve_checks": [],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": null,
+      "environment_adaptation_success": null
+    }
+  },
+  "ground_truth": {
+    "sample_id": "mt_single_0065",
+    "base_query_id": "single_0065",
+    "turn_id": 0,
+    "interaction_type": "user_state_evolution",
+    "must_preserve": [],
+    "must_update": [
+      "initial_plan"
+    ],
+    "inferred_must_update": [],
+    "current_user_state_deltas": [],
+    "oracle_state_after_turn": {
+      "active_hard_constraints": [
+        "attraction_require_popular_hotspot",
+        "restaurant_closest_to_attraction",
+        "trip_date_range_required",
+        "room_count_required",
+        "intercity_round_trip_mode_required"
+      ],
+      "active_user_state_deltas": []
+    },
+    "verification_oracle": {},
+    "generated_hard_constraints": {},
+    "current_generated_hard_constraints": {},
+    "expected_solution_status": "sat",
+    "response_expectation": "plan"
+  },
+  "plan_file": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\deepseek-v4-flash_en\\converted_plans\\id_mt_single_0065_turn_0_converted.json",
+  "query": "I'm planning a solo trip to Xi'an from Taiyuan, leaving on Thursday, April 30, 2026, and coming back Sunday, May 3, 2026, so that's 4 days total. Please book 1 room. Since I love diving into the cultural side of travel, I'd like to focus on heritage sites this time. But I have two rules: don't just pile on obscure spots; make sure to include at least one major, well-known landmark. Also, please schedule one meal near \"Xi'an Botanical Garden Children's Garden\" so I'm not wasting time commuting back and forth for food.",
+  "source_files": {
+    "converted_plan": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\deepseek-v4-flash_en\\converted_plans\\id_mt_single_0065_turn_0_converted.json",
+    "report": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\deepseek-v4-flash_en\\reports\\mt_single_0065_turn_0.txt",
+    "trajectory": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\deepseek-v4-flash_en\\trajectories\\mt_single_0065_turn_0.json"
+  },
+  "runtime": {
+    "elapsed_time": 182.78172373771667,
+    "llm_calls": 32,
+    "tool_calls": 65,
+    "tool_executions": 60,
+    "duplicate_tool_calls": 4,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 15352,
+      "prompt_tokens": 609065,
+      "total_tokens": 624417
+    },
+    "token_usage_status": "available",
+    "status": "completed_after_tool_hard_limit"
+  },
+  "query_id": "mt_single_0065"
+}

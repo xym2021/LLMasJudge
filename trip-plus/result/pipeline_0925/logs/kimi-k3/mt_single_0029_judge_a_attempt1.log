@@ -1,0 +1,2 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe -m simulation.run_user_simulation --simulator-model deepseek-v4-flash --result-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en --query-file C:\Users\Lenovo\Desktop\xhs笔试\2_评测集_cases\query_10.json --database-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en --target-id mt_single_0029 --output-root C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\kimi-k3_en\judge_a --workers 1
+

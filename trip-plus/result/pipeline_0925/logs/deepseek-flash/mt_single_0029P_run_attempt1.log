@@ -1,0 +1,2 @@
+$ C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\python.exe run.py --model deepseek-v4-flash --test-data C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925\_cases\mt_single_0029P.json --output-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\result\pipeline_0925 --database-dir C:\Users\Lenovo\Desktop\xhs笔试\trip-plus\database\sample\en --workers 1 --rerun-ids mt_single_0029P
+

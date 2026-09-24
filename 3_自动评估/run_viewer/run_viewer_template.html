@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模型评测结果 · 排行榜与逐轮回放</title>
+<style>
+:root {
+  --paper: #EDF1F3;
+  --panel: #FFFFFF;
+  --sunk: #F5F7F9;
+  --ink: #1C2B39;
+  --muted: #5B6B7A;
+  --rule: #CFD8DF;
+  --line: #E3E8EC;
+  --plan: #26786B;
+  --clar: #C4870F;
+  --nosol: #AF3646;
+  --ok: #26786B;   --ok-bg: #DDEBE8;
+  --warn: #9A6A0B; --warn-bg: #F6E4C4;
+  --bad: #AF3646;  --bad-bg: #F5DCDF;
+  --na: #7B8A97;   --na-bg: #E4E9ED;
+  --review: #2C4A8C; --review-bg: #DCE4F5;
+  --focus: #2F5FD0;
+  --ui: "Bahnschrift", "Segoe UI Variable Text", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  --text: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
+  --mono: "Cascadia Mono", "Consolas", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 14.5px; line-height: 1.6; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.masthead { padding: 34px 0 6px; }
+.masthead h1 { font-family: var(--ui); font-weight: 600; font-size: 30px; margin: 0 0 4px; }
+.masthead p { margin: 0; color: var(--muted); max-width: 85ch; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; margin-top: 18px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); }
+.bar nav { display: flex; flex-wrap: wrap; gap: 2px; }
+.bar nav a { text-decoration: none; color: var(--ink); padding: 4px 12px; border-radius: 999px; font-family: var(--ui); }
+.bar nav a:hover { background: #DCE3E8; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+
+section { padding: 30px 0 6px; }
+h2 { font-family: var(--ui); font-weight: 600; font-size: 21px; margin: 0 0 4px; }
+.lede { color: var(--muted); margin: 0 0 16px; max-width: 90ch; }
+h3 { font-family: var(--ui); font-weight: 600; font-size: 16px; margin: 0 0 10px; }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; }
+.en { color: var(--muted); font-size: 11.5px; font-family: var(--mono); }
+
+.st { display: inline-block; width: 12px; height: 12px; flex: none; background: currentColor; }
+.st.plan { color: var(--plan); border-radius: 50%; }
+.st.clarification { color: var(--clar); border-radius: 2px; transform: rotate(45deg) scale(.85); }
+.st.no_solution { color: var(--nosol); border-radius: 1px; }
+
+.pill { display: inline-block; padding: 0 8px; border-radius: 5px; font-family: var(--ui); font-size: 12.5px; font-weight: 600; line-height: 21px; white-space: nowrap; }
+.v-合格, .p-pass, .p-ok, .p-done { background: var(--ok-bg); color: var(--ok); }
+.v-基本合格, .p-partial, .p-warn, .p-done_partial, .p-retrying, .p-running { background: var(--warn-bg); color: var(--warn); }
+.v-不合格, .p-fail, .p-bad, .p-error, .p-failed { background: var(--bad-bg); color: var(--bad); }
+.v-待复核, .p-review, .p-info { background: var(--review-bg); color: var(--review); }
+.v-未运行, .p-na, .p-not_applicable, .p-insufficient_evidence, .p-skip, .p-skipped, .p-pending { background: var(--na-bg); color: var(--na); }
+.lvl { font-size: 11.5px; font-family: var(--ui); padding: 0 5px; border-radius: 4px; border: 1px solid currentColor; line-height: 17px; }
+.lvl.key { color: var(--bad); }
+.lvl.important { color: var(--warn); }
+.note-box { background: #FFF6DD; color: #6B4A08; border-radius: 10px; padding: 10px 14px; font-size: 13px; margin: 0 0 14px; }
+
+.card { background: var(--panel); border-radius: 14px; padding: 16px 18px; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.empty { padding: 26px; text-align: center; color: var(--muted); border: 2px dashed var(--rule); border-radius: 10px; }
+.scroll-x { overflow-x: auto; }
+
+/* leaderboard */
+table.grid { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.grid th, .grid td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.grid th { font-family: var(--ui); font-weight: 600; background: var(--sunk); font-size: 12.5px; }
+.grid th:first-child, .grid td:first-child, .grid th.l, .grid td.l { text-align: left; }
+.grid td.best { font-weight: 700; }
+.grid td.second { text-decoration: underline; }
+.grid .grp-h th { background: var(--panel); color: var(--muted); font-weight: 400; border-bottom: 0; text-align: center; }
+.rank { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; align-items: center; justify-content: center; background: var(--ink); color: #fff; font-family: var(--ui); font-size: 12px; margin-right: 8px; }
+.cellbar { position: relative; }
+.cellbar i { position: absolute; left: 0; bottom: 3px; height: 3px; background: var(--plan); opacity: .35; border-radius: 2px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+.hbars { display: grid; gap: 6px; font-size: 13px; }
+.hbar { display: grid; grid-template-columns: 130px 1fr 52px; gap: 8px; align-items: center; }
+.hbar .track { height: 10px; background: var(--na-bg); border-radius: 5px; overflow: hidden; }
+.hbar .track i { display: block; height: 100%; border-radius: 5px; }
+.stackbar { display: flex; height: 18px; border-radius: 5px; overflow: hidden; background: var(--na-bg); min-width: 160px; }
+.stackbar span { display: flex; align-items: center; justify-content: center; font-size: 11px; font-family: var(--ui); font-weight: 600; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.chart-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+.analysis { margin: 0; padding-left: 20px; font-size: 13.5px; }
+.analysis li { margin-bottom: 6px; }
+
+.cells { display: flex; gap: 5px; flex-wrap: wrap; }
+.cell { width: 34px; height: 30px; border-radius: 6px; border: 0; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--ui); font-size: 11px; line-height: 1.1; gap: 2px; }
+.cell:hover { outline: 2px solid var(--ink); }
+.cell.none { background: var(--sunk); color: #AAB5BF; cursor: default; }
+.cell.none:hover { outline: none; }
+
+/* log */
+.log-list { max-height: 420px; overflow: auto; font-size: 12.5px; font-family: var(--mono); background: var(--sunk); border-radius: 10px; padding: 8px 10px; }
+.log-list div { display: grid; grid-template-columns: 140px 120px 120px 76px 1fr; gap: 8px; padding: 2px 0; border-bottom: 1px dashed var(--line); }
+.log-list .lv-error { color: var(--bad); }
+.log-list .lv-warn { color: var(--warn); }
+.log-list .lv-ok { color: var(--ok); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+
+/* replay */
+.pickers { display: flex; flex-wrap: wrap; gap: 12px 30px; align-items: center; margin-bottom: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--rule); background: var(--panel); border-radius: 999px; padding: 3px 12px; font-size: 13px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chip:disabled { opacity: .45; cursor: not-allowed; }
+.case-head { background: var(--panel); border-radius: 14px; padding: 14px 20px; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; }
+.case-head b { font-family: var(--ui); font-size: 18px; }
+.stepper { display: flex; margin-bottom: 14px; overflow-x: auto; }
+.step { flex: 1; min-width: 150px; border: 0; background: var(--panel); padding: 10px 14px; text-align: left; border-right: 1px solid var(--paper); display: flex; flex-direction: column; gap: 3px; }
+.step:first-child { border-radius: 12px 0 0 12px; }
+.step:last-child { border-radius: 0 12px 12px 0; border-right: 0; }
+.step[aria-current="true"] { box-shadow: inset 0 -4px 0 var(--ink); background: #FAFBFC; }
+.step .t { font-family: var(--ui); font-weight: 600; display: flex; gap: 8px; align-items: center; }
+.card h3 .n { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 12px; align-items: center; justify-content: center; }
+.card h3 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.card h3 .right { margin-left: auto; font-weight: 400; font-size: 12.5px; color: var(--muted); }
+.utter { background: var(--sunk); border-left: 3px solid var(--ink); padding: 8px 12px; border-radius: 0 8px 8px 0; }
+.utter .orig { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; font-size: 12.5px; }
+.tag { background: var(--sunk); padding: 0 8px; border-radius: 5px; }
+
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline > li { position: relative; padding: 0 0 12px 26px; }
+.timeline > li::before { content: ""; position: absolute; left: 7px; top: 18px; bottom: 0; width: 2px; background: var(--rule); }
+.timeline > li:last-child::before { display: none; }
+.timeline > li > .dot { position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--panel); border: 3px solid var(--ink); }
+.timeline > li.final > .dot { background: var(--ink); }
+.calls { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+details.call { background: var(--sunk); border-radius: 8px; }
+details.call > summary { padding: 4px 10px; cursor: pointer; font-family: var(--mono); font-size: 12.5px; list-style: none; display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+details.call > summary::-webkit-details-marker { display: none; }
+details.call > summary::before { content: "▸"; color: var(--muted); }
+details.call[open] > summary::before { content: "▾"; }
+.fn { font-weight: 700; color: #2C4A8C; flex: none; }
+.args { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+pre { margin: 0; white-space: pre-wrap; word-break: break-word; font-family: var(--mono); font-size: 12px; line-height: 1.5; }
+.io { padding: 4px 10px 10px; display: grid; gap: 6px; }
+.io .lab { font-size: 11.5px; color: var(--muted); font-family: var(--ui); }
+.io pre { background: var(--panel); border-radius: 6px; padding: 6px 8px; max-height: 260px; overflow: auto; }
+.rt { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+.reply-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+.reply-raw { max-height: 560px; overflow: auto; background: var(--sunk); border-radius: 8px; padding: 10px 12px; }
+.day { margin-bottom: 10px; }
+.day h4 { margin: 0 0 4px; font-family: var(--ui); font-size: 14px; }
+.act { display: grid; grid-template-columns: 96px 76px minmax(0, 1fr); gap: 8px; font-size: 13px; padding: 3px 0; border-bottom: 1px dashed var(--line); }
+.act .tm { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.act .ty { font-size: 12px; color: var(--muted); }
+
+.verdict { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.verdict .big { font-family: var(--ui); font-size: 24px; font-weight: 700; padding: 6px 16px; border-radius: 10px; flex: none; }
+.vitems { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; flex: 1; min-width: 260px; font-size: 13px; }
+.vitems li { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.mk { width: 18px; text-align: center; font-weight: 700; flex: none; }
+.mk.ok { color: var(--ok); } .mk.bad { color: var(--bad); } .mk.rv { color: var(--review); }
+
+.layer { border-top: 1px solid var(--line); padding: 12px 0 6px; }
+.layer:first-of-type { border-top: 0; padding-top: 0; }
+.layer-h { display: flex; gap: 8px; align-items: center; font-family: var(--ui); font-weight: 600; margin-bottom: 6px; flex-wrap: wrap; }
+.layer-h .sc { margin-left: auto; font-family: var(--ui); }
+.meter { height: 6px; background: var(--na-bg); border-radius: 3px; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--ok); }
+.dim { margin-bottom: 10px; }
+.dim .h { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 3px; font-weight: 600; }
+ul.checks { list-style: none; margin: 6px 0 0; padding: 0; font-size: 13px; display: grid; gap: 3px; }
+ul.checks li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 6px; }
+ul.checks .msg { grid-column: 2; color: var(--bad); font-size: 12.5px; background: var(--bad-bg); border-radius: 5px; padding: 3px 8px; margin-bottom: 3px; word-break: break-word; }
+ul.checks .msg.neutral { background: var(--sunk); color: var(--muted); }
+.foldlink { font-size: 12.5px; color: var(--muted); cursor: pointer; }
+
+.jd { border-top: 1px solid var(--line); padding: 10px 0; }
+.jd:first-of-type { border-top: 0; }
+.jd .h { display: flex; gap: 8px; align-items: center; font-weight: 600; font-family: var(--ui); flex-wrap: wrap; }
+.jd .h .conf { margin-left: auto; font-size: 12px; color: var(--muted); font-weight: 400; }
+.jd p { margin: 4px 0; font-size: 13.5px; }
+.quote { font-size: 12.5px; border-left: 3px solid var(--rule); padding: 2px 10px; margin: 4px 0; color: #34495A; font-family: var(--mono); background: var(--sunk); border-radius: 0 6px 6px 0; word-break: break-word; }
+.flag { font-size: 12.5px; background: var(--review-bg); color: #243B6E; border-radius: 8px; padding: 6px 10px; margin-top: 8px; }
+details.reason > summary { cursor: pointer; font-size: 13px; color: var(--muted); margin-top: 6px; }
+details.reason pre { background: var(--sunk); border-radius: 8px; padding: 10px; max-height: 460px; overflow: auto; margin-top: 6px; font-family: var(--text); font-size: 12.5px; }
+
+.arow { display: grid; grid-template-columns: 80px auto 64px; gap: 10px; align-items: center; font-size: 13.5px; padding: 4px 0; justify-content: start; }
+.dots5 { display: flex; gap: 4px; }
+.dots5 i { width: 24px; height: 10px; border-radius: 3px; background: var(--na-bg); }
+.dots5 i.on { background: var(--plan); }
+table.acts { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 8px; }
+.acts th, .acts td { border-bottom: 1px solid var(--line); padding: 5px 6px; vertical-align: top; text-align: left; }
+.acts th { background: var(--sunk); font-family: var(--ui); font-weight: 600; white-space: nowrap; }
+.sc5 { display: inline-block; min-width: 22px; text-align: center; border-radius: 4px; font-family: var(--ui); font-weight: 600; }
+.sc5.s1, .sc5.s2 { background: var(--bad-bg); color: var(--bad); }
+.sc5.s3 { background: var(--warn-bg); color: var(--warn); }
+.sc5.s4, .sc5.s5 { background: var(--ok-bg); color: var(--ok); }
+.acts .why { color: var(--muted); display: block; font-size: 12px; }
+.stopped { font-size: 13px; color: var(--muted); background: var(--sunk); border-radius: 8px; padding: 8px 12px; margin-top: 8px; }
+
+@media (max-width: 760px) {
+  .act { grid-template-columns: 80px minmax(0, 1fr); }
+  .act .ty { display: none; }
+  .log-list div { grid-template-columns: 1fr; }
+  .hbar { grid-template-columns: 96px 1fr 44px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>模型评测结果</h1>
+    <p>被测模型在评测集上逐 case 运行，每个 case 跑完立即做 Trip+ 规则评估、Judge B 交互行为评审和 Judge A 旅行者体验模拟。这里汇总排名，并能逐轮回放每个模型的对话、工具调用、回复与评分依据。</p>
+    <div class="bar">
+      <nav><a href="#board">排行榜</a><a href="#analysis">分维度分析</a><a href="#matrix-sec">逐轮判定矩阵</a><a href="#replay">逐轮回放</a><a href="#judgeA">最终方案体验</a><a href="#log">运行记录</a></nav>
+      <div class="legend">
+        <span><i class="st plan"></i>应出方案</span><span><i class="st clarification"></i>应澄清</span><span><i class="st no_solution"></i>应判无解</span>
+      </div>
+      <span id="judgeInfo"></span>
+    </div>
+  </header>
+
+  <section id="board">
+    <h2>排行榜</h2>
+    <p class="lede">列与 Trip+ 论文主表一致：前三列衡量多轮交互，后四列衡量方案质量（只在"应出方案且确实出了方案"的轮次上计算；用户模拟只评每个 case 的最后一份方案）。Plan Avg 是后四列均值，Win% 是 7 列中排第一的比例。排名依据规则总分，即前 6 列的均值；用户模拟由 deepseek 裁判给出，而 deepseek 本身也是被测模型，存在自评偏好，所以不计入排名。粗体为每列最佳，下划线为第二。</p>
+    <div id="boardNote"></div>
+    <div class="card scroll-x"><table class="grid" id="boardTable"></table></div>
+    <div id="commonBox"></div>
+  </section>
+
+  <section id="analysis">
+    <h2>分维度分析</h2>
+    <p class="lede">把总分拆开看：各模型在哪类回应、哪个可行性子维度、哪类硬约束、哪条 Judge B 维度上失分。</p>
+    <div class="two" id="analysisGrid"></div>
+  </section>
+
+  <section id="matrix-sec">
+    <h2>逐轮判定矩阵</h2>
+    <p class="lede">每一格是一轮，形状是本轮应有的回应方式，颜色是按《评估方案与验证》§1.2 算出的本轮判定。点任意一格跳到对应回放。</p>
+    <div class="card scroll-x"><table class="grid" id="matrix"></table></div>
+  </section>
+
+  <section id="replay">
+    <h2>逐轮回放</h2>
+    <p class="lede">从上到下依次是：用户这一轮说了什么、模型调了哪些工具、最终回复了什么、本轮判定及依据、规则逐项结果、Judge B 的逐维度判断。</p>
+    <div class="pickers">
+      <div><div class="small muted">被测模型</div><div class="chips" id="modelPick"></div></div>
+      <div><div class="small muted">Case</div><div class="chips" id="casePick"></div></div>
+    </div>
+    <div id="caseHead"></div>
+    <div class="stepper" id="stepper"></div>
+    <div id="turnView"></div>
+  </section>
+
+  <section id="judgeA">
+    <h2>最终方案体验（Judge A）</h2>
+    <p class="lede">Judge A 扮演画像中的旅行者，按逐分钟活动轨迹"走一遍"当前 case 的最后一份方案：每个活动在 5 个维度上打 1–5 分并写理由，维度分是按活动数加权的平均，总分由代码重算。只报告，不参与合格判定。</p>
+    <div id="jaView"></div>
+  </section>
+
+  <section id="log">
+    <h2>运行记录</h2>
+    <p class="lede">流水线的每个任务（模型 × case）的阶段状态，以及按时间顺序的全部事件：开始、完成、失败重试、跳过。</p>
+    <div id="logView"></div>
+  </section>
+  <div style="height:60px"></div>
+</div>
+
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L = (group, key) => (D.labels[group] || {})[key] || key;
+const pct = x => x == null ? "—" : Math.round(x * 100) + "%";
+const f4 = x => x == null ? "—" : x.toFixed(4);
+const MODE_ZH = { plan: "出方案", clarification: "澄清", no_solution: "判无解", no_ask: "不该问" };
+const LABEL_ZH = { pass: "通过", partial: "部分", fail: "未通过", not_applicable: "不适用", insufficient_evidence: "证据不足" };
+const TYPE_ZH = { attraction: "景点", meal: "用餐", travel_city: "市内交通", travel_intercity_public: "城际交通", buffer: "缓冲", accommodation: "住宿", hotel: "住宿" };
+const STAGE_ZH = { run: "推理与规则评估", judge_b: "Judge B", judge_a: "Judge A", task: "任务", report: "聚合", pipeline: "流水线" };
+const STATUS_ZH = { ok: "完成", running: "进行中", retrying: "重试中", failed: "失败", done: "完成", done_partial: "部分完成", skipped: "已跳过", pending: "未开始", not_applicable: "不适用" };
+const PALETTE = ["#26786B", "#2F5FD0", "#C4870F", "#AF3646", "#6B4FA0"];
+const caseById = Object.fromEntries(D.cases.map(c => [c.id, c]));
+const short = id => id.replace("mt_single_", "");
+const state = { run: 0, caseId: null, turn: 0 };
+const LB = D.leaderboard;
+const runColor = lab => PALETTE[D.runs.findIndex(r => r.label === lab) % PALETTE.length];
+
+$("#judgeInfo").innerHTML = D.judge_model ? `裁判：<b>${esc(D.judge_model)}</b>` : "";
+
+/* ---------- leaderboard ---------- */
+function renderBoard() {
+  const notes = D.runs.filter(r => r.note || r.exhausted).map(r => `<b>${esc(r.label)}</b>：${esc(r.note || "")}${r.exhausted ? `；<span style="color:var(--bad)">额度不足已停止</span>` : ""}${r.available && Object.keys(r.cases).length ? "" : "；无结果"}`);
+  $("#boardNote").innerHTML = notes.length ? `<div class="note-box">${notes.join("<br>")}</div>` : "";
+  if (!LB.order.length) { $("#boardTable").innerHTML = `<tr><td><div class="empty">还没有任何模型跑完 case。</div></td></tr>`; return; }
+  const cols = [...LB.metrics.map(m => [m.key, m.zh]), ["plan_avg", "Plan Avg"], ["win", "Win%"], ["rule_total", "规则总分"], ["total7", "七项总分"], ["pass_rate", "逐轮合格率"]];
+  const rankOf = {};
+  for (const [k] of cols) {
+    const vals = LB.order.map(l => LB.board[l].metrics[k]).filter(v => v != null).sort((a, b) => b - a);
+    rankOf[k] = v => v == null ? "" : Math.abs(v - vals[0]) < 1e-9 ? "best" : (vals.length > 1 && Math.abs(v - vals.find(x => x < vals[0] - 1e-9)) < 1e-9 ? "second" : "");
+  }
+  const head = `<tr class="grp-h"><th></th><th colspan="3">多轮交互</th><th colspan="4">方案质量</th><th colspan="2">论文汇总</th><th colspan="3">本方案汇总</th><th></th></tr>
+    <tr><th>模型</th>${cols.map(([k, zh]) => `<th>${zh}</th>`).join("")}<th>完成</th></tr>`;
+  const rows = LB.order.map((lab, i) => {
+    const b = LB.board[lab], m = b.metrics;
+    return `<tr><td><span class="rank">${i + 1}</span><b>${esc(lab)}</b></td>${cols.map(([k]) => {
+      const v = m[k];
+      const txt = k === "win" ? (v == null ? "—" : (v * 100).toFixed(1)) : f4(v);
+      return `<td class="num cellbar ${rankOf[k](v)}">${txt}${v != null && k !== "win" ? `<i style="width:${Math.max(0, Math.min(1, v)) * 100}%"></i>` : ""}</td>`;
+    }).join("")}<td class="num">${b.n_cases} case / ${b.n_turns} 轮</td></tr>`;
+  }).join("");
+  $("#boardTable").innerHTML = head + rows;
+  const maxCases = Math.max(...LB.order.map(l => LB.board[l].n_cases));
+  if (LB.common_cases.length && LB.common_cases.length < maxCases) {
+    $("#commonBox").innerHTML = `<div class="card" style="margin-top:14px"><h3>共同 case 口径<span class="right">${LB.common_cases.map(short).join("、")}</span></h3>
+      <p class="small muted" style="margin-top:-4px">各模型完成的 case 数不同，这里只用所有模型都跑完的 ${LB.common_cases.length} 个 case 重算，便于公平对比。</p>
+      <table class="grid"><tr><th>模型</th><th>回应准确率</th><th>请求落实</th><th>意图保留</th><th>可行性</th><th>硬约束</th><th>软偏好</th><th>用户模拟</th><th>规则总分</th><th>逐轮合格率</th></tr>
+      ${Object.entries(LB.common).sort((a, b) => (b[1].rule_total || 0) - (a[1].rule_total || 0)).map(([lab, m]) => `<tr><td>${esc(lab)}</td>${["resp_acc", "fulfill", "preserve", "feas", "hard", "soft", "user_sim", "rule_total", "pass_rate"].map(k => `<td class="num">${f4(m[k])}</td>`).join("")}</tr>`).join("")}</table></div>`;
+  }
+}
+
+function hbarsBlock(title, sub, rowsByLabel, fmtv = pct) {
+  const labs = LB.order;
+  const keys = [...new Set(labs.flatMap(l => Object.keys(rowsByLabel(l) || {})))];
+  if (!keys.length) return "";
+  return `<div class="card"><h3>${title}</h3>${sub ? `<p class="small muted" style="margin-top:-6px">${sub}</p>` : ""}
+    <div class="chart-legend">${labs.map(l => `<span><i style="background:${runColor(l)}"></i>${esc(l)}</span>`).join("")}</div>
+    ${keys.map(k => `<div style="margin-bottom:8px"><div class="small" style="font-weight:600">${esc(k)}</div><div class="hbars">${labs.map(l => {
+      const v = (rowsByLabel(l) || {})[k];
+      return `<div class="hbar"><span class="small muted">${esc(l)}</span><span class="track"><i style="width:${v == null ? 0 : Math.max(0, Math.min(1, v)) * 100}%;background:${runColor(l)}"></i></span><span class="num small">${fmtv(v)}</span></div>`;
+    }).join("")}</div></div>`).join("")}</div>`;
+}
+
+function renderAnalysis() {
+  if (!LB.order.length) { $("#analysisGrid").innerHTML = `<div class="empty">暂无数据</div>`; return; }
+  const B = LB.board;
+  const blocks = [];
+  blocks.push(hbarsBlock("回应方式：按类别拆开", "澄清轮和不该问轮（成对案例 T1，信息已给全）最能区分模型是否会主动澄清；只看总准确率会被大量出方案轮稀释。",
+    l => Object.fromEntries(Object.entries(B[l].mode).map(([k, v]) => [`${MODE_ZH[k] || k}轮`, v.acc]))));
+  blocks.push(hbarsBlock("行程可行性：9 个子维度通过率", "只统计应出方案且出了方案的轮次。", l => B[l].subdim));
+  blocks.push(hbarsBlock("软偏好：四个家族得分", "", l => B[l].soft_family));
+  blocks.push(hbarsBlock("用户模拟（Judge A）：5 个体验维度", "1–5 分换算为 (s-1)/4。", l => B[l].a_dims));
+  blocks.push(hbarsBlock("按交互类型：回应准确率", "", l => Object.fromEntries(Object.entries(B[l].itype).map(([k, v]) => [D.itype_zh[k] || k, v.resp_acc]))));
+  blocks.push(hbarsBlock("按交互类型：请求落实", "", l => Object.fromEntries(Object.entries(B[l].itype).map(([k, v]) => [D.itype_zh[k] || k, v.fulfill]))));
+
+  const order = ["合格", "基本合格", "待复核", "不合格"];
+  const colors = { "合格": "var(--ok-bg)", "基本合格": "var(--warn-bg)", "待复核": "var(--review-bg)", "不合格": "var(--bad-bg)" };
+  blocks.push(`<div class="card"><h3>逐轮判定分布</h3><table class="grid"><tr><th>模型</th><th class="l">分布</th><th>合格率</th></tr>${LB.order.map(l => {
+    const v = B[l].verdict, n = B[l].n_turns;
+    return `<tr><td>${esc(l)}</td><td class="l"><div class="stackbar">${order.filter(k => v[k]).map(k => `<span style="flex:${v[k]};background:${colors[k]}">${k} ${v[k]}</span>`).join("")}</div></td><td class="num">${pct(B[l].metrics.pass_rate)}</td></tr>`;
+  }).join("")}</table></div>`);
+
+  const bKeys = Object.keys(D.b_dims);
+  const bOrder = ["pass", "partial", "fail", "not_applicable", "insufficient_evidence"];
+  const bColors = { pass: "var(--ok-bg)", partial: "var(--warn-bg)", fail: "var(--bad-bg)", not_applicable: "var(--na-bg)", insufficient_evidence: "var(--review-bg)" };
+  blocks.push(`<div class="card"><h3>Judge B 标签分布</h3><div class="chart-legend">${bOrder.map(k => `<span><i style="background:${bColors[k]}"></i>${LABEL_ZH[k]}</span>`).join("")}</div>
+    <table class="grid"><tr><th>维度</th>${LB.order.map(l => `<th class="l">${esc(l)}</th>`).join("")}</tr>${bKeys.map(k => `<tr><td>${esc(D.b_dims[k])}</td>${LB.order.map(l => {
+      const v = (B[l].judge_b || {})[k] || {};
+      return `<td class="l"><div class="stackbar" style="min-width:120px">${bOrder.filter(x => v[x]).map(x => `<span style="flex:${v[x]};background:${bColors[x]}" title="${LABEL_ZH[x]} ${v[x]}">${v[x]}</span>`).join("")}</div></td>`;
+    }).join("")}</tr>`).join("")}</table></div>`);
+
+  const topList = (title, key) => `<div class="card"><h3>${title}</h3><table class="grid"><tr><th>模型</th><th class="l">出现次数最多的失败项</th></tr>${LB.order.map(l =>
+    `<tr><td>${esc(l)}</td><td class="l" style="white-space:normal">${(B[l][key] || []).map(([n, c]) => `${esc(n)} <b>×${c}</b>`).join("；") || "—"}</td></tr>`).join("")}</table></div>`;
+  blocks.push(topList("可行性检查失败 Top", "feas_fail"));
+  blocks.push(topList("硬约束失败 Top", "hard_fail"));
+
+  blocks.push(`<div class="card"><h3>运行成本（每轮平均）</h3><table class="grid"><tr><th>模型</th><th>LLM 调用</th><th>工具调用</th><th>Token</th><th>耗时（秒）</th></tr>${LB.order.map(l => {
+    const c = B[l].cost || {};
+    return `<tr><td>${esc(l)}</td><td class="num">${c.llm_calls?.toFixed(1) ?? "—"}</td><td class="num">${c.tool_calls?.toFixed(1) ?? "—"}</td><td class="num">${c.tokens ? Math.round(c.tokens).toLocaleString() : "—"}</td><td class="num">${c.elapsed?.toFixed(0) ?? "—"}</td></tr>`;
+  }).join("")}</table></div>`);
+  $("#analysisGrid").innerHTML = blocks.filter(Boolean).join("");
+}
+
+function renderMatrix() {
+  const head = `<tr><th class="l">Case</th><th class="l">画像</th>${D.runs.map(r => `<th class="l">${esc(r.label)}</th>`).join("")}</tr>`;
+  const rows = D.cases.map(c => {
+    const n = D.notes[c.id] || {};
+    const cols = D.runs.map((run, ri) => {
+      const rc = run.cases[c.id];
+      return `<td class="l"><div class="cells">${c.turns.map((t, ti) => {
+        const tr = rc && rc.turns[ti];
+        if (!tr) return `<span class="cell none" title="T${ti} 无结果"><i class="st ${t.expect}"></i>T${ti}</span>`;
+        const act = tr.rule.mode.actual;
+        return `<button class="cell v-${tr.verdict.label}" data-run="${ri}" data-case="${c.id}" data-turn="${ti}"
+          title="T${ti}：应${MODE_ZH[t.expect]}，实际${MODE_ZH[act] || act || "无法解析"} → ${tr.verdict.label}"><i class="st ${t.expect}"></i>T${ti}</button>`;
+      }).join("")}</div></td>`;
+    }).join("");
+    return `<tr><td class="l"><b>${short(c.id)}</b></td><td class="l">${esc(n.persona || "")}</td>${cols}</tr>`;
+  }).join("");
+  $("#matrix").innerHTML = head + rows;
+  $("#matrix").onclick = e => {
+    const b = e.target.closest("button.cell");
+    if (!b) return;
+    Object.assign(state, { run: +b.dataset.run, caseId: b.dataset.case, turn: +b.dataset.turn });
+    renderReplay();
+    $("#replay").scrollIntoView();
+  };
+}
+
+/* ---------- replay ---------- */
+function renderPickers() {
+  $("#modelPick").innerHTML = D.runs.map((r, i) =>
+    `<button class="chip" data-i="${i}" aria-pressed="${i === state.run}" ${Object.keys(r.cases).length ? "" : "disabled title='无结果'"}>${esc(r.label)}</button>`).join("");
+  const run = D.runs[state.run];
+  $("#casePick").innerHTML = D.cases.map(c =>
+    `<button class="chip" data-id="${c.id}" aria-pressed="${c.id === state.caseId}" ${run.cases[c.id] ? "" : "disabled title='该模型没有此 case 的结果'"}>${short(c.id)}</button>`).join("");
+}
+$("#modelPick").onclick = e => { const b = e.target.closest("button"); if (!b || b.disabled) return; state.run = +b.dataset.i; renderReplay(); };
+$("#casePick").onclick = e => { const b = e.target.closest("button"); if (!b || b.disabled) return; state.caseId = b.dataset.id; state.turn = 0; renderReplay(); };
+$("#stepper").onclick = e => { const b = e.target.closest("button"); if (!b) return; state.turn = +b.dataset.t; renderReplay(); };
+
+function renderReplay() {
+  const run = D.runs[state.run];
+  if (!run || !Object.keys(run.cases).length) { $("#turnView").innerHTML = `<div class="empty">暂无结果</div>`; renderPickers(); return; }
+  if (!run.cases[state.caseId]) { state.caseId = Object.keys(run.cases)[0]; state.turn = 0; }
+  renderPickers();
+  const c = caseById[state.caseId], n = D.notes[state.caseId] || {}, rc = run.cases[state.caseId];
+  $("#caseHead").innerHTML = `<div class="case-head"><b>${short(c.id)} · ${esc(n.persona || "")}</b><span class="pill ${n.group === "边界" ? "p-partial" : n.group === "成对" ? "p-review" : "p-ok"}">${esc(n.group || "")}</span>
+    <span class="muted">${esc(n.scene || "")}</span><span class="small muted">考察：${esc(n.boundary || "—")}</span></div>`;
+  $("#stepper").innerHTML = c.turns.map((t, i) => {
+    const tr = rc.turns[i];
+    const v = tr ? tr.verdict.label : "未运行";
+    const act = tr ? (MODE_ZH[tr.rule.mode.actual] || "无法解析") : "—";
+    return `<button class="step" data-t="${i}" ${i === state.turn ? 'aria-current="true"' : ""}>
+      <span class="t"><i class="st ${t.expect}"></i>T${i} <span class="pill v-${v}">${v}</span></span>
+      <span class="small muted">应${MODE_ZH[t.expect]} · 实际${act}</span></button>`;
+  }).join("");
+  renderTurn(c, n, rc);
+  renderJudgeA(c, rc);
+}
+
+function checkLine(x, nameGroup) {
+  const zh = x.zh || (nameGroup ? L(nameGroup, x.name) : null);
+  const mk = x.passed === true ? `<span class="mk ok">✓</span>` : x.passed === false ? `<span class="mk bad">✗</span>` : `<span class="mk muted">–</span>`;
+  return `<li>${mk}<span>${esc(zh && zh !== x.name ? zh : x.name)}${zh && zh !== x.name ? ` <span class="en">${esc(x.name)}</span>` : ""}</span>
+    ${x.message && x.passed !== true ? `<span class="msg ${x.passed === null ? "neutral" : ""}">${esc(x.message)}</span>` : ""}</li>`;
+}
+const checkList = (items, g) => `<ul class="checks">${items.map(x => checkLine(x, g)).join("")}</ul>`;
+
+function renderPlan(plan) {
+  if (!plan || !plan.daily_plans) return `<div class="muted small">本轮没有可解析的结构化行程。</div>`;
+  return plan.daily_plans.map(d => `<div class="day"><h4>第 ${d.day_number} 天 · ${esc(d.current_city || "")}</h4>
+    ${(d.activities || []).map(a => {
+      const det = a.details || {};
+      const what = det.name || det.description || [det.from, det.to].filter(Boolean).join(" → ") + (det.mode ? `（${det.mode}${det.number ? " " + det.number : ""}${det.duration ? "，" + det.duration : ""}）` : "");
+      return `<div class="act"><span class="tm">${esc(a.time_slot)}</span><span class="ty">${esc(TYPE_ZH[a.type] || a.type)}</span><span>${esc(what)}${det.cost != null ? ` <span class="muted small">¥${det.cost}</span>` : ""}</span></div>`;
+    }).join("")}</div>`).join("");
+}
+
+function renderTurn(c, n, rc) {
+  const i = state.turn, t = c.turns[i], tr = rc.turns[i];
+  const zh = (n.turns || [])[i] || [];
+  if (!tr) { $("#turnView").innerHTML = `<div class="empty">这一轮没有运行结果。</div>`; return; }
+  const runLabel = D.runs[state.run].label;
+
+  const utter = `<div class="card"><h3><span class="n">1</span>用户输入 · T${i}<span class="right">应${MODE_ZH[t.expect]}</span></h3>
+    <div class="utter">${esc(zh[0] || "")}<div class="orig">${esc(t.utterance)}</div></div>
+    ${zh[1] ? `<div class="small muted" style="margin-top:6px">评测者注：${esc(zh[1])}</div>` : ""}
+    <div class="tags">${t.must_update.map(k => `<span class="tag">需落实：${esc(L("update", k))}</span>`).join("")}
+      ${t.must_preserve.length ? `<span class="tag">需保留：${t.must_preserve.map(k => esc(L("hard", k))).join("、")}</span>` : ""}</div></div>`;
+
+  const rt = tr.runtime;
+  const steps = tr.steps.map((s, k) => `<li><span class="dot"></span><b class="small">LLM 调用 #${k + 1}</b> <span class="small muted">并行调用 ${s.calls.length} 个工具</span>
+      ${s.thinking ? `<div class="small muted">${esc(s.thinking)}</div>` : ""}
+      <div class="calls">${s.calls.map(cl => `<details class="call"><summary><span class="fn">${esc(cl.name)}</span><span class="args">${esc(cl.args)}</span></summary>
+        <div class="io"><div class="lab">参数</div><pre>${esc(cl.args)}</pre><div class="lab">返回</div><pre>${esc(cl.result)}</pre></div></details>`).join("")}</div></li>`).join("");
+  const exec = `<div class="card"><h3><span class="n">2</span>模型执行过程<span class="right">${esc(runLabel)}</span></h3>
+    ${tr.steps.length ? `<ol class="timeline">${steps}<li class="final"><span class="dot"></span><b class="small">LLM 调用 #${tr.steps.length + 1}</b> <span class="small muted">不再调用工具，生成最终回复</span></li></ol>`
+      : `<div class="small muted">本轮没有调用工具，直接回复。</div>`}
+    <div class="rt"><span>耗时 ${rt.elapsed ? rt.elapsed.toFixed(1) + " 秒" : "—"}</span><span>LLM 调用 ${rt.llm_calls ?? "—"} 次</span><span>工具调用 ${rt.tool_calls ?? "—"} 次</span>
+      <span>重复调用 ${rt.duplicate ?? 0}</span><span>工具报错 ${rt.errors ?? 0}</span><span>Token ${rt.tokens ? rt.tokens.toLocaleString() : "—"}</span></div></div>`;
+
+  const hasPlan = !!(tr.plan && tr.plan.daily_plans && tr.plan.daily_plans.length);
+  const reply = `<div class="card"><h3><span class="n">3</span>模型最终回复<span class="right">识别为：${esc(MODE_ZH[tr.rule.mode.actual] || tr.rule.mode.actual || "无法解析")}</span></h3>
+    <div class="reply-tabs"><button class="chip" data-v="plan" aria-pressed="${hasPlan}">结构化行程</button><button class="chip" data-v="raw" aria-pressed="${!hasPlan}">回复原文</button></div>
+    <div data-pane="plan" ${hasPlan ? "" : "hidden"}>${renderPlan(tr.plan)}</div>
+    <div data-pane="raw" class="reply-raw" ${hasPlan ? "hidden" : ""}><pre>${esc(tr.reply)}</pre></div></div>`;
+
+  const v = tr.verdict;
+  const verdict = `<div class="card"><h3><span class="n">4</span>本轮判定</h3>
+    <div class="verdict"><div class="big v-${v.label}">${v.label}</div>
+    <ul class="vitems">${v.items.map(x => `<li><span class="mk ${x.ok === true ? "ok" : x.ok === false ? "bad" : "rv"}">${x.ok === true ? "✓" : x.ok === false ? "✗" : "?"}</span>
+      <span class="lvl ${x.level}">${x.level === "key" ? "关键" : "重要"}</span><span>${esc(x.name)}</span><span class="small muted">${esc(x.note || "")}</span></li>`).join("")}</ul></div>
+    ${v.stopped ? `<div class="stopped">回应方式判错，按 Trip+ 口径本轮不再计算可行性、硬约束和软偏好。</div>` : ""}
+    ${(tr.judge_b?.flags || []).some(f => String(f).startsWith("possible_rule_error")) ? `<div class="flag">Judge B 认为规则可能判错，这一轮的结论需要人工复核（见下方 Judge B）。</div>` : ""}</div>`;
+
+  const r = tr.rule;
+  let rules = `<div class="layer"><div class="layer-h">L1 回应方式<span class="pill ${r.mode.passed ? "p-ok" : "p-bad"}">${r.mode.passed ? "正确" : "错误"}</span>
+      <span class="sc small muted">应${MODE_ZH[r.mode.expected]} · 实际${MODE_ZH[r.mode.actual] || r.mode.actual || "无法解析"}</span></div>
+      ${r.mode.message ? `<div class="small" style="color:var(--bad)">${esc(r.mode.message)}</div>` : ""}</div>`;
+  if (r.feasibility) {
+    const f = r.feasibility;
+    rules += `<div class="layer"><div class="layer-h">L2 行程可行性<span class="sc">${f.passed}/${f.total} 项通过 · ${pct(f.score)}</span></div>
+      ${f.dims.map(d => {
+        const all = d.subs.flatMap(s => s.checks), bad = all.filter(x => !x.passed);
+        return `<div class="dim"><div class="h"><span>${d.zh}</span><span>${pct(d.score)}</span></div><div class="meter"><i style="width:${(d.score || 0) * 100}%"></i></div>
+          ${checkList(bad)}${bad.length < all.length ? `<details><summary class="foldlink">另有 ${all.length - bad.length} 项通过</summary>${checkList(all.filter(x => x.passed))}</details>` : ""}</div>`;
+      }).join("")}</div>`;
+    const hardOk = r.hard.filter(h => h.passed).length;
+    rules += `<div class="layer"><div class="layer-h">L3 硬约束满足<span class="sc">${hardOk}/${r.hard.length}</span></div>${checkList(r.hard, "hard")}</div>`;
+    rules += `<div class="layer"><div class="layer-h">L3 软偏好满足<span class="sc">${pct(r.soft.score)} <span class="small muted">门槛 70%</span></span></div>
+      <div class="small muted">家族得分：${r.soft.families.map(fm => `${esc(fm.family)} ${pct(fm.score)}`).join(" · ") || "—"}</div>
+      <ul class="checks">${r.soft.checks.map(sc => `<li><span class="mk ${sc.score === 1 ? "ok" : sc.score === 0 ? "bad" : "rv"}">${sc.score === 1 ? "✓" : sc.score === 0 ? "✗" : "½"}</span>
+        <span>${esc(L("rules", sc.rule_id))} <span class="en">${esc(sc.rule_id)}</span> · <span class="small muted">${esc(sc.family || "")}：${esc(sc.message || "")}</span></span>
+        ${sc.violations.length ? `<span class="msg">${sc.violations.map(vv => `${esc(vv.name)} = ${vv.value}（${esc(vv.severity)}）`).join("；")}</span>` : ""}</li>`).join("")}</ul></div>`;
+  }
+  if (r.update.length) rules += `<div class="layer"><div class="layer-h">L3 本轮更新落实<span class="sc">${pct(r.fulfillment_score)}</span></div>${checkList(r.update, "update")}</div>`;
+  if (r.preserve.length) rules += `<div class="layer"><div class="layer-h">L3 前序要求保留<span class="sc">${pct(r.preserve_score)}</span></div>${checkList(r.preserve, "hard")}</div>`;
+  const rulesCard = `<div class="card"><h3><span class="n">5</span>规则评分（Trip+）</h3>${rules}</div>`;
+
+  const jb = tr.judge_b;
+  const judgeCard = jb ? `<div class="card"><h3><span class="n">6</span>Judge B 交互行为<span class="right">${esc(jb.model || D.judge_model)} · ${jb.elapsed ?? "—"} 秒 · ${jb.tokens ? jb.tokens.toLocaleString() : "—"} token</span></h3>
+    <div class="small" style="margin-bottom:6px">${esc(jb.summary || "")}</div>
+    ${Object.entries(jb.dimensions || {}).map(([k, d]) => `<div class="jd"><div class="h">${esc(D.b_dims[k] || k)}<span class="pill p-${d.label}">${esc(LABEL_ZH[d.label] || d.label)}</span><span class="conf">置信度 ${esc(d.confidence || "—")}</span></div>
+      <p>${esc(d.reason)}</p>${(d.evidence || []).map(q => `<div class="quote">${esc(q)}</div>`).join("")}</div>`).join("")}
+    ${(jb.flags || []).map(fl => { const s = typeof fl === "string" ? fl : JSON.stringify(fl); const [k, ...rest] = s.split(":");
+      return `<div class="flag"><span class="pill p-review">${esc(k === "possible_rule_error" ? "规则疑似误判 → 人工复核" : k)}</span> ${esc(rest.join(":").trim())}</div>`; }).join("")}
+    ${jb.missing && jb.missing.length ? `<div class="small muted">缺少证据：${esc(jb.missing.join("；"))}</div>` : ""}
+    <details class="reason"><summary>展开 Judge 的思考过程（${(jb.reasoning || "").length.toLocaleString()} 字符）</summary><pre>${esc(jb.reasoning)}</pre></details></div>`
+    : `<div class="card"><h3><span class="n">6</span>Judge B 交互行为</h3><div class="empty">本轮没有 Judge B 结果。</div></div>`;
+
+  $("#turnView").innerHTML = `<div class="stack">${utter}${exec}${reply}${verdict}${rulesCard}${judgeCard}</div>`;
+  $("#turnView").querySelector(".reply-tabs").onclick = e => {
+    const b = e.target.closest("button"); if (!b) return;
+    const card = b.closest(".card");
+    card.querySelectorAll(".reply-tabs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    card.querySelectorAll("[data-pane]").forEach(p => p.hidden = p.dataset.pane !== b.dataset.v);
+  };
+}
+
+function renderJudgeA(c, rc) {
+  const ja = rc.judge_a;
+  const runLabel = D.runs[state.run].label;
+  if (!ja) { $("#jaView").innerHTML = `<div class="empty">${esc(runLabel)} 在 ${short(c.id)} 上没有 Judge A 结果。</div>`; return; }
+  const dimKeys = Object.keys(D.a_dims);
+  const sc = s => s == null ? `<span class="muted">—</span>` : `<span class="sc5 s${Math.round(s)}">${s}</span>`;
+  $("#jaView").innerHTML = `<div class="stack"><div class="card">
+    <h3>${esc(runLabel)} · ${short(c.id)} · 评的是 T${ja.turn ?? "—"} 的方案<span class="right">${esc(ja.model || D.judge_model)} · ${ja.llm_calls ?? "—"} 次调用 · ${ja.tokens ? ja.tokens.toLocaleString() : "—"} token</span></h3>
+    <div style="display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start">
+      <div><div class="small muted">总分（代码重算）</div><div style="font-family:var(--ui);font-size:30px;font-weight:700">${ja.score_1_5 != null ? ja.score_1_5.toFixed(2) : "—"} <span class="small muted">/ 5 · 换算 ${pct(ja.score)}</span></div>
+        <div class="small muted">Judge 自报总分 ${ja.llm_overall_1_5 != null ? ja.llm_overall_1_5.toFixed(2) : "—"}</div></div>
+      <div>${dimKeys.map(k => { const d = ja.dims[k] || {}; const s = d.score; return `<div class="arow"><span>${esc(D.a_dims[k])}</span>
+        <span class="dots5">${[1, 2, 3, 4, 5].map(x => `<i class="${s != null && x <= Math.round(s) ? "on" : ""}"></i>`).join("")}</span><b class="num">${s != null ? s.toFixed(2) : "不适用"}</b></div>`; }).join("")}</div>
+    </div>
+    ${ja.missing.length ? `<div class="small muted" style="margin-top:8px">证据缺口：${esc(ja.missing.join("；"))}</div>` : ""}
+    ${ja.notes.length ? `<details class="reason"><summary>Judge 的审计备注（${ja.notes.length} 条）</summary><pre>${esc(ja.notes.join("\n"))}</pre></details>` : ""}
+  </div>
+  <div class="card scroll-x"><h3>逐活动评分与理由<span class="right">共 ${ja.activities.length} 个活动</span></h3>
+    <table class="acts"><tr><th>活动</th>${dimKeys.map(k => `<th>${esc(D.a_dims[k])}</th>`).join("")}</tr>
+    ${ja.activities.map(a => `<tr><td style="min-width:170px"><b>${esc(a.ref)}</b> <span class="muted">${esc(a.time || "")}</span><br>${esc(TYPE_ZH[a.type] || a.type || "")} · ${esc(a.name || "")}</td>
+      ${dimKeys.map(k => { const d = a.dims[k] || {}; return `<td style="min-width:150px">${sc(d.score)}<span class="why">${esc(d.reason || "")}</span></td>`; }).join("")}</tr>`).join("")}</table></div></div>`;
+}
+
+/* ---------- log ---------- */
+let logFilter = "all";
+function renderLog() {
+  const lg = D.log;
+  if (!lg) { $("#logView").innerHTML = `<div class="empty">没有流水线运行记录。</div>`; return; }
+  const tasks = lg.tasks;
+  const models = [...new Set(tasks.map(t => t.model))];
+  const cases = D.cases.map(c => c.id);
+  const stageCell = (t, s) => {
+    const st = (t?.stages || {})[s];
+    if (!st) return `<span class="pill p-pending">—</span>`;
+    return `<span class="pill p-${st.status}" title="${esc(st.last_error || "")}">${STATUS_ZH[st.status] || st.status}${st.attempts > 1 ? ` · ${st.attempts} 次` : ""}</span>`;
+  };
+  const taskTable = `<div class="card scroll-x"><h3>任务状态<span class="right">${lg.started || ""} → ${lg.finished || "进行中"} · ${esc(STATUS_ZH[lg.status] || lg.status || "")} · 每阶段最多尝试 ${lg.max_attempts} 次</span></h3>
+    <table class="grid"><tr><th class="l">Case</th>${models.map(m => `<th class="l">${esc(m)}</th>`).join("")}</tr>
+    ${cases.map(cid => `<tr><td class="l">${short(cid)}</td>${models.map(m => { const t = tasks.find(x => x.model === m && x.case === cid);
+      return `<td class="l"><span class="pill p-${t?.status || "pending"}">${STATUS_ZH[t?.status] || t?.status || "未开始"}</span><div class="small" style="margin-top:3px;display:flex;gap:4px;flex-wrap:wrap">推理${stageCell(t, "run")} B${stageCell(t, "judge_b")} A${stageCell(t, "judge_a")}</div></td>`; }).join("")}</tr>`).join("")}</table></div>`;
+  const evs = lg.events.filter(e => logFilter === "all" || (logFilter === "problem" ? ["warn", "error"].includes(e.level) : e.model === logFilter));
+  const filters = [["all", "全部"], ["problem", "只看失败与重试"], ...models.map(m => [m, m])];
+  const list = `<div class="card" style="margin-top:14px"><h3>事件流水<span class="right">${lg.events.length} 条</span></h3>
+    <div class="filters">${filters.map(([k, zh]) => `<button class="chip" data-f="${esc(k)}" aria-pressed="${logFilter === k}">${esc(zh)}</button>`).join("")}</div>
+    <div class="log-list">${evs.slice().reverse().map(e => `<div class="lv-${e.level}"><span>${esc(e.time)}</span><span>${esc(e.model)}</span><span>${esc(e.case ? short(e.case) : "-")}</span><span>${esc(STAGE_ZH[e.stage] || e.stage)}</span><span>${esc(e.msg)}</span></div>`).join("")}</div></div>`;
+  $("#logView").innerHTML = taskTable + list;
+  $("#logView").querySelector(".filters").onclick = e => { const b = e.target.closest("button"); if (!b) return; logFilter = b.dataset.f; renderLog(); };
+}
+
+renderBoard();
+renderAnalysis();
+renderMatrix();
+renderLog();
+state.run = Math.max(0, D.runs.findIndex(r => Object.keys(r.cases).length));
+state.caseId = Object.keys(D.runs[state.run]?.cases || {})[0];
+renderReplay();
+</script>
+</body>
+</html>

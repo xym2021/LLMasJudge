@@ -1,0 +1,156 @@
+{
+  "sample_id": "mt_single_0029_turn_1",
+  "evaluation_mode": "response_expectation_mismatch",
+  "scores": {
+    "feasibility_score": 0.0,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.0,
+    "strict_soft_preference": null,
+    "soft_preference_score": null,
+    "requirement_score": 0.0,
+    "llm_user_simulation_score": null
+  },
+  "response_expectation_details": {
+    "name": "response_expectation",
+    "passed": false,
+    "message": "Expected clarification response for response_expectation=clarification, got plan.",
+    "details": {
+      "response_expectation": "clarification",
+      "expected_mode": "clarification",
+      "actual_mode": "plan",
+      "actual_status": "",
+      "has_daily_plans": true
+    }
+  },
+  "turn_alignment": {
+    "fulfillment_score": 0.0,
+    "preserve_score": null,
+    "preserve_check_count": 0,
+    "preserve_error_count": 0,
+    "preserve_error_rate": null,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": false,
+        "message": "Expected clarification response for response_expectation=clarification, got plan.",
+        "details": {
+          "response_expectation": "clarification",
+          "expected_mode": "clarification",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "clarification_or_ranked_options",
+        "passed": false,
+        "message": "Expected a clarification/conflict response without daily_plans"
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "attraction_avoid_high_queue",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "restaurant_closest_to_attraction",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "room_count_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": null,
+        "message": "Skipped for non-itinerary turn; preservation is checked after the request is clarified/resolved"
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": 0.0,
+      "environment_adaptation_success": null
+    }
+  },
+  "ground_truth": {
+    "sample_id": "mt_single_0029",
+    "base_query_id": "single_0029",
+    "turn_id": 1,
+    "interaction_type": "request_resolution",
+    "must_preserve": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+      "clarification_or_ranked_options"
+    ],
+    "inferred_must_update": [],
+    "current_user_state_deltas": [],
+    "oracle_state_after_turn": {
+      "active_hard_constraints": [
+        "attraction_avoid_high_queue",
+        "restaurant_closest_to_attraction",
+        "trip_date_range_required",
+        "room_count_required",
+        "intercity_round_trip_mode_required"
+      ],
+      "active_user_state_deltas": [],
+      "active_request_resolutions": [
+        {
+          "ambiguous_request": {
+            "component": "restaurant",
+            "missing_slots": [
+              "meal day or route anchor",
+              "price threshold",
+              "cuisine priority"
+            ],
+            "profile_interest_tags": [
+              "history",
+              "food"
+            ]
+          }
+        }
+      ]
+    },
+    "verification_oracle": {},
+    "generated_hard_constraints": {},
+    "current_generated_hard_constraints": {},
+    "expected_solution_status": "sat",
+    "response_expectation": "clarification"
+  },
+  "plan_file": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\kimi-k3_en\\converted_plans\\id_mt_single_0029_turn_1_converted.json",
+  "query": "Could we also add a dinner reservation? We're looking for something with good reviews and a reasonable price, ideally without going too far out of our way.",
+  "source_files": {
+    "converted_plan": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\kimi-k3_en\\converted_plans\\id_mt_single_0029_turn_1_converted.json",
+    "report": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\kimi-k3_en\\reports\\mt_single_0029_turn_1.txt",
+    "trajectory": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\kimi-k3_en\\trajectories\\mt_single_0029_turn_1.json"
+  },
+  "runtime": {
+    "elapsed_time": 39.91031193733215,
+    "llm_calls": 1,
+    "tool_calls": 0,
+    "tool_executions": 0,
+    "duplicate_tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 2163,
+      "prompt_tokens": 8413,
+      "total_tokens": 10576
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0029"
+}

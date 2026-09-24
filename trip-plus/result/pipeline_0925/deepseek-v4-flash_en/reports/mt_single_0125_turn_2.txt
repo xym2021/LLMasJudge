@@ -1,0 +1,48 @@
+<plan>
+Day 1 (2026-05-01):
+Current City: Shanghai → Hong Kong
+Accommodation: 1881 Heritage Hotel, ¥940/room/night
+06:30-08:00 | buffer | security check and boarding at Shanghai Pudong International Airport
+08:00-10:40 | travel_intercity_public | flight HO1307, Shanghai Pudong International Airport - Hong Kong International Airport, Economy, ¥2,455/person
+10:40-11:30 | buffer | deplaning, baggage claim, and freshen up
+11:30-12:18 | travel_city | Hong Kong International Airport - 1881 Heritage Hotel, taxi, ~24km, 48min, ¥186.8
+12:18-13:30 | hotel | check-in and rest, 1881 Heritage Hotel
+13:30-13:38 | travel_city | 1881 Heritage Hotel - Peak Tram, taxi, ~2.3km, 8min, ¥29.9
+13:38-16:00 | attraction | Peak Tram, ¥80/person
+16:00-16:08 | travel_city | Peak Tram - Black Tea, taxi, ~2.7km, 8min, ¥33.7
+16:08-17:30 | meal | dinner, Black Tea, ¥76/person
+17:30-17:36 | travel_city | Black Tea - 1881 Heritage Hotel, walking, 504m, 6min, ¥0
+17:36- | hotel | rest, 1881 Heritage Hotel
+
+Day 2 (2026-05-02):
+Current City: Hong Kong
+Accommodation: 1881 Heritage Hotel, ¥940/room/night
+08:00-08:47 | travel_city | 1881 Heritage Hotel - Ping Shan Heritage Trail, taxi, ~23.7km, 47min, ¥185.5
+08:47-11:00 | attraction | Ping Shan Heritage Trail, ¥40/person
+11:00-11:03 | travel_city | Ping Shan Heritage Trail - Ping Shan Old Place Restaurant, walking, 288m, 3min, ¥0
+11:03-12:00 | meal | lunch, Ping Shan Old Place Restaurant, ¥65/person
+12:00-12:30 | travel_city | Ping Shan Old Place Restaurant - Hong Kong Disneyland, taxi, ~15km, 30min, ¥131.3
+12:30-19:00 | attraction | Hong Kong Disneyland, ¥90/person
+19:00-19:02 | travel_city | Hong Kong Disneyland - River View Restaurant, walking, 152m, 2min, ¥0
+19:02-20:30 | meal | dinner, River View Restaurant, ¥119/person
+20:30-20:57 | travel_city | River View Restaurant - 1881 Heritage Hotel, taxi, ~13.3km, 27min, ¥120.0
+20:57- | hotel | rest, 1881 Heritage Hotel
+
+Day 3 (2026-05-03):
+Current City: Hong Kong → Shanghai
+Accommodation: -
+08:00-09:00 | buffer | check-out, 1881 Heritage Hotel
+09:00-09:48 | travel_city | 1881 Heritage Hotel - Hong Kong International Airport, taxi, ~24km, 48min, ¥186.8
+09:48-11:20 | buffer | airport check-in and security (90 min before departure)
+11:20-12:50 | buffer | waiting at gate and boarding
+12:50-15:10 | travel_intercity_public | flight FM3012, Hong Kong International Airport - Hongqiao International Airport, Economy, ¥951/person
+15:10-15:40 | buffer | deplaning and baggage claim
+
+**Budget Summary**:
+**Transportation: 7,686.2 RMB**. Intercity: HO1307 (¥2,455/person × 2 = ¥4,910) + FM3012 (¥951/person × 2 = ¥1,902). Intracity taxis: ¥186.8 + ¥29.9 + ¥33.7 + ¥185.5 + ¥131.3 + ¥120.0 + ¥186.8 = ¥874.2 (1 vehicle per trip for 2 people).
+**Accommodation: 1,880 RMB**. ¥940/room/night × 1 room × 2 nights.
+**Meals: 520 RMB**. Black Tea (¥76/person × 2) + Ping Shan Old Place Restaurant (¥65/person × 2) + River View Restaurant (¥119/person × 2).
+**Attractions & Tickets: 420 RMB**. Peak Tram (¥80/person × 2) + Ping Shan Heritage Trail (¥40/person × 2) + Hong Kong Disneyland (¥90/person × 2).
+**Other: 0 RMB**
+**Total Estimated Budget: 10,506.2 RMB**
+</plan>

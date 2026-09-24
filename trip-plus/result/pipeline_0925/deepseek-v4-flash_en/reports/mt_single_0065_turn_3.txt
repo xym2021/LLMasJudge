@@ -1,0 +1,66 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: Taiyuan → Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+07:46-08:16 | buffer | security check, boarding at Taiyuan South
+08:16-11:17 | travel_intercity_public | EMU D2507, Taiyuan South - Xi'an North, Second Class Seat, ¥178.5/person
+11:17-11:47 | buffer | deplaning, exiting station
+11:47-12:25 | travel_city | Xi'an North - Junyuan Inn, taxi, ~36.6km, 73min, ¥76.3
+12:25-12:45 | hotel | check-in, drop luggage at Junyuan Inn
+12:45-13:23 | travel_city | Junyuan Inn - Big Wild Goose Pagoda, taxi, ~18.9km, 38min, ¥40.9
+13:23-15:23 | attraction | Big Wild Goose Pagoda, ¥40/person
+15:23-15:36 | travel_city | Big Wild Goose Pagoda - Shaanxi History Museum, walking, 1.1km, 13min, ¥0
+15:36-17:36 | attraction | Shaanxi History Museum, ¥50/person
+17:36-17:44 | travel_city | Shaanxi History Museum - Yongning Gate Tower, Xi'an City Wall, taxi, ~3.1km, 8min, ¥9.3
+17:44-19:44 | attraction | Yongning Gate Tower, Xi'an City Wall, ¥40/person
+19:44-19:59 | travel_city | Yongning Gate Tower - Muslim Quarter, walking, 1.2km, 15min, ¥0
+19:59-20:59 | meal | dinner, Wushan Paper-Wrapped Fish (Minleyuan Main Store), ¥54/person
+20:59-21:46 | travel_city | Muslim Quarter - Junyuan Inn, taxi, ~23.7km, 47min, ¥50.3
+21:46- | hotel | rest, Junyuan Inn
+
+Day 2 (2026-05-01):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+10:30-11:17 | travel_city | Junyuan Inn - Xi'an Bell Tower, taxi, ~23.4km, 47min, ¥49.7
+11:17-13:17 | attraction | Xi'an Bell Tower, ¥50/person
+13:17-13:22 | travel_city | Xi'an Bell Tower - Muslim Quarter, walking, 445m, 5min, ¥0
+13:22-14:22 | meal | lunch, Haidilao Hot Pot (Jiefang Road Branch), ¥96/person
+14:22-16:22 | attraction | Muslim Quarter, ¥0/person
+16:22-16:37 | travel_city | Muslim Quarter - Yongning Gate Tower, Xi'an City Wall, walking, 1.2km, 15min, ¥0
+16:37-18:37 | attraction | Yongning Gate Tower, Xi'an City Wall, ¥40/person
+18:37-18:49 | travel_city | Yongning Gate Tower - Xi'an Drum Tower, walking, 1.0km, 12min, ¥0
+18:49-20:49 | attraction | Xi'an Drum Tower, ¥50/person
+20:49-20:52 | travel_city | Xi'an Drum Tower - Muslim Quarter, walking, 229m, 3min, ¥0
+20:52-21:52 | meal | dinner, Halal Jinxiang Qiangguo Fish (Dongwu Road Branch), ¥81/person
+21:52-22:39 | travel_city | Muslim Quarter - Junyuan Inn, taxi, ~23.7km, 47min, ¥50.3
+22:39- | hotel | rest, Junyuan Inn
+
+Day 3 (2026-05-02):
+Current City: Xi'an
+Accommodation: Junyuan Inn, ¥140/room/night
+09:00-09:45 | travel_city | Junyuan Inn - Yongning Gate Tower, Xi'an City Wall, taxi, ~22.5km, 45min, ¥48.0
+09:45-11:45 | attraction | Yongning Gate Tower, Xi'an City Wall, ¥40/person
+11:45-12:02 | travel_city | Yongning Gate Tower - Xi'an Botanical Garden Children's Garden, taxi, ~8.7km, 17min, ¥20.4
+12:02-13:02 | meal | lunch, Weike Coffee (Wangzuo Qujiang Branch), ¥58/person
+13:02-15:02 | attraction | Xi'an Botanical Garden Children's Garden, ¥30/person
+15:02-15:14 | travel_city | Xi'an Botanical Garden Children's Garden - Grand Tang Mall, taxi, ~5.8km, 12min, ¥14.7
+15:14-18:14 | attraction | Grand Tang Mall, ¥0/person
+18:14-18:51 | travel_city | Grand Tang Mall - Junyuan Inn, taxi, ~18.5km, 37min, ¥39.9
+18:51- | hotel | rest, Junyuan Inn
+
+Day 4 (2026-05-03):
+Current City: Xi'an → Taiyuan
+Accommodation: -
+07:00-08:13 | travel_city | Junyuan Inn - Xi'an North, taxi, ~36.6km, 73min, ¥76.3
+08:13-08:32 | buffer | security check, boarding at Xi'an North
+08:32-11:43 | travel_intercity_public | EMU D2532, Xi'an North - Taiyuan South, Second Class Seat, ¥178/person
+11:43-12:13 | buffer | deplaning, exiting station
+
+**Budget Summary**:
+**Transportation: 1,029.2 RMB**. Intercity: D2507 ¥178.5×2 + D2532 ¥178×2 = ¥713. Intracity taxis: ¥76.3+¥40.9+¥9.3+¥50.3+¥49.7+¥50.3+¥48.0+¥20.4+¥14.7+¥39.9+¥76.3 = ¥475.8 (1 vehicle per trip, 2 people fit). Walking: ¥0.
+**Accommodation: 420 RMB**. ¥140/room/night × 1 room × 3 nights.
+**Meals: 578 RMB**. Dinner Day1: ¥54×2 + Lunch Day2: ¥96×2 + Dinner Day2: ¥81×2 + Lunch Day3: ¥58×2 = ¥578.
+**Attractions & Tickets: 580 RMB**. Big Wild Goose Pagoda ¥40×2 + Shaanxi History Museum ¥50×2 + Yongning Gate Tower ¥40×2 + Xi'an Bell Tower ¥50×2 + Muslim Quarter ¥0 + Yongning Gate Tower ¥40×2 + Xi'an Drum Tower ¥50×2 + Yongning Gate Tower ¥40×2 + Xi'an Botanical Garden Children's Garden ¥30×2 + Grand Tang Mall ¥0 = ¥580.
+**Other: 0 RMB**
+**Total Estimated Budget: 2,607.2 RMB**
+</plan>

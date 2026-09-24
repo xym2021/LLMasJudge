@@ -1,0 +1,45 @@
+{
+  "mode": "user_simulation_only",
+  "display_name": "dots3-note-prev",
+  "source_result_dir": "result\\pipeline_0925\\dots3-note-prev_en",
+  "simulator_model": "deepseek-v4-flash",
+  "user_simulation_dir": "result\\pipeline_0925\\dots3-note-prev_en\\judge_a\\dots3_note_prev\\user_simulations",
+  "counts": {
+    "records": 1,
+    "eligible": 1,
+    "ok": 1,
+    "failed": 0,
+    "skipped": 0,
+    "skip_reasons": {}
+  },
+  "scores": {
+    "mean_score": 0.5983,
+    "mean_score_1_5": 3.3931
+  },
+  "runtime_totals": {
+    "llm_calls": 4,
+    "tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 14814,
+      "prompt_tokens": 19496,
+      "total_tokens": 34310
+    },
+    "token_usage_available_count": 1,
+    "token_usage_missing_count": 0,
+    "token_usage_status": "available"
+  },
+  "results": [
+    {
+      "sample_id": "mt_single_0125",
+      "turn_id": 2,
+      "turn_for_simulation": 2,
+      "plan_file": "result\\pipeline_0925\\dots3-note-prev_en\\converted_plans\\id_mt_single_0125_turn_2_converted.json",
+      "status": "ok",
+      "activity_count": 29,
+      "score": 0.5983,
+      "score_1_5": 3.3931,
+      "artifact_path": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\pipeline_0925\\dots3-note-prev_en\\judge_a\\dots3_note_prev\\user_simulations\\id_mt_single_0125_turn_2_user_simulation.json"
+    }
+  ]
+}

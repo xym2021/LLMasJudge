@@ -1,0 +1,43 @@
+<plan>
+Day 1 (2026-04-30):
+Current City: Zhuhai → Guangzhou
+Accommodation: Sheraton Guangzhou Yuexiu Hotel, ¥1329/room/night
+07:40-08:10 | buffer | Arrive at Zhuhai Railway Station, security check and boarding wait
+08:10-09:16 | travel_intercity_public | Intercity C7608, Zhuhai Railway Station - Guangzhou South, Second Class Seat, ¥70/person
+09:16-09:31 | buffer | Deplaning/exiting station
+09:31-10:02 | travel_city | Guangzhou South - Dongshankou Arts District, taxi, 15.7 km, 31 min, ¥45
+10:02-12:30 | attraction | Dongshankou Arts District, ¥0/person
+12:30-13:30 | meal | lunch, Kowloon Ice Room (Guangzhou Yingxiong Square Branch), ¥41/person
+13:30-13:36 | travel_city | Dongshankou Arts District - Guangdong Museum of Art (Ersha Island Branch), taxi, 3.2 km, 6 min, ¥12.5
+13:36-15:30 | attraction | Guangdong Museum of Art (Ersha Island Branch), ¥0/person (advance reservation recommended)
+15:30-15:36 | travel_city | Guangdong Museum of Art (Ersha Island Branch) - Sheraton Guangzhou Yuexiu Hotel, taxi, 3.2 km, 6 min, ¥12.4
+15:36-17:30 | hotel | Check-in and rest, Sheraton Guangzhou Yuexiu Hotel
+17:30-17:35 | travel_city | Sheraton Guangzhou Yuexiu Hotel - Xu Bo Guan, taxi, 2.2 km, 5 min, ¥12.2
+17:35-19:00 | meal | dinner, Xu Bo Guan, ¥100/person
+19:00-19:05 | travel_city | Xu Bo Guan - Sheraton Guangzhou Yuexiu Hotel, taxi, 2.2 km, 5 min, ¥12.2
+19:05-22:00 | hotel | Rest, Sheraton Guangzhou Yuexiu Hotel
+
+Day 2 (2026-05-01):
+Current City: Guangzhou → Zhuhai
+Accommodation: -
+09:00-10:00 | buffer | Late start, breakfast at hotel, check-out
+10:00-10:22 | travel_city | Sheraton Guangzhou Yuexiu Hotel - Guangdong Science Center, taxi, 10.9 km, 22 min, ¥32.5
+10:22-12:00 | attraction | Guangdong Science Center, ¥60/person
+12:00-12:29 | travel_city | Guangdong Science Center - Saizeriya Italian Restaurant (Tianhe Xintiandi Branch), taxi, 14.3 km, 29 min, ¥41.3
+12:29-13:30 | meal | lunch, Saizeriya Italian Restaurant (Tianhe Xintiandi Branch), ¥39/person
+13:30-13:39 | travel_city | Saizeriya Italian Restaurant (Tianhe Xintiandi Branch) - Baiyun Mountain, taxi, 4.4 km, 9 min, ¥15.6
+13:39-15:30 | attraction | Baiyun Mountain, ¥0/person
+15:30-16:16 | travel_city | Baiyun Mountain - Guangzhou South, taxi, 22.8 km, 46 min, ¥63.4
+16:16-17:30 | buffer | Free time near Guangzhou South, dinner optional
+17:30-18:00 | buffer | Arrive at Guangzhou South Railway Station, security check and boarding wait
+18:00-19:06 | travel_intercity_public | Intercity C7729, Guangzhou South - Zhuhai Railway Station, Second Class Seat, ¥70/person
+19:06-19:21 | buffer | Deplaning/exiting station
+
+**Budget Summary**:
+**Transportation: ¥280 RMB**. Intercity tickets = ¥70 × 2 people × 2 trips = ¥280. Intracity taxi = (45 + 12.5 + 12.4 + 12.2 + 12.2 + 32.5 + 41.3 + 15.6 + 63.4) = ¥247.1 (per vehicle, 1 vehicle for 2 people).
+**Accommodation: ¥1329 RMB**. ¥1329 × 1 room × 1 night.
+**Meals: ¥360 RMB**. (41 + 100 + 39) × 2 people.
+**Attractions & Tickets: ¥120 RMB**. ¥60 × 2 people.
+**Other: ¥0 RMB**
+**Total Estimated Budget: ¥2089.1 RMB**
+</plan>

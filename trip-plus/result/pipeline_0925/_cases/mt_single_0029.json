@@ -1,0 +1,613 @@
+[
+  {
+    "id": "mt_single_0029",
+    "base_query_id": "single_0029",
+    "query": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+    "interaction_type": "request_resolution",
+    "turns": [
+      {
+        "turn_id": 0,
+        "utterance": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+        "must_preserve": [],
+        "must_update": [
+          "initial_plan"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_avoid_high_queue",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": []
+        }
+      },
+      {
+        "turn_id": 1,
+        "utterance": "Could we also add a dinner reservation? We're looking for something with good reviews and a reasonable price, ideally without going too far out of our way.",
+        "must_preserve": [
+          "attraction_avoid_high_queue",
+          "restaurant_closest_to_attraction",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "clarification_or_ranked_options"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "clarification",
+        "blocking_constraints": [
+          "Dining date or route anchor",
+          "Per-person budget",
+          "Cuisine priority"
+        ],
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_avoid_high_queue",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [],
+          "active_request_resolutions": [
+            {
+              "ambiguous_request": {
+                "component": "restaurant",
+                "missing_slots": [
+                  "meal day or route anchor",
+                  "price threshold",
+                  "cuisine priority"
+                ],
+                "profile_interest_tags": [
+                  "history",
+                  "food"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": 2,
+        "utterance": "For lunch on Day 2, please book \"Jiajun Eight-Treasure Beef Offal\" near \"Shenzhen Shekou Ocean Science Museum\". The average cost is around 29 yuan per person, and we'd like to grab some snacks.",
+        "must_preserve": [
+          "attraction_avoid_high_queue",
+          "restaurant_closest_to_attraction",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "restaurant_requirement"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_avoid_high_queue",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [
+            {
+              "restaurant_requirement": {
+                "restaurant_name": "Jiajun Eight-Treasure Beef Offal",
+                "anchor": "Shenzhen Shekou Ocean Science Museum",
+                "cuisine_type": "Snacks",
+                "meal_day": 2,
+                "meal_type": "Lunch",
+                "candidate_reference": {
+                  "name": "Jiajun Eight-Treasure Beef Offal",
+                  "rating": "4.6",
+                  "price_per_person": "29.0",
+                  "nearby_attraction": "Shenzhen Shekou Ocean Science Museum",
+                  "cuisine_type": "Snacks",
+                  "tags": [
+                    "Pure Beef Tendon",
+                    "Radish Beef Offal",
+                    "Beef Ball and Offal Ho Fun",
+                    "Pure Brisket",
+                    "Tofu Skewers",
+                    "Pure Radish"
+                  ],
+                  "acceptable_restaurant_names": [
+                    "Jiajun Eight-Treasure Beef Offal"
+                  ],
+                  "source": "sample_db.restaurants"
+                }
+              }
+            }
+          ],
+          "active_request_resolutions": [
+            {
+              "ambiguous_request": {
+                "component": "restaurant",
+                "missing_slots": [
+                  "meal day or route anchor",
+                  "price threshold",
+                  "cuisine priority"
+                ],
+                "profile_interest_tags": [
+                  "history",
+                  "food"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "meta_info": {
+      "base_query_meta": {
+        "org": "Beijing",
+        "dest": [
+          "Shenzhen"
+        ],
+        "days": 4,
+        "depart_date": "2026-07-15",
+        "depart_weekday": 3,
+        "return_date": "2026-07-18",
+        "people_number": 5,
+        "room_number": 3,
+        "solution_status": "sat",
+        "observable_profile": {
+          "party_composition": {
+            "adults": 3,
+            "children": [
+              {
+                "age": 5,
+                "note": "Gets tired easily"
+              }
+            ],
+            "elders": [
+              {
+                "age": 70,
+                "mobility_note": "Bad knees and sensitive to cold"
+              }
+            ]
+          },
+          "budget_range": [
+            4000,
+            9000
+          ],
+          "accommodation_style": "comfort",
+          "mobility_constraints": [
+            "knee_issue",
+            "heat_sensitive"
+          ],
+          "physical_rules": [
+            "avoid_long_walk"
+          ],
+          "schedule_rules": [
+            "relaxed"
+          ],
+          "interest_tags": [
+            "history",
+            "food"
+          ],
+          "hate_tags": [
+            "extreme_weather"
+          ],
+          "transport_preferences": [
+            "prefer_direct",
+            "avoid_red_eye"
+          ],
+          "rest_preferences": [
+            "midday_rest",
+            "afternoon_low_intensity"
+          ]
+        },
+        "user_profile": {
+          "party_type": "family_with_child",
+          "rule_ids": [
+            "budget_tight_cap",
+            "mobility_accessibility",
+            "weather_avoid_heat_exposure",
+            "weather_need_backup",
+            "schedule_pacing",
+            "transport_avoid_red_eye",
+            "transport_avoid_transfer",
+            "interest_local_food",
+            "interest_culture"
+          ],
+          "rules": [
+            {
+              "rule_id": "budget_tight_cap",
+              "category": "budget",
+              "trigger": "upper_budget_per_person_day=450.0 < 500 after destination price adjustment",
+              "planner_obligation": "Surface explicit budget more often and prefer lower-cost hotels, restaurants, and transport.",
+              "evaluation_basis": [
+                "total_cost",
+                "hotel.price",
+                "restaurant.price_per_person",
+                "transport.price"
+              ]
+            },
+            {
+              "rule_id": "mobility_accessibility",
+              "category": "mobility",
+              "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+              "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+              "evaluation_basis": [
+                "local_transport.distance_meters",
+                "duration_minutes",
+                "daily activity count",
+                "local_transport.duration_minutes",
+                "distance_meters",
+                "route continuity"
+              ],
+              "preference_variants": [
+                "walking_sensitive",
+                "route_transfer_sensitive"
+              ]
+            },
+            {
+              "rule_id": "weather_avoid_heat_exposure",
+              "category": "weather",
+              "trigger": "heat_sensitive observed",
+              "planner_obligation": "Avoid long outdoor exposure in high-temperature periods.",
+              "evaluation_basis": [
+                "weather.temperature_max_c",
+                "outdoor attraction timing",
+                "local_transport mode"
+              ]
+            },
+            {
+              "rule_id": "weather_need_backup",
+              "category": "weather",
+              "trigger": "extreme_weather disliked",
+              "planner_obligation": "Prefer weather-robust routing and indoor alternatives when weather risk appears.",
+              "evaluation_basis": [
+                "weather_code",
+                "precipitation_mm",
+                "indoor/outdoor attraction mix"
+              ]
+            },
+            {
+              "rule_id": "schedule_pacing",
+              "category": "schedule",
+              "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+              "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+              "evaluation_basis": [
+                "daily activity count",
+                "rest blocks",
+                "first activity start time"
+              ],
+              "preference_variants": [
+                "relaxed"
+              ]
+            },
+            {
+              "rule_id": "transport_avoid_red_eye",
+              "category": "transport",
+              "trigger": "transport_preferences includes avoid_red_eye",
+              "planner_obligation": "Avoid red-eye or very late-night transport.",
+              "evaluation_basis": [
+                "departure_time",
+                "arrival_time"
+              ]
+            },
+            {
+              "rule_id": "transport_avoid_transfer",
+              "category": "transport",
+              "trigger": "transport_preferences includes prefer_direct",
+              "planner_obligation": "Prefer direct intercity options.",
+              "evaluation_basis": [
+                "transfers",
+                "duration"
+              ]
+            },
+            {
+              "rule_id": "interest_local_food",
+              "category": "interest",
+              "trigger": "interest_tags includes food",
+              "planner_obligation": "Prefer local or high-rated restaurants.",
+              "evaluation_basis": [
+                "restaurant.cuisine",
+                "rating",
+                "price_per_person"
+              ]
+            },
+            {
+              "rule_id": "interest_culture",
+              "category": "interest",
+              "trigger": "interest_tags includes history",
+              "planner_obligation": "Prefer historical or cultural attractions.",
+              "evaluation_basis": [
+                "attraction_type",
+                "rating"
+              ]
+            }
+          ],
+          "derivation_context": {
+            "days": 4,
+            "dest_price_level": "medium",
+            "upper_budget_per_person_day": 450.0,
+            "party_size": 5,
+            "physical_rule_seeds": [
+              "avoid_long_walk"
+            ],
+            "schedule_rule_seeds": [
+              "relaxed"
+            ]
+          }
+        },
+        "hard_constraints": {
+          "attraction_avoid_high_queue": {
+            "constraint_context": "Do not include attractions marked in the database as having high queue risk in the itinerary.",
+            "constraint_type": "avoid_high_queue_attractions",
+            "banned_attraction_names": [
+              "Window of the World",
+              "OCT East",
+              "Xianhu Botanical Garden",
+              "Xiaomeisha Resort",
+              "Shenzhen Ping An Finance Centre Sky Observation Deck",
+              "OCT Happy Valley Shenzhen",
+              "Shenzhen Safari Park",
+              "Window of the World and Folk Culture Village"
+            ],
+            "banned_attraction_options": [
+              {
+                "attraction_name": "Window of the World",
+                "attraction_type": "Amusement Park/Sports & Entertainment",
+                "rating": 0.0,
+                "ticket_price": 115.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "09:30",
+                "closing_time": "21:30",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "night_hotspot",
+                  "family_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "OCT East",
+                "attraction_type": "Amusement Park/Sports & Entertainment",
+                "rating": 0.0,
+                "ticket_price": 200.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "09:30",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "nature_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Xianhu Botanical Garden",
+                "attraction_type": "Parks",
+                "rating": 0.0,
+                "ticket_price": 0.0,
+                "ticket_price_source": "legacy_zero_or_free",
+                "opening_time": "00:00",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "nature_hotspot",
+                  "family_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Xiaomeisha Resort",
+                "attraction_type": "Amusement Park/Sports & Entertainment",
+                "rating": 0.0,
+                "ticket_price": 45.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "10:00",
+                "closing_time": "21:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "family_hotspot",
+                  "nature_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Shenzhen Ping An Finance Centre Sky Observation Deck",
+                "attraction_type": "Cultural Landscape",
+                "rating": 0.0,
+                "ticket_price": 180.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "10:00",
+                "closing_time": "20:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "photo_spot",
+                  "night_hotspot",
+                  "classic_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "OCT Happy Valley Shenzhen",
+                "attraction_type": "Amusement Park/Sports & Entertainment",
+                "rating": 0.0,
+                "ticket_price": 130.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "10:00",
+                "closing_time": "19:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "viral"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Shenzhen Safari Park",
+                "attraction_type": "Amusement Park/Sports & Entertainment",
+                "rating": 0.0,
+                "ticket_price": 99.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "09:30",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "family_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Window of the World and Folk Culture Village",
+                "attraction_type": "Cultural Tourism Zone",
+                "rating": 0.0,
+                "ticket_price": 69.0,
+                "ticket_price_source": "legacy_existing_reference_price",
+                "opening_time": "10:00",
+                "closing_time": "21:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "culture_hotspot",
+                  "family_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              }
+            ]
+          },
+          "restaurant_closest_to_attraction": {
+            "constraint_context": "Please arrange a meal at the restaurant closest to 'Nanshan Library' during the trip.",
+            "constraint_type": "superlative_closest_to_attraction",
+            "attraction_name": "Nanshan Library",
+            "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+            "distance_meters": 1090,
+            "price_per_person": 26.0,
+            "acceptable_restaurant_names": [
+              "Hao Hao Wei Noodle House (Taoyuan Branch)"
+            ],
+            "acceptable_restaurant_options": [
+              {
+                "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+                "price_per_person": 26.0,
+                "restaurant_rating": 4.6,
+                "nearby_attraction_name": "Nanshan Library",
+                "cuisine_type": "Snacks",
+                "tags": [
+                  "Catering Services",
+                  "Chinese Restaurant",
+                  "Plain Wonton",
+                  "Beef Brisket Noodles",
+                  "Shrinkage Zongzi",
+                  "Plain Beef Brisket",
+                  "Oyster Sauce Noodles",
+                  "Mung Bean Soup",
+                  "Wonton Noodles",
+                  "Plain Wonton",
+                  "Lard Noodles",
+                  "Pork Trotter Ginger",
+                  "Kelp Mung Bean Soup",
+                  "Chinese Broccoli",
+                  "Pork Trotter Ginger Vinegar Egg",
+                  "Beef Brisket Soup Noodles",
+                  "Oyster Sauce Chinese Broccoli",
+                  "Food Stall",
+                  "Beef Brisket",
+                  "Wonton",
+                  "Beef"
+                ],
+                "opening_time": "07:00",
+                "closing_time": "22:00"
+              }
+            ]
+          },
+          "trip_date_range_required": {
+            "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+            "depart_date": "2026-07-15",
+            "return_date": "2026-07-18",
+            "days": 4
+          },
+          "party_size_required": {
+            "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+            "people_number": 5
+          },
+          "room_count_required": {
+            "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+            "room_number": 3
+          },
+          "intercity_round_trip_mode_required": {
+            "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+            "route_mode": "flight",
+            "origin": "Beijing",
+            "destinations": [
+              "Shenzhen"
+            ]
+          },
+          "party_composition_required": {
+            "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+            "people_number": 5,
+            "party_composition": {
+              "adults": 3,
+              "children": [
+                {
+                  "age": 5,
+                  "note": "Gets tired easily"
+                }
+              ],
+              "elders": [
+                {
+                  "age": 70,
+                  "mobility_note": "Bad knees and sensitive to cold"
+                }
+              ]
+            }
+          }
+        },
+        "soft_constraints": {
+          "city_soft_wishes": [],
+          "profile_soft_wish": "Average physical stamina; the itinerary should minimize hassle and avoid long periods of continuous walking.",
+          "environment_hints": [
+            {
+              "type": "reservation",
+              "hint": "It is best to book popular venues and scenic spots in advance; do not leave key attractions to be decided at the last minute.",
+              "reason": "Real-name reservations, capacity limits, or popular tickets may affect the feasibility of core attractions. Travel companions are more sensitive to physical comfort."
+            }
+          ]
+        },
+        "city_context": {
+          "city_tags": [
+            "coastal_humid_heat",
+            "coastal_walk_city",
+            "cross_border_adjacent_city",
+            "mega_city_metro_transfer",
+            "summer_heat_city",
+            "theme_park_reservation_city",
+            "typhoon_risk",
+            "window_of_world_theme_park",
+            "winter_warm_escape_city"
+          ],
+          "seasonal_advisories": [
+            "extreme_heat",
+            "rain_risk",
+            "typhoon_rain_risk"
+          ]
+        },
+        "route_mode": "flight"
+      }
+    }
+  }
+]

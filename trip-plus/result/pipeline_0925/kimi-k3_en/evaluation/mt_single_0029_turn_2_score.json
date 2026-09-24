@@ -1,0 +1,830 @@
+{
+  "sample_id": "mt_single_0029_turn_2",
+  "scores": {
+    "feasibility_score": 0.7611111111111111,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.75,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.6875,
+    "requirement_score": 0.7188,
+    "llm_user_simulation_score": null
+  },
+  "feasibility_details": {
+    "score": 0.7611111111111111,
+    "strict_feasibility": 0.0,
+    "passed_checks": 18,
+    "total_checks": 22,
+    "dimensions": {
+      "structure_completeness": {
+        "weight": 0.3333333333333333,
+        "score": 0.8333333333333334,
+        "weighted_score": 0.2777777777777778,
+        "subdimensions": {
+          "valid_trip_duration": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "valid_trip_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "route_and_stay_continuity": {
+            "score": 1.0,
+            "passed": 5,
+            "total": 5,
+            "checks": [
+              {
+                "name": "closed_loop_route_structure",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "seamless_intercity_transfers",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "day_boundary_continuity",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "traceable_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "ends_with_accommodation",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "daily_content_coverage": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "essential_meal_coverage",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "essential_attraction_coverage",
+                "passed": false,
+                "message": "Attraction arrangements unreasonable: D2: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 2.3 hours, 1 attractions); D3: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 2.3 hours, 1 attractions)"
+              }
+            ]
+          }
+        }
+      },
+      "evidence_validity": {
+        "weight": 0.3333333333333333,
+        "score": 0.75,
+        "weighted_score": 0.25,
+        "subdimensions": {
+          "poi_grounding_valid": {
+            "score": 1.0,
+            "passed": 3,
+            "total": 3,
+            "checks": [
+              {
+                "name": "validated_accommodation",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "validated_meals",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "transport_grounding_valid": {
+            "score": 0.5,
+            "passed": 1,
+            "total": 2,
+            "checks": [
+              {
+                "name": "validated_transportation",
+                "passed": false,
+                "message": "Segment mismatch: [\"CA1306 Bao'an International Airport 09:07-12:22 -> Beijing Capital International Airport does not match any DB segment; candidates: Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3290; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 1574; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3290; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 1830; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3690\"]"
+              },
+              {
+                "name": "local_move_sanity",
+                "passed": true,
+                "message": null
+              }
+            ]
+          }
+        }
+      },
+      "execution_operability": {
+        "weight": 0.3333333333333333,
+        "score": 0.7,
+        "weighted_score": 0.2333333333333333,
+        "subdimensions": {
+          "time_and_transfer_feasible": {
+            "score": 1.0,
+            "passed": 2,
+            "total": 2,
+            "checks": [
+              {
+                "name": "no_time_overlaps",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_transfer_time",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "venue_and_duration_feasible": {
+            "score": 0.8,
+            "passed": 4,
+            "total": 5,
+            "checks": [
+              {
+                "name": "attraction_visit_within_opening_hours",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "dining_within_service_hours",
+                "passed": false,
+                "message": "Meal time not within business hours: ['Hao Hao Wei Noodle House (Taoyuan Branch)(06:35-07:05 not within 07:00-22:00)']"
+              },
+              {
+                "name": "avoidance_of_closure_days",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_duration_at_attractions",
+                "passed": true,
+                "message": null
+              },
+              {
+                "name": "reasonable_meal_duration",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "intercity_buffer_feasible": {
+            "score": 1.0,
+            "passed": 1,
+            "total": 1,
+            "checks": [
+              {
+                "name": "intercity_buffer_adequacy",
+                "passed": true,
+                "message": null
+              }
+            ]
+          },
+          "budget_arithmetic_feasible": {
+            "score": 0.0,
+            "passed": 0,
+            "total": 1,
+            "checks": [
+              {
+                "name": "cost_calculation_correctness",
+                "passed": false,
+                "message": "Budget subtotal sum mismatch: subtotals sum to 20015.40, but total_estimated_budget is 19515.40 (subtotals={'transportation': 15403.4, 'accommodation': 2637.0, 'meals': 1580.0, 'attractions_and_tickets': 395.0, 'other': 0.0})"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "checks": {
+      "valid_trip_duration": {
+        "passed": true,
+        "message": null
+      },
+      "closed_loop_route_structure": {
+        "passed": true,
+        "message": null
+      },
+      "seamless_intercity_transfers": {
+        "passed": true,
+        "message": null
+      },
+      "day_boundary_continuity": {
+        "passed": true,
+        "message": null
+      },
+      "validated_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "validated_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "validated_meals": {
+        "passed": true,
+        "message": null
+      },
+      "validated_transportation": {
+        "passed": false,
+        "message": "Segment mismatch: [\"CA1306 Bao'an International Airport 09:07-12:22 -> Beijing Capital International Airport does not match any DB segment; candidates: Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3290; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 1574; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3290; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 1830; Bao'an International Airport 08:55 -> Beijing Capital International Airport 12:10 @ 3690\"]"
+      },
+      "traceable_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "ends_with_accommodation": {
+        "passed": true,
+        "message": null
+      },
+      "essential_meal_coverage": {
+        "passed": true,
+        "message": null
+      },
+      "essential_attraction_coverage": {
+        "passed": false,
+        "message": "Attraction arrangements unreasonable: D2: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 2.3 hours, 1 attractions); D3: Non-intercity day requires attraction-related duration ≥ 4 hours or ≥2 attractions (current: 2.3 hours, 1 attractions)"
+      },
+      "no_time_overlaps": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_transfer_time": {
+        "passed": true,
+        "message": null
+      },
+      "local_move_sanity": {
+        "passed": true,
+        "message": null
+      },
+      "attraction_visit_within_opening_hours": {
+        "passed": true,
+        "message": null
+      },
+      "dining_within_service_hours": {
+        "passed": false,
+        "message": "Meal time not within business hours: ['Hao Hao Wei Noodle House (Taoyuan Branch)(06:35-07:05 not within 07:00-22:00)']"
+      },
+      "avoidance_of_closure_days": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_duration_at_attractions": {
+        "passed": true,
+        "message": null
+      },
+      "reasonable_meal_duration": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_buffer_adequacy": {
+        "passed": true,
+        "message": null
+      },
+      "cost_calculation_correctness": {
+        "passed": false,
+        "message": "Budget subtotal sum mismatch: subtotals sum to 20015.40, but total_estimated_budget is 19515.40 (subtotals={'transportation': 15403.4, 'accommodation': 2637.0, 'meals': 1580.0, 'attractions_and_tickets': 395.0, 'other': 0.0})"
+      }
+    }
+  },
+  "requirement_details": {
+    "score": 0.7188,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.75,
+    "hard_constraint_ratio": 0.75,
+    "hard_constraints_passed": 6,
+    "hard_constraints_total": 8,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.6875,
+    "soft_preferences": {
+      "score": 0.6875,
+      "checks": [
+        {
+          "rule_id": "budget_tight_cap",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "cost choices have a budget-profile violation",
+          "violations": [
+            {
+              "name": "expensive_meal_count_without_budget_cap",
+              "value": 2,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "major"
+            }
+          ],
+          "source_rule_ids": [
+            "budget_tight_cap"
+          ],
+          "preference_family": "budget_and_value"
+        },
+        {
+          "rule_id": "mobility_accessibility",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "mobility burden is compatible with profile",
+          "violations": [
+            {
+              "name": "max_daily_local_transfer_minutes",
+              "value": 130.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "route_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 2,
+              "major_at": 4,
+              "severity": "none"
+            },
+            {
+              "name": "route_very_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            },
+            {
+              "name": "mobility_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 3,
+              "severity": "none"
+            },
+            {
+              "name": "mobility_very_long_local_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            },
+            {
+              "name": "max_daily_outdoor_minutes",
+              "value": 120.0,
+              "soft_boundary": 240,
+              "hard_boundary": 360,
+              "severity": "none",
+              "unit": "minutes"
+            }
+          ],
+          "source_rule_ids": [
+            "mobility_accessibility"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "weather_avoid_heat_exposure",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "weather exposure is handled for the active profile",
+          "violations": [
+            {
+              "name": "midday_heat_outdoor_minutes",
+              "value": 43.0,
+              "soft_boundary": 90,
+              "hard_boundary": 120,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "total_heat_outdoor_minutes",
+              "value": 120.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            }
+          ],
+          "source_rule_ids": [
+            "weather_avoid_heat_exposure"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "weather_need_backup",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "weather exposure is handled for the active profile",
+          "violations": [
+            {
+              "name": "backup_weather_outdoor_minutes",
+              "value": 120.0,
+              "soft_boundary": 240,
+              "hard_boundary": 300,
+              "severity": "none",
+              "unit": "minutes"
+            },
+            {
+              "name": "backup_or_indoor_option_missing",
+              "value": false,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "weather_need_backup"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "schedule_pacing",
+          "applicable": true,
+          "score": 0.0,
+          "passed": false,
+          "severity": "major",
+          "violation_level": "major",
+          "message": "schedule has a profile pacing violation",
+          "violations": [
+            {
+              "name": "max_daily_attraction_count",
+              "value": 1.0,
+              "soft_boundary": 3,
+              "hard_boundary": 4,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "avg_daily_attraction_count",
+              "value": 0.75,
+              "soft_boundary": 3,
+              "hard_boundary": 4,
+              "severity": "none",
+              "unit": "visits"
+            },
+            {
+              "name": "max_day_span_hours",
+              "value": 17.5,
+              "soft_boundary": 10,
+              "hard_boundary": 12,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "early_start_hours_before_08",
+              "value": 4.5,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "major",
+              "unit": "hours"
+            },
+            {
+              "name": "late_end_hours_after_21",
+              "value": 0.0,
+              "soft_boundary": 0,
+              "hard_boundary": 1,
+              "severity": "none",
+              "unit": "hours"
+            }
+          ],
+          "source_rule_ids": [
+            "schedule_pacing"
+          ],
+          "preference_family": "comfort_and_pace"
+        },
+        {
+          "rule_id": "transport_avoid_red_eye",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "violations": [
+            {
+              "name": "red_eye_segments",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 1,
+              "severity": "none"
+            },
+            {
+              "name": "late_arrivals",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 3,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "transport_avoid_red_eye"
+          ],
+          "preference_family": "transport_convenience"
+        },
+        {
+          "rule_id": "transport_avoid_transfer",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "transport timing/mode is compatible with profile",
+          "violations": [
+            {
+              "name": "transfer_mentions",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            },
+            {
+              "name": "structured_transfer_segments",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            },
+            {
+              "name": "structured_transfer_count",
+              "value": 0,
+              "minor_at": 1,
+              "major_at": 2,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "transport_avoid_transfer"
+          ],
+          "preference_family": "transport_convenience"
+        },
+        {
+          "rule_id": "interest_local_food",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "plan includes profile-matching interest content",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 6,
+              "target": 2,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "interest_local_food"
+          ],
+          "preference_family": "interest_match"
+        },
+        {
+          "rule_id": "interest_culture",
+          "applicable": true,
+          "score": 1.0,
+          "passed": true,
+          "severity": "none",
+          "violation_level": "none",
+          "message": "plan includes profile-matching interest content",
+          "violations": [
+            {
+              "name": "profile_interest_matched_items",
+              "value": 2,
+              "target": 2,
+              "severity": "none"
+            }
+          ],
+          "source_rule_ids": [
+            "interest_culture"
+          ],
+          "preference_family": "interest_match"
+        }
+      ],
+      "preference_family_scores": [
+        {
+          "family": "comfort_and_pace",
+          "score": 0.75,
+          "evaluated_count": 4,
+          "rule_ids": [
+            "mobility_accessibility",
+            "weather_avoid_heat_exposure",
+            "weather_need_backup",
+            "schedule_pacing"
+          ]
+        },
+        {
+          "family": "transport_convenience",
+          "score": 1.0,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "transport_avoid_red_eye",
+            "transport_avoid_transfer"
+          ]
+        },
+        {
+          "family": "budget_and_value",
+          "score": 0.0,
+          "evaluated_count": 1,
+          "rule_ids": [
+            "budget_tight_cap"
+          ]
+        },
+        {
+          "family": "interest_match",
+          "score": 1.0,
+          "evaluated_count": 2,
+          "rule_ids": [
+            "interest_local_food",
+            "interest_culture"
+          ]
+        }
+      ],
+      "active_rule_ids": [
+        "budget_tight_cap",
+        "mobility_accessibility",
+        "weather_avoid_heat_exposure",
+        "weather_need_backup",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "transport_avoid_transfer",
+        "interest_local_food",
+        "interest_culture"
+      ],
+      "requested_rule_ids": [
+        "budget_tight_cap",
+        "mobility_accessibility",
+        "weather_avoid_heat_exposure",
+        "weather_need_backup",
+        "schedule_pacing",
+        "transport_avoid_red_eye",
+        "transport_avoid_transfer",
+        "interest_local_food",
+        "interest_culture"
+      ],
+      "unsupported_rule_ids": [],
+      "evaluated_count": 9,
+      "evaluated_family_count": 4,
+      "compiled_count": 9,
+      "not_applicable_count": 0
+    },
+    "components": [
+      {
+        "name": "hard_constraint_score",
+        "score": 0.75,
+        "weight": 1.0
+      },
+      {
+        "name": "soft_preference_score",
+        "score": 0.6875,
+        "weight": 1.0
+      }
+    ],
+    "constraints": {
+      "attraction_avoid_high_queue": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_closest_to_attraction": {
+        "passed": true,
+        "message": null
+      },
+      "trip_date_range_required": {
+        "passed": true,
+        "message": null
+      },
+      "room_count_required": {
+        "passed": true,
+        "message": null
+      },
+      "intercity_round_trip_mode_required": {
+        "passed": true,
+        "message": null
+      },
+      "restaurant_turn_added_1": {
+        "passed": true,
+        "message": null
+      },
+      "party_size_required": {
+        "passed": false,
+        "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=15403.40, expected=15086.40; meals: plan=1580.00, expected=1840.00"
+      },
+      "party_composition_required": {
+        "passed": false,
+        "message": "Budget component mismatch under explicit party/room metadata: transportation: plan=15403.40, expected=15086.40; meals: plan=1580.00, expected=1840.00"
+      }
+    }
+  },
+  "diagnostics": {
+    "delivered_itinerary": true
+  },
+  "turn_alignment": {
+    "fulfillment_score": 1.0,
+    "preserve_score": 1.0,
+    "preserve_check_count": 5,
+    "preserve_error_count": 0,
+    "preserve_error_rate": 0.0,
+    "fulfillment_checks": [
+      {
+        "name": "response_expectation",
+        "passed": true,
+        "message": null,
+        "details": {
+          "response_expectation": "plan",
+          "expected_mode": "plan",
+          "actual_mode": "plan",
+          "actual_status": "",
+          "has_daily_plans": true
+        }
+      },
+      {
+        "name": "restaurant_turn_added_1",
+        "passed": true,
+        "message": null,
+        "details": {
+          "constraint_context": "Multi-turn user requested adding restaurant: Jiajun Eight-Treasure Beef Offal",
+          "constraint_type": "turn_added_restaurant_requirement",
+          "restaurant_name": "Jiajun Eight-Treasure Beef Offal",
+          "acceptable_restaurant_names": [
+            "Jiajun Eight-Treasure Beef Offal"
+          ],
+          "attraction_name": "Shenzhen Shekou Ocean Science Museum",
+          "cuisine_type": "Snacks",
+          "meal_day": 2,
+          "meal_type": "Lunch",
+          "source": "sample_db.restaurants"
+        }
+      },
+      {
+        "name": "restaurant_turn_added_1:meal_slot",
+        "passed": true,
+        "message": null
+      }
+    ],
+    "preserve_checks": [
+      {
+        "name": "attraction_avoid_high_queue",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "restaurant_closest_to_attraction",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "trip_date_range_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "room_count_required",
+        "passed": true,
+        "message": null
+      },
+      {
+        "name": "intercity_round_trip_mode_required",
+        "passed": true,
+        "message": null
+      }
+    ],
+    "breakdowns": {
+      "user_state_update_success": null,
+      "request_resolution_success": null,
+      "environment_adaptation_success": null
+    }
+  },
+  "query": "For lunch on Day 2, please book \"Jiajun Eight-Treasure Beef Offal\" near \"Shenzhen Shekou Ocean Science Museum\". The average cost is around 29 yuan per person, and we'd like to grab some snacks.",
+  "runtime": {
+    "elapsed_time": 45.12395119667053,
+    "llm_calls": 1,
+    "tool_calls": 0,
+    "tool_executions": 0,
+    "duplicate_tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 2294,
+      "prompt_tokens": 10650,
+      "total_tokens": 12944
+    },
+    "token_usage_status": "available",
+    "status": "completed"
+  },
+  "query_id": "mt_single_0029"
+}

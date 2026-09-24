@@ -1,0 +1,5667 @@
+[
+ {
+  "id": "mt_single_0065",
+  "base_query_id": "single_0065",
+  "query": "I'm planning a solo trip to Xi'an from Taiyuan, leaving on Thursday, April 30, 2026, and coming back Sunday, May 3, 2026, so that's 4 days total. Please book 1 room. Since I love diving into the cultural side of travel, I'd like to focus on heritage sites this time. But I have two rules: don't just pile on obscure spots; make sure to include at least one major, well-known landmark. Also, please schedule one meal near \"Xi'an Botanical Garden Children's Garden\" so I'm not wasting time commuting back and forth for food.",
+  "interaction_type": "user_state_evolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "I'm planning a solo trip to Xi'an from Taiyuan, leaving on Thursday, April 30, 2026, and coming back Sunday, May 3, 2026, so that's 4 days total. Please book 1 room. Since I love diving into the cultural side of travel, I'd like to focus on heritage sites this time. But I have two rules: don't just pile on obscure spots; make sure to include at least one major, well-known landmark. Also, please schedule one meal near \"Xi'an Botanical Garden Children's Garden\" so I'm not wasting time commuting back and forth for food.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "An elderly person has joined our group, so please update the headcount to 2 people. Adjust the rooms, transport seats, and tickets to match. For the rest of the itinerary, please avoid mountain climbing, long walks, or anything too physically demanding.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "party_update"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "party_update": {
+        "party_subtype": "elder_added",
+        "added_elders": 1,
+        "new_people_number": 2,
+        "new_room_number": 1,
+        "adaptation_requirements": [
+         "elder_friendly_pacing",
+         "avoid_strenuous_walk",
+         "update_ticket_count"
+        ]
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "On Day 2, we want to start a bit later. Please schedule all official attractions and intra-city transfers after 10:30 AM.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "late_start_request"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "party_update": {
+        "party_subtype": "elder_added",
+        "added_elders": 1,
+        "new_people_number": 2,
+        "new_room_number": 1,
+        "adaptation_requirements": [
+         "elder_friendly_pacing",
+         "avoid_strenuous_walk",
+         "update_ticket_count"
+        ]
+       }
+      },
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:30",
+        "earliest_start_minutes": 630,
+        "scope": "first_formal_activity"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 3,
+    "utterance": "I've changed my mind on accommodation; I'd prefer a homestay or apartment now, so please book \"Junyuan Inn\".",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "hotel_requirement"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "party_update": {
+        "party_subtype": "elder_added",
+        "added_elders": 1,
+        "new_people_number": 2,
+        "new_room_number": 1,
+        "adaptation_requirements": [
+         "elder_friendly_pacing",
+         "avoid_strenuous_walk",
+         "update_ticket_count"
+        ]
+       }
+      },
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:30",
+        "earliest_start_minutes": 630,
+        "scope": "first_formal_activity"
+       }
+      },
+      {
+       "hotel_requirement": {
+        "hotel_name": "Junyuan Inn",
+        "candidate_reference": {
+         "name": "Junyuan Inn",
+         "requirement_type": "homestay",
+         "utterance": "Actually, I'd like to switch to a homestay or apartment. Please book \"Junyuan Inn\".",
+         "score": "4.9",
+         "price": "140",
+         "hotel_star": "",
+         "services": [
+          "Accommodation Service",
+          "Hotel"
+         ],
+         "acceptable_hotel_names": [
+          "Junyuan Inn"
+         ],
+         "source": "sample_db.hotels"
+        }
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Taiyuan",
+    "dest": [
+     "Xi'an"
+    ],
+    "days": 4,
+    "depart_date": "2026-04-30",
+    "depart_weekday": 4,
+    "return_date": "2026-05-03",
+    "people_number": 1,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 1,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      2500,
+      6000
+     ],
+     "accommodation_style": "comfort",
+     "mobility_constraints": [],
+     "physical_rules": [
+      "long_walk_ok"
+     ],
+     "schedule_rules": [
+      "moderate"
+     ],
+     "interest_tags": [
+      "history",
+      "museum"
+     ],
+     "hate_tags": [
+      "long_local_transfer"
+     ],
+     "transport_preferences": [
+      "avoid_red_eye"
+     ],
+     "rest_preferences": []
+    },
+    "user_profile": {
+     "party_type": "solo",
+     "rule_ids": [
+      "mobility_accessibility",
+      "schedule_pacing",
+      "transport_avoid_red_eye",
+      "interest_culture"
+     ],
+     "rules": [
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "default moderate pacing",
+       "planner_obligation": "Keep daily activity load feasible without forcing extra rest.",
+       "evaluation_basis": [
+        "daily activity count",
+        "transport duration",
+        "opening hours"
+       ],
+       "preference_variants": [
+        "moderate"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_red_eye",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_red_eye",
+       "planner_obligation": "Avoid red-eye or very late-night transport.",
+       "evaluation_basis": [
+        "departure_time",
+        "arrival_time"
+       ]
+      },
+      {
+       "rule_id": "interest_culture",
+       "category": "interest",
+       "trigger": "interest_tags includes history; interest_tags includes museum",
+       "planner_obligation": "Prefer historical or cultural attractions.; Prefer museums or memorial venues.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating",
+        "opening_time"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 4,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 1500.0,
+      "party_size": 1,
+      "physical_rule_seeds": [
+       "long_walk_ok"
+      ],
+      "schedule_rule_seeds": [
+       "moderate"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "attraction_require_popular_hotspot": {
+      "constraint_context": "The itinerary must include at least one popular/internet-famous/photo-check-in attraction marked in the database.",
+      "constraint_type": "popularity_tag_required",
+      "required_tags": [
+       "classic_hotspot",
+       "viral",
+       "photo_spot",
+       "night_hotspot"
+      ],
+      "acceptable_attraction_names": [
+       "Big Wild Goose Pagoda",
+       "Xi'an Bell Tower",
+       "Muslim Quarter",
+       "Grand Tang Mall",
+       "Xi'an Museum",
+       "Xi'an Drum Tower",
+       "Shaanxi History Museum",
+       "Xi'an City Wall",
+       "Tang Da Ci'en Temple Ruins Park",
+       "Da Ci'en Temple",
+       "Duchenghuang Temple",
+       "Xiangji Temple",
+       "Xi'an Beilin Museum",
+       "Shaanxi Natural History Museum",
+       "Lishan Garden, Mausoleum of the First Qin Emperor Museum",
+       "Caotang Temple",
+       "Xi'an Banpo Museum",
+       "Big Wild Goose Pagoda Cultural Leisure Scenic Area",
+       "Xi'an Tang Dynasty Imperial City Wall Hanguang Gate Ruins Museum",
+       "Oceanarium",
+       "Tang Paradise - Deer Park",
+       "Da Xingshan Temple",
+       "Guangren Temple",
+       "Xingqing Palace Park",
+       "Kunming Pool · Qixi Park",
+       "Qinling Four Treasures Science Park",
+       "Xi'an Chanba National Wetland Park",
+       "Qujiang Pool Ruins Park",
+       "Xi'an Art Museum",
+       "Daming Palace National Heritage Park",
+       "Small Wild Goose Pagoda",
+       "Zhuque National Forest Park",
+       "Hancheng Lake Tourist Scenic Area",
+       "Zhongnan Mountain Nanyuwutai Scenic Area",
+       "Xi'an Qinling Wildlife Park",
+       "Qinglong Temple, Leyouyuan",
+       "Qujiang Hanyao Ruins Park",
+       "Datang West Market Museum",
+       "Huaxia Cultural Tourism Xi'an Resort",
+       "Qujiang Ocean and Polar Park",
+       "Xi'an Expo Park Nature Hall",
+       "Bailuyuan Film and Television City - Zishui County Town"
+      ],
+      "acceptable_attraction_options": [
+       {
+        "attraction_name": "Big Wild Goose Pagoda",
+        "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+        "rating": 4.9,
+        "ticket_price": 40.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "09:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Xi'an Bell Tower",
+        "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+        "rating": 4.9,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_default_reference",
+        "opening_time": "08:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "night_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Muslim Quarter",
+        "attraction_type": "Shopping Service; Characteristic Commercial Street; Pedestrian Street",
+        "rating": 4.8,
+        "ticket_price": 0.0,
+        "ticket_price_source": "estimated_rule_free_category",
+        "opening_time": "00:00",
+        "closing_time": "24:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "shopping_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Grand Tang Mall",
+        "attraction_type": "Scenic Spots; Scenic Spot Related; Tourist Attractions | Shopping Services; Characteristic Commercial Streets; Characteristic Commercial Streets",
+        "rating": 4.8,
+        "ticket_price": 0.0,
+        "ticket_price_source": "estimated_rule_free_category",
+        "opening_time": "00:00",
+        "closing_time": "24:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "viral",
+         "photo_spot",
+         "night_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Xi'an Museum",
+        "attraction_type": "Science, Education and Cultural Services; Museum; Museum | Scenic Spots; Scenic Spot Related; Tourist Attraction",
+        "rating": 4.8,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "09:00",
+        "closing_time": "17:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xi'an Drum Tower",
+        "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+        "rating": 4.8,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_default_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "night_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Shaanxi History Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.8,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:30",
+        "closing_time": "19:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xi'an City Wall",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.8,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:00",
+        "closing_time": "22:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Tang Da Ci'en Temple Ruins Park",
+        "attraction_type": "Scenic Spots;Parks and Squares;Parks",
+        "rating": 4.7,
+        "ticket_price": 20.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "00:00",
+        "closing_time": "24:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "viral",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Da Ci'en Temple",
+        "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+        "rating": 4.7,
+        "ticket_price": 20.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Duchenghuang Temple",
+        "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+        "rating": 4.7,
+        "ticket_price": 20.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:30",
+        "closing_time": "17:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": ""
+       },
+       {
+        "attraction_name": "Xiangji Temple",
+        "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+        "rating": 4.7,
+        "ticket_price": 20.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:00",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": ""
+       },
+       {
+        "attraction_name": "Xi'an Beilin Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.7,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "09:00",
+        "closing_time": "18:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Shaanxi Natural History Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.7,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Lishan Garden, Mausoleum of the First Qin Emperor Museum",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.7,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:30",
+        "closing_time": "18:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Caotang Temple",
+        "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+        "rating": 4.6,
+        "ticket_price": 20.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "09:00",
+        "closing_time": "17:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": ""
+       },
+       {
+        "attraction_name": "Xi'an Banpo Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.6,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:00",
+        "closing_time": "17:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Big Wild Goose Pagoda Cultural Leisure Scenic Area",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.6,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "viral",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Xi'an Tang Dynasty Imperial City Wall Hanguang Gate Ruins Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.3,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "08:00",
+        "closing_time": "22:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "viral",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Oceanarium",
+        "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+        "rating": 4.2,
+        "ticket_price": 120.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": ""
+       }
+      ]
+     },
+     "restaurant_closest_to_attraction": {
+      "constraint_context": "Please arrange a meal at the restaurant closest to 'Xi'an Botanical Garden Children's Garden' during the trip.",
+      "constraint_type": "superlative_closest_to_attraction",
+      "attraction_name": "Xi'an Botanical Garden Children's Garden",
+      "restaurant_name": "Weike Coffee (Wangzuo Qujiang Branch)",
+      "distance_meters": 1114,
+      "price_per_person": 58.0,
+      "acceptable_restaurant_names": [
+       "Weike Coffee (Wangzuo Qujiang Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Weike Coffee (Wangzuo Qujiang Branch)",
+        "price_per_person": 58.0,
+        "restaurant_rating": 4.8,
+        "nearby_attraction_name": "Xi'an Botanical Garden Children's Garden",
+        "cuisine_type": "Coffee Shop",
+        "tags": [
+         "Catering Services",
+         "Coffee Shop",
+         "Salad",
+         "Steak"
+        ],
+        "opening_time": "07:00",
+        "closing_time": "22:00"
+       }
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-04-30",
+      "return_date": "2026-05-03",
+      "days": 4
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 1
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "train",
+      "origin": "Taiyuan",
+      "destinations": [
+       "Xi'an"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [],
+     "profile_soft_wish": "Keep city transfers straightforward; just make the route smooth.",
+     "environment_hints": []
+    },
+    "city_context": {
+     "city_tags": [
+      "city_wall_walk_route",
+      "cold_winter_city",
+      "dry_winter_city",
+      "heritage_hotspot_queue",
+      "historic_crowd_city",
+      "museum_reservation_city",
+      "old_town_walk_city",
+      "real_name_reservation_city",
+      "summer_heat_city",
+      "terracotta_army_daytrip_buffer"
+     ],
+     "seasonal_advisories": [
+      "wind_dust_risk"
+     ]
+    },
+    "route_mode": "train"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0125",
+  "base_query_id": "single_0125",
+  "query": "We are flying from Shanghai to Hong Kong for our honeymoon, departing on May 1, 2026 (Friday) and returning on May 3, 2026 (Sunday). It is a three-day trip for just the two of us, sharing one room. We really want a direct flight with the shortest duration so we aren't stuck in the air too long. For food, I heard Ping Shan Heritage Trail is amazing, so let's eat at the highest-rated spot nearby. Our budget is between 8200 and 12100 yuan. Also, please make sure we visit \"Peak Tram\" and \"Hong Kong Disneyland\".",
+  "interaction_type": "environment_driven_replanning",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "We are flying from Shanghai to Hong Kong for our honeymoon, departing on May 1, 2026 (Friday) and returning on May 3, 2026 (Sunday). It is a three-day trip for just the two of us, sharing one room. We really want a direct flight with the shortest duration so we aren't stuck in the air too long. For food, I heard Ping Shan Heritage Trail is amazing, so let's eat at the highest-rated spot nearby. Our budget is between 8200 and 12100 yuan. Also, please make sure we visit \"Peak Tram\" and \"Hong Kong Disneyland\".",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_crowd_queue_initial_must_visit",
+      "budget_constraint",
+      "flight_shortest_duration_direct",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "It looks like our flight is arriving 30 minutes later than planned. Could we build in some buffer time after we land for checking in, eating, or just resting? We'd prefer to keep the first day light with no more than two attractions.",
+    "must_preserve": [
+     "budget_constraint",
+     "flight_shortest_duration_direct",
+     "restaurant_highest_rated",
+     "attraction_crowd_queue_initial_must_visit",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "environment_aware_replanning"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_crowd_queue_initial_must_visit",
+      "budget_constraint",
+      "flight_shortest_duration_direct",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_environment_events": [
+      {
+       "factor": "transport_disruption",
+       "type": "transport_disruption",
+       "city": "Hong Kong",
+       "message": "I checked, and the flight arrival time is 30 minutes later than originally scheduled.",
+       "expected_adjustments": [
+        {
+         "check": "first_day_light_after_transport_delay",
+         "max_first_day_attractions": 2,
+         "requires_buffer_or_hotel_after_intercity": true
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "I noticed that the popular spots in Hong Kong get really crowded between 10:00 and 12:00. Please keep \"Peak Tram\" and \"Hong Kong Disneyland\" on the list, but don't schedule them during that window. Also, let's time our main meal to avoid the 12:00-13:00 slot.",
+    "must_preserve": [
+     "budget_constraint",
+     "flight_shortest_duration_direct",
+     "restaurant_highest_rated",
+     "attraction_crowd_queue_initial_must_visit",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "environment_aware_replanning"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_crowd_queue_initial_must_visit",
+      "budget_constraint",
+      "flight_shortest_duration_direct",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_environment_events": [
+      {
+       "factor": "transport_disruption",
+       "type": "transport_disruption",
+       "city": "Hong Kong",
+       "message": "I checked, and the flight arrival time is 30 minutes later than originally scheduled.",
+       "expected_adjustments": [
+        {
+         "check": "first_day_light_after_transport_delay",
+         "max_first_day_attractions": 2,
+         "requires_buffer_or_hotel_after_intercity": true
+        }
+       ]
+      },
+      {
+       "factor": "crowd_queue_risk",
+       "type": "holiday_or_hotspot_queue",
+       "city": "Hong Kong",
+       "message": "I just checked, and there are a lot of people at the popular attractions in Hong Kong from 10:00 to 12:00 in the morning.",
+       "expected_adjustments": [
+        {
+         "check": "avoid_peak_meal_window",
+         "peak_window": [
+          720,
+          780
+         ]
+        },
+        {
+         "check": "avoid_peak_attraction_window",
+         "peak_window": [
+          600,
+          720
+         ],
+         "target_attractions": [
+          "Peak Tram",
+          "Hong Kong Disneyland"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Shanghai",
+    "dest": [
+     "Hong Kong"
+    ],
+    "days": 3,
+    "depart_date": "2026-05-01",
+    "depart_weekday": 5,
+    "return_date": "2026-05-03",
+    "people_number": 2,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 2,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      4000,
+      8000
+     ],
+     "accommodation_style": "luxury",
+     "mobility_constraints": [
+      "cold_sensitive"
+     ],
+     "physical_rules": [
+      "standard_walking"
+     ],
+     "schedule_rules": [
+      "moderate"
+     ],
+     "interest_tags": [
+      "nature",
+      "park"
+     ],
+     "hate_tags": [
+      "overpacked_schedule"
+     ],
+     "transport_preferences": [
+      "prefer_flight"
+     ],
+     "rest_preferences": []
+    },
+    "user_profile": {
+     "party_type": "couple",
+     "rule_ids": [
+      "weather_avoid_cold_exposure",
+      "schedule_pacing",
+      "transport_prefer_flight",
+      "interest_outdoor_nature"
+     ],
+     "rules": [
+      {
+       "rule_id": "weather_avoid_cold_exposure",
+       "category": "weather",
+       "trigger": "cold_sensitive observed",
+       "planner_obligation": "Avoid long outdoor exposure in cold periods.",
+       "evaluation_basis": [
+        "weather.temperature_min_c",
+        "outdoor attraction timing",
+        "local_transport mode"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_prefer_flight",
+       "category": "transport",
+       "trigger": "transport_preferences includes prefer_flight",
+       "planner_obligation": "Prefer flight when feasible.",
+       "evaluation_basis": [
+        "transport.mode",
+        "price",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_outdoor_nature",
+       "category": "interest",
+       "trigger": "interest_tags includes nature; interest_tags includes park",
+       "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating",
+        "ticket_price"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 3,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 1533.3,
+      "party_size": 2,
+      "physical_rule_seeds": [
+       "standard_walking"
+      ],
+      "schedule_rule_seeds": [
+       "moderate"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "restaurant_highest_rated": {
+      "constraint_context": "Please arrange a meal at the highest-rated restaurant near 'Ping Shan Heritage Trail' during the trip.",
+      "constraint_type": "superlative_highest_rated_restaurant",
+      "attraction_name": "Ping Shan Heritage Trail",
+      "restaurant_name": "Ping Shan Old Place Restaurant",
+      "restaurant_rating": 4.4,
+      "price_per_person": 65.0,
+      "acceptable_restaurant_names": [
+       "Ping Shan Old Place Restaurant"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Ping Shan Old Place Restaurant",
+        "price_per_person": 65.0,
+        "restaurant_rating": 4.4,
+        "nearby_attraction_name": "Ping Shan Heritage Trail",
+        "cuisine_type": "Chinese Restaurant",
+        "tags": [
+         "Catering Services",
+         "Chinese Restaurant"
+        ],
+        "opening_time": "08:00",
+        "closing_time": "21:00"
+       }
+      ]
+     },
+     "flight_shortest_duration_direct": {
+      "constraint_context": "For the outbound journey, I prefer to fly and need to select the direct flight with the shortest duration.",
+      "constraint_type": "superlative_shortest_duration",
+      "direction": "Outbound",
+      "outbound_flight_no": "HO1307",
+      "outbound_route_index": 42,
+      "outbound_airline": "Juneyao Airlines",
+      "outbound_duration": 160,
+      "outbound_dep_time": "2026-05-01 08:00:00",
+      "is_direct": true,
+      "acceptable_outbound_flight_nos": [
+       "HO1307",
+       "FM809",
+       "MU8629",
+       "FM3027",
+       "MU723",
+       "HX239"
+      ],
+      "acceptable_outbound_flight_options": [
+       {
+        "flight_no": "HO1307",
+        "airline": "Juneyao Airlines",
+        "seat_class": "Economy",
+        "price": 2455.0,
+        "dep_datetime": "2026-05-01 08:00:00",
+        "arr_datetime": "2026-05-01 10:40:00",
+        "manufacturer": "Airbus",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       },
+       {
+        "flight_no": "FM809",
+        "airline": "Shanghai Airlines",
+        "seat_class": "Economy",
+        "price": 2713.0,
+        "dep_datetime": "2026-05-01 15:00:00",
+        "arr_datetime": "2026-05-01 17:40:00",
+        "manufacturer": "Boeing",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       },
+       {
+        "flight_no": "MU8629",
+        "airline": "China Eastern Airlines",
+        "seat_class": "Economy",
+        "price": 2711.0,
+        "dep_datetime": "2026-05-01 15:00:00",
+        "arr_datetime": "2026-05-01 17:40:00",
+        "manufacturer": "Boeing",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       },
+       {
+        "flight_no": "FM3027",
+        "airline": "Shanghai Airlines",
+        "seat_class": "Economy",
+        "price": 1723.0,
+        "dep_datetime": "2026-05-01 18:25:00",
+        "arr_datetime": "2026-05-01 21:05:00",
+        "manufacturer": "Unknown",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       },
+       {
+        "flight_no": "MU723",
+        "airline": "China Eastern Airlines",
+        "seat_class": "Economy",
+        "price": 1721.0,
+        "dep_datetime": "2026-05-01 18:25:00",
+        "arr_datetime": "2026-05-01 21:05:00",
+        "manufacturer": "Unknown",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       },
+       {
+        "flight_no": "HX239",
+        "airline": "Hong Kong Airlines",
+        "seat_class": "Economy",
+        "price": 1645.0,
+        "dep_datetime": "2026-05-01 19:15:00",
+        "arr_datetime": "2026-05-01 21:55:00",
+        "manufacturer": "Airbus",
+        "origin_city": "Shanghai",
+        "destination_city": "Hong Kong"
+       }
+      ]
+     },
+     "budget_constraint": {
+      "minimum_feasible_budget": 8300,
+      "estimated_meal_slots": 3,
+      "estimated_breakdown": {
+       "transportation": 4530.0,
+       "accommodation": 3300.0,
+       "meals": 390.0,
+       "attractions": 0.0
+      },
+      "is_unsat": false,
+      "min_budget": 8200,
+      "max_budget": 12100,
+      "budget_slack_ratio": 1.4757,
+      "budget_policy": {
+       "type": "db_feasible_cost_plus_profile_slack",
+       "profile_budget_rule": "budget_unspecified",
+       "basis": [
+        "intercity_transport",
+        "hotel_nights",
+        "restaurant_meals",
+        "attraction_tickets"
+       ]
+      },
+      "constraint_type": "budget_range_total"
+     },
+     "attraction_crowd_queue_initial_must_visit": {
+      "constraint_context": "Initial request requires keeping explicit crowd/queue target attractions unless a later event removes them.",
+      "constraint_type": "crowd_queue_initial_must_visit",
+      "attraction_names": [
+       "Peak Tram",
+       "Hong Kong Disneyland"
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-05-01",
+      "return_date": "2026-05-03",
+      "days": 3
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 2
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Shanghai",
+      "destinations": [
+       "Hong Kong"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [
+      "I recently came across Hong Kong Disneyland online, and if it's on the way, I'd quite like to check it out."
+     ],
+     "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+     "environment_hints": [
+      {
+       "type": "cross_border",
+       "hint": "For cross-border areas like Hong Kong, it's best to confirm visa endorsements, local network connectivity, and payment methods in advance.",
+       "reason": "Cross-border destinations require additional consideration for documents, entry procedures, roaming/SIM cards, and local payment methods. Travel companions are more sensitive to physical comfort."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "coastal_humid_heat",
+      "cross_border_region",
+      "ferry_island_transfer",
+      "local_currency_hkd",
+      "mega_city_metro_transfer",
+      "mobile_roaming_or_esim",
+      "octopus_transit_payment",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk",
+      "winter_warm_escape_city"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0029",
+  "base_query_id": "single_0029",
+  "query": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+  "interaction_type": "request_resolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "Could we also add a dinner reservation? We're looking for something with good reviews and a reasonable price, ideally without going too far out of our way.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "clarification_or_ranked_options"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "blocking_constraints": [
+     "Dining date or route anchor",
+     "Per-person budget",
+     "Cuisine priority"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "ambiguous_request": {
+        "component": "restaurant",
+        "missing_slots": [
+         "meal day or route anchor",
+         "price threshold",
+         "cuisine priority"
+        ],
+        "profile_interest_tags": [
+         "history",
+         "food"
+        ]
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "For lunch on Day 2, please book \"Jiajun Eight-Treasure Beef Offal\" near \"Shenzhen Shekou Ocean Science Museum\". The average cost is around 29 yuan per person, and we'd like to grab some snacks.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "restaurant_requirement"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "restaurant_requirement": {
+        "restaurant_name": "Jiajun Eight-Treasure Beef Offal",
+        "anchor": "Shenzhen Shekou Ocean Science Museum",
+        "cuisine_type": "Snacks",
+        "meal_day": 2,
+        "meal_type": "Lunch",
+        "candidate_reference": {
+         "name": "Jiajun Eight-Treasure Beef Offal",
+         "rating": "4.6",
+         "price_per_person": "29.0",
+         "nearby_attraction": "Shenzhen Shekou Ocean Science Museum",
+         "cuisine_type": "Snacks",
+         "tags": [
+          "Pure Beef Tendon",
+          "Radish Beef Offal",
+          "Beef Ball and Offal Ho Fun",
+          "Pure Brisket",
+          "Tofu Skewers",
+          "Pure Radish"
+         ],
+         "acceptable_restaurant_names": [
+          "Jiajun Eight-Treasure Beef Offal"
+         ],
+         "source": "sample_db.restaurants"
+        }
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "ambiguous_request": {
+        "component": "restaurant",
+        "missing_slots": [
+         "meal day or route anchor",
+         "price threshold",
+         "cuisine priority"
+        ],
+        "profile_interest_tags": [
+         "history",
+         "food"
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Beijing",
+    "dest": [
+     "Shenzhen"
+    ],
+    "days": 4,
+    "depart_date": "2026-07-15",
+    "depart_weekday": 3,
+    "return_date": "2026-07-18",
+    "people_number": 5,
+    "room_number": 3,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 3,
+      "children": [
+       {
+        "age": 5,
+        "note": "Gets tired easily"
+       }
+      ],
+      "elders": [
+       {
+        "age": 70,
+        "mobility_note": "Bad knees and sensitive to cold"
+       }
+      ]
+     },
+     "budget_range": [
+      4000,
+      9000
+     ],
+     "accommodation_style": "comfort",
+     "mobility_constraints": [
+      "knee_issue",
+      "heat_sensitive"
+     ],
+     "physical_rules": [
+      "avoid_long_walk"
+     ],
+     "schedule_rules": [
+      "relaxed"
+     ],
+     "interest_tags": [
+      "history",
+      "food"
+     ],
+     "hate_tags": [
+      "extreme_weather"
+     ],
+     "transport_preferences": [
+      "prefer_direct",
+      "avoid_red_eye"
+     ],
+     "rest_preferences": [
+      "midday_rest",
+      "afternoon_low_intensity"
+     ]
+    },
+    "user_profile": {
+     "party_type": "family_with_child",
+     "rule_ids": [
+      "budget_tight_cap",
+      "mobility_accessibility",
+      "weather_avoid_heat_exposure",
+      "weather_need_backup",
+      "schedule_pacing",
+      "transport_avoid_red_eye",
+      "transport_avoid_transfer",
+      "interest_local_food",
+      "interest_culture"
+     ],
+     "rules": [
+      {
+       "rule_id": "budget_tight_cap",
+       "category": "budget",
+       "trigger": "upper_budget_per_person_day=450.0 < 500 after destination price adjustment",
+       "planner_obligation": "Surface explicit budget more often and prefer lower-cost hotels, restaurants, and transport.",
+       "evaluation_basis": [
+        "total_cost",
+        "hotel.price",
+        "restaurant.price_per_person",
+        "transport.price"
+       ]
+      },
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.distance_meters",
+        "duration_minutes",
+        "daily activity count",
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "walking_sensitive",
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "weather_avoid_heat_exposure",
+       "category": "weather",
+       "trigger": "heat_sensitive observed",
+       "planner_obligation": "Avoid long outdoor exposure in high-temperature periods.",
+       "evaluation_basis": [
+        "weather.temperature_max_c",
+        "outdoor attraction timing",
+        "local_transport mode"
+       ]
+      },
+      {
+       "rule_id": "weather_need_backup",
+       "category": "weather",
+       "trigger": "extreme_weather disliked",
+       "planner_obligation": "Prefer weather-robust routing and indoor alternatives when weather risk appears.",
+       "evaluation_basis": [
+        "weather_code",
+        "precipitation_mm",
+        "indoor/outdoor attraction mix"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_red_eye",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_red_eye",
+       "planner_obligation": "Avoid red-eye or very late-night transport.",
+       "evaluation_basis": [
+        "departure_time",
+        "arrival_time"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes prefer_direct",
+       "planner_obligation": "Prefer direct intercity options.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_local_food",
+       "category": "interest",
+       "trigger": "interest_tags includes food",
+       "planner_obligation": "Prefer local or high-rated restaurants.",
+       "evaluation_basis": [
+        "restaurant.cuisine",
+        "rating",
+        "price_per_person"
+       ]
+      },
+      {
+       "rule_id": "interest_culture",
+       "category": "interest",
+       "trigger": "interest_tags includes history",
+       "planner_obligation": "Prefer historical or cultural attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 4,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 450.0,
+      "party_size": 5,
+      "physical_rule_seeds": [
+       "avoid_long_walk"
+      ],
+      "schedule_rule_seeds": [
+       "relaxed"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "attraction_avoid_high_queue": {
+      "constraint_context": "Do not include attractions marked in the database as having high queue risk in the itinerary.",
+      "constraint_type": "avoid_high_queue_attractions",
+      "banned_attraction_names": [
+       "Window of the World",
+       "OCT East",
+       "Xianhu Botanical Garden",
+       "Xiaomeisha Resort",
+       "Shenzhen Ping An Finance Centre Sky Observation Deck",
+       "OCT Happy Valley Shenzhen",
+       "Shenzhen Safari Park",
+       "Window of the World and Folk Culture Village"
+      ],
+      "banned_attraction_options": [
+       {
+        "attraction_name": "Window of the World",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 115.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "21:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "night_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "OCT East",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 200.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xianhu Botanical Garden",
+        "attraction_type": "Parks",
+        "rating": 0.0,
+        "ticket_price": 0.0,
+        "ticket_price_source": "legacy_zero_or_free",
+        "opening_time": "00:00",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "nature_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xiaomeisha Resort",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 45.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "family_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Shenzhen Ping An Finance Centre Sky Observation Deck",
+        "attraction_type": "Cultural Landscape",
+        "rating": 0.0,
+        "ticket_price": 180.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "20:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "photo_spot",
+         "night_hotspot",
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "OCT Happy Valley Shenzhen",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 130.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "19:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "viral"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Shenzhen Safari Park",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 99.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Window of the World and Folk Culture Village",
+        "attraction_type": "Cultural Tourism Zone",
+        "rating": 0.0,
+        "ticket_price": 69.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       }
+      ]
+     },
+     "restaurant_closest_to_attraction": {
+      "constraint_context": "Please arrange a meal at the restaurant closest to 'Nanshan Library' during the trip.",
+      "constraint_type": "superlative_closest_to_attraction",
+      "attraction_name": "Nanshan Library",
+      "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+      "distance_meters": 1090,
+      "price_per_person": 26.0,
+      "acceptable_restaurant_names": [
+       "Hao Hao Wei Noodle House (Taoyuan Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+        "price_per_person": 26.0,
+        "restaurant_rating": 4.6,
+        "nearby_attraction_name": "Nanshan Library",
+        "cuisine_type": "Snacks",
+        "tags": [
+         "Catering Services",
+         "Chinese Restaurant",
+         "Plain Wonton",
+         "Beef Brisket Noodles",
+         "Shrinkage Zongzi",
+         "Plain Beef Brisket",
+         "Oyster Sauce Noodles",
+         "Mung Bean Soup",
+         "Wonton Noodles",
+         "Plain Wonton",
+         "Lard Noodles",
+         "Pork Trotter Ginger",
+         "Kelp Mung Bean Soup",
+         "Chinese Broccoli",
+         "Pork Trotter Ginger Vinegar Egg",
+         "Beef Brisket Soup Noodles",
+         "Oyster Sauce Chinese Broccoli",
+         "Food Stall",
+         "Beef Brisket",
+         "Wonton",
+         "Beef"
+        ],
+        "opening_time": "07:00",
+        "closing_time": "22:00"
+       }
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-07-15",
+      "return_date": "2026-07-18",
+      "days": 4
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 5
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 3
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Beijing",
+      "destinations": [
+       "Shenzhen"
+      ]
+     },
+     "party_composition_required": {
+      "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+      "people_number": 5,
+      "party_composition": {
+       "adults": 3,
+       "children": [
+        {
+         "age": 5,
+         "note": "Gets tired easily"
+        }
+       ],
+       "elders": [
+        {
+         "age": 70,
+         "mobility_note": "Bad knees and sensitive to cold"
+        }
+       ]
+      }
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [],
+     "profile_soft_wish": "Average physical stamina; the itinerary should minimize hassle and avoid long periods of continuous walking.",
+     "environment_hints": [
+      {
+       "type": "reservation",
+       "hint": "It is best to book popular venues and scenic spots in advance; do not leave key attractions to be decided at the last minute.",
+       "reason": "Real-name reservations, capacity limits, or popular tickets may affect the feasibility of core attractions. Travel companions are more sensitive to physical comfort."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "coastal_humid_heat",
+      "coastal_walk_city",
+      "cross_border_adjacent_city",
+      "mega_city_metro_transfer",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk",
+      "window_of_world_theme_park",
+      "winter_warm_escape_city"
+     ],
+     "seasonal_advisories": [
+      "extreme_heat",
+      "rain_risk",
+      "typhoon_rain_risk"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0029P",
+  "base_query_id": "single_0029",
+  "query": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+  "interaction_type": "request_resolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "We are a family of five heading from Beijing to Shenzhen for 4 days. We'll be leaving on July 15, 2026 (Wednesday) and returning on July 18, 2026 (Saturday), and we need to book 3 rooms. Please make sure to avoid places like Window of the World that have massive queues; we really don't want to spend our time waiting in line. Also, could you arrange one meal at a spot close to Nanshan Library so we save on travel back and forth?",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "Could we also add a dinner on Day 2? Somewhere along our Day 2 route, local Cantonese food is our priority, and please keep it under 100 yuan per person.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "resolved_restaurant_preference"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "ambiguous_request": {
+        "component": "restaurant",
+        "missing_slots": [
+         "meal day or route anchor",
+         "price threshold",
+         "cuisine priority"
+        ],
+        "profile_interest_tags": [
+         "history",
+         "food"
+        ]
+       }
+      },
+      {
+       "resolved_restaurant_preference": {
+        "meal_day": 2,
+        "meal_type": "dinner",
+        "price_per_person_max": 100,
+        "cuisine_priority": "local Cantonese cuisine",
+        "route_anchor": "near the existing day-2 route"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "For lunch on Day 2, please book \"Jiajun Eight-Treasure Beef Offal\" near \"Shenzhen Shekou Ocean Science Museum\". The average cost is around 29 yuan per person, and we'd like to grab some snacks.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "restaurant_requirement"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "restaurant_requirement": {
+        "restaurant_name": "Jiajun Eight-Treasure Beef Offal",
+        "anchor": "Shenzhen Shekou Ocean Science Museum",
+        "cuisine_type": "Snacks",
+        "meal_day": 2,
+        "meal_type": "Lunch",
+        "candidate_reference": {
+         "name": "Jiajun Eight-Treasure Beef Offal",
+         "rating": "4.6",
+         "price_per_person": "29.0",
+         "nearby_attraction": "Shenzhen Shekou Ocean Science Museum",
+         "cuisine_type": "Snacks",
+         "tags": [
+          "Pure Beef Tendon",
+          "Radish Beef Offal",
+          "Beef Ball and Offal Ho Fun",
+          "Pure Brisket",
+          "Tofu Skewers",
+          "Pure Radish"
+         ],
+         "acceptable_restaurant_names": [
+          "Jiajun Eight-Treasure Beef Offal"
+         ],
+         "source": "sample_db.restaurants"
+        }
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "ambiguous_request": {
+        "component": "restaurant",
+        "missing_slots": [
+         "meal day or route anchor",
+         "price threshold",
+         "cuisine priority"
+        ],
+        "profile_interest_tags": [
+         "history",
+         "food"
+        ]
+       }
+      },
+      {
+       "resolved_restaurant_preference": {
+        "meal_day": 2,
+        "meal_type": "dinner",
+        "price_per_person_max": 100,
+        "cuisine_priority": "local Cantonese cuisine",
+        "route_anchor": "near the existing day-2 route"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Beijing",
+    "dest": [
+     "Shenzhen"
+    ],
+    "days": 4,
+    "depart_date": "2026-07-15",
+    "depart_weekday": 3,
+    "return_date": "2026-07-18",
+    "people_number": 5,
+    "room_number": 3,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 3,
+      "children": [
+       {
+        "age": 5,
+        "note": "Gets tired easily"
+       }
+      ],
+      "elders": [
+       {
+        "age": 70,
+        "mobility_note": "Bad knees and sensitive to cold"
+       }
+      ]
+     },
+     "budget_range": [
+      4000,
+      9000
+     ],
+     "accommodation_style": "comfort",
+     "mobility_constraints": [
+      "knee_issue",
+      "heat_sensitive"
+     ],
+     "physical_rules": [
+      "avoid_long_walk"
+     ],
+     "schedule_rules": [
+      "relaxed"
+     ],
+     "interest_tags": [
+      "history",
+      "food"
+     ],
+     "hate_tags": [
+      "extreme_weather"
+     ],
+     "transport_preferences": [
+      "prefer_direct",
+      "avoid_red_eye"
+     ],
+     "rest_preferences": [
+      "midday_rest",
+      "afternoon_low_intensity"
+     ]
+    },
+    "user_profile": {
+     "party_type": "family_with_child",
+     "rule_ids": [
+      "budget_tight_cap",
+      "mobility_accessibility",
+      "weather_avoid_heat_exposure",
+      "weather_need_backup",
+      "schedule_pacing",
+      "transport_avoid_red_eye",
+      "transport_avoid_transfer",
+      "interest_local_food",
+      "interest_culture"
+     ],
+     "rules": [
+      {
+       "rule_id": "budget_tight_cap",
+       "category": "budget",
+       "trigger": "upper_budget_per_person_day=450.0 < 500 after destination price adjustment",
+       "planner_obligation": "Surface explicit budget more often and prefer lower-cost hotels, restaurants, and transport.",
+       "evaluation_basis": [
+        "total_cost",
+        "hotel.price",
+        "restaurant.price_per_person",
+        "transport.price"
+       ]
+      },
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.distance_meters",
+        "duration_minutes",
+        "daily activity count",
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "walking_sensitive",
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "weather_avoid_heat_exposure",
+       "category": "weather",
+       "trigger": "heat_sensitive observed",
+       "planner_obligation": "Avoid long outdoor exposure in high-temperature periods.",
+       "evaluation_basis": [
+        "weather.temperature_max_c",
+        "outdoor attraction timing",
+        "local_transport mode"
+       ]
+      },
+      {
+       "rule_id": "weather_need_backup",
+       "category": "weather",
+       "trigger": "extreme_weather disliked",
+       "planner_obligation": "Prefer weather-robust routing and indoor alternatives when weather risk appears.",
+       "evaluation_basis": [
+        "weather_code",
+        "precipitation_mm",
+        "indoor/outdoor attraction mix"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_red_eye",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_red_eye",
+       "planner_obligation": "Avoid red-eye or very late-night transport.",
+       "evaluation_basis": [
+        "departure_time",
+        "arrival_time"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes prefer_direct",
+       "planner_obligation": "Prefer direct intercity options.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_local_food",
+       "category": "interest",
+       "trigger": "interest_tags includes food",
+       "planner_obligation": "Prefer local or high-rated restaurants.",
+       "evaluation_basis": [
+        "restaurant.cuisine",
+        "rating",
+        "price_per_person"
+       ]
+      },
+      {
+       "rule_id": "interest_culture",
+       "category": "interest",
+       "trigger": "interest_tags includes history",
+       "planner_obligation": "Prefer historical or cultural attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 4,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 450.0,
+      "party_size": 5,
+      "physical_rule_seeds": [
+       "avoid_long_walk"
+      ],
+      "schedule_rule_seeds": [
+       "relaxed"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "attraction_avoid_high_queue": {
+      "constraint_context": "Do not include attractions marked in the database as having high queue risk in the itinerary.",
+      "constraint_type": "avoid_high_queue_attractions",
+      "banned_attraction_names": [
+       "Window of the World",
+       "OCT East",
+       "Xianhu Botanical Garden",
+       "Xiaomeisha Resort",
+       "Shenzhen Ping An Finance Centre Sky Observation Deck",
+       "OCT Happy Valley Shenzhen",
+       "Shenzhen Safari Park",
+       "Window of the World and Folk Culture Village"
+      ],
+      "banned_attraction_options": [
+       {
+        "attraction_name": "Window of the World",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 115.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "21:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "night_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "OCT East",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 200.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xianhu Botanical Garden",
+        "attraction_type": "Parks",
+        "rating": 0.0,
+        "ticket_price": 0.0,
+        "ticket_price_source": "legacy_zero_or_free",
+        "opening_time": "00:00",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "nature_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xiaomeisha Resort",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 45.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "family_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Shenzhen Ping An Finance Centre Sky Observation Deck",
+        "attraction_type": "Cultural Landscape",
+        "rating": 0.0,
+        "ticket_price": 180.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "20:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "photo_spot",
+         "night_hotspot",
+         "classic_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "OCT Happy Valley Shenzhen",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 130.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "19:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "viral"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Shenzhen Safari Park",
+        "attraction_type": "Amusement Park/Sports & Entertainment",
+        "rating": 0.0,
+        "ticket_price": 99.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "09:30",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Window of the World and Folk Culture Village",
+        "attraction_type": "Cultural Tourism Zone",
+        "rating": 0.0,
+        "ticket_price": 69.0,
+        "ticket_price_source": "legacy_existing_reference_price",
+        "opening_time": "10:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       }
+      ]
+     },
+     "restaurant_closest_to_attraction": {
+      "constraint_context": "Please arrange a meal at the restaurant closest to 'Nanshan Library' during the trip.",
+      "constraint_type": "superlative_closest_to_attraction",
+      "attraction_name": "Nanshan Library",
+      "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+      "distance_meters": 1090,
+      "price_per_person": 26.0,
+      "acceptable_restaurant_names": [
+       "Hao Hao Wei Noodle House (Taoyuan Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+        "price_per_person": 26.0,
+        "restaurant_rating": 4.6,
+        "nearby_attraction_name": "Nanshan Library",
+        "cuisine_type": "Snacks",
+        "tags": [
+         "Catering Services",
+         "Chinese Restaurant",
+         "Plain Wonton",
+         "Beef Brisket Noodles",
+         "Shrinkage Zongzi",
+         "Plain Beef Brisket",
+         "Oyster Sauce Noodles",
+         "Mung Bean Soup",
+         "Wonton Noodles",
+         "Plain Wonton",
+         "Lard Noodles",
+         "Pork Trotter Ginger",
+         "Kelp Mung Bean Soup",
+         "Chinese Broccoli",
+         "Pork Trotter Ginger Vinegar Egg",
+         "Beef Brisket Soup Noodles",
+         "Oyster Sauce Chinese Broccoli",
+         "Food Stall",
+         "Beef Brisket",
+         "Wonton",
+         "Beef"
+        ],
+        "opening_time": "07:00",
+        "closing_time": "22:00"
+       }
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-07-15",
+      "return_date": "2026-07-18",
+      "days": 4
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 5
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 3
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Beijing",
+      "destinations": [
+       "Shenzhen"
+      ]
+     },
+     "party_composition_required": {
+      "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+      "people_number": 5,
+      "party_composition": {
+       "adults": 3,
+       "children": [
+        {
+         "age": 5,
+         "note": "Gets tired easily"
+        }
+       ],
+       "elders": [
+        {
+         "age": 70,
+         "mobility_note": "Bad knees and sensitive to cold"
+        }
+       ]
+      }
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [],
+     "profile_soft_wish": "Average physical stamina; the itinerary should minimize hassle and avoid long periods of continuous walking.",
+     "environment_hints": [
+      {
+       "type": "reservation",
+       "hint": "It is best to book popular venues and scenic spots in advance; do not leave key attractions to be decided at the last minute.",
+       "reason": "Real-name reservations, capacity limits, or popular tickets may affect the feasibility of core attractions. Travel companions are more sensitive to physical comfort."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "coastal_humid_heat",
+      "coastal_walk_city",
+      "cross_border_adjacent_city",
+      "mega_city_metro_transfer",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk",
+      "window_of_world_theme_park",
+      "winter_warm_escape_city"
+     ],
+     "seasonal_advisories": [
+      "extreme_heat",
+      "rain_risk",
+      "typhoon_rain_risk"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  },
+  "pair_of": "mt_single_0029",
+  "pair_note": "Only T1 changes: the dinner request now carries the day, route anchor, cuisine and price cap, so nothing is missing. Expected mode flips from clarification to plan."
+ },
+ {
+  "id": "mt_single_0006",
+  "base_query_id": "single_0006",
+  "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+  "interaction_type": "request_resolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "I was wondering if it's possible to fit in at least four popular spots each day and handle most of the local travel just by walking around.",
+    "must_preserve": [
+     "restaurant_cheapest_nearby_attraction",
+     "train_latest_arrival_direct",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "priority_clarification"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "ambiguous_or_conflicting_request": {
+        "request": "at least 4 attractions per day and walking-first local transfers",
+        "requested_min_attractions_per_day": 4,
+        "conflicts_with_profile_rules": [
+         "mobility_accessibility",
+         "schedule_pacing"
+        ]
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+    "must_preserve": [
+     "restaurant_cheapest_nearby_attraction",
+     "train_latest_arrival_direct",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "resolved_pacing_limit",
+     "route_preference"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "route_preference": {
+        "preference": "prefer low-transfer subway or taxi over forced long walking",
+        "preferred_modes": [
+         "subway",
+         "taxi"
+        ],
+        "avoid": [
+         "forced_long_walks",
+         "excessive_subway_transfers"
+        ]
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "ambiguous_or_conflicting_request": {
+        "request": "at least 4 attractions per day and walking-first local transfers",
+        "requested_min_attractions_per_day": 4,
+        "conflicts_with_profile_rules": [
+         "mobility_accessibility",
+         "schedule_pacing"
+        ]
+       }
+      },
+      {
+       "resolved_pacing_limit": {
+        "priority": "comfort and feasible pacing outrank packed attraction coverage",
+        "max_attractions_per_day": 2
+       },
+       "route_preference": {
+        "preference": "prefer low-transfer subway or taxi over forced long walking",
+        "preferred_modes": [
+         "subway",
+         "taxi"
+        ],
+        "avoid": [
+         "forced_long_walks",
+         "excessive_subway_transfers"
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Zhuhai",
+    "dest": [
+     "Guangzhou"
+    ],
+    "days": 2,
+    "depart_date": "2026-04-30",
+    "depart_weekday": 4,
+    "return_date": "2026-05-01",
+    "people_number": 2,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 1,
+      "children": [],
+      "elders": [
+       {
+        "age": 69,
+        "mobility_note": "sensitive to cold"
+       }
+      ]
+     },
+     "budget_range": [
+      4000,
+      7500
+     ],
+     "accommodation_style": "luxury",
+     "mobility_constraints": [
+      "knee_issue"
+     ],
+     "physical_rules": [
+      "avoid_long_walk"
+     ],
+     "schedule_rules": [
+      "relaxed"
+     ],
+     "interest_tags": [
+      "nature",
+      "park"
+     ],
+     "hate_tags": [
+      "long_local_transfer"
+     ],
+     "transport_preferences": [
+      "prefer_direct",
+      "avoid_transfer"
+     ],
+     "rest_preferences": [
+      "late_start"
+     ]
+    },
+    "user_profile": {
+     "party_type": "family_with_elder",
+     "rule_ids": [
+      "mobility_accessibility",
+      "schedule_pacing",
+      "transport_avoid_transfer",
+      "interest_outdoor_nature"
+     ],
+     "rules": [
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.distance_meters",
+        "duration_minutes",
+        "daily activity count",
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "walking_sensitive",
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_transfer; transport_preferences includes prefer_direct",
+       "planner_obligation": "Avoid transfer-heavy transport.; Prefer direct intercity options.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_outdoor_nature",
+       "category": "interest",
+       "trigger": "interest_tags includes nature; interest_tags includes park",
+       "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating",
+        "ticket_price"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 2,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 2156.2,
+      "party_size": 2,
+      "physical_rule_seeds": [
+       "avoid_long_walk"
+      ],
+      "schedule_rule_seeds": [
+       "relaxed"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "train_latest_arrival_direct": {
+      "constraint_context": "For the return trip, choose the latest-arriving direct train.",
+      "constraint_type": "superlative_latest_arrival",
+      "inbound_train_no": "C7729",
+      "inbound_route_index": 10553,
+      "inbound_train_type": "Intercity",
+      "inbound_arr_time": "2026-05-01 23:06:00",
+      "inbound_price": 70.0,
+      "is_direct": true,
+      "acceptable_inbound_train_nos": [
+       "C7729"
+      ],
+      "acceptable_inbound_train_options": [
+       {
+        "train_no": "C7729",
+        "route_index": 10553,
+        "segment_index": 1,
+        "train_type": "Intercity",
+        "seat_class": "Second Class Seat",
+        "price": 70.0,
+        "dep_datetime": "2026-05-01 22:07:00",
+        "arr_datetime": "2026-05-01 23:06:00",
+        "origin_city": "Guangzhou",
+        "destination_city": "Zhuhai"
+       }
+      ]
+     },
+     "restaurant_cheapest_nearby_attraction": {
+      "constraint_context": "Arrange one meal at the cheapest restaurant near Dongshankou Arts District.",
+      "constraint_type": "superlative_cheapest_nearby_attraction",
+      "attraction_name": "Dongshankou Arts District",
+      "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+      "price_per_person": 41.0,
+      "acceptable_restaurant_names": [
+       "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+        "price_per_person": 41.0,
+        "restaurant_rating": 4.6,
+        "nearby_attraction_name": "Dongshankou Arts District",
+        "cuisine_type": "Dining Related",
+        "tags": [
+         "Waiting Area Available",
+         "Online Queueing",
+         "Outdoor Seating",
+         "Birthday Set Meal Service"
+        ],
+        "opening_time": "10:30",
+        "closing_time": "21:00"
+       }
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-04-30",
+      "return_date": "2026-05-01",
+      "days": 2
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 2
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "train",
+      "origin": "Zhuhai",
+      "destinations": [
+       "Guangzhou"
+      ]
+     },
+     "party_composition_required": {
+      "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+      "people_number": 2,
+      "party_composition": {
+       "adults": 1,
+       "children": [],
+       "elders": [
+        {
+         "age": 69,
+         "mobility_note": "sensitive to cold"
+        }
+       ]
+      }
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [
+      "If it fits the route, I would like to visit Taikoo Hui."
+     ],
+     "profile_soft_wish": "Average stamina; minimize hassle and avoid long periods of continuous walking.",
+     "environment_hints": [
+      {
+       "type": "reservation",
+       "hint": "Popular venues and attractions should be reserved in advance; do not leave key visits undecided.",
+       "reason": "Real-name reservations, capacity limits, or popular ticketing can affect key attraction feasibility."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "cantonese_dim_sum_timing",
+      "coastal_humid_heat",
+      "heritage_hotspot_queue",
+      "major_metro_crowd",
+      "mega_city_metro_transfer",
+      "night_food_crowd_city",
+      "rainy_humid_city",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk"
+     ]
+    },
+    "route_mode": "train"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0006P",
+  "base_query_id": "single_0006",
+  "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+  "interaction_type": "request_resolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "I was hoping to fit in at least four popular spots each day and walk most of the way, but my mom's knees come first. So please cap it at 2 attractions per day and use subway or taxi instead of long walks.",
+    "must_preserve": [
+     "restaurant_cheapest_nearby_attraction",
+     "train_latest_arrival_direct",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "resolved_pacing_limit"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "ambiguous_or_conflicting_request": {
+        "request": "at least 4 attractions per day and walking-first local transfers",
+        "requested_min_attractions_per_day": 4,
+        "conflicts_with_profile_rules": [
+         "mobility_accessibility",
+         "schedule_pacing"
+        ]
+       }
+      },
+      {
+       "resolved_pacing_limit": {
+        "priority": "comfort and feasible pacing outrank packed attraction coverage",
+        "max_attractions_per_day": 2
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+    "must_preserve": [
+     "restaurant_cheapest_nearby_attraction",
+     "train_latest_arrival_direct",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "resolved_pacing_limit",
+     "route_preference"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "restaurant_cheapest_nearby_attraction",
+      "train_latest_arrival_direct",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "route_preference": {
+        "preference": "prefer low-transfer subway or taxi over forced long walking",
+        "preferred_modes": [
+         "subway",
+         "taxi"
+        ],
+        "avoid": [
+         "forced_long_walks",
+         "excessive_subway_transfers"
+        ]
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "ambiguous_or_conflicting_request": {
+        "request": "at least 4 attractions per day and walking-first local transfers",
+        "requested_min_attractions_per_day": 4,
+        "conflicts_with_profile_rules": [
+         "mobility_accessibility",
+         "schedule_pacing"
+        ]
+       }
+      },
+      {
+       "resolved_pacing_limit": {
+        "priority": "comfort and feasible pacing outrank packed attraction coverage",
+        "max_attractions_per_day": 2
+       },
+       "route_preference": {
+        "preference": "prefer low-transfer subway or taxi over forced long walking",
+        "preferred_modes": [
+         "subway",
+         "taxi"
+        ],
+        "avoid": [
+         "forced_long_walks",
+         "excessive_subway_transfers"
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Zhuhai",
+    "dest": [
+     "Guangzhou"
+    ],
+    "days": 2,
+    "depart_date": "2026-04-30",
+    "depart_weekday": 4,
+    "return_date": "2026-05-01",
+    "people_number": 2,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 1,
+      "children": [],
+      "elders": [
+       {
+        "age": 69,
+        "mobility_note": "sensitive to cold"
+       }
+      ]
+     },
+     "budget_range": [
+      4000,
+      7500
+     ],
+     "accommodation_style": "luxury",
+     "mobility_constraints": [
+      "knee_issue"
+     ],
+     "physical_rules": [
+      "avoid_long_walk"
+     ],
+     "schedule_rules": [
+      "relaxed"
+     ],
+     "interest_tags": [
+      "nature",
+      "park"
+     ],
+     "hate_tags": [
+      "long_local_transfer"
+     ],
+     "transport_preferences": [
+      "prefer_direct",
+      "avoid_transfer"
+     ],
+     "rest_preferences": [
+      "late_start"
+     ]
+    },
+    "user_profile": {
+     "party_type": "family_with_elder",
+     "rule_ids": [
+      "mobility_accessibility",
+      "schedule_pacing",
+      "transport_avoid_transfer",
+      "interest_outdoor_nature"
+     ],
+     "rules": [
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "elder/child/avoid_long_walk/knee_issue/stroller observed; long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Reduce long walking segments and avoid high-intensity consecutive transfers.; Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.distance_meters",
+        "duration_minutes",
+        "daily activity count",
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "walking_sensitive",
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_transfer; transport_preferences includes prefer_direct",
+       "planner_obligation": "Avoid transfer-heavy transport.; Prefer direct intercity options.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_outdoor_nature",
+       "category": "interest",
+       "trigger": "interest_tags includes nature; interest_tags includes park",
+       "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating",
+        "ticket_price"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 2,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 2156.2,
+      "party_size": 2,
+      "physical_rule_seeds": [
+       "avoid_long_walk"
+      ],
+      "schedule_rule_seeds": [
+       "relaxed"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "train_latest_arrival_direct": {
+      "constraint_context": "For the return trip, choose the latest-arriving direct train.",
+      "constraint_type": "superlative_latest_arrival",
+      "inbound_train_no": "C7729",
+      "inbound_route_index": 10553,
+      "inbound_train_type": "Intercity",
+      "inbound_arr_time": "2026-05-01 23:06:00",
+      "inbound_price": 70.0,
+      "is_direct": true,
+      "acceptable_inbound_train_nos": [
+       "C7729"
+      ],
+      "acceptable_inbound_train_options": [
+       {
+        "train_no": "C7729",
+        "route_index": 10553,
+        "segment_index": 1,
+        "train_type": "Intercity",
+        "seat_class": "Second Class Seat",
+        "price": 70.0,
+        "dep_datetime": "2026-05-01 22:07:00",
+        "arr_datetime": "2026-05-01 23:06:00",
+        "origin_city": "Guangzhou",
+        "destination_city": "Zhuhai"
+       }
+      ]
+     },
+     "restaurant_cheapest_nearby_attraction": {
+      "constraint_context": "Arrange one meal at the cheapest restaurant near Dongshankou Arts District.",
+      "constraint_type": "superlative_cheapest_nearby_attraction",
+      "attraction_name": "Dongshankou Arts District",
+      "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+      "price_per_person": 41.0,
+      "acceptable_restaurant_names": [
+       "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+        "price_per_person": 41.0,
+        "restaurant_rating": 4.6,
+        "nearby_attraction_name": "Dongshankou Arts District",
+        "cuisine_type": "Dining Related",
+        "tags": [
+         "Waiting Area Available",
+         "Online Queueing",
+         "Outdoor Seating",
+         "Birthday Set Meal Service"
+        ],
+        "opening_time": "10:30",
+        "closing_time": "21:00"
+       }
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-04-30",
+      "return_date": "2026-05-01",
+      "days": 2
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 2
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "train",
+      "origin": "Zhuhai",
+      "destinations": [
+       "Guangzhou"
+      ]
+     },
+     "party_composition_required": {
+      "constraint_context": "The itinerary budget must preserve the explicit child/elder party composition from the user request.",
+      "people_number": 2,
+      "party_composition": {
+       "adults": 1,
+       "children": [],
+       "elders": [
+        {
+         "age": 69,
+         "mobility_note": "sensitive to cold"
+        }
+       ]
+      }
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [
+      "If it fits the route, I would like to visit Taikoo Hui."
+     ],
+     "profile_soft_wish": "Average stamina; minimize hassle and avoid long periods of continuous walking.",
+     "environment_hints": [
+      {
+       "type": "reservation",
+       "hint": "Popular venues and attractions should be reserved in advance; do not leave key visits undecided.",
+       "reason": "Real-name reservations, capacity limits, or popular ticketing can affect key attraction feasibility."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "cantonese_dim_sum_timing",
+      "coastal_humid_heat",
+      "heritage_hotspot_queue",
+      "major_metro_crowd",
+      "mega_city_metro_transfer",
+      "night_food_crowd_city",
+      "rainy_humid_city",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk"
+     ]
+    },
+    "route_mode": "train"
+   }
+  },
+  "pair_of": "mt_single_0006",
+  "pair_note": "Only T1 changes: the user states that the elder's knee comfort outranks attraction count and fixes the cap at 2 per day. Expected mode flips from clarification to plan."
+ },
+ {
+  "id": "mt_single_0148",
+  "base_query_id": "single_0148",
+  "query": "My two roommates and I are going to Kunming from Zhengzhou for the May Day holiday. We leave on May 1, 2026 (Friday) and return on May 5, 2026 (Tuesday), making it a 5-day trip. We're working with a budget between 7600 and 8400 yuan and will book 2 rooms. For food, we want to eat near \"1010 Art Bar (Cuihu Branch)\", so please pick the highest-rated spot there. Kunming Laoyu River Wetland Park and Haigeng Park, Dianchi Lake are must-sees; just make sure the rest of the itinerary flows well without being too rushed.",
+  "interaction_type": "request_resolution",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "My two roommates and I are going to Kunming from Zhengzhou for the May Day holiday. We leave on May 1, 2026 (Friday) and return on May 5, 2026 (Tuesday), making it a 5-day trip. We're working with a budget between 7600 and 8400 yuan and will book 2 rooms. For food, we want to eat near \"1010 Art Bar (Cuihu Branch)\", so please pick the highest-rated spot there. Kunming Laoyu River Wetland Park and Haigeng Park, Dianchi Lake are must-sees; just make sure the rest of the itinerary flows well without being too rushed.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_must_visit_named",
+      "budget_constraint",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "Can we try to tighten the budget a bit? Ideally, we want to keep the total under 5900 yuan, but please don't change the transport, hotel, or dining plans we already discussed.",
+    "must_preserve": [
+     "attraction_must_visit_named",
+     "budget_constraint",
+     "restaurant_highest_rated",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "prior_constraint_clarification"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "blocking_constraints": [
+     "Total budget is lower than the minimum cost required to retain the old requirements."
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_must_visit_named",
+      "budget_constraint",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "budget",
+        "blocking_constraint": "budget_constraint",
+        "new_cap": 5900,
+        "observed_value": 7600.0,
+        "requires_relaxation": true
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "If you can't pull it off within 5900 yuan, just say so. Don't sneakily swap out the transport, accommodation, or dining options we agreed on.",
+    "must_preserve": [
+     "attraction_must_visit_named",
+     "budget_constraint",
+     "restaurant_highest_rated",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "explain_unsolved"
+    ],
+    "feasibility_status": "unsolved",
+    "response_expectation": "no_solution",
+    "unsolved_reason": "user explicitly asks for no-solution if preserved hard constraints cannot be jointly satisfied",
+    "blocking_constraints": [
+     "Total budget is lower than the minimum cost required to retain the old requirements."
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_must_visit_named",
+      "budget_constraint",
+      "restaurant_highest_rated",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "budget",
+        "blocking_constraint": "budget_constraint",
+        "new_cap": 5900,
+        "observed_value": 7600.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "budget",
+        "blocking_constraint": "budget_constraint",
+        "relaxed_new_condition": false
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Zhengzhou",
+    "dest": [
+     "Kunming"
+    ],
+    "days": 5,
+    "depart_date": "2026-05-01",
+    "depart_weekday": 5,
+    "return_date": "2026-05-05",
+    "people_number": 3,
+    "room_number": 2,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 3,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      1500,
+      3000
+     ],
+     "accommodation_style": "budget",
+     "mobility_constraints": [],
+     "physical_rules": [
+      "standard_walking"
+     ],
+     "schedule_rules": [
+      "dense"
+     ],
+     "interest_tags": [
+      "food",
+      "shopping"
+     ],
+     "hate_tags": [
+      "overpacked_schedule"
+     ],
+     "transport_preferences": [
+      "prefer_flight"
+     ],
+     "rest_preferences": []
+    },
+    "user_profile": {
+     "party_type": "friends",
+     "rule_ids": [
+      "budget_tight_cap",
+      "hotel_value_first",
+      "schedule_pacing",
+      "transport_prefer_flight",
+      "interest_local_food",
+      "interest_shopping"
+     ],
+     "rules": [
+      {
+       "rule_id": "budget_tight_cap",
+       "category": "budget",
+       "trigger": "upper_budget_per_person_day=200.0 < 500 after destination price adjustment",
+       "planner_obligation": "Surface explicit budget more often and prefer lower-cost hotels, restaurants, and transport.",
+       "evaluation_basis": [
+        "total_cost",
+        "hotel.price",
+        "restaurant.price_per_person",
+        "transport.price"
+       ]
+      },
+      {
+       "rule_id": "hotel_value_first",
+       "category": "hotel",
+       "trigger": "accommodation_style=budget",
+       "planner_obligation": "Prefer lower hotel prices unless an explicit hotel hard constraint says otherwise.",
+       "evaluation_basis": [
+        "hotel.price",
+        "hotel.score"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_prefer_flight",
+       "category": "transport",
+       "trigger": "transport_preferences includes prefer_flight",
+       "planner_obligation": "Prefer flight when feasible.",
+       "evaluation_basis": [
+        "transport.mode",
+        "price",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_local_food",
+       "category": "interest",
+       "trigger": "interest_tags includes food",
+       "planner_obligation": "Prefer local or high-rated restaurants.",
+       "evaluation_basis": [
+        "restaurant.cuisine",
+        "rating",
+        "price_per_person"
+       ]
+      },
+      {
+       "rule_id": "interest_shopping",
+       "category": "interest",
+       "trigger": "interest_tags includes shopping",
+       "planner_obligation": "Prefer shopping streets or commercial districts.",
+       "evaluation_basis": [
+        "attraction_type",
+        "opening_time"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 5,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 200.0,
+      "party_size": 3,
+      "physical_rule_seeds": [
+       "standard_walking"
+      ],
+      "schedule_rule_seeds": [
+       "dense"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "restaurant_highest_rated": {
+      "attraction_name": "1010 Art Bar (Cuihu Branch)",
+      "restaurant_name": "Wenshan Hexianju (Wenshan Breakfast)",
+      "price_per_person": 14.0,
+      "acceptable_restaurant_names": [
+       "Wenshan Hexianju (Wenshan Breakfast)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Wenshan Hexianju (Wenshan Breakfast)",
+        "price_per_person": 14.0,
+        "restaurant_rating": 4.7,
+        "nearby_attraction_name": "1010 Art Bar (Cuihu Branch)",
+        "cuisine_type": "Chinese Restaurant",
+        "tags": [
+         "Catering Services",
+         "Chinese Restaurant",
+         "Chicken Soup Rice Noodles",
+         "Rice Noodles",
+         "Er Si",
+         "Self-Service Condiments",
+         "Chicken Soup Er Si",
+         "Chicken"
+        ],
+        "opening_time": "07:00",
+        "closing_time": "20:30"
+       }
+      ],
+      "constraint_context": "Please arrange a meal at the highest-rated restaurant near '1010 Art Bar (Cuihu Branch)' during the trip.",
+      "constraint_type": "superlative_highest_rated_restaurant",
+      "restaurant_rating": 4.7
+     },
+     "attraction_must_visit_named": {
+      "constraint_context": "The itinerary must include visits to 'Kunming Laoyu River Wetland Park' and 'Haigeng Park, Dianchi Lake'",
+      "constraint_type": "superlative_must_visit_named",
+      "attraction_names": [
+       "Kunming Laoyu River Wetland Park",
+       "Haigeng Park, Dianchi Lake"
+      ],
+      "attraction_ratings": [
+       4.8,
+       4.8
+      ]
+     },
+     "budget_constraint": {
+      "minimum_feasible_budget": 7600,
+      "estimated_meal_slots": 4,
+      "estimated_breakdown": {
+       "transportation": 6198.0,
+       "accommodation": 880.0,
+       "meals": 492.0,
+       "attractions": 0.0
+      },
+      "is_unsat": false,
+      "min_budget": 7600,
+      "max_budget": 8400,
+      "budget_slack_ratio": 1.1116,
+      "budget_policy": {
+       "type": "db_feasible_cost_plus_profile_slack",
+       "profile_budget_rule": "budget_tight_cap",
+       "basis": [
+        "intercity_transport",
+        "hotel_nights",
+        "restaurant_meals",
+        "attraction_tickets"
+       ]
+      },
+      "constraint_type": "budget_range_total"
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-05-01",
+      "return_date": "2026-05-05",
+      "days": 5
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 3
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 2
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Zhengzhou",
+      "destinations": [
+       "Kunming"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [],
+     "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+     "environment_hints": []
+    },
+    "city_context": {
+     "city_tags": [
+      "minority_customs_sensitive",
+      "mountain_transfer_city",
+      "plateau_mild_city",
+      "plateau_uv",
+      "spring_like_mild_city"
+     ],
+     "seasonal_advisories": [
+      "plateau_uv_exposure"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0005",
+  "base_query_id": "single_0005",
+  "query": "My partner and I are planning a nature-focused getaway from Beijing to Shenzhen, arriving on July 14, 2026 (Tuesday) and staying for 4 days, with our return flight on July 17, 2026 (Friday). We'll need just one room. Since we love scenic parks, our main goal is to visit Nantou Ancient City. To keep things easy, we'd like to book a single meal near \"Nantou Ancient City Museum\". For accommodation, we're looking for the highest-rated hotel in the city, but we need to stick to a budget between 5400 and 7200 yuan.",
+  "interaction_type": "long_horizon_alignment",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "My partner and I are planning a nature-focused getaway from Beijing to Shenzhen, arriving on July 14, 2026 (Tuesday) and staying for 4 days, with our return flight on July 17, 2026 (Friday). We'll need just one room. Since we love scenic parks, our main goal is to visit Nantou Ancient City. To keep things easy, we'd like to book a single meal near \"Nantou Ancient City Museum\". For accommodation, we're looking for the highest-rated hotel in the city, but we need to stick to a budget between 5400 and 7200 yuan.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "budget_constraint",
+      "hotel_highest_rated",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "Please add \"Xianhu Botanical Garden\" to Day 3, while keeping every earlier requirement unchanged.",
+    "must_preserve": [
+     "budget_constraint",
+     "hotel_highest_rated",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "add_attraction"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "budget_constraint",
+      "hotel_highest_rated",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xianhu Botanical Garden",
+        "insert_day": 3,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "Could we tighten the budget a bit and keep the hotel cost under 160 yuan per night? Please maintain the earlier requirement for the hotel style as well.",
+    "must_preserve": [
+     "restaurant_closest_to_attraction",
+     "hotel_highest_rated",
+     "budget_constraint",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "prior_constraint_clarification"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "blocking_constraints": [
+     "the new nightly hotel cap is below the available hotel options that satisfy the earlier hotel requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "budget_constraint",
+      "hotel_highest_rated",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xianhu Botanical Garden",
+        "insert_day": 3,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "new_cap": 160,
+        "observed_value": 263.0,
+        "requires_relaxation": true
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 3,
+    "utterance": "If you can't find a hotel under 160 yuan per night that also meets the previous requirement, please just state that it's not possible. Do not silently swap or relax that earlier condition.",
+    "must_preserve": [
+     "restaurant_closest_to_attraction",
+     "hotel_highest_rated",
+     "budget_constraint",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "explain_unsolved"
+    ],
+    "feasibility_status": "unsolved",
+    "response_expectation": "no_solution",
+    "unsolved_reason": "user explicitly asks for no-solution if preserved hard constraints cannot be jointly satisfied",
+    "blocking_constraints": [
+     "the new nightly hotel cap is below the available hotel options that satisfy the earlier hotel requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "budget_constraint",
+      "hotel_highest_rated",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xianhu Botanical Garden",
+        "insert_day": 3,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "new_cap": 160,
+        "observed_value": 263.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "relaxed_new_condition": false
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 4,
+    "utterance": "Okay, you can relax that new cap and keep the earlier hotel requirement as the priority. Please rebuild the plan with that priority and keep all the other earlier requirements active.",
+    "must_preserve": [
+     "restaurant_closest_to_attraction",
+     "hotel_highest_rated",
+     "budget_constraint",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "apply_relaxed_constraint"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "budget_constraint",
+      "hotel_highest_rated",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xianhu Botanical Garden",
+        "insert_day": 3,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "new_cap": 160,
+        "observed_value": 263.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "relaxed_new_condition": false
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_highest_rated",
+        "relaxed_new_condition": true
+       },
+       "final_alignment_request": "preserve all active constraints, user-state updates, request resolutions, and environment events"
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Beijing",
+    "dest": [
+     "Shenzhen"
+    ],
+    "days": 4,
+    "depart_date": "2026-07-14",
+    "depart_weekday": 2,
+    "return_date": "2026-07-17",
+    "people_number": 2,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 2,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      3500,
+      8000
+     ],
+     "accommodation_style": "budget",
+     "mobility_constraints": [
+      "heat_sensitive"
+     ],
+     "physical_rules": [
+      "standard_walking"
+     ],
+     "schedule_rules": [
+      "moderate"
+     ],
+     "interest_tags": [
+      "nature",
+      "park"
+     ],
+     "hate_tags": [
+      "overpacked_schedule"
+     ],
+     "transport_preferences": [
+      "avoid_red_eye"
+     ],
+     "rest_preferences": [
+      "late_start"
+     ]
+    },
+    "user_profile": {
+     "party_type": "couple",
+     "rule_ids": [
+      "hotel_value_first",
+      "weather_avoid_heat_exposure",
+      "schedule_pacing",
+      "transport_avoid_red_eye",
+      "interest_outdoor_nature"
+     ],
+     "rules": [
+      {
+       "rule_id": "hotel_value_first",
+       "category": "hotel",
+       "trigger": "accommodation_style=budget",
+       "planner_obligation": "Prefer lower hotel prices unless an explicit hotel hard constraint says otherwise.",
+       "evaluation_basis": [
+        "hotel.price",
+        "hotel.score"
+       ]
+      },
+      {
+       "rule_id": "weather_avoid_heat_exposure",
+       "category": "weather",
+       "trigger": "heat_sensitive observed",
+       "planner_obligation": "Avoid long outdoor exposure in high-temperature periods.",
+       "evaluation_basis": [
+        "weather.temperature_max_c",
+        "outdoor attraction timing",
+        "local_transport mode"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_red_eye",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_red_eye",
+       "planner_obligation": "Avoid red-eye or very late-night transport.",
+       "evaluation_basis": [
+        "departure_time",
+        "arrival_time"
+       ]
+      },
+      {
+       "rule_id": "interest_outdoor_nature",
+       "category": "interest",
+       "trigger": "interest_tags includes nature; interest_tags includes park",
+       "planner_obligation": "Prefer nature-related attractions.; Prefer parks or low-intensity outdoor attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating",
+        "ticket_price"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 4,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 1000.0,
+      "party_size": 2,
+      "physical_rule_seeds": [
+       "standard_walking"
+      ],
+      "schedule_rule_seeds": [
+       "moderate"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "restaurant_closest_to_attraction": {
+      "constraint_context": "Please arrange a meal at the restaurant closest to 'Nantou Ancient City Museum' during the trip.",
+      "constraint_type": "superlative_closest_to_attraction",
+      "attraction_name": "Nantou Ancient City Museum",
+      "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+      "distance_meters": 1596,
+      "price_per_person": 26.0,
+      "acceptable_restaurant_names": [
+       "Hao Hao Wei Noodle House (Taoyuan Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Hao Hao Wei Noodle House (Taoyuan Branch)",
+        "price_per_person": 26.0,
+        "restaurant_rating": 4.6,
+        "nearby_attraction_name": "Nantou Ancient City Museum",
+        "cuisine_type": "Snacks",
+        "tags": [
+         "Catering Services",
+         "Chinese Restaurant",
+         "Plain Wonton",
+         "Beef Brisket Noodles",
+         "Shrinkage Zongzi",
+         "Plain Beef Brisket",
+         "Oyster Sauce Noodles",
+         "Mung Bean Soup",
+         "Wonton Noodles",
+         "Plain Wonton",
+         "Lard Noodles",
+         "Pork Trotter Ginger",
+         "Kelp Mung Bean Soup",
+         "Chinese Broccoli",
+         "Pork Trotter Ginger Vinegar Egg",
+         "Beef Brisket Soup Noodles",
+         "Oyster Sauce Chinese Broccoli",
+         "Food Stall",
+         "Beef Brisket",
+         "Wonton",
+         "Beef"
+        ],
+        "opening_time": "07:00",
+        "closing_time": "22:00"
+       }
+      ]
+     },
+     "hotel_highest_rated": {
+      "constraint_context": "For accommodation, please select the highest-rated hotel in this city.",
+      "constraint_type": "superlative_highest_rated",
+      "hotel_name": "Tingbo Hotel (Shenzhen Bao'an Airport Gushu Metro Station Branch)",
+      "hotel_score": 4.9,
+      "hotel_price": 263.0,
+      "acceptable_hotel_names": [
+       "Tingbo Hotel (Shenzhen Bao'an Airport Gushu Metro Station Branch)",
+       "Shenzhen Ingiston Hotel"
+      ],
+      "acceptable_hotel_options": [
+       {
+        "hotel_name": "Tingbo Hotel (Shenzhen Bao'an Airport Gushu Metro Station Branch)",
+        "hotel_price": 263.0,
+        "hotel_score": 4.9,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Free parking"
+        ]
+       },
+       {
+        "hotel_name": "Shenzhen Ingiston Hotel",
+        "hotel_price": 484.0,
+        "hotel_score": 4.9,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Free parking"
+        ]
+       }
+      ]
+     },
+     "budget_constraint": {
+      "minimum_feasible_budget": 5300,
+      "estimated_meal_slots": 4,
+      "estimated_breakdown": {
+       "transportation": 4220.0,
+       "accommodation": 789.0,
+       "meals": 208.0,
+       "attractions": 0.0
+      },
+      "is_unsat": false,
+      "min_budget": 5400,
+      "max_budget": 7200,
+      "budget_slack_ratio": 1.3424,
+      "budget_policy": {
+       "type": "db_feasible_cost_plus_profile_slack",
+       "profile_budget_rule": "budget_unspecified",
+       "basis": [
+        "intercity_transport",
+        "hotel_nights",
+        "restaurant_meals",
+        "attraction_tickets"
+       ]
+      },
+      "constraint_type": "budget_range_total"
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-07-14",
+      "return_date": "2026-07-17",
+      "days": 4
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 2
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Beijing",
+      "destinations": [
+       "Shenzhen"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [
+      "I recently came across China Merchants Shekou Cruise Home Port Tour online, and if it's on the way, I'd quite like to check it out."
+     ],
+     "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+     "environment_hints": [
+      {
+       "type": "reservation",
+       "hint": "It is best to book popular venues and scenic spots in advance; do not leave key attractions to be decided at the last minute.",
+       "reason": "Real-name reservations, capacity limits, or popular tickets may affect the feasibility of core attractions. Travel companions are more sensitive to physical comfort."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "coastal_humid_heat",
+      "coastal_walk_city",
+      "cross_border_adjacent_city",
+      "mega_city_metro_transfer",
+      "summer_heat_city",
+      "theme_park_reservation_city",
+      "typhoon_risk",
+      "window_of_world_theme_park",
+      "winter_warm_escape_city"
+     ],
+     "seasonal_advisories": [
+      "extreme_heat",
+      "rain_risk",
+      "typhoon_rain_risk"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0115",
+  "base_query_id": "single_0115",
+  "query": "My partner and I are flying from Changsha to Urumqi on May 3, 2026 (Sunday) for 3 days, returning on May 5, 2026 (Tuesday). Since it's mostly business with some downtime, one room for two is fine. Please keep the pace moderate and avoid places with long lines like Xinjiang Uygur Autonomous Region Museum to save time. We'd also like one meal near Urumqi Oceanarium so we can head straight there or leave right after, minimizing any back-and-forth. Also, please include \"Hongshan Park\" and \"Shuimogou Scenic Area\" in the plan.",
+  "interaction_type": "long_horizon_alignment",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "My partner and I are flying from Changsha to Urumqi on May 3, 2026 (Sunday) for 3 days, returning on May 5, 2026 (Tuesday). Since it's mostly business with some downtime, one room for two is fine. Please keep the pace moderate and avoid places with long lines like Xinjiang Uygur Autonomous Region Museum to save time. We'd also like one meal near Urumqi Oceanarium so we can head straight there or leave right after, minimizing any back-and-forth. Also, please include \"Hongshan Park\" and \"Shuimogou Scenic Area\" in the plan.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "attraction_crowd_queue_initial_must_visit",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "Please add \"Xinjiang International Grand Bazaar\" to Day 2, while keeping every earlier requirement unchanged.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "attraction_crowd_queue_initial_must_visit",
+     "restaurant_closest_to_attraction",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "add_attraction"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "attraction_crowd_queue_initial_must_visit",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xinjiang International Grand Bazaar",
+        "insert_day": 2,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "Can we tighten this a bit and keep the extra meal under 40 yuan per person? Please keep the earlier restaurant requirement unchanged too.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "attraction_crowd_queue_initial_must_visit",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "prior_constraint_clarification"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "blocking_constraints": [
+     "the new per-person restaurant cap is below the available restaurant options that satisfy the earlier restaurant requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "attraction_crowd_queue_initial_must_visit",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xinjiang International Grand Bazaar",
+        "insert_day": 2,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "new_cap": 40,
+        "observed_value": 73.0,
+        "requires_relaxation": true
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 3,
+    "utterance": "If there is no option that keeps the extra meal under 40 yuan per person while preserving the earlier restaurant requirement, please say it cannot be done. Do not quietly swap or relax the earlier requirement.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "attraction_crowd_queue_initial_must_visit",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "explain_unsolved"
+    ],
+    "feasibility_status": "unsolved",
+    "response_expectation": "no_solution",
+    "unsolved_reason": "user explicitly asks for no-solution if preserved hard constraints cannot be jointly satisfied",
+    "blocking_constraints": [
+     "the new per-person restaurant cap is below the available restaurant options that satisfy the earlier restaurant requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "attraction_crowd_queue_initial_must_visit",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xinjiang International Grand Bazaar",
+        "insert_day": 2,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "new_cap": 40,
+        "observed_value": 73.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "relaxed_new_condition": false
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 4,
+    "utterance": "Got it. You can relax that new cap, but please keep the earlier restaurant requirement as the top priority. Rebuild the plan with that focus and keep all the other original requirements active.",
+    "must_preserve": [
+     "attraction_avoid_high_queue",
+     "restaurant_closest_to_attraction",
+     "attraction_crowd_queue_initial_must_visit",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "apply_relaxed_constraint"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_avoid_high_queue",
+      "attraction_crowd_queue_initial_must_visit",
+      "restaurant_closest_to_attraction",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "add_attraction": {
+        "name": "Xinjiang International Grand Bazaar",
+        "insert_day": 2,
+        "source": "city_context.signature_or_crowd_attractions"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "new_cap": 40,
+        "observed_value": 73.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "relaxed_new_condition": false
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "restaurant",
+        "blocking_constraint": "restaurant_closest_to_attraction",
+        "relaxed_new_condition": true
+       },
+       "final_alignment_request": "preserve all active constraints, user-state updates, request resolutions, and environment events"
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Changsha",
+    "dest": [
+     "Urumqi"
+    ],
+    "days": 3,
+    "depart_date": "2026-05-03",
+    "depart_weekday": 7,
+    "return_date": "2026-05-05",
+    "people_number": 2,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 2,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      5000,
+      11000
+     ],
+     "accommodation_style": "comfort",
+     "mobility_constraints": [],
+     "physical_rules": [
+      "standard_walking"
+     ],
+     "schedule_rules": [
+      "moderate"
+     ],
+     "interest_tags": [
+      "history",
+      "food"
+     ],
+     "hate_tags": [
+      "long_local_transfer"
+     ],
+     "transport_preferences": [
+      "prefer_direct",
+      "avoid_transfer"
+     ],
+     "rest_preferences": [
+      "midday_rest"
+     ]
+    },
+    "user_profile": {
+     "party_type": "couple",
+     "rule_ids": [
+      "mobility_accessibility",
+      "schedule_pacing",
+      "transport_avoid_transfer",
+      "interest_local_food",
+      "interest_culture"
+     ],
+     "rules": [
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_transfer; transport_preferences includes prefer_direct",
+       "planner_obligation": "Avoid transfer-heavy transport.; Prefer direct intercity options.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_local_food",
+       "category": "interest",
+       "trigger": "interest_tags includes food",
+       "planner_obligation": "Prefer local or high-rated restaurants.",
+       "evaluation_basis": [
+        "restaurant.cuisine",
+        "rating",
+        "price_per_person"
+       ]
+      },
+      {
+       "rule_id": "interest_culture",
+       "category": "interest",
+       "trigger": "interest_tags includes history",
+       "planner_obligation": "Prefer historical or cultural attractions.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 3,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 1833.3,
+      "party_size": 2,
+      "physical_rule_seeds": [
+       "standard_walking"
+      ],
+      "schedule_rule_seeds": [
+       "moderate"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "attraction_avoid_high_queue": {
+      "constraint_context": "Do not include attractions marked in the database as having high queue risk in the itinerary.",
+      "constraint_type": "avoid_high_queue_attractions",
+      "banned_attraction_names": [
+       "Xinjiang Uygur Autonomous Region Museum",
+       "Urumqi Museum",
+       "Xinjiang Geology and Mineral Resources Museum",
+       "Xinjiang Tianshan Wildlife Park"
+      ],
+      "banned_attraction_options": [
+       {
+        "attraction_name": "Xinjiang Uygur Autonomous Region Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.9,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Urumqi Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.7,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xinjiang Geology and Mineral Resources Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.7,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "10:00",
+        "closing_time": "18:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "family_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Xinjiang Tianshan Wildlife Park",
+        "attraction_type": "Scenic Spot;Park & Plaza;Zoo",
+        "rating": 4.5,
+        "ticket_price": 120.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "photo_spot",
+         "family_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       }
+      ]
+     },
+     "restaurant_closest_to_attraction": {
+      "constraint_context": "Please arrange a meal at the restaurant closest to 'Urumqi Oceanarium' during the trip.",
+      "constraint_type": "superlative_closest_to_attraction",
+      "attraction_name": "Urumqi Oceanarium",
+      "restaurant_name": "Li Wandei Cafe (Tianshan Vanke Plaza Branch)",
+      "distance_meters": 1407,
+      "price_per_person": 73.0,
+      "acceptable_restaurant_names": [
+       "Li Wandei Cafe (Tianshan Vanke Plaza Branch)"
+      ],
+      "acceptable_restaurant_options": [
+       {
+        "restaurant_name": "Li Wandei Cafe (Tianshan Vanke Plaza Branch)",
+        "price_per_person": 73.0,
+        "restaurant_rating": 4.3,
+        "nearby_attraction_name": "Urumqi Oceanarium",
+        "cuisine_type": "Coffee Shop",
+        "tags": [
+         "Catering Services",
+         "Coffee Shop",
+         "Afternoon Tea"
+        ],
+        "opening_time": "11:00",
+        "closing_time": "22:30"
+       }
+      ]
+     },
+     "attraction_crowd_queue_initial_must_visit": {
+      "constraint_context": "Initial request requires keeping explicit crowd/queue target attractions unless a later event removes them.",
+      "constraint_type": "crowd_queue_initial_must_visit",
+      "attraction_names": [
+       "Hongshan Park",
+       "Shuimogou Scenic Area"
+      ]
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2026-05-03",
+      "return_date": "2026-05-05",
+      "days": 3
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 2
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Changsha",
+      "destinations": [
+       "Urumqi"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [],
+     "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+     "environment_hints": [
+      {
+       "type": "security_check",
+       "hint": "In Xinjiang, document checks and security screenings may be more frequent, so don't schedule transfer times too tightly.",
+       "reason": "Document checks and security screenings will affect the buffer time at nodes such as stations, attractions, and hotels."
+      }
+     ]
+    },
+    "city_context": {
+     "city_tags": [
+      "cold_winter_city",
+      "dry_inland_city",
+      "large_diurnal_range",
+      "minority_customs_sensitive",
+      "mountain_transfer_city",
+      "time_zone_shift_far_west",
+      "xinjiang_security_check_region"
+     ],
+     "seasonal_advisories": [
+      "dry_air"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ },
+ {
+  "id": "mt_single_0050",
+  "base_query_id": "single_0050",
+  "query": "Hey, I'm planning a solo trip from Nanjing to Shenyang. I'll be leaving on Wednesday, January 13, 2027, and coming back on Saturday, January 16, 2027, so it's a total of 4 days. My budget for accommodation is between 105 and 135 yuan per night. For the itinerary, I really want to hit at least one major, iconic landmark instead of just obscure spots. Please book 1 room for my stay.",
+  "interaction_type": "long_horizon_alignment",
+  "turns": [
+   {
+    "turn_id": 0,
+    "utterance": "Hey, I'm planning a solo trip from Nanjing to Shenyang. I'll be leaving on Wednesday, January 13, 2027, and coming back on Saturday, January 16, 2027, so it's a total of 4 days. My budget for accommodation is between 105 and 135 yuan per night. For the itinerary, I really want to hit at least one major, iconic landmark instead of just obscure spots. Please book 1 room for my stay.",
+    "must_preserve": [],
+    "must_update": [
+     "initial_plan"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "hotel_price_range",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": []
+    }
+   },
+   {
+    "turn_id": 1,
+    "utterance": "For Day 2, please do not start formal sightseeing or city transfers before 10:00. Keep all earlier requirements in place, but give us a slower start that morning.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "hotel_price_range",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "late_start_request"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "hotel_price_range",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:00",
+        "earliest_start_minutes": 600,
+        "scope": "first_formal_activity"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 2,
+    "utterance": "Can we tighten this a bit and keep the hotel price under 70 yuan per night? Please keep the earlier hotel requirement unchanged too.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "hotel_price_range",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "prior_constraint_clarification"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "clarification",
+    "blocking_constraints": [
+     "the new nightly hotel cap is below the available hotel options that satisfy the earlier hotel requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "hotel_price_range",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:00",
+        "earliest_start_minutes": 600,
+        "scope": "first_formal_activity"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "new_cap": 70,
+        "observed_value": 105.0,
+        "requires_relaxation": true
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 3,
+    "utterance": "If there is no option that keeps the hotel price under 70 yuan per night while preserving the earlier hotel requirement, please say it cannot be done. Do not quietly swap or relax the earlier requirement.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "hotel_price_range",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "explain_unsolved"
+    ],
+    "feasibility_status": "unsolved",
+    "response_expectation": "no_solution",
+    "unsolved_reason": "user explicitly asks for no-solution if preserved hard constraints cannot be jointly satisfied",
+    "blocking_constraints": [
+     "the new nightly hotel cap is below the available hotel options that satisfy the earlier hotel requirement"
+    ],
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "hotel_price_range",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:00",
+        "earliest_start_minutes": 600,
+        "scope": "first_formal_activity"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "new_cap": 70,
+        "observed_value": 105.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "relaxed_new_condition": false
+       }
+      }
+     ]
+    }
+   },
+   {
+    "turn_id": 4,
+    "utterance": "Cool, you can bump that new budget limit up a bit, but the hotel thing is still the main priority. Please rebuild the plan keeping that as the focus and keeping all my other original requirements in place.",
+    "must_preserve": [
+     "attraction_require_popular_hotspot",
+     "hotel_price_range",
+     "trip_date_range_required",
+     "room_count_required",
+     "intercity_round_trip_mode_required"
+    ],
+    "must_update": [
+     "apply_relaxed_constraint"
+    ],
+    "feasibility_status": "solved",
+    "response_expectation": "plan",
+    "oracle_state_after_turn": {
+     "active_hard_constraints": [
+      "attraction_require_popular_hotspot",
+      "hotel_price_range",
+      "trip_date_range_required",
+      "room_count_required",
+      "intercity_round_trip_mode_required"
+     ],
+     "active_user_state_deltas": [
+      {
+       "late_start_request": {
+        "day": 2,
+        "earliest_start_time": "10:00",
+        "earliest_start_minutes": 600,
+        "scope": "first_formal_activity"
+       }
+      }
+     ],
+     "active_request_resolutions": [
+      {
+       "prior_request_conflict": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "new_cap": 70,
+        "observed_value": 105.0,
+        "requires_relaxation": true
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "relaxed_new_condition": false
+       }
+      },
+      {
+       "resolution_instruction": {
+        "component": "hotel",
+        "blocking_constraint": "hotel_price_range",
+        "relaxed_new_condition": true
+       },
+       "final_alignment_request": "preserve all active constraints, user-state updates, request resolutions, and environment events"
+      }
+     ]
+    }
+   }
+  ],
+  "meta_info": {
+   "base_query_meta": {
+    "org": "Nanjing",
+    "dest": [
+     "Shenyang"
+    ],
+    "days": 4,
+    "depart_date": "2027-01-13",
+    "depart_weekday": 3,
+    "return_date": "2027-01-16",
+    "people_number": 1,
+    "room_number": 1,
+    "solution_status": "sat",
+    "observable_profile": {
+     "party_composition": {
+      "adults": 1,
+      "children": [],
+      "elders": []
+     },
+     "budget_range": [
+      1500,
+      3500
+     ],
+     "accommodation_style": "budget",
+     "mobility_constraints": [],
+     "physical_rules": [
+      "standard_walking"
+     ],
+     "schedule_rules": [
+      "dense"
+     ],
+     "interest_tags": [
+      "shopping",
+      "landmark"
+     ],
+     "hate_tags": [
+      "expensive_meal"
+     ],
+     "transport_preferences": [
+      "prefer_flight",
+      "avoid_transfer"
+     ],
+     "rest_preferences": [
+      "late_start"
+     ]
+    },
+    "user_profile": {
+     "party_type": "solo",
+     "rule_ids": [
+      "budget_guarded",
+      "hotel_value_first",
+      "mobility_accessibility",
+      "schedule_pacing",
+      "transport_avoid_transfer",
+      "transport_prefer_flight",
+      "interest_landmark",
+      "interest_shopping",
+      "meal_avoid_expensive"
+     ],
+     "rules": [
+      {
+       "rule_id": "budget_guarded",
+       "category": "budget",
+       "trigger": "500 <= upper_budget_per_person_day=875.0 < 950 after destination price adjustment",
+       "planner_obligation": "Keep cost visible but allow moderate comfort tradeoffs.",
+       "evaluation_basis": [
+        "total_cost",
+        "hotel.price",
+        "restaurant.price_per_person",
+        "transport.price"
+       ]
+      },
+      {
+       "rule_id": "hotel_value_first",
+       "category": "hotel",
+       "trigger": "accommodation_style=budget",
+       "planner_obligation": "Prefer lower hotel prices unless an explicit hotel hard constraint says otherwise.",
+       "evaluation_basis": [
+        "hotel.price",
+        "hotel.score"
+       ]
+      },
+      {
+       "rule_id": "mobility_accessibility",
+       "category": "mobility",
+       "trigger": "long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+       "planner_obligation": "Prefer geographically coherent routes and fewer transfers.",
+       "evaluation_basis": [
+        "local_transport.duration_minutes",
+        "distance_meters",
+        "route continuity"
+       ],
+       "preference_variants": [
+        "route_transfer_sensitive"
+       ]
+      },
+      {
+       "rule_id": "schedule_pacing",
+       "category": "schedule",
+       "trigger": "relaxed pace, rest preference, or overpacked_schedule disliked",
+       "planner_obligation": "Avoid overpacked days and include rest or buffer time.",
+       "evaluation_basis": [
+        "daily activity count",
+        "rest blocks",
+        "first activity start time"
+       ],
+       "preference_variants": [
+        "relaxed"
+       ]
+      },
+      {
+       "rule_id": "transport_avoid_transfer",
+       "category": "transport",
+       "trigger": "transport_preferences includes avoid_transfer",
+       "planner_obligation": "Avoid transfer-heavy transport.",
+       "evaluation_basis": [
+        "transfers",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "transport_prefer_flight",
+       "category": "transport",
+       "trigger": "transport_preferences includes prefer_flight",
+       "planner_obligation": "Prefer flight when feasible.",
+       "evaluation_basis": [
+        "transport.mode",
+        "price",
+        "duration"
+       ]
+      },
+      {
+       "rule_id": "interest_landmark",
+       "category": "interest",
+       "trigger": "interest_tags includes landmark",
+       "planner_obligation": "Prefer representative city landmarks.",
+       "evaluation_basis": [
+        "attraction_type",
+        "rating"
+       ]
+      },
+      {
+       "rule_id": "interest_shopping",
+       "category": "interest",
+       "trigger": "interest_tags includes shopping",
+       "planner_obligation": "Prefer shopping streets or commercial districts.",
+       "evaluation_basis": [
+        "attraction_type",
+        "opening_time"
+       ]
+      },
+      {
+       "rule_id": "meal_avoid_expensive",
+       "category": "food",
+       "trigger": "hate_tags includes expensive_meal",
+       "planner_obligation": "Prefer lower or moderate restaurant price_per_person unless a restaurant hard constraint overrides it.",
+       "evaluation_basis": [
+        "restaurant.price_per_person"
+       ]
+      }
+     ],
+     "derivation_context": {
+      "days": 4,
+      "dest_price_level": "medium",
+      "upper_budget_per_person_day": 875.0,
+      "party_size": 1,
+      "physical_rule_seeds": [
+       "standard_walking"
+      ],
+      "schedule_rule_seeds": [
+       "dense"
+      ]
+     }
+    },
+    "hard_constraints": {
+     "attraction_require_popular_hotspot": {
+      "constraint_context": "The itinerary must include at least one popular/internet-famous/photo-check-in attraction marked in the database.",
+      "constraint_type": "popularity_tag_required",
+      "required_tags": [
+       "classic_hotspot",
+       "viral",
+       "photo_spot",
+       "night_hotspot"
+      ],
+      "acceptable_attraction_names": [
+       "September 18th History Museum",
+       "Shenyang Zhongjie Pedestrian Street",
+       "Museum of the Imperial Palace, Shenyang",
+       "Liaoning Provincial Museum",
+       "Beiling Park",
+       "Zhang Xueliang Former Residence Memorial Hall",
+       "Taiyuan Street Pedestrian Street",
+       "Old North Market",
+       "Shenyang Expo Garden - Xiang Garden",
+       "Shenyang Dongling Park",
+       "Changbai Island Forest Park",
+       "Shenshuiwan Park",
+       "Shenyang Financial Museum"
+      ],
+      "acceptable_attraction_options": [
+       {
+        "attraction_name": "September 18th History Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 5.0,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Shenyang Zhongjie Pedestrian Street",
+        "attraction_type": "Shopping Service; Characteristic Commercial Street; Pedestrian Street",
+        "rating": 4.9,
+        "ticket_price": 0.0,
+        "ticket_price_source": "estimated_rule_free_category",
+        "opening_time": "10:00",
+        "closing_time": "21:30",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "shopping_hotspot",
+         "night_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "low"
+       },
+       {
+        "attraction_name": "Museum of the Imperial Palace, Shenyang",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.9,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Liaoning Provincial Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.8,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Beiling Park",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.8,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Zhang Xueliang Former Residence Memorial Hall",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.8,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "high"
+       },
+       {
+        "attraction_name": "Taiyuan Street Pedestrian Street",
+        "attraction_type": "Shopping Service; Characteristic Commercial Street; Pedestrian Street",
+        "rating": 4.7,
+        "ticket_price": 0.0,
+        "ticket_price_source": "estimated_rule_free_category",
+        "opening_time": "09:00",
+        "closing_time": "21:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "shopping_hotspot",
+         "night_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "low"
+       },
+       {
+        "attraction_name": "Old North Market",
+        "attraction_type": "Scenic Spot; Scenic Spot; Scenic Spot|Shopping Service; Shopping Related Places; Shopping Related Places",
+        "rating": 4.7,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_default_reference",
+        "opening_time": "10:00",
+        "closing_time": "22:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "viral",
+         "culture_hotspot",
+         "shopping_hotspot",
+         "night_hotspot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "low"
+       },
+       {
+        "attraction_name": "Shenyang Expo Garden - Xiang Garden",
+        "attraction_type": "Scenic Spots;Scenic Spot Related;Tourist Attractions",
+        "rating": 3.9,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_default_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "nature_hotspot",
+         "family_hotspot",
+         "photo_spot"
+        ],
+        "crowd_risk": "high",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Shenyang Dongling Park",
+        "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+        "rating": 4.7,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "classic_hotspot",
+         "culture_hotspot",
+         "nature_hotspot"
+        ],
+        "crowd_risk": "medium",
+        "queue_risk": "medium"
+       },
+       {
+        "attraction_name": "Changbai Island Forest Park",
+        "attraction_type": "Scenic Spots;Parks and Squares;Parks",
+        "rating": 4.7,
+        "ticket_price": 60.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "00:00",
+        "closing_time": "24:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "nature_hotspot",
+         "photo_spot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "medium",
+        "queue_risk": "low"
+       },
+       {
+        "attraction_name": "Shenshuiwan Park",
+        "attraction_type": "Scenic Spots;Parks and Squares;Parks",
+        "rating": 4.6,
+        "ticket_price": 0.0,
+        "ticket_price_source": "estimated_rule_free_category",
+        "opening_time": "00:00",
+        "closing_time": "24:00",
+        "closing_dates": "",
+        "popularity_tags": [
+         "nature_hotspot",
+         "photo_spot",
+         "family_hotspot"
+        ],
+        "crowd_risk": "medium",
+        "queue_risk": "low"
+       },
+       {
+        "attraction_name": "Shenyang Financial Museum",
+        "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+        "rating": 4.6,
+        "ticket_price": 50.0,
+        "ticket_price_source": "estimated_rule_category_reference",
+        "opening_time": "",
+        "closing_time": "",
+        "closing_dates": "",
+        "popularity_tags": [
+         "culture_hotspot",
+         "photo_spot"
+        ],
+        "crowd_risk": "medium",
+        "queue_risk": "medium"
+       }
+      ]
+     },
+     "hotel_price_range": {
+      "constraint_context": "The accommodation price must be between 105 and 135 yuan.",
+      "price_range": "105-135",
+      "min_price": 105,
+      "max_price": 135,
+      "hotel_name": "Yijing Holiday Hotel",
+      "hotel_price": 120.0,
+      "acceptable_hotel_names": [
+       "Oujia Apartment (Shenyang Qingnian Street Maoye Center Branch)",
+       "Shenyang Fumanyuan Hotel",
+       "Hongyuanxiang Hotel (Caixia Street Branch)",
+       "Chuntian Hotel (Shengjing Hospital Huaxiang Campus, Huaxiang Subway Station Branch)",
+       "Kangping Kangle Business Hotel",
+       "Shenyang Qidong Guesthouse",
+       "Shenyang Xinyue Hotel Apartment",
+       "72 Tenants Hotel Apartment (Shenyang Zhongjie Joy City D2 Branch)",
+       "Shenyang Youshang Boutique Homestay (Shenyang Station Taiyuan Street Pedestrian Street Branch)",
+       "Kangping Mango Apartment",
+       "Shenyang Guilin Homestay (Zhongshan Square First Affiliated Hospital of China Medical University Branch)",
+       "Xingshun Fruit Holiday Hotel",
+       "Yijing Holiday Hotel",
+       "Wanting Holiday Hotel (Taoxian Airport T3 Branch)",
+       "Guihua Hot Spring Holiday Homestay",
+       "Home Inn Group - Shenyang Lijing Qingya Holiday Hotel",
+       "Bali Holiday Hotel (Shenyang Nanta Olympic Sports Center Branch)",
+       "Hehe Renaissance Holiday Hotel (Shenyang Beiling Park Branch)",
+       "Shenyang Jidian Express Hotel",
+       "Wan Ting Inn (Shenbei New District Branch)",
+       "Junhui Hotel (Shenyang North Station Branch)"
+      ],
+      "acceptable_hotel_options": [
+       {
+        "hotel_name": "Oujia Apartment (Shenyang Qingnian Street Maoye Center Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 5.0,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel",
+         "Economy Chain Hotels"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Fumanyuan Hotel",
+        "hotel_price": 120.0,
+        "hotel_score": 4.3,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Hongyuanxiang Hotel (Caixia Street Branch)",
+        "hotel_price": 120.0,
+        "hotel_score": 4.1,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Chuntian Hotel (Shengjing Hospital Huaxiang Campus, Huaxiang Subway Station Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.4,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel",
+         "Economy Chain Hotels"
+        ]
+       },
+       {
+        "hotel_name": "Kangping Kangle Business Hotel",
+        "hotel_price": 130.0,
+        "hotel_score": 4.6,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Qidong Guesthouse",
+        "hotel_price": 120.0,
+        "hotel_score": 3.8,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Xinyue Hotel Apartment",
+        "hotel_price": 120.0,
+        "hotel_score": 4.2,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel",
+         "Economy Chain Hotels"
+        ]
+       },
+       {
+        "hotel_name": "72 Tenants Hotel Apartment (Shenyang Zhongjie Joy City D2 Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.7,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Youshang Boutique Homestay (Shenyang Station Taiyuan Street Pedestrian Street Branch)",
+        "hotel_price": 120.0,
+        "hotel_score": 4.3,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Accommodation Related Services"
+        ]
+       },
+       {
+        "hotel_name": "Kangping Mango Apartment",
+        "hotel_price": 130.0,
+        "hotel_score": 4.9,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Guilin Homestay (Zhongshan Square First Affiliated Hospital of China Medical University Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.7,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Xingshun Fruit Holiday Hotel",
+        "hotel_price": 120.0,
+        "hotel_score": 4.0,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Yijing Holiday Hotel",
+        "hotel_price": 120.0,
+        "hotel_score": 4.1,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Wanting Holiday Hotel (Taoxian Airport T3 Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.5,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Guihua Hot Spring Holiday Homestay",
+        "hotel_price": 130.0,
+        "hotel_score": 4.5,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Home Inn Group - Shenyang Lijing Qingya Holiday Hotel",
+        "hotel_price": 120.0,
+        "hotel_score": 4.7,
+        "hotel_star": 0,
+        "brand": "Home Inn",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Bali Holiday Hotel (Shenyang Nanta Olympic Sports Center Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.5,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Hehe Renaissance Holiday Hotel (Shenyang Beiling Park Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.5,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Shenyang Jidian Express Hotel",
+        "hotel_price": 130.0,
+        "hotel_score": 4.2,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel",
+         "Guesthouse & Hostel"
+        ]
+       },
+       {
+        "hotel_name": "Wan Ting Inn (Shenbei New District Branch)",
+        "hotel_price": 110.0,
+        "hotel_score": 4.0,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Guesthouse & Hostel",
+         "Hotel"
+        ]
+       },
+       {
+        "hotel_name": "Junhui Hotel (Shenyang North Station Branch)",
+        "hotel_price": 130.0,
+        "hotel_score": 4.5,
+        "hotel_star": 0,
+        "brand": "",
+        "decoration_time": 0,
+        "services": [
+         "Accommodation Service",
+         "Hotel"
+        ]
+       }
+      ],
+      "constraint_type": "price_range_hotel"
+     },
+     "trip_date_range_required": {
+      "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+      "depart_date": "2027-01-13",
+      "return_date": "2027-01-16",
+      "days": 4
+     },
+     "party_size_required": {
+      "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+      "people_number": 1
+     },
+     "room_count_required": {
+      "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+      "room_number": 1
+     },
+     "intercity_round_trip_mode_required": {
+      "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+      "route_mode": "flight",
+      "origin": "Nanjing",
+      "destinations": [
+       "Shenyang"
+      ]
+     }
+    },
+    "soft_constraints": {
+     "city_soft_wishes": [
+      "For food, I'd also like to try local specialties, such as Chinese restaurants or hot pot restaurants."
+     ],
+     "profile_soft_wish": "Please don't pack the itinerary too tightly; keep it relaxed and smooth.",
+     "environment_hints": []
+    },
+    "city_context": {
+     "city_tags": [
+      "cold_winter_city",
+      "heritage_hotspot_queue",
+      "ice_snow_winter_destination",
+      "imperial_palace_northeast_history",
+      "museum_reservation_city",
+      "summer_heat_city"
+     ],
+     "seasonal_advisories": [
+      "winter_outdoor_exposure"
+     ]
+    },
+    "route_mode": "flight"
+   }
+  }
+ }
+]

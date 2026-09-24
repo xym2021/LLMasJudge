@@ -1,0 +1,524 @@
+{
+  "total_samples": 1,
+  "evaluated_turns": 3,
+  "missing_turn_plans": 0,
+  "metrics": {
+    "feasibility_score": 0.7250000000000001,
+    "strict_feasibility": 0.0,
+    "strict_hard_constraint": 0.0,
+    "hard_constraint_score": 0.7143,
+    "strict_soft_preference": 0.0,
+    "soft_preference_score": 0.79165,
+    "requirement_score": 0.75295,
+    "llm_user_simulation_score": null,
+    "fulfillment_score": 0.5555555555555555,
+    "preserve_score": 1.0,
+    "preserve_error_rate": 0.0,
+    "response_mode_accuracy": 0.6666666666666666
+  },
+  "metric_groups": {
+    "all_responses": {
+      "feasibility_score": 0.4833333333333334,
+      "strict_feasibility": 0.0,
+      "strict_hard_constraint": 0.0,
+      "hard_constraint_score": 0.4762,
+      "strict_soft_preference": 0.0,
+      "soft_preference_score": 0.5277666666666666,
+      "requirement_score": 0.5019666666666667,
+      "llm_user_simulation_score": null,
+      "evaluated_turn_count": 3,
+      "score_counts": {
+        "feasibility_score": 3,
+        "strict_feasibility": 3,
+        "strict_hard_constraint": 3,
+        "hard_constraint_score": 3,
+        "strict_soft_preference": 2,
+        "soft_preference_score": 2,
+        "requirement_score": 3,
+        "llm_user_simulation_score": 0
+      },
+      "score_denominators": {
+        "feasibility_score": 3,
+        "strict_feasibility": 3,
+        "strict_hard_constraint": 3,
+        "hard_constraint_score": 3,
+        "strict_soft_preference": 3,
+        "soft_preference_score": 3,
+        "requirement_score": 3,
+        "llm_user_simulation_score": 0
+      },
+      "plan_requirement_denominator": 2,
+      "llm_user_simulation_denominator": 1,
+      "definition": "Coverage over all evaluated responses. Plan-scoped score averages impute missing, non-plan, or inapplicable turn scores as 0 over all evaluated turns, so this group reflects end-to-end response coverage. Score counts report observed non-null scores; score denominators report the averaging denominator."
+    },
+    "successful_plans": {
+      "feasibility_score": 0.7250000000000001,
+      "strict_feasibility": 0.0,
+      "strict_hard_constraint": 0.0,
+      "hard_constraint_score": 0.7143,
+      "strict_soft_preference": 0.0,
+      "soft_preference_score": 0.79165,
+      "requirement_score": 0.75295,
+      "llm_user_simulation_score": null,
+      "evaluated_turn_count": 2,
+      "score_counts": {
+        "feasibility_score": 2,
+        "strict_feasibility": 2,
+        "strict_hard_constraint": 2,
+        "hard_constraint_score": 2,
+        "strict_soft_preference": 2,
+        "soft_preference_score": 2,
+        "requirement_score": 2,
+        "llm_user_simulation_score": 0
+      },
+      "llm_user_simulation_denominator": 1,
+      "definition": "Conditional average over turns where the benchmark expected a plan and the model delivered a parseable plan. Missing or inapplicable scores are not imputed as 0."
+    }
+  },
+  "reporting_metrics": {
+    "overall": {
+      "turn_count": 3,
+      "expected_response_mode_counts": {
+        "clarification": 1,
+        "plan": 2
+      },
+      "actual_response_mode_counts": {
+        "plan": 3
+      },
+      "expected_plan_turn_count": 2,
+      "delivered_plan_turn_count": 3,
+      "response_mode_accuracy": 0.6666666666666666,
+      "fulfillment_score": 0.5555555555555555,
+      "preserve_score": 1.0,
+      "plan_feasibility": 0.7250000000000001,
+      "cumulative_requirement_satisfaction": 0.75295,
+      "hard_all_pass_rate": 0.0,
+      "hard_all_pass_rate_filtered": 0.0,
+      "end_to_end_requirement_strict": 0.0,
+      "hard_all_pass_count": 0.0,
+      "preserve_error_count": 0,
+      "preserve_check_count": 5,
+      "preserve_error_rate": 0.0,
+      "soft_preference_failure_count": 3,
+      "plan_feasibility_evaluated_count": 2,
+      "cumulative_requirement_evaluated_count": 2,
+      "strict_requirement_evaluated_count": 2
+    },
+    "by_turn": {
+      "T0": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "plan": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 1,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 1.0,
+        "fulfillment_score": 1.0,
+        "preserve_score": null,
+        "plan_feasibility": 0.7166666666666667,
+        "cumulative_requirement_satisfaction": 0.7321,
+        "hard_all_pass_rate": 0.0,
+        "hard_all_pass_rate_filtered": 0.0,
+        "end_to_end_requirement_strict": 0.0,
+        "hard_all_pass_count": 0.0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 0,
+        "preserve_error_rate": null,
+        "soft_preference_failure_count": 2,
+        "plan_feasibility_evaluated_count": 1,
+        "cumulative_requirement_evaluated_count": 1,
+        "strict_requirement_evaluated_count": 1
+      },
+      "T1": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "clarification": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 0,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 0.0,
+        "fulfillment_score": 0.0,
+        "preserve_score": null,
+        "plan_feasibility": null,
+        "cumulative_requirement_satisfaction": null,
+        "hard_all_pass_rate": null,
+        "hard_all_pass_rate_filtered": null,
+        "end_to_end_requirement_strict": null,
+        "hard_all_pass_count": 0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 0,
+        "preserve_error_rate": null,
+        "soft_preference_failure_count": 0,
+        "plan_feasibility_evaluated_count": 0,
+        "cumulative_requirement_evaluated_count": 0,
+        "strict_requirement_evaluated_count": 0
+      },
+      "T2": {
+        "turn_count": 1,
+        "expected_response_mode_counts": {
+          "plan": 1
+        },
+        "actual_response_mode_counts": {
+          "plan": 1
+        },
+        "expected_plan_turn_count": 1,
+        "delivered_plan_turn_count": 1,
+        "response_mode_accuracy": 1.0,
+        "fulfillment_score": 0.6666666666666666,
+        "preserve_score": 1.0,
+        "plan_feasibility": 0.7333333333333334,
+        "cumulative_requirement_satisfaction": 0.7738,
+        "hard_all_pass_rate": 0.0,
+        "hard_all_pass_rate_filtered": 0.0,
+        "end_to_end_requirement_strict": 0.0,
+        "hard_all_pass_count": 0.0,
+        "preserve_error_count": 0,
+        "preserve_check_count": 5,
+        "preserve_error_rate": 0.0,
+        "soft_preference_failure_count": 1,
+        "plan_feasibility_evaluated_count": 1,
+        "cumulative_requirement_evaluated_count": 1,
+        "strict_requirement_evaluated_count": 1
+      }
+    },
+    "by_turn_and_type": {
+      "T0": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "plan": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 1,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 1.0,
+          "fulfillment_score": 1.0,
+          "preserve_score": null,
+          "plan_feasibility": 0.7166666666666667,
+          "cumulative_requirement_satisfaction": 0.7321,
+          "hard_all_pass_rate": 0.0,
+          "hard_all_pass_rate_filtered": 0.0,
+          "end_to_end_requirement_strict": 0.0,
+          "hard_all_pass_count": 0.0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 0,
+          "preserve_error_rate": null,
+          "soft_preference_failure_count": 2,
+          "plan_feasibility_evaluated_count": 1,
+          "cumulative_requirement_evaluated_count": 1,
+          "strict_requirement_evaluated_count": 1
+        }
+      },
+      "T1": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "clarification": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 0,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 0.0,
+          "fulfillment_score": 0.0,
+          "preserve_score": null,
+          "plan_feasibility": null,
+          "cumulative_requirement_satisfaction": null,
+          "hard_all_pass_rate": null,
+          "hard_all_pass_rate_filtered": null,
+          "end_to_end_requirement_strict": null,
+          "hard_all_pass_count": 0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 0,
+          "preserve_error_rate": null,
+          "soft_preference_failure_count": 0,
+          "plan_feasibility_evaluated_count": 0,
+          "cumulative_requirement_evaluated_count": 0,
+          "strict_requirement_evaluated_count": 0
+        }
+      },
+      "T2": {
+        "request_resolution": {
+          "turn_count": 1,
+          "expected_response_mode_counts": {
+            "plan": 1
+          },
+          "actual_response_mode_counts": {
+            "plan": 1
+          },
+          "expected_plan_turn_count": 1,
+          "delivered_plan_turn_count": 1,
+          "response_mode_accuracy": 1.0,
+          "fulfillment_score": 0.6666666666666666,
+          "preserve_score": 1.0,
+          "plan_feasibility": 0.7333333333333334,
+          "cumulative_requirement_satisfaction": 0.7738,
+          "hard_all_pass_rate": 0.0,
+          "hard_all_pass_rate_filtered": 0.0,
+          "end_to_end_requirement_strict": 0.0,
+          "hard_all_pass_count": 0.0,
+          "preserve_error_count": 0,
+          "preserve_check_count": 5,
+          "preserve_error_rate": 0.0,
+          "soft_preference_failure_count": 1,
+          "plan_feasibility_evaluated_count": 1,
+          "cumulative_requirement_evaluated_count": 1,
+          "strict_requirement_evaluated_count": 1
+        }
+      }
+    },
+    "definitions": {
+      "response_mode_accuracy": "Whether each turn uses the expected response mode: plan, clarification, or no-solution.",
+      "fulfillment_score": "Whether the current turn's requested update or response requirement is handled correctly.",
+      "preserve_score": "Whether historical hard constraints listed in must_preserve remain satisfied.",
+      "plan_feasibility": "Feasibility averaged only over turns where a plan is expected and a plan is delivered.",
+      "cumulative_requirement_satisfaction": "Active hard constraints plus active soft preferences, averaged only over delivered expected-plan turns.",
+      "hard_all_pass_rate": "Share of expected-plan turns where a delivered plan satisfies every active hard constraint; missing or non-plan responses count as failures.",
+      "hard_all_pass_rate_filtered": "Reference metric: share of delivered expected-plan turns where every active hard constraint passes.",
+      "end_to_end_requirement_strict": "Strict requirement score over all expected-plan turns. Missing/non-plan responses score 0; delivered plans average hard_all_pass and active soft-preference score.",
+      "preserve_error_count": "Failed preserved historical hard constraints. Active soft preferences are included in cumulative_requirement_satisfaction."
+    }
+  },
+  "breakdowns": {
+    "user_state_update_success": null,
+    "request_resolution_success": 0.3333333333333333,
+    "environment_adaptation_success": null
+  },
+  "diagnostics": {
+    "llm_user_simulation_success_count": 0,
+    "llm_user_simulation_failed_count": 0,
+    "llm_user_simulation_scope": "final_turn_only",
+    "runtime_totals": {
+      "llm_calls": 23,
+      "tool_calls": 56,
+      "tool_executions": 53,
+      "duplicate_tool_calls": 3,
+      "tool_errors": 0,
+      "token_usage": {
+        "completion_tokens": 8275,
+        "prompt_tokens": 247761,
+        "total_tokens": 256036,
+        "prompt_cache_hit_tokens": 224768,
+        "prompt_cache_miss_tokens": 22993
+      },
+      "token_usage_status": "available",
+      "token_usage_available_count": 3,
+      "token_usage_missing_count": 0
+    },
+    "llm_user_simulation_runtime_totals": {
+      "llm_calls": 0,
+      "tool_calls": 0,
+      "tool_executions": 0,
+      "duplicate_tool_calls": 0,
+      "tool_errors": 0,
+      "token_usage": null,
+      "token_usage_status": "unavailable",
+      "token_usage_available_count": 0,
+      "token_usage_missing_count": 0
+    },
+    "preserve_error_count": 0,
+    "preserve_check_count": 5,
+    "preserve_error_rate": 0.0,
+    "missing_turn_plans": 0,
+    "response_mode_accuracy_by_turn": {
+      "T0": 1.0,
+      "T1": 0.0,
+      "T2": 1.0
+    },
+    "response_mode_accuracy_by_type": {
+      "request_resolution": 0.6666666666666666
+    },
+    "response_mode_confusion": {
+      "expected_clarification__got_plan": 1
+    },
+    "first_response_mode_mismatch_turn_distribution": {
+      "T1": 1
+    }
+  },
+  "missing_turns": [],
+  "summary_files": {
+    "full_debug_summary": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\debug\\multiturn_summary_full.json",
+    "per_turn_score_pattern": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\{sample_id}_turn_{turn_id}_score.json",
+    "per_turn_debug_score_pattern": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\debug\\{sample_id}_turn_{turn_id}_score_debug.json"
+  },
+  "results": [
+    {
+      "sample_id": "mt_single_0006",
+      "base_query_id": "single_0006",
+      "interaction_type": "request_resolution",
+      "database_path": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\database\\sample\\en\\id_0006",
+      "turn_results": [
+        {
+          "turn_id": 0,
+          "success": true,
+          "query": "I am planning a 2-day trip from Zhuhai to Guangzhou, departing on April 30, 2026 (Thursday) and returning on May 1, 2026 (Friday). There will be two of us, so one room is enough. For the return train, please choose the latest-arriving direct option so we can stay longer in Guangzhou. Please arrange one meal at the cheapest restaurant near \"Dongshankou Arts District\". For popular museums or major attractions, account for advance reservations, and make the intercity train numbers explicit.",
+          "score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\mt_single_0006_turn_0_score.json",
+          "debug_score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\debug\\mt_single_0006_turn_0_score_debug.json",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_0",
+            "query_id": "mt_single_0006",
+            "scores": {
+              "feasibility_score": 0.7166666666666667,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.75,
+              "requirement_score": 0.7321,
+              "llm_user_simulation_score": null
+            },
+            "runtime": {
+              "elapsed_time": 38.82850193977356,
+              "llm_calls": 9,
+              "tool_calls": 20,
+              "tool_executions": 20,
+              "duplicate_tool_calls": 0,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2540,
+                "prompt_tokens": 93501,
+                "total_tokens": 96041,
+                "prompt_cache_hit_tokens": 80128,
+                "prompt_cache_miss_tokens": 13373
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "diagnostics": {
+              "delivered_itinerary": true
+            },
+            "turn_alignment": {
+              "fulfillment_score": 1.0,
+              "preserve_score": null,
+              "preserve_check_count": 0,
+              "preserve_error_count": 0,
+              "preserve_error_rate": null,
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": null,
+                "environment_adaptation_success": null
+              }
+            }
+          }
+        },
+        {
+          "turn_id": 1,
+          "success": true,
+          "query": "I was wondering if it's possible to fit in at least four popular spots each day and handle most of the local travel just by walking around.",
+          "score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\mt_single_0006_turn_1_score.json",
+          "debug_score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\debug\\mt_single_0006_turn_1_score_debug.json",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_1",
+            "query_id": "mt_single_0006",
+            "evaluation_mode": "response_expectation_mismatch",
+            "scores": {
+              "feasibility_score": 0.0,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.0,
+              "strict_soft_preference": null,
+              "soft_preference_score": null,
+              "requirement_score": 0.0,
+              "llm_user_simulation_score": null
+            },
+            "runtime": {
+              "elapsed_time": 34.75507211685181,
+              "llm_calls": 5,
+              "tool_calls": 20,
+              "tool_executions": 20,
+              "duplicate_tool_calls": 0,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2870,
+                "prompt_tokens": 49431,
+                "total_tokens": 52301,
+                "prompt_cache_hit_tokens": 44416,
+                "prompt_cache_miss_tokens": 5015
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "response_expectation_details": {
+              "passed": false,
+              "message": "Expected clarification response for response_expectation=clarification, got plan."
+            },
+            "turn_alignment": {
+              "fulfillment_score": 0.0,
+              "preserve_score": null,
+              "preserve_check_count": 0,
+              "preserve_error_count": 0,
+              "preserve_error_rate": null,
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": 0.0,
+                "environment_adaptation_success": null
+              }
+            }
+          }
+        },
+        {
+          "turn_id": 2,
+          "success": true,
+          "query": "Let us avoid overpacking the itinerary. Please schedule at most 2 attractions per day, prioritize subway routes with fewer transfers, use taxis when places are far apart, and do not force long walks just to save transport cost.",
+          "score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\mt_single_0006_turn_2_score.json",
+          "debug_score_file": "result\\smoke\\deepseek-v4-pro_en\\evaluation\\debug\\mt_single_0006_turn_2_score_debug.json",
+          "evaluation_result": {
+            "sample_id": "mt_single_0006_turn_2",
+            "query_id": "mt_single_0006",
+            "scores": {
+              "feasibility_score": 0.7333333333333334,
+              "strict_feasibility": 0.0,
+              "strict_hard_constraint": 0.0,
+              "hard_constraint_score": 0.7143,
+              "strict_soft_preference": 0.0,
+              "soft_preference_score": 0.8333,
+              "requirement_score": 0.7738,
+              "llm_user_simulation_score": null
+            },
+            "runtime": {
+              "elapsed_time": 39.286017179489136,
+              "llm_calls": 9,
+              "tool_calls": 16,
+              "tool_executions": 13,
+              "duplicate_tool_calls": 3,
+              "tool_errors": 0,
+              "token_usage": {
+                "completion_tokens": 2865,
+                "prompt_tokens": 104829,
+                "total_tokens": 107694,
+                "prompt_cache_hit_tokens": 100224,
+                "prompt_cache_miss_tokens": 4605
+              },
+              "token_usage_status": "available",
+              "status": "completed"
+            },
+            "diagnostics": {
+              "delivered_itinerary": true
+            },
+            "turn_alignment": {
+              "fulfillment_score": 0.6666666666666666,
+              "preserve_score": 1.0,
+              "preserve_check_count": 5,
+              "preserve_error_count": 0,
+              "preserve_error_rate": 0.0,
+              "breakdowns": {
+                "user_state_update_success": null,
+                "request_resolution_success": 0.6666666666666666,
+                "environment_adaptation_success": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

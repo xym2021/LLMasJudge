@@ -1,0 +1,2675 @@
+{
+  "llm_reported_overall": {
+    "score_1_5": 3.0,
+    "score": 0.5,
+    "raw_score_1_5": 3.0,
+    "raw_score": 0.5,
+    "score_normalized_from": "score_1_5",
+    "score_scale_consistent": true,
+    "source": "LLM self-reported overall score for comparison only",
+    "authoritative": false,
+    "aggregation": "activity-count-weighted average of chunk-level LLM self-reported overall scores",
+    "chunk_score_scale_inconsistent_count": 0
+  },
+  "profile_summary": {
+    "party": {
+      "has_child": true,
+      "has_elder": true
+    },
+    "comfort_sensitivities": {
+      "budget": "high",
+      "environment": "high",
+      "fatigue": "high",
+      "schedule": "high"
+    },
+    "interest_preferences": {
+      "comfort": true,
+      "scenery": true
+    },
+    "sensitivity_flags": {
+      "budget_sensitive": true,
+      "fatigue_sensitive": true,
+      "schedule_sensitive": true,
+      "weather_sensitive": true
+    },
+    "profile_uncertainties": []
+  },
+  "activity_simulations": [
+    {
+      "item_ref": "D1-A1",
+      "day": 1,
+      "activity_index": 1,
+      "activity": {
+        "type": "buffer",
+        "name": "security check and boarding at Shanghai Pudong International Airport",
+        "time_slot": "06:30-08:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long buffer but standing/walking not evidenced.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor airport, no weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Starts before 7am, high schedule sensitivity.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A1",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A1]",
+          "claim": "Long buffer with early start flag.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A2",
+      "day": 1,
+      "activity_index": 2,
+      "activity": {
+        "type": "travel_intercity_public",
+        "name": "Hong Kong International Airport",
+        "time_slot": "08:00-10:40"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long flight but seated; fatigue sensitive but no extra burden.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Indoor cabin, no direct weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Morning flight, reasonable timing.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "High cost (2455 CNY) and budget near limit; budget-sensitive.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A2",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A2]",
+          "claim": "Long flight with high budget cost relevance.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A3",
+      "day": 1,
+      "activity_index": 3,
+      "activity": {
+        "type": "buffer",
+        "name": "deplaning, baggage claim, and freshen up",
+        "time_slot": "10:40-11:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Moderate buffer allows recovery after flight.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor airport, no weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Adequate time, no rush.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A3",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A3]",
+          "claim": "Moderate buffer with no flags.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A4",
+      "day": 1,
+      "activity_index": 4,
+      "activity": {
+        "type": "travel_city",
+        "name": "1881 Heritage Hotel",
+        "time_slot": "11:30-12:18"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "48-min taxi ride, seated, moderate duration.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Air-conditioned taxi, no direct exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Midday, no tightness.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Minor cost (186.8 CNY), not stressful.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A4",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A4]",
+          "claim": "Moderate taxi ride with minor cost.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A5",
+      "day": 1,
+      "activity_index": 5,
+      "activity": {
+        "type": "hotel",
+        "name": "1881 Heritage Hotel",
+        "time_slot": "12:18-13:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Explicit rest/recovery, helps fatigue.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor hotel, no weather exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Well-timed rest before afternoon activities.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Hotel stay, comfort preference but no details.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A5",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A5]",
+          "claim": "Explicit rest/recovery flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A6",
+      "day": 1,
+      "activity_index": 6,
+      "activity": {
+        "type": "travel_city",
+        "name": "Peak Tram",
+        "time_slot": "13:30-13:38"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Brief 8-min taxi ride, low burden.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Air-conditioned taxi, no direct exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short transfer, no tightness.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (29.9 CNY), negligible.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A6",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A6]",
+          "claim": "Brief taxi with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A7",
+      "day": 1,
+      "activity_index": 7,
+      "activity": {
+        "type": "attraction",
+        "name": "Peak Tram",
+        "time_slot": "13:38-16:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long duration (142 min) but no walking/standing evidence.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Potential outdoor exposure but no weather flag; environment tags present.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Afternoon slot, no tightness.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (80 CNY), not stressful.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Scenery interest but no explicit evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A7",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A7]",
+          "claim": "Long attraction with minor cost.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A8",
+      "day": 1,
+      "activity_index": 8,
+      "activity": {
+        "type": "travel_city",
+        "name": "Black Tea",
+        "time_slot": "16:00-16:08"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Brief 8-min taxi ride, low burden.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Air-conditioned taxi, no direct exposure.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short transfer, no tightness.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Minor cost (33.7 CNY), negligible.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A8",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A8]",
+          "claim": "Brief taxi with minor cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A9",
+      "day": 1,
+      "activity_index": 9,
+      "activity": {
+        "type": "meal",
+        "name": "Black Tea",
+        "time_slot": "16:08-17:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Moderate duration meal provides rest.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this indoor meal.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Late afternoon meal fits well; no rush.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Minor cost (76 CNY) but budget near limit adds slight pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this meal.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A9",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A9]",
+          "claim": "Meal with moderate duration (82 min) and minor cost (76 CNY).",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D1-A10",
+      "day": 1,
+      "activity_index": 10,
+      "activity": {
+        "type": "travel_city",
+        "name": "1881 Heritage Hotel",
+        "time_slot": "17:30-17:36"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Very brief walk (6 min) is easy.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this short walk.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Short transfer after meal; no schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost (0 CNY).",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D1-A10",
+          "source": "EXPERIENCE_TRACE.activity_trace[D1-A10]",
+          "claim": "Brief walking transfer (6 min) with no cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A1",
+      "day": 2,
+      "activity_index": 1,
+      "activity": {
+        "type": "travel_city",
+        "name": "Ping Shan Heritage Trail",
+        "time_slot": "08:00-08:47"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Moderate taxi ride (47 min) is comfortable but early start may cause fatigue.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No direct environmental evidence for this taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Early start (08:00) may be tiring for family with child/elder.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Minor cost (185.5 CNY) but budget near limit and high sensitivity.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A1",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A1]",
+          "claim": "Moderate taxi ride (47 min) with minor cost (185.5 CNY).",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A2",
+      "day": 2,
+      "activity_index": 2,
+      "activity": {
+        "type": "attraction",
+        "name": "Ping Shan Heritage Trail",
+        "time_slot": "08:47-11:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long duration (133 min) outdoor walking may cause fatigue for child/elder.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Outdoor marker present; summer heat and typhoon risk are concerns.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Long morning activity; schedule is dense but manageable.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Minor cost (40 CNY) but budget near limit adds slight pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Heritage trail aligns with scenery interest.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A2",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A2]",
+          "claim": "Long outdoor attraction (133 min) with minor cost (40 CNY) and outdoor marker.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A3",
+      "day": 2,
+      "activity_index": 3,
+      "activity": {
+        "type": "travel_city",
+        "name": "Ping Shan Old Place Restaurant",
+        "time_slot": "11:00-11:03"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Very brief walk (3 min) is easy.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this short walk.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5.0,
+          "applicable": true,
+          "reason": "Short transfer; no schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost (0 CNY).",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A3",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A3]",
+          "claim": "Brief walking transfer (3 min) with no cost.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A4",
+      "day": 2,
+      "activity_index": 4,
+      "activity": {
+        "type": "meal",
+        "name": "Ping Shan Old Place Restaurant",
+        "time_slot": "11:03-12:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Moderate duration meal provides rest.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this indoor meal.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Lunch at reasonable time; good break in schedule.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Minor cost (65 CNY) but budget near limit adds slight pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this meal.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A4",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A4]",
+          "claim": "Moderate duration meal (57 min) with minor cost (65 CNY).",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A5",
+      "day": 2,
+      "activity_index": 5,
+      "activity": {
+        "type": "travel_city",
+        "name": "Hong Kong Disneyland",
+        "time_slot": "12:00-12:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short taxi ride (30 min) is comfortable.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No direct environmental evidence for this taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Short transfer after lunch; good timing.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Minor cost (131.3 CNY) but budget near limit and high sensitivity.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A5",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A5]",
+          "claim": "Short taxi ride (30 min) with minor cost (131.3 CNY).",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A6",
+      "day": 2,
+      "activity_index": 6,
+      "activity": {
+        "type": "attraction",
+        "name": "Hong Kong Disneyland",
+        "time_slot": "12:30-19:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Very long block (390 min) likely causes fatigue for child/elder.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3.0,
+          "applicable": true,
+          "reason": "Summer heat and typhoon risk; no direct discomfort flagged.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Very long afternoon block may be tiring for family.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2.0,
+          "applicable": true,
+          "reason": "Minor cost (90 CNY) but budget near limit and high sensitivity.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4.0,
+          "applicable": true,
+          "reason": "Disneyland aligns with comfort and family interests.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A6",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A6]",
+          "claim": "Very long attraction block (390 min) with minor cost (90 CNY).",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A7",
+      "day": 2,
+      "activity_index": 7,
+      "activity": {
+        "type": "travel_city",
+        "name": "River View Restaurant",
+        "time_slot": "19:00-19:02"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5,
+          "applicable": true,
+          "reason": "Brief 2-minute walk, negligible physical effort.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for this short walk.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5,
+          "applicable": true,
+          "reason": "Evening time, no schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Cost is 0, no budget relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A7",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A7]",
+          "claim": "2-minute walking transfer, cost 0, no flags for discomfort.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A8",
+      "day": 2,
+      "activity_index": 8,
+      "activity": {
+        "type": "meal",
+        "name": "River View Restaurant",
+        "time_slot": "19:02-20:30"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "Moderate duration seated meal, low physical demand.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for indoor meal.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5,
+          "applicable": true,
+          "reason": "Evening dinner, relaxed timing.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "Minor cost (119 CNY), budget-sensitive but not stressful.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "Meal at a restaurant, likely comfortable; aligns with comfort preference.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A8",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A8]",
+          "claim": "88-minute dinner, cost 119, minor budget relevance, meal flag.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D2-A9",
+      "day": 2,
+      "activity_index": 9,
+      "activity": {
+        "type": "travel_city",
+        "name": "1881 Heritage Hotel",
+        "time_slot": "20:30-20:57"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 5,
+          "applicable": true,
+          "reason": "Short taxi ride, no physical strain.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 5,
+          "applicable": true,
+          "reason": "Evening transfer, no schedule pressure.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "Minor cost (120 CNY), not stressful.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D2-A9",
+          "source": "EXPERIENCE_TRACE.activity_trace[D2-A9]",
+          "claim": "27-minute taxi ride, cost 120, minor budget relevance.",
+          "score_impact": "positive"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A1",
+      "day": 3,
+      "activity_index": 1,
+      "activity": {
+        "type": "buffer",
+        "name": "check-out, 1881 Heritage Hotel",
+        "time_slot": "08:00-09:00"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "Moderate buffer, likely involves packing and check-out, manageable.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor activity, no environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Early start (08:00) may be tiring for family with child and elder.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost, no budget relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for buffer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A1",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A1]",
+          "claim": "60-minute buffer, no flags, no cost.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A2",
+      "day": 3,
+      "activity_index": 2,
+      "activity": {
+        "type": "travel_city",
+        "name": "Hong Kong International Airport",
+        "time_slot": "09:00-09:48"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 4,
+          "applicable": true,
+          "reason": "48-minute taxi ride, comfortable but moderate duration.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No environmental evidence for taxi ride.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Morning transfer after early check-out, schedule-sensitive traveler may feel rushed.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Minor cost (186.8 CNY), but budget margin is near limit, adding slight pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for this transfer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A2",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A2]",
+          "claim": "48-minute taxi, cost 186.8, minor budget relevance.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A3",
+      "day": 3,
+      "activity_index": 3,
+      "activity": {
+        "type": "buffer",
+        "name": "airport check-in and security (90 min before departure)",
+        "time_slot": "09:48-11:20"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 2,
+          "applicable": true,
+          "reason": "Long buffer (92 min) with standing and queuing, fatiguing for child and elder.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor airport, no environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Required buffer for flight, but long wait may feel tedious.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost, no budget relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for buffer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A3",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A3]",
+          "claim": "92-minute buffer, no flags, no cost.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A4",
+      "day": 3,
+      "activity_index": 4,
+      "activity": {
+        "type": "buffer",
+        "name": "waiting at gate and boarding",
+        "time_slot": "11:20-12:50"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 2,
+          "applicable": true,
+          "reason": "Long wait (90 min) in airport, fatiguing for family.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor airport, no environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Long wait before flight, but necessary; schedule-sensitive traveler may find it tedious.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No cost, no budget relevance.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "No preference evidence for buffer.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A4",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A4]",
+          "claim": "90-minute buffer, no flags, no cost.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A5",
+      "day": 3,
+      "activity_index": 5,
+      "activity": {
+        "type": "travel_intercity_public",
+        "name": "Hongqiao International Airport",
+        "time_slot": "12:50-15:10"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 2,
+          "applicable": true,
+          "reason": "Long flight (140 min) in economy, fatiguing for child and elder.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Indoor flight, no environmental evidence.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Midday flight, but preceded by long buffers; schedule-sensitive traveler may feel drained.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": 2,
+          "applicable": true,
+          "reason": "Moderate cost (951 CNY) and budget margin near limit; budget-sensitive traveler feels pressure.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 2,
+          "applicable": true,
+          "reason": "Long flight reduces comfort and scenery enjoyment; not aligned with comfort preference.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A5",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A5]",
+          "claim": "140-minute flight, cost 951, moderate budget relevance, intercity transport flag.",
+          "score_impact": "negative"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "item_ref": "D3-A6",
+      "day": 3,
+      "activity_index": 6,
+      "activity": {
+        "type": "buffer",
+        "name": "deplaning and baggage claim",
+        "time_slot": "15:10-15:40"
+      },
+      "dimension_updates": {
+        "physical_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Short duration, no walking or standing evidence.",
+          "dimension": "physical_comfort"
+        },
+        "environmental_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Indoor airport, no environmental stress evidenced.",
+          "dimension": "environmental_comfort"
+        },
+        "schedule_comfort": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "30-min buffer, no tightness or delay evidence.",
+          "dimension": "schedule_comfort"
+        },
+        "budget_comfort": {
+          "score_1_5": null,
+          "applicable": false,
+          "not_applicable_reason": "Buffer activity has no cost.",
+          "dimension": "budget_comfort"
+        },
+        "preference_satisfaction": {
+          "score_1_5": 3,
+          "applicable": true,
+          "reason": "Neutral activity, no preference alignment or conflict.",
+          "dimension": "preference_satisfaction"
+        }
+      },
+      "evidence": [
+        {
+          "item_ref": "D3-A6",
+          "source": "EXPERIENCE_TRACE.activity_trace[D3-A6]",
+          "claim": "Short 30-min buffer with no cost relevance or comfort flags.",
+          "score_impact": "neutral"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "experience_dimensions": {
+    "physical_comfort": {
+      "score_1_5": 3.0,
+      "score": 3.0,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "physical_comfort"
+    },
+    "schedule_comfort": {
+      "score_1_5": 2.68,
+      "score": 2.68,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "schedule_comfort"
+    },
+    "environmental_comfort": {
+      "score_1_5": 3.0,
+      "score": 3.0,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "environmental_comfort"
+    },
+    "budget_comfort": {
+      "score_1_5": 2.0,
+      "score": 2.0,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "budget_comfort"
+    },
+    "preference_satisfaction": {
+      "score_1_5": 3.0,
+      "score": 3.0,
+      "applicable": true,
+      "aggregation": "activity-count-weighted average across chunks",
+      "dimension": "preference_satisfaction"
+    }
+  },
+  "trace_faithfulness": {
+    "chunked": true,
+    "chunk_count": 4,
+    "all_chunks_trace_faithful": true
+  },
+  "missing_evidence": [
+    "No evidence on weather discomfort during outdoor activities.",
+    "No evidence on child/elder specific fatigue or enjoyment.",
+    "No evidence on meal quality or preference alignment."
+  ],
+  "audit_notes": {
+    "strategy": "chunked LLM simulation; final artifact revalidated against full experience trace",
+    "chunk_notes": [
+      [],
+      [
+        "Activity refs D1-A9 and D1-A10 from PLAN daily_plans[0] activities[8] and [9] are included; trace uses indices 9 and 10.",
+        "Budget margin near_limit (10506.2/12100) triggers high sensitivity; minor costs accumulate stress.",
+        "Environment includes heat and typhoon risk; only outdoor marker at D2-A2 connects directly."
+      ],
+      [
+        "All expected activity refs present exactly once.",
+        "No invented facts; all scores grounded in trace evidence.",
+        "Budget comfort penalized only for D3-A5 due to moderate relevance and near-limit margin."
+      ],
+      [
+        "Only one activity (buffer) in this turn; no comfort or preference flags triggered."
+      ]
+    ]
+  },
+  "chunking": {
+    "enabled": true,
+    "chunk_size": 8,
+    "chunk_count": 4,
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "activity_refs": [
+          "D1-A1",
+          "D1-A2",
+          "D1-A3",
+          "D1-A4",
+          "D1-A5",
+          "D1-A6",
+          "D1-A7",
+          "D1-A8"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.4,
+        "score_1_5": 2.6,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 2,
+        "activity_refs": [
+          "D1-A9",
+          "D1-A10",
+          "D2-A1",
+          "D2-A2",
+          "D2-A3",
+          "D2-A4",
+          "D2-A5",
+          "D2-A6"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.45,
+        "score_1_5": 2.8,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 3,
+        "activity_refs": [
+          "D2-A7",
+          "D2-A8",
+          "D2-A9",
+          "D3-A1",
+          "D3-A2",
+          "D3-A3",
+          "D3-A4",
+          "D3-A5"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.45,
+        "score_1_5": 2.8,
+        "trace_faithful": true
+      },
+      {
+        "chunk_index": 4,
+        "activity_refs": [
+          "D3-A6"
+        ],
+        "llm_reported_score": 0.5,
+        "llm_reported_score_1_5": 3.0,
+        "llm_raw_score": null,
+        "llm_raw_score_1_5": 3.0,
+        "llm_score_scale_consistent": null,
+        "score": 0.5,
+        "score_1_5": 3.0,
+        "trace_faithful": true
+      }
+    ]
+  },
+  "input_experience_trace": {
+    "method": "Traveler Experience Trace",
+    "rubric": {
+      "scale": "1-5, higher is better",
+      "anchors": {
+        "5": "very good: strongly matched to the user with low burden",
+        "4": "good: mostly comfortable with only minor issues",
+        "3": "medium: acceptable, but with visible tradeoffs",
+        "2": "poor: executable but clearly uncomfortable or stressful",
+        "1": "very poor: severe discomfort, stress, or profile conflict"
+      },
+      "dimension_groups": {
+        "physical": [
+          "physical_comfort",
+          "environmental_comfort"
+        ],
+        "psychological": [
+          "schedule_comfort",
+          "budget_comfort",
+          "preference_satisfaction"
+        ]
+      }
+    },
+    "turn_context": {
+      "current_turn_state_available": true,
+      "turn_selector_used": true
+    },
+    "profile_source": {
+      "used_observable_profile": true,
+      "used_user_profile": true,
+      "used_oracle_state_after_turn": true
+    },
+    "user_model": {
+      "profile_source": {
+        "used_observable_profile": true,
+        "used_user_profile": true,
+        "used_oracle_state_after_turn": true
+      },
+      "party": {
+        "has_child": true,
+        "has_elder": true,
+        "raw_evidence": [
+          "party_composition",
+          "adults",
+          "2",
+          "children",
+          "elders",
+          "budget_range",
+          "4000",
+          "8000",
+          "accommodation_style",
+          "luxury",
+          "mobility_constraints",
+          "cold_sensitive"
+        ]
+      },
+      "sensitivities": {
+        "fatigue": "high",
+        "environment": "high",
+        "schedule_stress": "high",
+        "budget_stress": "high",
+        "preference_reward": "high"
+      },
+      "positive_preferences": {
+        "food": false,
+        "scenery": true,
+        "comfort": true
+      },
+      "negative_preferences": {
+        "fatigue_sensitive": true,
+        "weather_sensitive": true,
+        "schedule_sensitive": true,
+        "budget_sensitive": true
+      },
+      "raw_signal_excerpt": [
+        "party_composition",
+        "adults",
+        "2",
+        "children",
+        "elders",
+        "budget_range",
+        "4000",
+        "8000",
+        "accommodation_style",
+        "luxury",
+        "mobility_constraints",
+        "cold_sensitive",
+        "physical_rules",
+        "standard_walking",
+        "schedule_rules",
+        "moderate",
+        "interest_tags",
+        "nature",
+        "park",
+        "hate_tags",
+        "overpacked_schedule",
+        "transport_preferences",
+        "prefer_flight",
+        "rest_preferences"
+      ]
+    },
+    "environment": {
+      "risk_tags": [
+        "heat",
+        "typhoon"
+      ],
+      "raw_context_excerpt": [
+        "coastal_humid_heat",
+        "cross_border_region",
+        "ferry_island_transfer",
+        "local_currency_hkd",
+        "mega_city_metro_transfer",
+        "mobile_roaming_or_esim",
+        "octopus_transit_payment",
+        "summer_heat_city",
+        "theme_park_reservation_city",
+        "typhoon_risk",
+        "winter_warm_escape_city"
+      ]
+    },
+    "budget": {
+      "applicable": true,
+      "reason": "explicit budget constraint",
+      "budget_limit": 12100.0,
+      "estimated_total": 10506.2,
+      "remaining_margin_level": "near_limit"
+    },
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D3-A1",
+      "D3-A2",
+      "D3-A3",
+      "D3-A4",
+      "D3-A5",
+      "D3-A6"
+    ],
+    "activity_count": 25,
+    "activity_trace": [
+      {
+        "item_ref": "D1-A1",
+        "event": {
+          "item_ref": "D1-A1",
+          "day": 1,
+          "activity_index": 1,
+          "type": "buffer",
+          "name": "security check and boarding at Shanghai Pudong International Airport",
+          "time_slot": "06:30-08:00",
+          "duration_minutes": 90,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[0]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 90,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "starts_before_7am"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A2",
+        "event": {
+          "item_ref": "D1-A2",
+          "day": 1,
+          "activity_index": 2,
+          "type": "travel_intercity_public",
+          "name": "Hong Kong International Airport",
+          "time_slot": "08:00-10:40",
+          "duration_minutes": 160,
+          "mode": "flight",
+          "cost": 2455.0,
+          "source": "plan.daily_plans[0].activities[1]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_intercity_public",
+          "duration_minutes": 160,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "transport",
+            "intercity_transport"
+          ],
+          "cost": 2455.0,
+          "budget_cost_relevance": "high"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A3",
+        "event": {
+          "item_ref": "D1-A3",
+          "day": 1,
+          "activity_index": 3,
+          "type": "buffer",
+          "name": "deplaning, baggage claim, and freshen up",
+          "time_slot": "10:40-11:30",
+          "duration_minutes": 50,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[2]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 50,
+          "duration_bucket": "moderate",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A4",
+        "event": {
+          "item_ref": "D1-A4",
+          "day": 1,
+          "activity_index": 4,
+          "type": "travel_city",
+          "name": "1881 Heritage Hotel",
+          "time_slot": "11:30-12:18",
+          "duration_minutes": 48,
+          "mode": "taxi",
+          "cost": 186.8,
+          "source": "plan.daily_plans[0].activities[3]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 48,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 186.8,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A5",
+        "event": {
+          "item_ref": "D1-A5",
+          "day": 1,
+          "activity_index": 5,
+          "type": "hotel",
+          "name": "1881 Heritage Hotel",
+          "time_slot": "12:18-13:30",
+          "duration_minutes": 72,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[0].activities[4]"
+        },
+        "experience_facts": {
+          "activity_type": "hotel",
+          "duration_minutes": 72,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "explicit_rest_or_recovery"
+          ],
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A6",
+        "event": {
+          "item_ref": "D1-A6",
+          "day": 1,
+          "activity_index": 6,
+          "type": "travel_city",
+          "name": "Peak Tram",
+          "time_slot": "13:30-13:38",
+          "duration_minutes": 8,
+          "mode": "taxi",
+          "cost": 29.9,
+          "source": "plan.daily_plans[0].activities[5]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 8,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 29.9,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A7",
+        "event": {
+          "item_ref": "D1-A7",
+          "day": 1,
+          "activity_index": 7,
+          "type": "attraction",
+          "name": "Peak Tram",
+          "time_slot": "13:38-16:00",
+          "duration_minutes": 142,
+          "mode": null,
+          "cost": 80.0,
+          "source": "plan.daily_plans[0].activities[6]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 142,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction"
+          ],
+          "cost": 80.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A8",
+        "event": {
+          "item_ref": "D1-A8",
+          "day": 1,
+          "activity_index": 8,
+          "type": "travel_city",
+          "name": "Black Tea",
+          "time_slot": "16:00-16:08",
+          "duration_minutes": 8,
+          "mode": "taxi",
+          "cost": 33.7,
+          "source": "plan.daily_plans[0].activities[7]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 8,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 33.7,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A9",
+        "event": {
+          "item_ref": "D1-A9",
+          "day": 1,
+          "activity_index": 9,
+          "type": "meal",
+          "name": "Black Tea",
+          "time_slot": "16:08-17:30",
+          "duration_minutes": 82,
+          "mode": null,
+          "cost": 76.0,
+          "source": "plan.daily_plans[0].activities[8]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 82,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 76.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D1-A10",
+        "event": {
+          "item_ref": "D1-A10",
+          "day": 1,
+          "activity_index": 10,
+          "type": "travel_city",
+          "name": "1881 Heritage Hotel",
+          "time_slot": "17:30-17:36",
+          "duration_minutes": 6,
+          "mode": "walking",
+          "cost": 0.0,
+          "source": "plan.daily_plans[0].activities[9]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 6,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A1",
+        "event": {
+          "item_ref": "D2-A1",
+          "day": 2,
+          "activity_index": 1,
+          "type": "travel_city",
+          "name": "Ping Shan Heritage Trail",
+          "time_slot": "08:00-08:47",
+          "duration_minutes": 47,
+          "mode": "taxi",
+          "cost": 185.5,
+          "source": "plan.daily_plans[1].activities[0]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 47,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 185.5,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A2",
+        "event": {
+          "item_ref": "D2-A2",
+          "day": 2,
+          "activity_index": 2,
+          "type": "attraction",
+          "name": "Ping Shan Heritage Trail",
+          "time_slot": "08:47-11:00",
+          "duration_minutes": 133,
+          "mode": null,
+          "cost": 40.0,
+          "source": "plan.daily_plans[1].activities[1]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 133,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "attraction",
+            "outdoor_marker_present"
+          ],
+          "cost": 40.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A3",
+        "event": {
+          "item_ref": "D2-A3",
+          "day": 2,
+          "activity_index": 3,
+          "type": "travel_city",
+          "name": "Ping Shan Old Place Restaurant",
+          "time_slot": "11:00-11:03",
+          "duration_minutes": 3,
+          "mode": "walking",
+          "cost": 0.0,
+          "source": "plan.daily_plans[1].activities[2]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 3,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A4",
+        "event": {
+          "item_ref": "D2-A4",
+          "day": 2,
+          "activity_index": 4,
+          "type": "meal",
+          "name": "Ping Shan Old Place Restaurant",
+          "time_slot": "11:03-12:00",
+          "duration_minutes": 57,
+          "mode": null,
+          "cost": 65.0,
+          "source": "plan.daily_plans[1].activities[3]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 57,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 65.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A5",
+        "event": {
+          "item_ref": "D2-A5",
+          "day": 2,
+          "activity_index": 5,
+          "type": "travel_city",
+          "name": "Hong Kong Disneyland",
+          "time_slot": "12:00-12:30",
+          "duration_minutes": 30,
+          "mode": "taxi",
+          "cost": 131.3,
+          "source": "plan.daily_plans[1].activities[4]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 30,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 131.3,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A6",
+        "event": {
+          "item_ref": "D2-A6",
+          "day": 2,
+          "activity_index": 6,
+          "type": "attraction",
+          "name": "Hong Kong Disneyland",
+          "time_slot": "12:30-19:00",
+          "duration_minutes": 390,
+          "mode": null,
+          "cost": 90.0,
+          "source": "plan.daily_plans[1].activities[5]"
+        },
+        "experience_facts": {
+          "activity_type": "attraction",
+          "duration_minutes": 390,
+          "duration_bucket": "very_long",
+          "experience_flags": [
+            "attraction",
+            "long_attraction_block"
+          ],
+          "cost": 90.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A7",
+        "event": {
+          "item_ref": "D2-A7",
+          "day": 2,
+          "activity_index": 7,
+          "type": "travel_city",
+          "name": "River View Restaurant",
+          "time_slot": "19:00-19:02",
+          "duration_minutes": 2,
+          "mode": "walking",
+          "cost": 0.0,
+          "source": "plan.daily_plans[1].activities[6]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 2,
+          "duration_bucket": "brief",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 0.0,
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A8",
+        "event": {
+          "item_ref": "D2-A8",
+          "day": 2,
+          "activity_index": 8,
+          "type": "meal",
+          "name": "River View Restaurant",
+          "time_slot": "19:02-20:30",
+          "duration_minutes": 88,
+          "mode": null,
+          "cost": 119.0,
+          "source": "plan.daily_plans[1].activities[7]"
+        },
+        "experience_facts": {
+          "activity_type": "meal",
+          "duration_minutes": 88,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "meal"
+          ],
+          "cost": 119.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D2-A9",
+        "event": {
+          "item_ref": "D2-A9",
+          "day": 2,
+          "activity_index": 9,
+          "type": "travel_city",
+          "name": "1881 Heritage Hotel",
+          "time_slot": "20:30-20:57",
+          "duration_minutes": 27,
+          "mode": "taxi",
+          "cost": 120.0,
+          "source": "plan.daily_plans[1].activities[8]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 27,
+          "duration_bucket": "short",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 120.0,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A1",
+        "event": {
+          "item_ref": "D3-A1",
+          "day": 3,
+          "activity_index": 1,
+          "type": "buffer",
+          "name": "check-out, 1881 Heritage Hotel",
+          "time_slot": "08:00-09:00",
+          "duration_minutes": 60,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[2].activities[0]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 60,
+          "duration_bucket": "moderate",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A2",
+        "event": {
+          "item_ref": "D3-A2",
+          "day": 3,
+          "activity_index": 2,
+          "type": "travel_city",
+          "name": "Hong Kong International Airport",
+          "time_slot": "09:00-09:48",
+          "duration_minutes": 48,
+          "mode": "taxi",
+          "cost": 186.8,
+          "source": "plan.daily_plans[2].activities[1]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_city",
+          "duration_minutes": 48,
+          "duration_bucket": "moderate",
+          "experience_flags": [
+            "transport",
+            "local_transport"
+          ],
+          "cost": 186.8,
+          "budget_cost_relevance": "minor"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A3",
+        "event": {
+          "item_ref": "D3-A3",
+          "day": 3,
+          "activity_index": 3,
+          "type": "buffer",
+          "name": "airport check-in and security (90 min before departure)",
+          "time_slot": "09:48-11:20",
+          "duration_minutes": 92,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[2].activities[2]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 92,
+          "duration_bucket": "long",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A4",
+        "event": {
+          "item_ref": "D3-A4",
+          "day": 3,
+          "activity_index": 4,
+          "type": "buffer",
+          "name": "waiting at gate and boarding",
+          "time_slot": "11:20-12:50",
+          "duration_minutes": 90,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[2].activities[3]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 90,
+          "duration_bucket": "long",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A5",
+        "event": {
+          "item_ref": "D3-A5",
+          "day": 3,
+          "activity_index": 5,
+          "type": "travel_intercity_public",
+          "name": "Hongqiao International Airport",
+          "time_slot": "12:50-15:10",
+          "duration_minutes": 140,
+          "mode": "flight",
+          "cost": 951.0,
+          "source": "plan.daily_plans[2].activities[4]"
+        },
+        "experience_facts": {
+          "activity_type": "travel_intercity_public",
+          "duration_minutes": 140,
+          "duration_bucket": "long",
+          "experience_flags": [
+            "transport",
+            "intercity_transport"
+          ],
+          "cost": 951.0,
+          "budget_cost_relevance": "moderate"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      },
+      {
+        "item_ref": "D3-A6",
+        "event": {
+          "item_ref": "D3-A6",
+          "day": 3,
+          "activity_index": 6,
+          "type": "buffer",
+          "name": "deplaning and baggage claim",
+          "time_slot": "15:10-15:40",
+          "duration_minutes": 30,
+          "mode": null,
+          "cost": null,
+          "source": "plan.daily_plans[2].activities[5]"
+        },
+        "experience_facts": {
+          "activity_type": "buffer",
+          "duration_minutes": 30,
+          "duration_bucket": "short",
+          "budget_cost_relevance": "none"
+        },
+        "llm_scope": {
+          "may_infer": "subjective comfort scores from provided neutral facts only",
+          "must_not_infer": [
+            "unmentioned rest",
+            "unmentioned weather/crowd/closure/delay",
+            "restaurant quality unless supported",
+            "new hidden preferences"
+          ]
+        }
+      }
+    ],
+    "trace_audit": {
+      "all_plan_activities_traced": true,
+      "missing_evidence": [],
+      "allowed_claim_sources": [
+        "plan.daily_plans[].activities[]",
+        "query_record.meta_info.observable_profile",
+        "query_record.meta_info.user_profile",
+        "query_record.turns[].oracle_state_after_turn"
+      ]
+    }
+  },
+  "simulator_model": "deepseek-v4-flash",
+  "turn_id": 2,
+  "activity_count_check": {
+    "input_activity_count": 25,
+    "simulated_activity_count": 25,
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D3-A1",
+      "D3-A2",
+      "D3-A3",
+      "D3-A4",
+      "D3-A5",
+      "D3-A6"
+    ],
+    "simulated_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D3-A1",
+      "D3-A2",
+      "D3-A3",
+      "D3-A4",
+      "D3-A5",
+      "D3-A6"
+    ],
+    "missing_activity_refs": [],
+    "duplicate_activity_refs": [],
+    "unexpected_activity_refs": [],
+    "all_activities_simulated": true
+  },
+  "trace_faithfulness_check": {
+    "status": "ok",
+    "faithful": true,
+    "expected_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D3-A1",
+      "D3-A2",
+      "D3-A3",
+      "D3-A4",
+      "D3-A5",
+      "D3-A6"
+    ],
+    "simulated_activity_refs": [
+      "D1-A1",
+      "D1-A2",
+      "D1-A3",
+      "D1-A4",
+      "D1-A5",
+      "D1-A6",
+      "D1-A7",
+      "D1-A8",
+      "D1-A9",
+      "D1-A10",
+      "D2-A1",
+      "D2-A2",
+      "D2-A3",
+      "D2-A4",
+      "D2-A5",
+      "D2-A6",
+      "D2-A7",
+      "D2-A8",
+      "D2-A9",
+      "D3-A1",
+      "D3-A2",
+      "D3-A3",
+      "D3-A4",
+      "D3-A5",
+      "D3-A6"
+    ],
+    "missing_activity_refs": [],
+    "unexpected_activity_refs": [],
+    "duplicate_activity_refs": [],
+    "items_without_evidence": [],
+    "invalid_dimension_items": [],
+    "ungrounded_evidence_items": []
+  },
+  "score_recalculation": {
+    "authoritative": true,
+    "source": "code mean of applicable experience_dimensions.score_1_5",
+    "llm_reported_score_1_5": 3.0,
+    "llm_reported_score": 0.5,
+    "llm_raw_score_1_5": 3.0,
+    "llm_raw_score": 0.5,
+    "llm_score_scale_consistent": true,
+    "recomputed_score_1_5": 2.736,
+    "recomputed_score": 0.434,
+    "score_inconsistency": true,
+    "excluded_dimensions": [],
+    "missing_dimensions": []
+  },
+  "runtime": {
+    "llm_calls": 4,
+    "tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 12911,
+      "prompt_tokens": 18253,
+      "total_tokens": 31164
+    },
+    "token_usage_status": "available",
+    "llm_call_usage": [
+      {
+        "call_index": 1,
+        "completion_tokens": 3716,
+        "prompt_tokens": 4998,
+        "total_tokens": 8714,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      },
+      {
+        "call_index": 2,
+        "completion_tokens": 4081,
+        "prompt_tokens": 5187,
+        "total_tokens": 9268,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      },
+      {
+        "call_index": 3,
+        "completion_tokens": 4045,
+        "prompt_tokens": 4964,
+        "total_tokens": 9009,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      },
+      {
+        "call_index": 4,
+        "completion_tokens": 1069,
+        "prompt_tokens": 3104,
+        "total_tokens": 4173,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 2048
+        }
+      }
+    ],
+    "model": "deepseek-v4-flash",
+    "status": "completed"
+  }
+}

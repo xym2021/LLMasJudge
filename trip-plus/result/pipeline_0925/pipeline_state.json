@@ -1,0 +1,684 @@
+{
+ "created": "2026-09-25 01:23:43",
+ "events": [
+  {
+   "time": "2026-09-25 01:23:43",
+   "model": "-",
+   "case": null,
+   "stage": "pipeline",
+   "level": "info",
+   "msg": "开始：4 个模型 × 6 个 case，裁判 deepseek-v4-flash"
+  },
+  {
+   "time": "2026-09-25 01:23:43",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:45",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:47",
+   "model": "qwen3.8-flash",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:49",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:51",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:53",
+   "model": "qwen3.8-flash",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:55",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:23:57",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:25:50",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 113 秒"
+  },
+  {
+   "time": "2026-09-25 01:25:50",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 3 轮"
+  },
+  {
+   "time": "2026-09-25 01:26:13",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:26:13",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:27:42",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 238 秒"
+  },
+  {
+   "time": "2026-09-25 01:27:42",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 4 轮"
+  },
+  {
+   "time": "2026-09-25 01:27:59",
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:28:05",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:28:05",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:30:35",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 400 秒"
+  },
+  {
+   "time": "2026-09-25 01:30:35",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 3 轮"
+  },
+  {
+   "time": "2026-09-25 01:30:42",
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "stage": "judge_a",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:30:42",
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:31:09",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:31:09",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:32:18",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 515 秒"
+  },
+  {
+   "time": "2026-09-25 01:32:18",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 4 轮"
+  },
+  {
+   "time": "2026-09-25 01:32:46",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:32:46",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:33:10",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:33:10",
+   "model": "-",
+   "case": null,
+   "stage": "report",
+   "level": "ok",
+   "msg": "阶段性保存：重建面板与排行榜 wrote C:\\Users\\Lenovo\\Desktop\\xhs笔试\\3_自动评估\\run_viewer\\run_viewer.html (602 KB)"
+  },
+  {
+   "time": "2026-09-25 01:34:31",
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 229 秒"
+  },
+  {
+   "time": "2026-09-25 01:34:31",
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 3 轮"
+  },
+  {
+   "time": "2026-09-25 01:34:40",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 649 秒"
+  },
+  {
+   "time": "2026-09-25 01:34:40",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 3 轮"
+  },
+  {
+   "time": "2026-09-25 01:34:57",
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:34:57",
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:35:00",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:35:00",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:35:08",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "stage": "run",
+   "level": "ok",
+   "msg": "完成，用时 679 秒"
+  },
+  {
+   "time": "2026-09-25 01:35:08",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge B 评 4 轮"
+  },
+  {
+   "time": "2026-09-25 01:35:19",
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "stage": "judge_a",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:35:19",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0029",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:35:21",
+   "model": "deepseek-flash",
+   "case": "mt_single_0029",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  },
+  {
+   "time": "2026-09-25 01:35:42",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "stage": "judge_b",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:35:42",
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "stage": "judge_a",
+   "level": "info",
+   "msg": "第 1 次尝试：Judge A 模拟旅行者体验"
+  },
+  {
+   "time": "2026-09-25 01:36:46",
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "stage": "judge_a",
+   "level": "ok",
+   "msg": "完成"
+  },
+  {
+   "time": "2026-09-25 01:36:46",
+   "model": "deepseek-flash",
+   "case": "mt_single_0029P",
+   "stage": "run",
+   "level": "info",
+   "msg": "第 1 次尝试：推理 + 转换 + 规则评估"
+  }
+ ],
+ "tasks": {
+  "deepseek-flash|mt_single_0065": {
+   "model": "deepseek-flash",
+   "case": "mt_single_0065",
+   "status": "done",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:43",
+     "finished": "2026-09-25 01:32:18",
+     "elapsed_s": 515.4
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:32:18",
+     "finished": "2026-09-25 01:32:46"
+    },
+    "judge_a": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:32:46",
+     "finished": "2026-09-25 01:35:19"
+    }
+   },
+   "started": "2026-09-25 01:23:43",
+   "finished": "2026-09-25 01:35:19"
+  },
+  "kimi-k3|mt_single_0065": {
+   "model": "kimi-k3",
+   "case": "mt_single_0065",
+   "status": "done",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:45",
+     "finished": "2026-09-25 01:27:42",
+     "elapsed_s": 237.6
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:27:42",
+     "finished": "2026-09-25 01:28:05"
+    },
+    "judge_a": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:28:05",
+     "finished": "2026-09-25 01:30:42"
+    }
+   },
+   "started": "2026-09-25 01:23:45",
+   "finished": "2026-09-25 01:30:42"
+  },
+  "qwen3.8-flash|mt_single_0065": {
+   "model": "qwen3.8-flash",
+   "case": "mt_single_0065",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:47"
+    }
+   },
+   "started": "2026-09-25 01:23:47"
+  },
+  "dots3-note-prev|mt_single_0065": {
+   "model": "dots3-note-prev",
+   "case": "mt_single_0065",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:49",
+     "finished": "2026-09-25 01:35:08",
+     "elapsed_s": 679.3
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:35:08",
+     "finished": "2026-09-25 01:35:42"
+    },
+    "judge_a": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:35:42"
+    }
+   },
+   "started": "2026-09-25 01:23:49"
+  },
+  "deepseek-flash|mt_single_0125": {
+   "model": "deepseek-flash",
+   "case": "mt_single_0125",
+   "status": "done",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:51",
+     "finished": "2026-09-25 01:34:40",
+     "elapsed_s": 649.3
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:34:40",
+     "finished": "2026-09-25 01:35:00"
+    },
+    "judge_a": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:35:00",
+     "finished": "2026-09-25 01:36:46"
+    }
+   },
+   "started": "2026-09-25 01:23:51",
+   "finished": "2026-09-25 01:36:46"
+  },
+  "qwen3.8-flash|mt_single_0125": {
+   "model": "qwen3.8-flash",
+   "case": "mt_single_0125",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:53"
+    }
+   },
+   "started": "2026-09-25 01:23:53"
+  },
+  "dots3-note-prev|mt_single_0125": {
+   "model": "dots3-note-prev",
+   "case": "mt_single_0125",
+   "status": "done",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:55",
+     "finished": "2026-09-25 01:30:35",
+     "elapsed_s": 400.1
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:30:35",
+     "finished": "2026-09-25 01:31:09"
+    },
+    "judge_a": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:31:09",
+     "finished": "2026-09-25 01:33:10"
+    }
+   },
+   "started": "2026-09-25 01:23:55",
+   "finished": "2026-09-25 01:33:10"
+  },
+  "kimi-k3|mt_single_0125": {
+   "model": "kimi-k3",
+   "case": "mt_single_0125",
+   "status": "done",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:23:57",
+     "finished": "2026-09-25 01:25:50",
+     "elapsed_s": 112.9
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:25:50",
+     "finished": "2026-09-25 01:26:13"
+    },
+    "judge_a": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:26:13",
+     "finished": "2026-09-25 01:27:59"
+    }
+   },
+   "started": "2026-09-25 01:23:57",
+   "finished": "2026-09-25 01:27:59"
+  },
+  "deepseek-flash|mt_single_0029": {
+   "model": "deepseek-flash",
+   "case": "mt_single_0029",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:35:21"
+    }
+   },
+   "started": "2026-09-25 01:35:21"
+  },
+  "kimi-k3|mt_single_0029": {
+   "model": "kimi-k3",
+   "case": "mt_single_0029",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:30:42",
+     "finished": "2026-09-25 01:34:31",
+     "elapsed_s": 229.3
+    },
+    "judge_b": {
+     "status": "ok",
+     "attempts": 1,
+     "started": "2026-09-25 01:34:31",
+     "finished": "2026-09-25 01:34:57"
+    },
+    "judge_a": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:34:57"
+    }
+   },
+   "started": "2026-09-25 01:30:42"
+  },
+  "qwen3.8-flash|mt_single_0029": {
+   "model": "qwen3.8-flash",
+   "case": "mt_single_0029",
+   "status": "pending",
+   "stages": {}
+  },
+  "dots3-note-prev|mt_single_0029": {
+   "model": "dots3-note-prev",
+   "case": "mt_single_0029",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:35:19"
+    }
+   },
+   "started": "2026-09-25 01:35:19"
+  },
+  "deepseek-flash|mt_single_0029P": {
+   "model": "deepseek-flash",
+   "case": "mt_single_0029P",
+   "status": "running",
+   "stages": {
+    "run": {
+     "status": "running",
+     "attempts": 1,
+     "started": "2026-09-25 01:36:46"
+    }
+   },
+   "started": "2026-09-25 01:36:46"
+  }
+ },
+ "models": {
+  "deepseek-flash": {
+   "exhausted": false,
+   "config": "deepseek-v4-flash",
+   "note": "DeepSeek 官方 key 鉴权失败，改走阿里云百炼的 deepseek-v4-flash",
+   "dir": "deepseek-v4-flash_en"
+  },
+  "kimi-k3": {
+   "exhausted": false,
+   "config": "kimi-k3",
+   "note": "阿里云百炼",
+   "dir": "kimi-k3_en"
+  },
+  "qwen3.8-flash": {
+   "exhausted": false,
+   "config": "qwen3.8-flash",
+   "note": "阿里云百炼",
+   "dir": "qwen3.8-flash_en"
+  },
+  "dots3-note-prev": {
+   "exhausted": false,
+   "config": "dots3-note-prev",
+   "note": "XHS 接口",
+   "dir": "dots3-note-prev_en"
+  }
+ },
+ "judge_model": "deepseek-v4-flash",
+ "case_ids": [
+  "mt_single_0065",
+  "mt_single_0125",
+  "mt_single_0029",
+  "mt_single_0029P",
+  "mt_single_0006",
+  "mt_single_0006P"
+ ],
+ "max_attempts": 5,
+ "started": "2026-09-25 01:23:43",
+ "status": "running"
+}

@@ -1,0 +1,260 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "Zhuhai → Guangzhou",
+      "activities": [
+        {
+          "time_slot": "07:40-08:10",
+          "type": "buffer",
+          "details": {
+            "description": "Arrive at Zhuhai Railway Station, security check and boarding wait"
+          }
+        },
+        {
+          "time_slot": "08:10-09:16",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "C7608",
+            "from": "Zhuhai Railway Station",
+            "to": "Guangzhou South",
+            "cost": 70,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "09:16-09:31",
+          "type": "buffer",
+          "details": {
+            "description": "Deplaning/exiting station"
+          }
+        },
+        {
+          "time_slot": "09:31-10:02",
+          "type": "travel_city",
+          "details": {
+            "from": "Guangzhou South",
+            "to": "Dongshankou Arts District",
+            "mode": "taxi",
+            "distance": "15.7 km",
+            "duration": "31 min",
+            "cost": 45
+          }
+        },
+        {
+          "time_slot": "10:02-12:30",
+          "type": "attraction",
+          "details": {
+            "name": "Dongshankou Arts District",
+            "city": "Guangzhou",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "12:30-13:30",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Kowloon Ice Room (Guangzhou Yingxiong Square Branch)",
+            "cost": 41
+          }
+        },
+        {
+          "time_slot": "13:30-13:37",
+          "type": "travel_city",
+          "details": {
+            "from": "Dongshankou Arts District",
+            "to": "Guangdong Museum of Art (Ersha Island Branch)",
+            "mode": "taxi",
+            "distance": "3.2 km",
+            "duration": "6 min",
+            "cost": 12.5
+          }
+        },
+        {
+          "time_slot": "13:37-16:00",
+          "type": "attraction",
+          "details": {
+            "name": "Guangdong Museum of Art (Ersha Island Branch)",
+            "city": "Guangzhou",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "16:00-16:07",
+          "type": "travel_city",
+          "details": {
+            "from": "Guangdong Museum of Art (Ersha Island Branch)",
+            "to": "Sheraton Guangzhou Yuexiu Hotel",
+            "mode": "taxi",
+            "distance": "3.7 km",
+            "duration": "7 min",
+            "cost": 13.8
+          }
+        },
+        {
+          "time_slot": "16:07-17:30",
+          "type": "hotel",
+          "details": {
+            "activity": "Check-in and rest",
+            "name": "Sheraton Guangzhou Yuexiu Hotel"
+          }
+        },
+        {
+          "time_slot": "17:30-19:00",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Xu Bo Guan",
+            "cost": 100
+          }
+        },
+        {
+          "time_slot": "19:00-19:10",
+          "type": "travel_city",
+          "details": {
+            "from": "Xu Bo Guan",
+            "to": "Sheraton Guangzhou Yuexiu Hotel",
+            "mode": "taxi",
+            "distance": "~3.7 km",
+            "duration": "7 min",
+            "cost": 13.8
+          }
+        },
+        {
+          "time_slot": "19:10-22:00",
+          "type": "hotel",
+          "details": {
+            "activity": "Rest",
+            "name": "Sheraton Guangzhou Yuexiu Hotel"
+          }
+        }
+      ],
+      "date": "2026-04-30",
+      "accommodation": {
+        "name": "Sheraton Guangzhou Yuexiu Hotel",
+        "price_per_night": 1329
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Guangzhou → Zhuhai",
+      "activities": [
+        {
+          "time_slot": "09:00-10:00",
+          "type": "buffer",
+          "details": {
+            "description": "Late start, breakfast at hotel, check-out"
+          }
+        },
+        {
+          "time_slot": "10:00-10:13",
+          "type": "travel_city",
+          "details": {
+            "from": "Sheraton Guangzhou Yuexiu Hotel",
+            "to": "Baiyun Mountain",
+            "mode": "taxi",
+            "distance": "6.6 km",
+            "duration": "13 min",
+            "cost": 21.4
+          }
+        },
+        {
+          "time_slot": "10:13-12:00",
+          "type": "attraction",
+          "details": {
+            "name": "Baiyun Mountain",
+            "city": "Zhuhai",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "12:00-13:00",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+            "cost": 39
+          }
+        },
+        {
+          "time_slot": "13:00-13:15",
+          "type": "travel_city",
+          "details": {
+            "from": "Saizeriya Italian Restaurant (Tianhe Xintiandi Branch)",
+            "to": "Baiyun Mountain",
+            "mode": "taxi",
+            "distance": "~3.8 km",
+            "duration": "13 min",
+            "cost": 13.8
+          }
+        },
+        {
+          "time_slot": "13:15-15:30",
+          "type": "attraction",
+          "details": {
+            "name": "Baiyun Mountain",
+            "city": "Zhuhai",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "15:30-16:16",
+          "type": "travel_city",
+          "details": {
+            "from": "Baiyun Mountain",
+            "to": "Guangzhou South",
+            "mode": "taxi",
+            "distance": "22.8 km",
+            "duration": "46 min",
+            "cost": 63.4
+          }
+        },
+        {
+          "time_slot": "16:16-17:30",
+          "type": "buffer",
+          "details": {
+            "description": "Free time near Guangzhou South, dinner optional"
+          }
+        },
+        {
+          "time_slot": "17:30-18:00",
+          "type": "buffer",
+          "details": {
+            "description": "Arrive at Guangzhou South Railway Station, security check and boarding wait"
+          }
+        },
+        {
+          "time_slot": "18:00-19:06",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "C7729",
+            "from": "Guangzhou South",
+            "to": "Zhuhai Railway Station",
+            "cost": 70,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "19:06-19:21",
+          "type": "buffer",
+          "details": {
+            "description": "Deplaning/exiting station"
+          }
+        }
+      ],
+      "date": "2026-05-01"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 140,
+    "accommodation": 1329,
+    "meals": 360,
+    "attractions_and_tickets": 0,
+    "other": 0,
+    "total_estimated_budget": 2112.9
+  }
+}

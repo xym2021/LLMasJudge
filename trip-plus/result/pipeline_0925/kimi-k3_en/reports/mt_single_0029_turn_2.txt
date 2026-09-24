@@ -1,0 +1,73 @@
+<plan>
+Day 1 (2026-07-15):
+Current City: from Beijing to Shenzhen
+Accommodation: Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, ¥293/room/night
+03:30-05:00 | buffer | Wake-up and taxi transfer to Beijing Capital International Airport (self-arranged)
+05:00-06:30 | buffer | Airport check-in and security (90-minute pre-flight buffer)
+06:30-10:10 | travel_intercity_public | flight CA1393, Beijing Capital International Airport - Bao'an International Airport, Economy, ¥1170/person
+10:10-10:45 | buffer | Deplaning, baggage claim, and exiting the airport
+10:45-11:17 | travel_city | Bao'an International Airport - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, taxi (2 vehicles), 15.8 km, 32 min, ¥45.8/vehicle
+11:17-12:00 | hotel | check-in and short rest, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+12:00-12:05 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Hao Hao Wei Noodle House (Taoyuan Branch), walking, 450 m, 5 min, ¥0
+12:05-13:05 | meal | lunch, Hao Hao Wei Noodle House (Taoyuan Branch), ¥26/person (right by Nanshan Library, as requested)
+13:05-13:20 | buffer | Short rest near Nanshan Library before departure
+13:20-14:01 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Diwang Observation Deck · Window to Shenzhen and Hong Kong, taxi (2 vehicles), 20.6 km, 41 min, ¥58.4/vehicle
+14:01-16:01 | attraction | Diwang Observation Deck · Window to Shenzhen and Hong Kong, ¥79/person (indoor observation deck, no outdoor queueing in the rain)
+16:01-16:14 | travel_city | Diwang Observation Deck · Window to Shenzhen and Hong Kong - Xintai Thai Cuisine (KK Mall Branch), walking, 1.1 km, 13 min, ¥0
+16:14-17:00 | buffer | Rest and window browsing at KK Mall to bridge the gap before dinner
+17:00-18:30 | meal | dinner, Xintai Thai Cuisine (KK Mall Branch), ¥155/person
+18:30-19:09 | travel_city | Xintai Thai Cuisine (KK Mall Branch) - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, taxi (2 vehicles), 19.6 km, 39 min, ¥55.7/vehicle
+19:09-21:00 | hotel | rest, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+
+Day 2 (2026-07-16):
+Current City: Shenzhen
+Accommodation: Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, ¥293/room/night
+08:00-09:00 | buffer | Slow morning and breakfast at the hotel (self-arranged)
+09:00-09:13 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Shenzhen Shekou Ocean Science Museum, taxi (2 vehicles), 6.5 km, 13 min, ¥21.6/vehicle
+09:13-11:13 | attraction | Shenzhen Shekou Ocean Science Museum, ¥0/person (indoor marine exhibits, low queue exposure)
+11:13-11:21 | travel_city | Shenzhen Shekou Ocean Science Museum - Jiajun Eight-Treasure Beef Offal, taxi (2 vehicles), 1.7 km, 8 min, ¥10/vehicle
+11:21-12:30 | meal | lunch, Jiajun Eight-Treasure Beef Offal, ¥29/person (near Shenzhen Shekou Ocean Science Museum, as requested)
+12:30-13:00 | buffer | Grab snacks at nearby stalls and rest before heading back
+13:00-13:10 | travel_city | Jiajun Eight-Treasure Beef Offal - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, taxi (2 vehicles), 5.1 km, 10 min, ¥18.1/vehicle
+13:10-16:30 | hotel | midday rest and afternoon low-intensity time, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+16:30-17:00 | buffer | Short neighborhood stroll near the hotel; rainy-day backup is to stay indoors
+17:00-17:05 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Hao Hao Wei Noodle House (Taoyuan Branch), walking, 450 m, 5 min, ¥0
+17:05-18:05 | meal | dinner, Hao Hao Wei Noodle House (Taoyuan Branch), ¥26/person (near Nanshan Library, easy walk back)
+18:05-18:10 | travel_city | Hao Hao Wei Noodle House (Taoyuan Branch) - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, walking, 450 m, 5 min, ¥0
+18:10-21:00 | hotel | rest, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+
+Day 3 (2026-07-17):
+Current City: Shenzhen
+Accommodation: Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, ¥293/room/night
+08:30-09:30 | buffer | Slow morning and breakfast at the hotel (self-arranged)
+09:30-09:43 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - China Merchants Shekou Cruise Home Port Tour, taxi (2 vehicles), 6.5 km, 13 min, ¥21.6/vehicle
+09:43-11:43 | attraction | China Merchants Shekou Cruise Home Port Tour, ¥0/person (covered waterfront promenade, low queue exposure)
+11:43-11:51 | travel_city | China Merchants Shekou Cruise Home Port Tour - Shekou Kang Le Fast Food Fish Stall (Cuiyuan Residential Area Branch), taxi (2 vehicles), 1.7 km, 8 min, ¥10/vehicle
+11:51-13:00 | meal | lunch, Shekou Kang Le Fast Food Fish Stall (Cuiyuan Residential Area Branch), ¥80/person
+13:00-13:10 | travel_city | Shekou Kang Le Fast Food Fish Stall (Cuiyuan Residential Area Branch) - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, taxi (2 vehicles), 5.1 km, 10 min, ¥18.1/vehicle
+13:10-16:30 | hotel | midday rest and afternoon low-intensity time, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+16:30-17:00 | buffer | Short neighborhood stroll near the hotel; rainy-day backup is to stay indoors
+17:00-17:05 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Hao Hao Wei Noodle House (Taoyuan Branch), walking, 450 m, 5 min, ¥0
+17:05-18:05 | meal | dinner, Hao Hao Wei Noodle House (Taoyuan Branch), ¥26/person (near Nanshan Library, easy walk back)
+18:05-18:10 | travel_city | Hao Hao Wei Noodle House (Taoyuan Branch) - Shenzhen Nanshan Daxin Metro Station Hanhao Hotel, walking, 450 m, 5 min, ¥0
+18:10-21:00 | hotel | rest, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+
+Day 4 (2026-07-18):
+Current City: from Shenzhen to Beijing
+Accommodation: -
+06:00-06:30 | hotel | check-out, Shenzhen Nanshan Daxin Metro Station Hanhao Hotel
+06:30-06:35 | travel_city | Shenzhen Nanshan Daxin Metro Station Hanhao Hotel - Hao Hao Wei Noodle House (Taoyuan Branch), walking, 450 m, 5 min, ¥0
+06:35-07:05 | meal | lunch, Hao Hao Wei Noodle House (Taoyuan Branch), ¥26/person (early light meal near Nanshan Library before departure)
+07:05-07:37 | travel_city | Hao Hao Wei Noodle House (Taoyuan Branch) - Bao'an International Airport, taxi (2 vehicles), 16.0 km, 32 min, ¥46.4/vehicle
+07:37-09:07 | buffer | Airport check-in and security (90-minute pre-flight buffer)
+09:07-12:22 | travel_intercity_public | flight CA1306, Bao'an International Airport - Beijing Capital International Airport, Economy, ¥1725/person
+12:22-13:00 | buffer | Deplaning, baggage claim, and exiting the airport
+
+**Budget Summary**:
+**Transportation: 15,403.4 RMB**. Intercity flights: (¥1170 + ¥1725) × 5 people = ¥14,475. Intracity taxis: 9 taxi trips × 2 vehicles = ¥928.4 total (45.8×2 + 58.4×2 + 55.7×2 + 21.6×2 + 10×2 + 18.1×2 + 21.6×2 + 10×2 + 18.1×2 + 46.4×2); walking segments cost ¥0.
+**Accommodation: 2,637 RMB**. ¥293/room/night × 3 rooms × 3 nights.
+**Meals: 1,580 RMB**. (¥26 + ¥155 + ¥29 + ¥26 + ¥80 + ¥26 + ¥26) × 5 people.
+**Attractions & Tickets: 395 RMB**. Diwang Observation Deck ¥79 × 5 people; Shenzhen Shekou Ocean Science Museum, China Merchants Shekou Cruise Home Port Tour are free.
+**Other: 0 RMB**
+**Total Estimated Budget: 19,515.4 RMB**
+</plan>

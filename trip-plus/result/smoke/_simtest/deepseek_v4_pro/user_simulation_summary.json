@@ -1,0 +1,45 @@
+{
+  "mode": "user_simulation_only",
+  "display_name": "deepseek-v4-pro",
+  "source_result_dir": "result\\smoke\\deepseek-v4-pro_en",
+  "simulator_model": "deepseek-v4-flash",
+  "user_simulation_dir": "result\\smoke\\_simtest\\deepseek_v4_pro\\user_simulations",
+  "counts": {
+    "records": 1,
+    "eligible": 1,
+    "ok": 1,
+    "failed": 0,
+    "skipped": 0,
+    "skip_reasons": {}
+  },
+  "scores": {
+    "mean_score": 0.5622,
+    "mean_score_1_5": 3.2487
+  },
+  "runtime_totals": {
+    "llm_calls": 4,
+    "tool_calls": 0,
+    "tool_errors": 0,
+    "token_usage": {
+      "completion_tokens": 13498,
+      "prompt_tokens": 18537,
+      "total_tokens": 32035
+    },
+    "token_usage_available_count": 1,
+    "token_usage_missing_count": 0,
+    "token_usage_status": "available"
+  },
+  "results": [
+    {
+      "sample_id": "mt_single_0006",
+      "turn_id": 2,
+      "turn_for_simulation": 2,
+      "plan_file": "result\\smoke\\deepseek-v4-pro_en\\converted_plans\\id_mt_single_0006_turn_2_converted.json",
+      "status": "ok",
+      "activity_count": 26,
+      "score": 0.5622,
+      "score_1_5": 3.2487,
+      "artifact_path": "C:\\Users\\Lenovo\\Desktop\\xhs笔试\\trip-plus\\result\\smoke\\_simtest\\deepseek_v4_pro\\user_simulations\\id_mt_single_0006_turn_2_user_simulation.json"
+    }
+  ]
+}

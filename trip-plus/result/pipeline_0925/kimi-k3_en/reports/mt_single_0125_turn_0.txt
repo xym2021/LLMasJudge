@@ -1,0 +1,47 @@
+<plan>
+Day 1 (2026-05-01):
+Current City: from Shanghai to Hong Kong
+Accommodation: Hong Kong Ding Dian Hotel, ¥250/room/night
+06:30-08:00 | buffer | airport security and waiting at Shanghai Pudong International Airport
+08:00-10:40 | travel_intercity_public | flight HO1307, Shanghai Pudong International Airport - Hong Kong International Airport, Economy, ¥2455/person
+10:40-11:10 | buffer | deplaning, baggage claim, and exiting the airport
+11:10-11:58 | travel_city | Hong Kong International Airport - Hong Kong Ding Dian Hotel, taxi, 23.9 km, 48 min, ¥186.8
+11:58-12:30 | hotel | check-in and short rest, Hong Kong Ding Dian Hotel
+12:30-13:14 | travel_city | Hong Kong Ding Dian Hotel - Ping Shan Heritage Trail, taxi, 21.9 km, 44 min, ¥174.2
+13:14-14:14 | meal | lunch, Ping Shan Old Place Restaurant, ¥65/person
+14:14-14:17 | travel_city | Ping Shan Old Place Restaurant - Ping Shan Heritage Trail, walking, 0.3 km, 3 min, ¥0
+14:17-16:17 | attraction | Ping Shan Heritage Trail, ¥40/person
+16:17-17:05 | travel_city | Ping Shan Heritage Trail - Peak Tram, taxi, 24.2 km, 48 min, ¥188.0
+17:05-19:05 | attraction | Peak Tram, ¥80/person
+19:05-19:15 | travel_city | Peak Tram - Hong Kong Ding Dian Hotel, taxi, 4.8 km, 10 min, ¥54.5
+19:15-20:00 | hotel | rest, Hong Kong Ding Dian Hotel
+
+Day 2 (2026-05-02):
+Current City: Hong Kong
+Accommodation: Hong Kong Ding Dian Hotel, ¥250/room/night
+09:00-09:26 | travel_city | Hong Kong Ding Dian Hotel - Hong Kong Disneyland, taxi, 13.2 km, 26 min, ¥120.0
+09:26-10:00 | buffer | park entry and ticket check
+10:00-17:30 | attraction | Hong Kong Disneyland, ¥90/person
+17:30-17:32 | travel_city | Hong Kong Disneyland - River View Restaurant, walking, 0.2 km, 2 min, ¥0
+17:32-18:32 | meal | dinner, River View Restaurant, ¥119/person
+18:32-18:59 | travel_city | River View Restaurant - Hong Kong Ding Dian Hotel, taxi, 13.4 km, 27 min, ¥120.0
+18:59-20:00 | hotel | rest, Hong Kong Ding Dian Hotel
+
+Day 3 (2026-05-03):
+Current City: from Hong Kong to Shanghai
+Accommodation: -
+09:00-09:20 | hotel | check-out, Hong Kong Ding Dian Hotel
+09:20-10:08 | travel_city | Hong Kong Ding Dian Hotel - Hong Kong International Airport, taxi, 23.9 km, 48 min, ¥186.8
+10:08-11:20 | buffer | airport security and waiting
+11:20-12:50 | buffer | boarding wait for return flight
+12:50-15:10 | travel_intercity_public | flight FM3012, Hong Kong International Airport - Hongqiao International Airport, Economy, ¥951/person
+15:10-15:40 | buffer | deplaning and exiting the airport
+
+**Budget Summary**:
+**Transportation: 7762.8 RMB**. Intercity flights: (¥2455 + ¥951) × 2 people = ¥6812. Intracity taxis: ¥186.8 + ¥174.2 + ¥188.0 + ¥54.5 + ¥120.0 + ¥120.0 + ¥186.8 = ¥1030.3 (per vehicle, 1 taxi for 2 people); walking segments ¥0. Total = ¥7842.3? Recalculated: 6812 + 1030.3 = ¥7842.3.
+**Accommodation: 500 RMB**. ¥250/room/night × 1 room × 2 nights.
+**Meals: 368 RMB**. (¥65 + ¥119) × 2 people.
+**Attractions & Tickets: 420 RMB**. (¥40 + ¥80 + ¥90) × 2 people.
+**Other: 0 RMB**
+**Total Estimated Budget: 9130.3 RMB**
+</plan>

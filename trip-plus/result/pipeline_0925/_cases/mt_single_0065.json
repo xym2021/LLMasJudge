@@ -1,0 +1,770 @@
+[
+  {
+    "id": "mt_single_0065",
+    "base_query_id": "single_0065",
+    "query": "I'm planning a solo trip to Xi'an from Taiyuan, leaving on Thursday, April 30, 2026, and coming back Sunday, May 3, 2026, so that's 4 days total. Please book 1 room. Since I love diving into the cultural side of travel, I'd like to focus on heritage sites this time. But I have two rules: don't just pile on obscure spots; make sure to include at least one major, well-known landmark. Also, please schedule one meal near \"Xi'an Botanical Garden Children's Garden\" so I'm not wasting time commuting back and forth for food.",
+    "interaction_type": "user_state_evolution",
+    "turns": [
+      {
+        "turn_id": 0,
+        "utterance": "I'm planning a solo trip to Xi'an from Taiyuan, leaving on Thursday, April 30, 2026, and coming back Sunday, May 3, 2026, so that's 4 days total. Please book 1 room. Since I love diving into the cultural side of travel, I'd like to focus on heritage sites this time. But I have two rules: don't just pile on obscure spots; make sure to include at least one major, well-known landmark. Also, please schedule one meal near \"Xi'an Botanical Garden Children's Garden\" so I'm not wasting time commuting back and forth for food.",
+        "must_preserve": [],
+        "must_update": [
+          "initial_plan"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_require_popular_hotspot",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": []
+        }
+      },
+      {
+        "turn_id": 1,
+        "utterance": "An elderly person has joined our group, so please update the headcount to 2 people. Adjust the rooms, transport seats, and tickets to match. For the rest of the itinerary, please avoid mountain climbing, long walks, or anything too physically demanding.",
+        "must_preserve": [
+          "attraction_require_popular_hotspot",
+          "restaurant_closest_to_attraction",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "party_update"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_require_popular_hotspot",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [
+            {
+              "party_update": {
+                "party_subtype": "elder_added",
+                "added_elders": 1,
+                "new_people_number": 2,
+                "new_room_number": 1,
+                "adaptation_requirements": [
+                  "elder_friendly_pacing",
+                  "avoid_strenuous_walk",
+                  "update_ticket_count"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": 2,
+        "utterance": "On Day 2, we want to start a bit later. Please schedule all official attractions and intra-city transfers after 10:30 AM.",
+        "must_preserve": [
+          "attraction_require_popular_hotspot",
+          "restaurant_closest_to_attraction",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "late_start_request"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_require_popular_hotspot",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [
+            {
+              "party_update": {
+                "party_subtype": "elder_added",
+                "added_elders": 1,
+                "new_people_number": 2,
+                "new_room_number": 1,
+                "adaptation_requirements": [
+                  "elder_friendly_pacing",
+                  "avoid_strenuous_walk",
+                  "update_ticket_count"
+                ]
+              }
+            },
+            {
+              "late_start_request": {
+                "day": 2,
+                "earliest_start_time": "10:30",
+                "earliest_start_minutes": 630,
+                "scope": "first_formal_activity"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": 3,
+        "utterance": "I've changed my mind on accommodation; I'd prefer a homestay or apartment now, so please book \"Junyuan Inn\".",
+        "must_preserve": [
+          "attraction_require_popular_hotspot",
+          "restaurant_closest_to_attraction",
+          "trip_date_range_required",
+          "room_count_required",
+          "intercity_round_trip_mode_required"
+        ],
+        "must_update": [
+          "hotel_requirement"
+        ],
+        "feasibility_status": "solved",
+        "response_expectation": "plan",
+        "oracle_state_after_turn": {
+          "active_hard_constraints": [
+            "attraction_require_popular_hotspot",
+            "restaurant_closest_to_attraction",
+            "trip_date_range_required",
+            "room_count_required",
+            "intercity_round_trip_mode_required"
+          ],
+          "active_user_state_deltas": [
+            {
+              "party_update": {
+                "party_subtype": "elder_added",
+                "added_elders": 1,
+                "new_people_number": 2,
+                "new_room_number": 1,
+                "adaptation_requirements": [
+                  "elder_friendly_pacing",
+                  "avoid_strenuous_walk",
+                  "update_ticket_count"
+                ]
+              }
+            },
+            {
+              "late_start_request": {
+                "day": 2,
+                "earliest_start_time": "10:30",
+                "earliest_start_minutes": 630,
+                "scope": "first_formal_activity"
+              }
+            },
+            {
+              "hotel_requirement": {
+                "hotel_name": "Junyuan Inn",
+                "candidate_reference": {
+                  "name": "Junyuan Inn",
+                  "requirement_type": "homestay",
+                  "utterance": "Actually, I'd like to switch to a homestay or apartment. Please book \"Junyuan Inn\".",
+                  "score": "4.9",
+                  "price": "140",
+                  "hotel_star": "",
+                  "services": [
+                    "Accommodation Service",
+                    "Hotel"
+                  ],
+                  "acceptable_hotel_names": [
+                    "Junyuan Inn"
+                  ],
+                  "source": "sample_db.hotels"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "meta_info": {
+      "base_query_meta": {
+        "org": "Taiyuan",
+        "dest": [
+          "Xi'an"
+        ],
+        "days": 4,
+        "depart_date": "2026-04-30",
+        "depart_weekday": 4,
+        "return_date": "2026-05-03",
+        "people_number": 1,
+        "room_number": 1,
+        "solution_status": "sat",
+        "observable_profile": {
+          "party_composition": {
+            "adults": 1,
+            "children": [],
+            "elders": []
+          },
+          "budget_range": [
+            2500,
+            6000
+          ],
+          "accommodation_style": "comfort",
+          "mobility_constraints": [],
+          "physical_rules": [
+            "long_walk_ok"
+          ],
+          "schedule_rules": [
+            "moderate"
+          ],
+          "interest_tags": [
+            "history",
+            "museum"
+          ],
+          "hate_tags": [
+            "long_local_transfer"
+          ],
+          "transport_preferences": [
+            "avoid_red_eye"
+          ],
+          "rest_preferences": []
+        },
+        "user_profile": {
+          "party_type": "solo",
+          "rule_ids": [
+            "mobility_accessibility",
+            "schedule_pacing",
+            "transport_avoid_red_eye",
+            "interest_culture"
+          ],
+          "rules": [
+            {
+              "rule_id": "mobility_accessibility",
+              "category": "mobility",
+              "trigger": "long_local_transfer disliked, avoid_transfer preferred, or mobility constraint observed",
+              "planner_obligation": "Prefer geographically coherent routes and fewer transfers.",
+              "evaluation_basis": [
+                "local_transport.duration_minutes",
+                "distance_meters",
+                "route continuity"
+              ],
+              "preference_variants": [
+                "route_transfer_sensitive"
+              ]
+            },
+            {
+              "rule_id": "schedule_pacing",
+              "category": "schedule",
+              "trigger": "default moderate pacing",
+              "planner_obligation": "Keep daily activity load feasible without forcing extra rest.",
+              "evaluation_basis": [
+                "daily activity count",
+                "transport duration",
+                "opening hours"
+              ],
+              "preference_variants": [
+                "moderate"
+              ]
+            },
+            {
+              "rule_id": "transport_avoid_red_eye",
+              "category": "transport",
+              "trigger": "transport_preferences includes avoid_red_eye",
+              "planner_obligation": "Avoid red-eye or very late-night transport.",
+              "evaluation_basis": [
+                "departure_time",
+                "arrival_time"
+              ]
+            },
+            {
+              "rule_id": "interest_culture",
+              "category": "interest",
+              "trigger": "interest_tags includes history; interest_tags includes museum",
+              "planner_obligation": "Prefer historical or cultural attractions.; Prefer museums or memorial venues.",
+              "evaluation_basis": [
+                "attraction_type",
+                "rating",
+                "opening_time"
+              ]
+            }
+          ],
+          "derivation_context": {
+            "days": 4,
+            "dest_price_level": "medium",
+            "upper_budget_per_person_day": 1500.0,
+            "party_size": 1,
+            "physical_rule_seeds": [
+              "long_walk_ok"
+            ],
+            "schedule_rule_seeds": [
+              "moderate"
+            ]
+          }
+        },
+        "hard_constraints": {
+          "attraction_require_popular_hotspot": {
+            "constraint_context": "The itinerary must include at least one popular/internet-famous/photo-check-in attraction marked in the database.",
+            "constraint_type": "popularity_tag_required",
+            "required_tags": [
+              "classic_hotspot",
+              "viral",
+              "photo_spot",
+              "night_hotspot"
+            ],
+            "acceptable_attraction_names": [
+              "Big Wild Goose Pagoda",
+              "Xi'an Bell Tower",
+              "Muslim Quarter",
+              "Grand Tang Mall",
+              "Xi'an Museum",
+              "Xi'an Drum Tower",
+              "Shaanxi History Museum",
+              "Xi'an City Wall",
+              "Tang Da Ci'en Temple Ruins Park",
+              "Da Ci'en Temple",
+              "Duchenghuang Temple",
+              "Xiangji Temple",
+              "Xi'an Beilin Museum",
+              "Shaanxi Natural History Museum",
+              "Lishan Garden, Mausoleum of the First Qin Emperor Museum",
+              "Caotang Temple",
+              "Xi'an Banpo Museum",
+              "Big Wild Goose Pagoda Cultural Leisure Scenic Area",
+              "Xi'an Tang Dynasty Imperial City Wall Hanguang Gate Ruins Museum",
+              "Oceanarium",
+              "Tang Paradise - Deer Park",
+              "Da Xingshan Temple",
+              "Guangren Temple",
+              "Xingqing Palace Park",
+              "Kunming Pool · Qixi Park",
+              "Qinling Four Treasures Science Park",
+              "Xi'an Chanba National Wetland Park",
+              "Qujiang Pool Ruins Park",
+              "Xi'an Art Museum",
+              "Daming Palace National Heritage Park",
+              "Small Wild Goose Pagoda",
+              "Zhuque National Forest Park",
+              "Hancheng Lake Tourist Scenic Area",
+              "Zhongnan Mountain Nanyuwutai Scenic Area",
+              "Xi'an Qinling Wildlife Park",
+              "Qinglong Temple, Leyouyuan",
+              "Qujiang Hanyao Ruins Park",
+              "Datang West Market Museum",
+              "Huaxia Cultural Tourism Xi'an Resort",
+              "Qujiang Ocean and Polar Park",
+              "Xi'an Expo Park Nature Hall",
+              "Bailuyuan Film and Television City - Zishui County Town"
+            ],
+            "acceptable_attraction_options": [
+              {
+                "attraction_name": "Big Wild Goose Pagoda",
+                "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+                "rating": 4.9,
+                "ticket_price": 40.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "09:00",
+                "closing_time": "21:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Xi'an Bell Tower",
+                "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+                "rating": 4.9,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_default_reference",
+                "opening_time": "08:30",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "night_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Muslim Quarter",
+                "attraction_type": "Shopping Service; Characteristic Commercial Street; Pedestrian Street",
+                "rating": 4.8,
+                "ticket_price": 0.0,
+                "ticket_price_source": "estimated_rule_free_category",
+                "opening_time": "00:00",
+                "closing_time": "24:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "shopping_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Grand Tang Mall",
+                "attraction_type": "Scenic Spots; Scenic Spot Related; Tourist Attractions | Shopping Services; Characteristic Commercial Streets; Characteristic Commercial Streets",
+                "rating": 4.8,
+                "ticket_price": 0.0,
+                "ticket_price_source": "estimated_rule_free_category",
+                "opening_time": "00:00",
+                "closing_time": "24:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "viral",
+                  "photo_spot",
+                  "night_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Xi'an Museum",
+                "attraction_type": "Science, Education and Cultural Services; Museum; Museum | Scenic Spots; Scenic Spot Related; Tourist Attraction",
+                "rating": 4.8,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "09:00",
+                "closing_time": "17:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Xi'an Drum Tower",
+                "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+                "rating": 4.8,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_default_reference",
+                "opening_time": "",
+                "closing_time": "",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "night_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Shaanxi History Museum",
+                "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+                "rating": 4.8,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:30",
+                "closing_time": "19:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Xi'an City Wall",
+                "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+                "rating": 4.8,
+                "ticket_price": 60.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:00",
+                "closing_time": "22:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Tang Da Ci'en Temple Ruins Park",
+                "attraction_type": "Scenic Spots;Parks and Squares;Parks",
+                "rating": 4.7,
+                "ticket_price": 20.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "00:00",
+                "closing_time": "24:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "viral",
+                  "photo_spot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Da Ci'en Temple",
+                "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+                "rating": 4.7,
+                "ticket_price": 20.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:30",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "photo_spot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Duchenghuang Temple",
+                "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+                "rating": 4.7,
+                "ticket_price": 20.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:30",
+                "closing_time": "17:30",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": ""
+              },
+              {
+                "attraction_name": "Xiangji Temple",
+                "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+                "rating": 4.7,
+                "ticket_price": 20.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:00",
+                "closing_time": "18:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": ""
+              },
+              {
+                "attraction_name": "Xi'an Beilin Museum",
+                "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+                "rating": 4.7,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "09:00",
+                "closing_time": "18:30",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Shaanxi Natural History Museum",
+                "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+                "rating": 4.7,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "",
+                "closing_time": "",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Lishan Garden, Mausoleum of the First Qin Emperor Museum",
+                "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+                "rating": 4.7,
+                "ticket_price": 60.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:30",
+                "closing_time": "18:30",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Caotang Temple",
+                "attraction_type": "Scenic Spot;Scenic Spot;Temple & Taoist Temple",
+                "rating": 4.6,
+                "ticket_price": 20.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "09:00",
+                "closing_time": "17:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": ""
+              },
+              {
+                "attraction_name": "Xi'an Banpo Museum",
+                "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+                "rating": 4.6,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:00",
+                "closing_time": "17:30",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "family_hotspot",
+                  "culture_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "high"
+              },
+              {
+                "attraction_name": "Big Wild Goose Pagoda Cultural Leisure Scenic Area",
+                "attraction_type": "Scenic Spots;Scenic Spots;National Scenic Spots",
+                "rating": 4.6,
+                "ticket_price": 60.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "",
+                "closing_time": "",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "viral",
+                  "photo_spot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Xi'an Tang Dynasty Imperial City Wall Hanguang Gate Ruins Museum",
+                "attraction_type": "Science, Education & Cultural Services;Museum;Museum",
+                "rating": 4.3,
+                "ticket_price": 50.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "08:00",
+                "closing_time": "22:00",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot",
+                  "viral",
+                  "photo_spot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": "medium"
+              },
+              {
+                "attraction_name": "Oceanarium",
+                "attraction_type": "Scenic Spots;Scenic Spots;Scenic Spots",
+                "rating": 4.2,
+                "ticket_price": 120.0,
+                "ticket_price_source": "estimated_rule_category_reference",
+                "opening_time": "",
+                "closing_time": "",
+                "closing_dates": "",
+                "popularity_tags": [
+                  "classic_hotspot"
+                ],
+                "crowd_risk": "high",
+                "queue_risk": ""
+              }
+            ]
+          },
+          "restaurant_closest_to_attraction": {
+            "constraint_context": "Please arrange a meal at the restaurant closest to 'Xi'an Botanical Garden Children's Garden' during the trip.",
+            "constraint_type": "superlative_closest_to_attraction",
+            "attraction_name": "Xi'an Botanical Garden Children's Garden",
+            "restaurant_name": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "distance_meters": 1114,
+            "price_per_person": 58.0,
+            "acceptable_restaurant_names": [
+              "Weike Coffee (Wangzuo Qujiang Branch)"
+            ],
+            "acceptable_restaurant_options": [
+              {
+                "restaurant_name": "Weike Coffee (Wangzuo Qujiang Branch)",
+                "price_per_person": 58.0,
+                "restaurant_rating": 4.8,
+                "nearby_attraction_name": "Xi'an Botanical Garden Children's Garden",
+                "cuisine_type": "Coffee Shop",
+                "tags": [
+                  "Catering Services",
+                  "Coffee Shop",
+                  "Salad",
+                  "Steak"
+                ],
+                "opening_time": "07:00",
+                "closing_time": "22:00"
+              }
+            ]
+          },
+          "trip_date_range_required": {
+            "constraint_context": "The itinerary must use the explicit departure/return dates and trip length from the user request.",
+            "depart_date": "2026-04-30",
+            "return_date": "2026-05-03",
+            "days": 4
+          },
+          "party_size_required": {
+            "constraint_context": "The itinerary budget must be calculated for the explicit party size from the user request.",
+            "people_number": 1
+          },
+          "room_count_required": {
+            "constraint_context": "The accommodation budget must be calculated for the explicit room count from the user request.",
+            "room_number": 1
+          },
+          "intercity_round_trip_mode_required": {
+            "constraint_context": "All intercity public transportation segments must use the explicit round-trip mode from the user request.",
+            "route_mode": "train",
+            "origin": "Taiyuan",
+            "destinations": [
+              "Xi'an"
+            ]
+          }
+        },
+        "soft_constraints": {
+          "city_soft_wishes": [],
+          "profile_soft_wish": "Keep city transfers straightforward; just make the route smooth.",
+          "environment_hints": []
+        },
+        "city_context": {
+          "city_tags": [
+            "city_wall_walk_route",
+            "cold_winter_city",
+            "dry_winter_city",
+            "heritage_hotspot_queue",
+            "historic_crowd_city",
+            "museum_reservation_city",
+            "old_town_walk_city",
+            "real_name_reservation_city",
+            "summer_heat_city",
+            "terracotta_army_daytrip_buffer"
+          ],
+          "seasonal_advisories": [
+            "wind_dust_risk"
+          ]
+        },
+        "route_mode": "train"
+      }
+    }
+  }
+]

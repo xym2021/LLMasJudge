@@ -1,0 +1,441 @@
+{
+  "daily_plans": [
+    {
+      "day_number": 1,
+      "current_city": "Taiyuan → Xi'an",
+      "activities": [
+        {
+          "time_slot": "07:46-08:16",
+          "type": "buffer",
+          "details": {
+            "description": "security check, boarding at Taiyuan South"
+          }
+        },
+        {
+          "time_slot": "08:16-11:17",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2507",
+            "from": "Taiyuan South",
+            "to": "Xi'an North",
+            "cost": 178.5,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:17-11:47",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, exiting station"
+          }
+        },
+        {
+          "time_slot": "11:47-12:25",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an North",
+            "to": "Junyuan Inn",
+            "mode": "taxi",
+            "distance": "~36.6km",
+            "duration": "73min",
+            "cost": 76.3
+          }
+        },
+        {
+          "time_slot": "12:25-12:45",
+          "type": "hotel",
+          "details": {
+            "activity": "check-in",
+            "name": "drop luggage at Junyuan Inn"
+          }
+        },
+        {
+          "time_slot": "12:45-13:23",
+          "type": "travel_city",
+          "details": {
+            "from": "Junyuan Inn",
+            "to": "Big Wild Goose Pagoda",
+            "mode": "taxi",
+            "distance": "~18.9km",
+            "duration": "38min",
+            "cost": 40.9
+          }
+        },
+        {
+          "time_slot": "13:23-15:23",
+          "type": "attraction",
+          "details": {
+            "name": "Big Wild Goose Pagoda",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "15:23-15:36",
+          "type": "travel_city",
+          "details": {
+            "from": "Big Wild Goose Pagoda",
+            "to": "Shaanxi History Museum",
+            "mode": "walking",
+            "distance": "1.1km",
+            "duration": "13min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "15:36-17:36",
+          "type": "attraction",
+          "details": {
+            "name": "Shaanxi History Museum",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "17:36-17:44",
+          "type": "travel_city",
+          "details": {
+            "from": "Shaanxi History Museum",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "taxi",
+            "distance": "~3.1km",
+            "duration": "8min",
+            "cost": 9.3
+          }
+        },
+        {
+          "time_slot": "17:44-19:44",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "19:44-19:59",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "distance": "1.2km",
+            "duration": "15min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "19:59-20:59",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Wushan Paper-Wrapped Fish (Minleyuan Main Store)",
+            "cost": 54
+          }
+        },
+        {
+          "time_slot": "20:59-21:46",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Junyuan Inn",
+            "mode": "taxi",
+            "distance": "~23.7km",
+            "duration": "47min",
+            "cost": 50.3
+          }
+        }
+      ],
+      "date": "2026-04-30",
+      "accommodation": {
+        "name": "Junyuan Inn",
+        "price_per_night": 140
+      }
+    },
+    {
+      "day_number": 2,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "10:30-11:17",
+          "type": "travel_city",
+          "details": {
+            "from": "Junyuan Inn",
+            "to": "Xi'an Bell Tower",
+            "mode": "taxi",
+            "distance": "~23.4km",
+            "duration": "47min",
+            "cost": 49.7
+          }
+        },
+        {
+          "time_slot": "11:17-13:17",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Bell Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "13:17-13:22",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Bell Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "duration": "5min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "13:22-14:22",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Haidilao Hot Pot (Jiefang Road Branch)",
+            "cost": 96
+          }
+        },
+        {
+          "time_slot": "14:22-16:22",
+          "type": "attraction",
+          "details": {
+            "name": "Muslim Quarter",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "16:22-16:37",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "walking",
+            "distance": "1.2km",
+            "duration": "15min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "16:37-18:37",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "18:37-18:49",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Xi'an Drum Tower",
+            "mode": "walking",
+            "distance": "1.0km",
+            "duration": "12min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:49-20:49",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Drum Tower",
+            "city": "Xi'an",
+            "cost": 50
+          }
+        },
+        {
+          "time_slot": "20:49-20:52",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Drum Tower",
+            "to": "Muslim Quarter",
+            "mode": "walking",
+            "duration": "3min",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "20:52-21:52",
+          "type": "meal",
+          "details": {
+            "meal_type": "dinner",
+            "name": "Halal Jinxiang Qiangguo Fish (Dongwu Road Branch)",
+            "cost": 81
+          }
+        },
+        {
+          "time_slot": "21:52-22:39",
+          "type": "travel_city",
+          "details": {
+            "from": "Muslim Quarter",
+            "to": "Junyuan Inn",
+            "mode": "taxi",
+            "distance": "~23.7km",
+            "duration": "47min",
+            "cost": 50.3
+          }
+        }
+      ],
+      "date": "2026-05-01",
+      "accommodation": {
+        "name": "Junyuan Inn",
+        "price_per_night": 140
+      }
+    },
+    {
+      "day_number": 3,
+      "current_city": "Xi'an",
+      "activities": [
+        {
+          "time_slot": "09:00-09:45",
+          "type": "travel_city",
+          "details": {
+            "from": "Junyuan Inn",
+            "to": "Yongning Gate Tower, Xi'an City Wall",
+            "mode": "taxi",
+            "distance": "~22.5km",
+            "duration": "45min",
+            "cost": 48
+          }
+        },
+        {
+          "time_slot": "09:45-11:45",
+          "type": "attraction",
+          "details": {
+            "name": "Yongning Gate Tower, Xi'an City Wall",
+            "city": "Xi'an",
+            "cost": 40
+          }
+        },
+        {
+          "time_slot": "11:45-12:02",
+          "type": "travel_city",
+          "details": {
+            "from": "Yongning Gate Tower",
+            "to": "Xi'an Botanical Garden Children's Garden",
+            "mode": "taxi",
+            "distance": "~8.7km",
+            "duration": "17min",
+            "cost": 20.4
+          }
+        },
+        {
+          "time_slot": "12:02-13:02",
+          "type": "meal",
+          "details": {
+            "meal_type": "lunch",
+            "name": "Weike Coffee (Wangzuo Qujiang Branch)",
+            "cost": 58
+          }
+        },
+        {
+          "time_slot": "13:02-15:02",
+          "type": "attraction",
+          "details": {
+            "name": "Xi'an Botanical Garden Children's Garden",
+            "city": "Xi'an",
+            "cost": 30
+          }
+        },
+        {
+          "time_slot": "15:02-15:14",
+          "type": "travel_city",
+          "details": {
+            "from": "Xi'an Botanical Garden Children's Garden",
+            "to": "Grand Tang Mall",
+            "mode": "taxi",
+            "distance": "~5.8km",
+            "duration": "12min",
+            "cost": 14.7
+          }
+        },
+        {
+          "time_slot": "15:14-18:14",
+          "type": "attraction",
+          "details": {
+            "name": "Grand Tang Mall",
+            "city": "Xi'an",
+            "cost": 0
+          }
+        },
+        {
+          "time_slot": "18:14-18:51",
+          "type": "travel_city",
+          "details": {
+            "from": "Grand Tang Mall",
+            "to": "Junyuan Inn",
+            "mode": "taxi",
+            "distance": "~18.5km",
+            "duration": "37min",
+            "cost": 39.9
+          }
+        }
+      ],
+      "date": "2026-05-02",
+      "accommodation": {
+        "name": "Junyuan Inn",
+        "price_per_night": 140
+      }
+    },
+    {
+      "day_number": 4,
+      "current_city": "Xi'an → Taiyuan",
+      "activities": [
+        {
+          "time_slot": "07:00-08:13",
+          "type": "travel_city",
+          "details": {
+            "from": "Junyuan Inn",
+            "to": "Xi'an North",
+            "mode": "taxi",
+            "distance": "~36.6km",
+            "duration": "73min",
+            "cost": 76.3
+          }
+        },
+        {
+          "time_slot": "08:13-08:32",
+          "type": "buffer",
+          "details": {
+            "description": "security check, boarding at Xi'an North"
+          }
+        },
+        {
+          "time_slot": "08:32-11:43",
+          "type": "travel_intercity_public",
+          "details": {
+            "mode": "train",
+            "number": "D2532",
+            "from": "Xi'an North",
+            "to": "Taiyuan South",
+            "cost": 178,
+            "seat_class": "Second Class Seat"
+          }
+        },
+        {
+          "time_slot": "11:43-12:13",
+          "type": "buffer",
+          "details": {
+            "description": "deplaning, exiting station"
+          }
+        }
+      ],
+      "date": "2026-05-03"
+    }
+  ],
+  "budget_summary": {
+    "currency": "CNY",
+    "transportation": 1029.2,
+    "accommodation": 420,
+    "meals": 578,
+    "attractions_and_tickets": 580,
+    "other": 0,
+    "total_estimated_budget": 2607.2
+  }
+}
